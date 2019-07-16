@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 
 @Component({
@@ -12,7 +12,20 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent {
   title = 'RobotTeachingv0';
 
-  private avvMethods  = [];
+   avvMethods  = [];
+
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+
+      'jsonrpc':'2.0',
+      'user':'intern',
+      'token':'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2JvdElkIjoiY2hpbWVyYTEiLCJle' +
+        'HBpcmVzIjozMTUzNjAwMH0.fPubN5HhuKhmg0o8gL5NA7TCNbtLdL6FxkG_B8A3U1s'
+
+    })
+  };
+
 
   constructor(private http: HttpClient) {
   }
@@ -20,10 +33,11 @@ export class AppComponent {
 
   doPostRequest() {
     const req = this.http.post('http://localhost:4000', {
-      title: 'foo',
-      body: 'bar',
-      userId: 1
-    })
+      "jsonrpc":"2.0",
+      "method":"get_service_description",
+      "params":[3],
+      "id": 1
+    },this.httpOptions)
       .subscribe(
         (res: any[]) => {
           console.log(res);
