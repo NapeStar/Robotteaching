@@ -12,6 +12,7 @@ import {Observable} from 'rxjs';
 export class RobotmethodsComponent implements OnInit {
 
   httpResult: Object;
+  selectedRobotmethod: Object;
 
   constructor(private dataService: DataService) { }
 
@@ -19,11 +20,9 @@ export class RobotmethodsComponent implements OnInit {
     this.getRobotMethods();
   }
 
-/*
-  onSelect(robotmethod: Robotmethod): void {
+  onSelect(robotmethod: Array<string>): void {
     this.selectedRobotmethod = robotmethod;
   }
-*/
 
   getRobotMethods(): void {
     this.dataService.getWorkflows().subscribe(data => {

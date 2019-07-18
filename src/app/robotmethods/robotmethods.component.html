@@ -1,12 +1,13 @@
 
 <button (click)="dataClick()">show Workflows</button>
 
-<ul >
+<ul class ="robotmethods" >
 
+  <li *ngFor="let workflow of httpResult.result.workflows, index as i"
+      [class.selected]="workflow === selectedRobotmethod"
+      (click)="onSelect(workflow)">
 
-  <li *ngFor="let workflow of httpResult.result.workflows">
-
-    <p> {{workflow}}</p>
+    <span class="badge">{{i}}</span> {{workflow}}
 
   </li>
 
