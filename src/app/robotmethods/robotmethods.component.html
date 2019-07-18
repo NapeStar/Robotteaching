@@ -1,0 +1,36 @@
+
+<button (click)="dataClick()">show Workflows</button>
+
+<ul >
+
+
+  <li *ngFor="let workflow of httpResult.result.workflows">
+
+    <p> {{workflow}}</p>
+
+  </li>
+
+</ul>
+
+<!--
+<h2>My Robotmethods</h2>
+<ul class="robotmethods">
+  <li *ngFor="let robotmethod of robotmethods"
+      [class.selected]="robotmethod === selectedRobotmethod"
+      (click)="onSelect(robotmethod)">
+    <span class="badge">{{robotmethod.id}}</span> {{robotmethod.name}}
+  </li>
+</ul>
+
+<div *ngIf="selectedRobotmethod">
+
+  <h2>{{selectedRobotmethod.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedRobotmethod.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedRobotmethod.name" placeholder="name"/>
+    </label>
+  </div>
+
+</div>
+-->
