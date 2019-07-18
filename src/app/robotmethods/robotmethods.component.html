@@ -1,37 +1,85 @@
 
 <button (click)="dataClick()">show Workflows</button>
 
-<ul class ="robotmethods" >
+<div class = example-container>
+<h2>Available Methods</h2>
+
+<ul cdkDropList
+    #todoList="cdkDropList"
+    [cdkDropListData]="hero"
+    [cdkDropListConnectedTo]="[doneList]"
+    class="robotmethods"
+    (cdkDropListDropped)="drop($event)"
+    >
 
   <li *ngFor="let workflow of httpResult.result.workflows, index as i"
       [class.selected]="workflow === selectedRobotmethod"
-      (click)="onSelect(workflow)">
+      (click)="onSelect(workflow)" cdkDrag>
 
     <span class="badge">{{i}}</span> {{workflow}}
 
   </li>
 
 </ul>
+</div>
+
+<div class = example-container>
+<h2>choosen Methods</h2>
+
+<ul cdkDropList
+    #doneList="cdkDropList"
+    [cdkDropListData]="selectedRobotmethods"
+    [cdkDropListConnectedTo]="[todoList]"
+    class="robotmethods"
+    (cdkDropListDropped)="drop($event)"
+>
+
+  <li *ngFor="let workflow of selectedRobotmethods, index as i"
+      [class.selected]="workflow === selectedRobotmethod"
+      (click)="onSelect(workflow)" cdkDrag>
+
+    <span class="badge">{{i}}</span> {{workflow}}
+
+  </li>
+
+</ul>
+</div>
+
 
 <!--
-<h2>My Robotmethods</h2>
-<ul class="robotmethods">
-  <li *ngFor="let robotmethod of robotmethods"
-      [class.selected]="robotmethod === selectedRobotmethod"
-      (click)="onSelect(robotmethod)">
-    <span class="badge">{{robotmethod.id}}</span> {{robotmethod.name}}
+div class = example-container>
+<h2>Available Heroes</h2>
+
+<ul cdkDropList
+    #todoList="cdkDropList"
+    [cdkDropListData]="heroes"
+    [cdkDropListConnectedTo]="[doneList]"
+    class="heroes"
+    (cdkDropListDropped)="drop($event)">
+
+  <li *ngFor="let hero of heroes"
+      [class.selected]="hero === selectedHero"
+      (click)="onSelect(hero)" cdkDrag>
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
   </li>
 </ul>
+</div>
 
-<div *ngIf="selectedRobotmethod">
+<div class = example-container>
+<h2>Choosen Heroes</h2>
 
-  <h2>{{selectedRobotmethod.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{selectedRobotmethod.id}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="selectedRobotmethod.name" placeholder="name"/>
-    </label>
-  </div>
+<ul cdkDropList
+    #doneList="cdkDropList"
+    [cdkDropListData]="heroes2"
+    [cdkDropListConnectedTo]="[todoList]"
+    class="heroes"
+    (cdkDropListDropped)="drop($event)">
 
+  <li *ngFor="let hero of heroes2"
+      [class.selected]="hero === selectedHero"
+      (click)="onSelect(hero)" cdkDrag>
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
 </div>
 -->
