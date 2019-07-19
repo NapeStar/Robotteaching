@@ -40,9 +40,10 @@ export class RobotmethodsComponent implements OnInit {
     // this.httpResultList = this.httpResult.result.workflows;
   }
 
-
-  private resetList() {
+  resetClick() {
     this.getRobotMethods();
+    this.selectedRobotmethods = [];
+    this.selectedRobotmethods = ['Windstorm'];
   }
 
 
@@ -54,6 +55,7 @@ export class RobotmethodsComponent implements OnInit {
         event.container.data,
         event.previousIndex,
         event.currentIndex);
+      this.getRobotMethods();
     }
   }
 
