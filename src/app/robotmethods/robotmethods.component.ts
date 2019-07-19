@@ -12,17 +12,19 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 })
 export class RobotmethodsComponent implements OnInit {
 
-  httpResult: Object;
-  selectedRobotmethod: Object;
+  httpResult: any;
+  selectedRobotmethod: any;
+  httpResultList: any[];
+  // selectedRobotmethods: string[];
   selectedRobotmethods: Array<string> = ['Windstorm'];
 
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    //this.getRobotMethods();
+    // this.getRobotMethods();
   }
 
-  onSelect(robotmethod: Array<string>): void {
+  onSelect(robotmethod: string): void {
     this.selectedRobotmethod = robotmethod;
   }
 
@@ -35,6 +37,7 @@ export class RobotmethodsComponent implements OnInit {
 
   dataClick() {
     this.getRobotMethods();
+    // this.httpResultList = this.httpResult.result.workflows;
   }
 
   drop(event: CdkDragDrop<string[]>) {
@@ -47,5 +50,9 @@ export class RobotmethodsComponent implements OnInit {
         event.currentIndex);
     }
   }
+
+  /*addToList(event: CdkDragDrop<string[]>){
+    this.item3.push(this.item2[event.previousIndex]);
+    */
 
 }

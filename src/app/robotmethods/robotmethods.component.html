@@ -6,7 +6,7 @@
 
 <ul cdkDropList
     #todoList="cdkDropList"
-    [cdkDropListData]="hero"
+    [cdkDropListData]="httpResult.result.workflows"
     [cdkDropListConnectedTo]="[doneList]"
     class="robotmethods"
     (cdkDropListDropped)="drop($event)"
@@ -45,41 +45,3 @@
 </ul>
 </div>
 
-
-<!--
-div class = example-container>
-<h2>Available Heroes</h2>
-
-<ul cdkDropList
-    #todoList="cdkDropList"
-    [cdkDropListData]="heroes"
-    [cdkDropListConnectedTo]="[doneList]"
-    class="heroes"
-    (cdkDropListDropped)="drop($event)">
-
-  <li *ngFor="let hero of heroes"
-      [class.selected]="hero === selectedHero"
-      (click)="onSelect(hero)" cdkDrag>
-    <span class="badge">{{hero.id}}</span> {{hero.name}}
-  </li>
-</ul>
-</div>
-
-<div class = example-container>
-<h2>Choosen Heroes</h2>
-
-<ul cdkDropList
-    #doneList="cdkDropList"
-    [cdkDropListData]="heroes2"
-    [cdkDropListConnectedTo]="[todoList]"
-    class="heroes"
-    (cdkDropListDropped)="drop($event)">
-
-  <li *ngFor="let hero of heroes2"
-      [class.selected]="hero === selectedHero"
-      (click)="onSelect(hero)" cdkDrag>
-    <span class="badge">{{hero.id}}</span> {{hero.name}}
-  </li>
-</ul>
-</div>
--->

@@ -65,9 +65,13 @@
 }
 
 .cdk-drag-placeholder {
+  background: #607D8B;
+  padding: 20px;
+  text-indent: -9999px;
   opacity: 0;
 }
 
+/* Animate an item that has been dropped. */
 .cdk-drag-animating {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
