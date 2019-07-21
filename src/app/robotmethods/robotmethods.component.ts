@@ -16,13 +16,14 @@ export class RobotmethodsComponent implements OnInit {
   httpResult: any;
   selectedRobotmethod: any;
   httpResultList: any[];
-  // selectedRobotmethods: string[];
-  selectedRobotmethods: Array<string> = ['Windstorm'];
+  selectedRobotmethods: any[];
+  // selectedRobotmethods: Array<string> = ['Windstorm'];
 
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    // this.getRobotMethods();
+    this.getRobotMethods();
+    this.selectedRobotmethods = [];
   }
 
   onSelect(robotmethod: string): void {
@@ -38,14 +39,15 @@ export class RobotmethodsComponent implements OnInit {
 
   dataClick() {
     this.getRobotMethods();
-    this.loaded = true;
+    this.selectedRobotmethods = [];
+    // this.loaded = true;
     // this.httpResultList = this.httpResult.result.workflows;
   }
 
   resetClick() {
     this.getRobotMethods();
     this.selectedRobotmethods = [];
-    this.selectedRobotmethods = ['Windstorm'];
+    // this.selectedRobotmethods = ['Windstorm'];
   }
 
 

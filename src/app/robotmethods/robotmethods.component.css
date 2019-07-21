@@ -15,8 +15,9 @@
 .robotmethods {
   margin: 0 0 2em 0;
   list-style-type: none;
-  padding: 0;
+  padding: 20px;
   width: 20em;
+  border: 1px solid #EEE;
 }
 .robotmethods li {
   cursor: pointer;
