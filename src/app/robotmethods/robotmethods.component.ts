@@ -12,6 +12,7 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 })
 export class RobotmethodsComponent implements OnInit {
 
+  loaded = false;
   httpResult: any;
   selectedRobotmethod: any;
   httpResultList: any[];
@@ -37,6 +38,7 @@ export class RobotmethodsComponent implements OnInit {
 
   dataClick() {
     this.getRobotMethods();
+    this.loaded = true;
     // this.httpResultList = this.httpResult.result.workflows;
   }
 

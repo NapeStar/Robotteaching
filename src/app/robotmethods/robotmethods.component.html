@@ -5,44 +5,55 @@
 <div class = example-container>
 <h2>Available Methods</h2>
 
-<ul cdkDropList
-    #todoList="cdkDropList"
-    [cdkDropListData]="httpResult.result.workflows"
-    [cdkDropListConnectedTo]="[doneList]"
-    class="robotmethods"
-    (cdkDropListDropped)="drop($event)"
-    >
+  <!--<ul [ngSwitch]="loaded">-->
 
-  <li *ngFor="let workflow of httpResult.result.workflows, index as i"
-      [class.selected]="workflow === selectedRobotmethod"
-      (click)="onSelect(workflow)" cdkDrag>
+    <ul cdkDropList
+        #todoList="cdkDropList"
+        [cdkDropListData]="httpResult?.result.workflows"
+        [cdkDropListConnectedTo]="[doneList]"
+        class="robotmethods"
+        (cdkDropListDropped)="drop($event)"
+        >
 
-    <span class="badge">{{i}}</span> {{workflow}}
+      <li *ngFor="let workflow of httpResult?.result.workflows, index as i"
+          [class.selected]="workflow === selectedRobotmethod"
+          (click)="onSelect(workflow)" cdkDrag>
 
-  </li>
+        <span class="badge">{{i}}</span> {{workflow}}
 
-</ul>
+      </li>
+
+    </ul>
+
+    <!--<ul *ngSwitchDefault></ul>
+
+  </ul>-->
 </div>
 
 <div class = example-container>
 <h2>choosen Methods</h2>
 
-<ul cdkDropList
-    #doneList="cdkDropList"
-    [cdkDropListData]="selectedRobotmethods"
-    [cdkDropListConnectedTo]="[todoList]"
-    class="robotmethods"
-    (cdkDropListDropped)="drop($event)"
->
+  <!--<ul [ngSwitch]="loaded">-->
 
-  <li *ngFor="let workflow of selectedRobotmethods, index as i"
-      [class.selected]="workflow === selectedRobotmethod"
-      (click)="onSelect(workflow)" cdkDrag>
+      <ul cdkDropList
+          #doneList="cdkDropList"
+          [cdkDropListData]="selectedRobotmethods"
+          [cdkDropListConnectedTo]="[todoList]"
+          class="robotmethods"
+          (cdkDropListDropped)="drop($event)"
+      >
 
-    <span class="badge">{{i}}</span> {{workflow}}
+        <li *ngFor="let workflow of selectedRobotmethods, index as i"
+            [class.selected]="workflow === selectedRobotmethod"
+            (click)="onSelect(workflow)" cdkDrag>
 
-  </li>
+          <span class="badge">{{i}}</span> {{workflow}}
 
-</ul>
+        </li>
+
+      </ul>
+    <!--<ul *ngSwitchDefault></ul>
+
+  </ul>-->
+
 </div>
-
