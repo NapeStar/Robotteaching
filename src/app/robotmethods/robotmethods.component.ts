@@ -13,19 +13,22 @@ import {MoveList} from '../datatypes/data.moveList';
 })
 export class RobotmethodsComponent implements OnInit {
 
+  loaded = false;
   httpResult: any;
   selectedRobotmethod: any;
   ml: MoveList;
 
   httpResultList: any[];
-  // selectedRobotmethods: string[];
-  selectedRobotmethods: Array<string> = ['Windstorm'];
+  selectedRobotmethods: any[];
+  // selectedRobotmethods: Array<string> = ['Windstorm'];
 
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
     // this.getRobotMethods();
     this.ml = new MoveList("");
+    this.getRobotMethods();
+    this.selectedRobotmethods = [];
   }
 
   onSelect(robotmethod: string): void {
@@ -48,13 +51,15 @@ export class RobotmethodsComponent implements OnInit {
 
   dataClick() {
     this.getRobotMethods();
-
+    this.selectedRobotmethods = [];
+    // this.loaded = true;
     // this.httpResultList = this.httpResult.result.workflows;
   }
 
-
-  private resetList() {
+  resetClick() {
     this.getRobotMethods();
+    this.selectedRobotmethods = [];
+    // this.selectedRobotmethods = ['Windstorm'];
   }
 
 
@@ -66,6 +71,7 @@ export class RobotmethodsComponent implements OnInit {
         event.container.data,
         event.previousIndex,
         event.currentIndex);
+      this.getRobotMethods();
     }
   }
 
