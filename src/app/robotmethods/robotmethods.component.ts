@@ -4,6 +4,7 @@ import { ROBOTMETHODS} from '../mock-robotmethods';
 import { DataService} from '../data.service';
 import {Observable} from 'rxjs';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import {MoveList} from '../datatypes/data.moveList';
 
 @Component({
   selector: 'app-robotmethods',
@@ -14,6 +15,8 @@ export class RobotmethodsComponent implements OnInit {
 
   httpResult: any;
   selectedRobotmethod: any;
+  ml: MoveList;
+
   httpResultList: any[];
   // selectedRobotmethods: string[];
   selectedRobotmethods: Array<string> = ['Windstorm'];
@@ -22,6 +25,7 @@ export class RobotmethodsComponent implements OnInit {
 
   ngOnInit() {
     // this.getRobotMethods();
+    this.ml = new MoveList("");
   }
 
   onSelect(robotmethod: string): void {
@@ -31,12 +35,20 @@ export class RobotmethodsComponent implements OnInit {
   getRobotMethods(): void {
     this.dataService.getWorkflows().subscribe(data => {
       this.httpResult = data
-      console.log(this.httpResult)
+      this.ml = new MoveList(this.httpResult);
+
+      for (let move of this.ml.moveList) {
+
+        console.log("Showing Move: " + move.name);
+
+      }
+      console.log(this.httpResult);
     });
   }
 
   dataClick() {
     this.getRobotMethods();
+
     // this.httpResultList = this.httpResult.result.workflows;
   }
 

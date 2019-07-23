@@ -1,22 +1,22 @@
 
 <button (click)="dataClick()">show Workflows</button>
 
-<div class = example-container>
+<div class = example-container >
 <h2>Available Methods</h2>
 
 <ul cdkDropList
     #todoList="cdkDropList"
-    [cdkDropListData]="httpResult.result.workflows"
+    [cdkDropListData]="ml.moveList"
     [cdkDropListConnectedTo]="[doneList]"
     class="robotmethods"
     (cdkDropListDropped)="drop($event)"
     >
 
-  <li *ngFor="let workflow of httpResult.result.workflows, index as i"
-      [class.selected]="workflow === selectedRobotmethod"
-      (click)="onSelect(workflow)" cdkDrag>
+  <li *ngFor="let move of ml.moveList, index as i"
+      [class.selected]="move === selectedRobotmethod"
+      (click)="onSelect(move)" cdkDrag>
 
-    <span class="badge">{{i}}</span> {{workflow}}
+    <span class="badge">{{i}}</span> {{move.name}}
 
   </li>
 
@@ -34,11 +34,11 @@
     (cdkDropListDropped)="drop($event)"
 >
 
-  <li *ngFor="let workflow of selectedRobotmethods, index as i"
-      [class.selected]="workflow === selectedRobotmethod"
-      (click)="onSelect(workflow)" cdkDrag>
+  <li *ngFor="let move of selectedRobotmethods, index as i"
+      [class.selected]="move === selectedRobotmethod"
+      (click)="onSelect(move)" cdkDrag>
 
-    <span class="badge">{{i}}</span> {{workflow}}
+    <span class="badge">{{i}}</span> {{move}}
 
   </li>
 
