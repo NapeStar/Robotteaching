@@ -11,7 +11,7 @@ import { RobotmethodsComponent } from './robotmethods/robotmethods.component';
 @NgModule({
   declarations: [
     AppComponent,
-    RobotmethodsComponent
+    RobotmethodsComponent,
   ],
   imports: [
     BrowserModule,
