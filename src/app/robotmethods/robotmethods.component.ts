@@ -5,6 +5,7 @@ import { DataService} from '../data.service';
 import {Observable} from 'rxjs';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import {MoveList} from '../datatypes/data.moveList';
+import {Move} from '../datatypes/move.data';
 
 @Component({
   selector: 'app-robotmethods',
@@ -19,30 +20,30 @@ export class RobotmethodsComponent implements OnInit {
   ml: MoveList;
 
   httpResultList: any[];
-  selectedRobotmethods: any[];
+  selectedRobotmethods: Move[];
   // selectedRobotmethods: Array<string> = ['Windstorm'];
 
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
     // this.getRobotMethods();
-    this.ml = new MoveList("");
+    // this.ml = new MoveList("");
     this.getRobotMethods();
     this.selectedRobotmethods = [];
   }
 
-  onSelect(robotmethod: string): void {
+  onSelect(robotmethod: any): void {
     this.selectedRobotmethod = robotmethod;
   }
 
   getRobotMethods(): void {
     this.dataService.getWorkflows().subscribe(data => {
-      this.httpResult = data
+      this.httpResult = data;
       this.ml = new MoveList(this.httpResult);
 
-      for (let move of this.ml.moveList) {
+      for (const move of this.ml.moveList) {
 
-        console.log("Showing Move: " + move.name);
+        console.log('Showing Move: ' + move.name);
 
       }
       console.log(this.httpResult);
@@ -63,7 +64,7 @@ export class RobotmethodsComponent implements OnInit {
   }
 
 
-  drop(event: CdkDragDrop<string[]>) {
+  drop(event: CdkDragDrop<Move[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {

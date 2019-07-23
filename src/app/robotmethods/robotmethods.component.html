@@ -35,11 +35,11 @@
     (cdkDropListDropped)="drop($event)"
 >
 
-        <li *ngFor="let workflow of selectedRobotmethods, index as i"
-            [class.selected]="workflow === selectedRobotmethod"
-            (click)="onSelect(workflow)" cdkDrag>
+        <li *ngFor="let move of selectedRobotmethods, index as i"
+            [class.selected]="move === selectedRobotmethod"
+            (click)="onSelect(move)" cdkDrag>
 
-          <span class="badge">{{i}}</span> {{workflow}}
+          <span class="badge">{{i}}</span> {{move.name}}
 
   </li>
 
