@@ -1,34 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { Robotmethod } from '../robotmethod';
-import { ROBOTMETHODS} from '../mock-robotmethods';
-import { DataService} from '../data.service';
-import {Observable} from 'rxjs';
+import { JobsService} from '../jobs.service';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
-import {MoveList} from '../datatypes/data.moveList';
-import {Move} from '../datatypes/move.data';
+import {MoveList} from '../data.moveList';
+import {Move} from '../move.data';
 
 @Component({
   selector: 'app-robotmethods',
-  templateUrl: './robotmethods.component.html',
-  styleUrls: ['./robotmethods.component.css']
+  templateUrl: './availableJobs.component.html',
+  styleUrls: ['./availableJobs.component.css']
 })
-export class RobotmethodsComponent implements OnInit {
+export class AvailableJobsComponent implements OnInit {
 
-  loaded = false;
   httpResult: any;
   selectedRobotmethod: any;
   ml: MoveList;
 
-  httpResultList: any[];
   selectedRobotmethods: Move[];
-  // selectedRobotmethods: Array<string> = ['Windstorm'];
 
-  constructor(private dataService: DataService) { }
+  constructor(private jobService: JobsService) { }
 
   ngOnInit() {
-    // this.getRobotMethods();
-    // this.ml = new MoveList("");
-    this.getRobotMethods();
+    this.getAvailableJobs();
     this.selectedRobotmethods = [];
   }
 
@@ -36,8 +28,8 @@ export class RobotmethodsComponent implements OnInit {
     this.selectedRobotmethod = robotmethod;
   }
 
-  getRobotMethods(): void {
-    this.dataService.getWorkflows().subscribe(data => {
+  getAvailableJobs(): void {
+    this.jobService.getWorkflows().subscribe(data => {
       this.httpResult = data;
       this.ml = new MoveList(this.httpResult);
 
@@ -51,14 +43,14 @@ export class RobotmethodsComponent implements OnInit {
   }
 
   dataClick() {
-    this.getRobotMethods();
+    this.getAvailableJobs();
     this.selectedRobotmethods = [];
     // this.loaded = true;
     // this.httpResultList = this.httpResult.result.workflows;
   }
 
   resetClick() {
-    this.getRobotMethods();
+    this.getAvailableJobs();
     this.selectedRobotmethods = [];
     // this.selectedRobotmethods = ['Windstorm'];
   }
@@ -72,7 +64,7 @@ export class RobotmethodsComponent implements OnInit {
         event.container.data,
         event.previousIndex,
         event.currentIndex);
-      this.getRobotMethods();
+      this.getAvailableJobs();
     }
   }
 

@@ -1,7 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {DataService} from './data.service';
-import {Workflow} from './data.workflow';
-
 
 @Component({
   selector: 'app-root',

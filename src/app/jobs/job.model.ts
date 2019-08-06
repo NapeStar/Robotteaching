@@ -1,4 +1,4 @@
-export class Robotmethod {
+export interface Job {
   id: number;
   name: string;
 }

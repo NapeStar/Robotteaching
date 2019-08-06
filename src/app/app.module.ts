@@ -6,12 +6,14 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 
 
 import { AppComponent } from './app.component';
-import { RobotmethodsComponent } from './robotmethods/robotmethods.component';
+import { AvailableJobsComponent } from './jobs/availableJobs/availableJobs.component';
+import { ChoosenJobsComponent } from './jobs/choosen-jobs/choosen-jobs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RobotmethodsComponent,
+    AvailableJobsComponent,
+    ChoosenJobsComponent,
   ],
   imports: [
     BrowserModule,

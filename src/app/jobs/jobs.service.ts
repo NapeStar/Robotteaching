@@ -4,7 +4,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
+export class JobsService {
 
   httpOptions = {
     headers: new HttpHeaders({
