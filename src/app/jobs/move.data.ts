@@ -2,11 +2,9 @@ export class Move {
   id: number;
   name: string;
 
-constructor(workflow: any){
-
+constructor(id: number, workflow: any) {
+  this.id = id;
   this.name = workflow;
-
-
 }
 
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JobsService} from '../jobs.service';
-import { AvailableJobsComponent} from '../availableJobs/availableJobs.component';
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import { AvailableJobsComponent} from '../available-jobs/available-jobs.component';
+import {CdkDragDrop, moveItemInArray, transferArrayItem, copyArrayItem} from '@angular/cdk/drag-drop';
 import {MoveList} from '../data.moveList';
 import {Move} from '../move.data';
 
@@ -13,27 +13,38 @@ import {Move} from '../move.data';
 export class ChoosenJobsComponent implements OnInit {
 
   selectedJob: any;
-  selectedRobotmethods: Move[];
+  selectedJobs: Move[];
 
   constructor(private jobService: JobsService) { }
 
   ngOnInit() {
-    this.selectedRobotmethods = [];
+    this.selectedJobs = [];
   }
 
   onSelect(job: any): void {
     this.selectedJob = job;
   }
 
+  onResetClick() {
+    this.selectedJobs = [];
+  }
+
+  onSaveClick() {
+
+
+  }
+
   drop(event: CdkDragDrop<Move[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
-      transferArrayItem(event.previousContainer.data,
+      copyArrayItem(
+        event.previousContainer.data,
         event.container.data,
         event.previousIndex,
         event.currentIndex);
     }
+
   }
 
 }

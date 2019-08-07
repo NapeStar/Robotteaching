@@ -1,31 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { JobsService} from '../jobs.service';
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import {CdkDragDrop, moveItemInArray, transferArrayItem, copyArrayItem} from '@angular/cdk/drag-drop';
 import {MoveList} from '../data.moveList';
 import {Move} from '../move.data';
+import {ChoosenJobsComponent} from '../choosen-jobs/choosen-jobs.component';
 
 @Component({
-  selector: 'app-robotmethods',
-  templateUrl: './availableJobs.component.html',
-  styleUrls: ['./availableJobs.component.css']
+  selector: 'app-available-jobs',
+  templateUrl: './available-jobs.component.html',
+  styleUrls: ['./available-jobs.component.css']
 })
 export class AvailableJobsComponent implements OnInit {
 
   httpResult: any;
-  selectedRobotmethod: any;
+  selectedJob: any;
   ml: MoveList;
-
-  selectedRobotmethods: Move[];
 
   constructor(private jobService: JobsService) { }
 
   ngOnInit() {
     this.getAvailableJobs();
-    this.selectedRobotmethods = [];
   }
 
   onSelect(robotmethod: any): void {
-    this.selectedRobotmethod = robotmethod;
+    this.selectedJob = robotmethod;
   }
 
   getAvailableJobs(): void {
@@ -42,25 +40,17 @@ export class AvailableJobsComponent implements OnInit {
     });
   }
 
-  dataClick() {
-    this.getAvailableJobs();
-    this.selectedRobotmethods = [];
-    // this.loaded = true;
-    // this.httpResultList = this.httpResult.result.workflows;
-  }
 
-  resetClick() {
+  onClick() {
     this.getAvailableJobs();
-    this.selectedRobotmethods = [];
-    // this.selectedRobotmethods = ['Windstorm'];
   }
-
 
   drop(event: CdkDragDrop<Move[]>) {
-    if (event.previousContainer === event.container) {
+    if (event.previousContainer.id === event.container.id) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
-      transferArrayItem(event.previousContainer.data,
+      transferArrayItem(
+        event.previousContainer.data,
         event.container.data,
         event.previousIndex,
         event.currentIndex);
