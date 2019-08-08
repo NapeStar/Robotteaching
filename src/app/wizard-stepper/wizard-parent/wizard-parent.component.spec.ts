@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StartingPageJobsComponent } from './starting-page-jobs.component';
+import { WizardParentComponent } from './wizard-parent.component';
 
-describe('StartingPageJobsComponent', () => {
-  let component: StartingPageJobsComponent;
-  let fixture: ComponentFixture<StartingPageJobsComponent>;
+describe('WizardParentComponent', () => {
+  let component: WizardParentComponent;
+  let fixture: ComponentFixture<WizardParentComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StartingPageJobsComponent ]
+      declarations: [ WizardParentComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(StartingPageJobsComponent);
+    fixture = TestBed.createComponent(WizardParentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

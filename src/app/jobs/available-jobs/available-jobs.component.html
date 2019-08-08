@@ -29,3 +29,42 @@
   <button mat-raised-button color="primary" (click)="onClick()">refresh Workflows</button>
 </mat-card-actions>
 </mat-card>
+
+<mat-card class = example-container>
+  <mat-card-header>
+    <mat-card-title>Selected Methods</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <ul cdkDropList
+        cdkDropList
+        id = "list2"
+        [cdkDropListData]="selectedJobs"
+        [cdkDropListConnectedTo]="['list1']"
+        class="robotmethods"
+        (cdkDropListDropped)="drop($event)"
+    >
+
+      <li *ngFor="let move of selectedJobs"
+          [class.selected]="move === selectedJob"
+          (click)="onSelect(move)" cdkDrag>
+
+        <span class="badge">{{move.id}}</span> {{move.name}}
+
+      </li>
+
+    </ul>
+
+  </mat-card-content>
+  <mat-card-actions>
+    <div class="example-button-row">
+      <button mat-raised-button color="warn" (click)="onResetClick()">reset Workflow</button>
+      <button mat-raised-button color="primary" (click)="onSaveClick()">save Workflow</button>
+    </div>
+  </mat-card-actions>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="onNextClick()">next</button>
+  </mat-card-actions>
+
+</mat-card>

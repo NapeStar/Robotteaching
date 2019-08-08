@@ -25,7 +25,7 @@ export class JobsService {
   constructor(private http: HttpClient) {
   }
 
-  getWorkflows(){
+  getWorkflows() {
     return this.http.post('http://localhost:4000', {
       jsonrpc: '2.0',
       method: 'get_available_workflows',
@@ -39,7 +39,4 @@ export class JobsService {
   //   this.jobs = this.getWorkflows().result.workflows;
   //   const array = JSON.parse((JSON.stringify(this.getWorkflows().result.workflows)));
   // }
-
-
-
 }

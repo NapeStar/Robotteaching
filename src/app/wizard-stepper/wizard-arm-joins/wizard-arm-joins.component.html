@@ -1,0 +1,34 @@
+<mat-card class="example-container">
+  <mat-card-title>{{title}}</mat-card-title>
+
+  <mat-card-content>
+
+    <section class="example-section">
+      <mat-slider
+        class="example-margin"
+        [disabled]="disabled"
+        [invert]="invert"
+        [max]="max"
+        [min]="min"
+        [step]="step"
+        [thumbLabel]="thumbLabel"
+        [(ngModel)]="value"
+        [vertical]="vertical">
+      </mat-slider>
+
+      <mat-form-field class="example-margin">
+        <input matInput type="number" placeholder="Value" [(ngModel)]="value">
+        <mat-hint>Timeout</mat-hint>
+      </mat-form-field>
+    </section>
+  </mat-card-content>
+
+  <mat-card-actions align="end">
+    <button mat-raised-button color="primary">prev</button>
+
+    <button mat-raised-button color="primary" align="end">next</button>
+  </mat-card-actions>
+
+
+
+</mat-card>
