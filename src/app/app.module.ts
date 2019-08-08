@@ -15,6 +15,8 @@ import { AppComponent } from './app.component';
 import { AvailableJobsComponent } from './jobs/available-jobs/available-jobs.component';
 import { ChoosenJobsComponent } from './jobs/choosen-jobs/choosen-jobs.component';
 import { HeaderComponent } from './header/header.component';
+import {RouterModule} from '@angular/router';
+import { StartingPageJobsComponent } from './jobs/starting-page-jobs/starting-page-jobs.component';
 
 @NgModule({
   declarations: [
@@ -22,10 +24,12 @@ import { HeaderComponent } from './header/header.component';
     AvailableJobsComponent,
     ChoosenJobsComponent,
     HeaderComponent,
+    StartingPageJobsComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    RouterModule,
     FormsModule,
     BrowserAnimationsModule,
     DragDropModule,

@@ -4,6 +4,7 @@ import { AvailableJobsComponent} from '../available-jobs/available-jobs.componen
 import {CdkDragDrop, moveItemInArray, transferArrayItem, copyArrayItem} from '@angular/cdk/drag-drop';
 import {MoveList} from '../data.moveList';
 import {Move} from '../move.data';
+import {Jobs2Service} from '../jobs2.service';
 
 @Component({
   selector: 'app-choosen-jobs',
@@ -15,7 +16,7 @@ export class ChoosenJobsComponent implements OnInit {
   selectedJob: any;
   selectedJobs: Move[];
 
-  constructor(private jobService: JobsService) { }
+  constructor(private jobService: JobsService, private jobService2: Jobs2Service) { }
 
   ngOnInit() {
     this.selectedJobs = [];
@@ -30,8 +31,7 @@ export class ChoosenJobsComponent implements OnInit {
   }
 
   onSaveClick() {
-
-
+    this.jobService2.saveJobs(this.selectedJobs);
   }
 
   drop(event: CdkDragDrop<Move[]>) {

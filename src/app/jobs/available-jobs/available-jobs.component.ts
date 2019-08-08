@@ -1,29 +1,44 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { JobsService} from '../jobs.service';
+import {Jobs2Service} from '../jobs2.service';
 import {CdkDragDrop, moveItemInArray, transferArrayItem, copyArrayItem} from '@angular/cdk/drag-drop';
 import {MoveList} from '../data.moveList';
 import {Move} from '../move.data';
 import {ChoosenJobsComponent} from '../choosen-jobs/choosen-jobs.component';
+import {Job} from '../job.model';
+import {Subscription} from 'rxjs';
+
 
 @Component({
   selector: 'app-available-jobs',
   templateUrl: './available-jobs.component.html',
   styleUrls: ['./available-jobs.component.css']
 })
-export class AvailableJobsComponent implements OnInit {
+export class AvailableJobsComponent implements OnInit, OnDestroy {
 
   httpResult: any;
   selectedJob: any;
   ml: MoveList;
+  jobs: Job[] = [];
+  private jobsSub: Subscription;
 
-  constructor(private jobService: JobsService) { }
+  constructor(private jobService: JobsService, private jobService2: Jobs2Service) { }
 
   ngOnInit() {
     this.getAvailableJobs();
+    // this.jobService2.getJobs();
+    // this.jobsSub = this.jobService2.getJobsUpdateListener()
+    //   .subscribe((jobs: Job[]) => {
+    //     this.jobs = jobs;
+    //     });
   }
 
   onSelect(robotmethod: any): void {
     this.selectedJob = robotmethod;
+  }
+
+  ngOnDestroy() {
+    this.jobsSub.unsubscribe();
   }
 
   getAvailableJobs(): void {
