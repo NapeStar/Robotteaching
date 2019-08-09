@@ -1,39 +1,96 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import { AvailableJobsComponent } from '../../jobs/available-jobs/available-jobs.component';
+import {Job} from '../../jobs/job.model';
+import {Subscription} from 'rxjs';
+import {Router} from '@angular/router';
+import {WizardStepperService} from '../wizard-stepper.service';
 
 @Component({
   selector: 'app-wizard-gripper-release',
   templateUrl: './wizard-gripper-release.component.html',
   styleUrls: ['./wizard-gripper-release.component.css']
 })
-export class WizardGripperReleaseComponent implements OnInit {
+export class WizardGripperReleaseComponent implements OnInit, OnDestroy {
   title = 'Gripper Release';
 
-  autoTicks = false;
   disabled = false;
   invert = false;
   max = 100;
   min = 0;
-  showTicks = false;
   step = 1;
   thumbLabel = true;
   value = 50;
   vertical = false;
 
-  constructor() { }
+  jobs: Job[] = [];
+  jobsUpdated: Job[] = [];
+  private jobsSub: Subscription;
+  link = 'wizard/';
 
-  ngOnInit() {
+  constructor(private router: Router,
+              private wizardStepperService: WizardStepperService) {
   }
 
-  onNextClick() {
-  //   if (this.copiedJobs.length > 0) {
-  //     this.selecetNextJob();
-  //     console.log(this.link);
-  //     this.router.navigate([this.link]);
-  //   } else {
-  //     alert('no jobs selected');
-  //   }
-  //   console.log(this.copiedJobs.length);
+  ngOnInit() {
+    this.jobsSub = this.wizardStepperService.getJobs()
+      .subscribe(jobsUpdated => {
+        this.jobsUpdated = jobsUpdated;
+      });
+    this.jobsUpdated = this.wizardStepperService.getJobs2();
+  }
+
+  ngOnDestroy() {
+    this.jobsSub.unsubscribe();
+  }
+
+  onNextClick(): void {
+    if (this.jobsUpdated.length > 0) {
+      this.selectNextJob(this.jobsUpdated.reverse().pop());
+      this.jobsUpdated.reverse();
+      this.wizardStepperService.updateJob(this.jobsUpdated);
+      this.router.navigate([this.link]);
+    } else {
+      alert('no jobs selected');
+    }
+    console.log(this.jobsUpdated.length);
+  }
+
+  selectNextJob(job: Job) {
+    this.link = 'wizard/';
+    switch (job.id) {
+      case 0: {
+        this.link += 'gripper_grip';
+        break;
+      }
+      case 1: {
+        this.link += 'arm_trajectory';
+        break;
+      }
+      case 2: {
+        this.link += 'arm_trajectory';
+        break;
+      }
+      case 3: {
+        this.link += 'arm_joints';
+        break;
+      }
+      case 4: {
+        this.link += 'base';
+        break;
+      }
+      case 5: {
+        this.link += 'arm_cartesian';
+        break;
+      }
+      case 6: {
+        this.link += 'gripper_release';
+        break;
+      }
+      default: {
+        break;
+      }
+    }
+    console.log(this.link);
   }
 
 }

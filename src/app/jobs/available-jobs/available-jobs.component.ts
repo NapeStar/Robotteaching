@@ -9,6 +9,7 @@ import {Job} from '../job.model';
 import {Subscription} from 'rxjs';
 import {Router} from '@angular/router';
 import { NgModule } from '@angular/core';
+import { WizardStepperService} from '../../wizard-stepper/wizard-stepper.service';
 
 
 @Component({
@@ -16,7 +17,7 @@ import { NgModule } from '@angular/core';
   templateUrl: './available-jobs.component.html',
   styleUrls: ['./available-jobs.component.css']
 })
-export class AvailableJobsComponent implements OnInit {
+export class AvailableJobsComponent implements OnInit, OnDestroy {
 
   httpResult: any;
   selectedJob: any;
@@ -24,42 +25,46 @@ export class AvailableJobsComponent implements OnInit {
   copiedJobs: Move[];
   ml: MoveList;
   jobs: Job[] = [];
+
+  jobsUpdated: Job[] = [];
   private jobsSub: Subscription;
   link = 'wizard/';
 
-  constructor(private jobService: JobsService, private router: Router) { }
+  constructor(private jobService: JobsService, private router: Router, private wizardStepperService: WizardStepperService) { }
 
   ngOnInit() {
     this.getAvailableJobs();
     this.selectedJobs = [];
     this.copiedJobs = [...this.selectedJobs];
-    // this.jobService2.getJobs();
-    // this.jobsSub = this.jobService2.getJobsUpdateListener()
-    //   .subscribe((jobs: Job[]) => {
-    //     this.jobs = jobs;
-    //     });
+    this.jobsSub = this.wizardStepperService.getJobs()
+      .subscribe(jobsUpdated => {
+        this.jobsUpdated = jobsUpdated;
+        // console.log(this.jobsUpdated);
+      });
   }
-
+  ngOnDestroy() {
+    this.jobsSub.unsubscribe();
+  }
   onSelect(job: any): void {
     this.selectedJob = job;
   }
-
-  // ngOnDestroy() {
-  //   this.jobsSub.unsubscribe();
-  // }
-
   getAvailableJobs(): void {
     this.jobService.getWorkflows().subscribe(data => {
       this.httpResult = data;
       this.ml = new MoveList(this.httpResult);
-
-      // for (const move of this.ml.moveList) {
-      //
-      //   console.log('Showing Move: ' + move.name);
-      //
-      // }
       console.log(this.httpResult);
     });
+  }
+
+  onNextClick(): void {
+    if (this.jobsUpdated.length > 0) {
+      this.selectNextJob(this.jobsUpdated.reverse().pop());
+      this.jobsUpdated.reverse();
+      this.wizardStepperService.updateJob(this.jobsUpdated);
+      this.router.navigate([this.link]);
+    } else {
+      alert('no jobs selected');
+    }
   }
 
   onClick() {
@@ -68,15 +73,17 @@ export class AvailableJobsComponent implements OnInit {
 
   onResetClick() {
     this.selectedJobs = [];
+    this.wizardStepperService.updateJob(this.selectedJobs);
+    console.log(this.jobsUpdated);
   }
 
   onSaveClick() {
     // this.jobService2.saveJobs(this.selectedJobs);
   }
 
-  selecetNextJob() {
+  selectNextJob(job: Job) {
     this.link = 'wizard/';
-    switch (this.copiedJobs.reverse().pop().id) {
+    switch (job.id) {
         case 0: {
           this.link += 'gripper_grip';
           break;
@@ -112,17 +119,6 @@ export class AvailableJobsComponent implements OnInit {
     console.log(this.link);
   }
 
-  onNextClick() {
-    if (this.copiedJobs.length > 0) {
-      this.selecetNextJob();
-      console.log(this.link);
-      this.router.navigate([this.link]);
-    } else {
-      alert('no jobs selected');
-    }
-    console.log(this.copiedJobs.length);
-  }
-
   drop(event: CdkDragDrop<Move[]>) {
     if (event.previousContainer.id === event.container.id) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
@@ -134,7 +130,8 @@ export class AvailableJobsComponent implements OnInit {
         event.currentIndex);
       this.getAvailableJobs();
     }
-    this.copiedJobs = [...this.selectedJobs];
+    this.wizardStepperService.updateJob(this.selectedJobs);
+    console.log(this.jobsUpdated.length);
   }
 
   /*addToList(event: CdkDragDrop<string[]>){

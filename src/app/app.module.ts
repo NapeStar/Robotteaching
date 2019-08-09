@@ -11,7 +11,6 @@ import {
   MatExpansionModule, MatDividerModule
 } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {coerceNumberProperty} from '@angular/cdk/coercion';
 
 import { AppComponent } from './app.component';
 import { AvailableJobsComponent } from './jobs/available-jobs/available-jobs.component';
@@ -27,6 +26,7 @@ import { WizardArmTrajectoryComponent} from './wizard-stepper/wizard-arm-traject
 import { WizardArmJoinsComponent } from './wizard-stepper/wizard-arm-joins/wizard-arm-joins.component';
 import { WizardArmCartesianComponent } from './wizard-stepper/wizard-arm-cartesian/wizard-arm-cartesian.component';
 import { WizardBaseComponent } from './wizard-stepper/wizard-base/wizard-base.component';
+import {WizardStepperService} from './wizard-stepper/wizard-stepper.service';
 
 @NgModule({
   declarations: [
@@ -58,7 +58,7 @@ import { WizardBaseComponent } from './wizard-stepper/wizard-base/wizard-base.co
     MatSliderModule,
     MatDividerModule
   ],
-  providers: [],
+  providers: [WizardStepperService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

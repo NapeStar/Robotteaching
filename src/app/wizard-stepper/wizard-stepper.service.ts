@@ -1,37 +1,31 @@
 import { Injectable } from '@angular/core';
 import {Job} from '../jobs/job.model';
+import {Observable, Subject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WizardStepperService {
 
-  selectedJobs: Job[] = [];
-  remainingJobs: Job[] = [];
+  private jobs: Job[] = [];
+  private jobsUpdated = new Subject<Job[]>();
 
   constructor() { }
 
-  getSelectedJobs(): Job[] {
-      return this.selectedJobs;
+  getJobs(): Observable<Job[]> {
+    // this.updateJob([...this.jobs]);
+    return this.jobsUpdated.asObservable();
   }
 
-  setSelectedJobs(jobs: Job[]) {
-      this.selectedJobs = [...jobs];
+  getJobs2(): Job[] {
+    console.log(this.jobs);
+    return this.jobs;
   }
 
-  getRemainingJobs(): Job[] {
-      return this.remainingJobs;
-  }
-
-  getNextJob() {
-    return this.remainingJobs.reverse().pop();
-  }
-  addJob(job: Job) {
-    this.remainingJobs.reverse().push(job);
-  }
-
-  updateRemainingJobs(jobs: Job[]) {
-    this.remainingJobs = [...jobs];
+  updateJob(jobs: Job[]) {
+    this.jobs = jobs;
+    console.log(this.jobs);
+    this.jobsUpdated.next([...this.jobs]);
   }
 
 }
