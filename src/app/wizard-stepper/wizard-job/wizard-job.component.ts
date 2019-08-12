@@ -45,8 +45,8 @@ export class WizardJobComponent implements OnInit, OnDestroy {
     } else {
       alert('no jobs selected');
     }
-    console.log(this.jobsUpdated.length);
-    console.log(this.counter);
+    // console.log(this.jobsUpdated.length);
+    // console.log(this.counter);
   }
 
   onPreviousClick(): void {
@@ -58,8 +58,8 @@ export class WizardJobComponent implements OnInit, OnDestroy {
       this.link = 'jobs';
       this.router.navigate([this.link]);
     }
-    console.log(this.jobsUpdated.length);
-    console.log(this.counter);
+    // console.log(this.jobsUpdated.length);
+    // console.log(this.counter);
   }
 
   ngOnDestroy() {

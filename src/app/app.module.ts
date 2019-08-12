@@ -14,7 +14,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { AvailableJobsComponent } from './jobs/available-jobs/available-jobs.component';
-import { ChoosenJobsComponent } from './jobs/choosen-jobs/choosen-jobs.component';
 import { HeaderComponent } from './header/header.component';
 import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
@@ -33,7 +32,6 @@ import { WizardJobComponent } from './wizard-stepper/wizard-job/wizard-job.compo
   declarations: [
     AppComponent,
     AvailableJobsComponent,
-    ChoosenJobsComponent,
     HeaderComponent,
     NoPageFoundComponent,
     WizardParentComponent,

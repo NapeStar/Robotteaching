@@ -4,12 +4,12 @@ import {Jobs2Service} from '../jobs2.service';
 import {CdkDragDrop, moveItemInArray, transferArrayItem, copyArrayItem} from '@angular/cdk/drag-drop';
 import {MoveList} from '../data.moveList';
 import {Move} from '../move.data';
-import {ChoosenJobsComponent} from '../choosen-jobs/choosen-jobs.component';
 import {Job} from '../job.model';
 import {Subject, Subscription} from 'rxjs';
 import {Router} from '@angular/router';
 import { NgModule } from '@angular/core';
 import { WizardStepperService} from '../../wizard-stepper/wizard-stepper.service';
+import {Workflow} from '../../model/workflow.model';
 
 
 @Component({
@@ -25,6 +25,8 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
   copiedJobs: Move[];
   ml: MoveList;
   jobs: Job[] = [];
+
+  workflow: Workflow;
 
   jobsUpdated: Job[] = [];
   private jobsSub: Subscription;
@@ -86,7 +88,9 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
   }
 
   onSaveClick() {
-    // this.jobService2.saveJobs(this.selectedJobs);
+    this.workflow = new Workflow();
+    this.workflow.addJobs(this.jobsUpdated);
+    console.log(this.workflow);
   }
 
   selectNextJob(job: Job) {
