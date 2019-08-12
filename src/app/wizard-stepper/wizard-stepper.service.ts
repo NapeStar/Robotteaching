@@ -7,24 +7,43 @@ import {Observable, Subject} from 'rxjs';
 })
 export class WizardStepperService {
 
+  private counter: number;
+  private counterListener = new Subject<number>();
+
   private jobs: Job[] = [];
   private jobsUpdated = new Subject<Job[]>();
 
   constructor() { }
 
-  getJobs(): Observable<Job[]> {
-    // this.updateJob([...this.jobs]);
+  getCounterListener(): Observable<number> {
+    return this.counterListener.asObservable();
+  }
+  getCounter(): number {
+    return this.counter;
+  }
+  increaseCount() {
+    this.counterListener.next(++ this.counter);
+  }
+
+  decreaseCount() {
+    this.counterListener.next(-- this.counter);
+  }
+
+  updateCount(counter: number) {
+    this.counter = counter;
+    this.counterListener.next(this.counter);
+  }
+
+  getJobsListener(): Observable<Job[]> {
     return this.jobsUpdated.asObservable();
   }
 
   getJobs2(): Job[] {
-    console.log(this.jobs);
     return this.jobs;
   }
 
   updateJob(jobs: Job[]) {
     this.jobs = jobs;
-    console.log(this.jobs);
     this.jobsUpdated.next([...this.jobs]);
   }
 

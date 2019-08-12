@@ -27,6 +27,7 @@ import { WizardArmJoinsComponent } from './wizard-stepper/wizard-arm-joins/wizar
 import { WizardArmCartesianComponent } from './wizard-stepper/wizard-arm-cartesian/wizard-arm-cartesian.component';
 import { WizardBaseComponent } from './wizard-stepper/wizard-base/wizard-base.component';
 import {WizardStepperService} from './wizard-stepper/wizard-stepper.service';
+import { WizardJobComponent } from './wizard-stepper/wizard-job/wizard-job.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import {WizardStepperService} from './wizard-stepper/wizard-stepper.service';
     WizardArmJoinsComponent,
     WizardArmCartesianComponent,
     WizardBaseComponent,
+    WizardJobComponent,
   ],
   imports: [
     BrowserModule,

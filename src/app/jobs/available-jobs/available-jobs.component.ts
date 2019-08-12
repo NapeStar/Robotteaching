@@ -6,7 +6,7 @@ import {MoveList} from '../data.moveList';
 import {Move} from '../move.data';
 import {ChoosenJobsComponent} from '../choosen-jobs/choosen-jobs.component';
 import {Job} from '../job.model';
-import {Subscription} from 'rxjs';
+import {Subject, Subscription} from 'rxjs';
 import {Router} from '@angular/router';
 import { NgModule } from '@angular/core';
 import { WizardStepperService} from '../../wizard-stepper/wizard-stepper.service';
@@ -30,20 +30,28 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
   private jobsSub: Subscription;
   link = 'wizard/';
 
+  counter: number;
+  counterSub: Subscription;
+
   constructor(private jobService: JobsService, private router: Router, private wizardStepperService: WizardStepperService) { }
 
   ngOnInit() {
     this.getAvailableJobs();
     this.selectedJobs = [];
     this.copiedJobs = [...this.selectedJobs];
-    this.jobsSub = this.wizardStepperService.getJobs()
+    this.jobsSub = this.wizardStepperService.getJobsListener()
       .subscribe(jobsUpdated => {
         this.jobsUpdated = jobsUpdated;
-        // console.log(this.jobsUpdated);
+      });
+
+    this.counterSub = this.wizardStepperService.getCounterListener()
+      .subscribe(counter => {
+        this.counter = counter;
       });
   }
   ngOnDestroy() {
     this.jobsSub.unsubscribe();
+    this.counterSub.unsubscribe();
   }
   onSelect(job: any): void {
     this.selectedJob = job;
@@ -58,13 +66,13 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
 
   onNextClick(): void {
     if (this.jobsUpdated.length > 0) {
-      this.selectNextJob(this.jobsUpdated.reverse().pop());
-      this.jobsUpdated.reverse();
-      this.wizardStepperService.updateJob(this.jobsUpdated);
+      this.selectNextJob(this.jobsUpdated[this.counter]);
+      // this.wizardStepperService.increaseCount();
       this.router.navigate([this.link]);
     } else {
       alert('no jobs selected');
     }
+    console.log(this.counter);
   }
 
   onClick() {
@@ -131,7 +139,9 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
       this.getAvailableJobs();
     }
     this.wizardStepperService.updateJob(this.selectedJobs);
+    this.wizardStepperService.updateCount(this.counter = 0);
     console.log(this.jobsUpdated.length);
+    console.log(this.counter);
   }
 
   /*addToList(event: CdkDragDrop<string[]>){
