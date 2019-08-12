@@ -1,19 +1,72 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Job} from '../../jobs/job.model';
+import {Router} from '@angular/router';
+import {WizardStepperService} from '../wizard-stepper.service';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-wizard-job',
   templateUrl: './wizard-job.component.html',
   styleUrls: ['./wizard-job.component.css']
 })
-export class WizardJobComponent implements OnInit {
+export class WizardJobComponent implements OnInit, OnDestroy {
 
   link = 'wizard/';
 
-  constructor() { }
+  jobsUpdated: Job[] = [];
+  private jobsSub: Subscription;
+
+  counter: number;
+  counterSub: Subscription;
+
+
+  constructor(private router: Router,
+              private wizardStepperService: WizardStepperService) { }
 
   ngOnInit() {
+    this.jobsSub = this.wizardStepperService.getJobsListener()
+      .subscribe(jobsUpdated => {
+        this.jobsUpdated = jobsUpdated;
+      });
+    this.counterSub = this.wizardStepperService.getCounterListener()
+      .subscribe(counter => {
+        this.counter = counter;
+      });
+    this.jobsUpdated = this.wizardStepperService.getJobs2();
+    this.counter = this.wizardStepperService.getCounter();
+    console.log(this.counter);
   }
+
+  onNextClick(): void {
+    if (this.counter < this.jobsUpdated.length - 1) {
+      this.wizardStepperService.increaseCount();
+      this.selectNextJob(this.jobsUpdated[this.counter]);
+      this.router.navigate([this.link]);
+    } else {
+      alert('no jobs selected');
+    }
+    console.log(this.jobsUpdated.length);
+    console.log(this.counter);
+  }
+
+  onPreviousClick(): void {
+    this.wizardStepperService.decreaseCount();
+    if (this.counter >= 0) {
+      this.selectNextJob(this.jobsUpdated[this.counter]);
+      this.router.navigate([this.link]);
+    } else {
+      this.link = 'jobs';
+      this.router.navigate([this.link]);
+    }
+    console.log(this.jobsUpdated.length);
+    console.log(this.counter);
+  }
+
+  ngOnDestroy() {
+    this.jobsSub.unsubscribe();
+    this.counterSub.unsubscribe();
+  }
+
 
   selectNextJob(job: Job) {
     this.link = 'wizard/';
@@ -52,7 +105,4 @@ export class WizardJobComponent implements OnInit {
     }
     console.log(this.link);
   }
-
-
-
 }
