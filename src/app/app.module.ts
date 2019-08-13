@@ -11,6 +11,7 @@ import {
   MatExpansionModule, MatDividerModule
 } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
 import { AvailableJobsComponent } from './jobs/available-jobs/available-jobs.component';
@@ -27,6 +28,8 @@ import { WizardArmCartesianComponent } from './wizard-stepper/wizard-arm-cartesi
 import { WizardBaseComponent } from './wizard-stepper/wizard-base/wizard-base.component';
 import {WizardStepperService} from './wizard-stepper/wizard-stepper.service';
 import { WizardJobComponent } from './wizard-stepper/wizard-job/wizard-job.component';
+import { ExecutionRunComponent } from './execution/execution-run/execution-run.component';
+
 
 @NgModule({
   declarations: [
@@ -42,6 +45,7 @@ import { WizardJobComponent } from './wizard-stepper/wizard-job/wizard-job.compo
     WizardArmCartesianComponent,
     WizardBaseComponent,
     WizardJobComponent,
+    ExecutionRunComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,7 +60,8 @@ import { WizardJobComponent } from './wizard-stepper/wizard-job/wizard-job.compo
     MatToolbarModule,
     MatExpansionModule,
     MatSliderModule,
-    MatDividerModule
+    MatDividerModule,
+    FlexLayoutModule
   ],
   providers: [WizardStepperService],
   bootstrap: [AppComponent]

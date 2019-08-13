@@ -10,6 +10,7 @@ import {WizardArmTrajectoryComponent} from '../wizard-stepper/wizard-arm-traject
 import {WizardArmJoinsComponent} from '../wizard-stepper/wizard-arm-joins/wizard-arm-joins.component';
 import {WizardArmCartesianComponent} from '../wizard-stepper/wizard-arm-cartesian/wizard-arm-cartesian.component';
 import {WizardBaseComponent} from '../wizard-stepper/wizard-base/wizard-base.component';
+import {ExecutionRunComponent} from '../execution/execution-run/execution-run.component';
 
 const routes: Routes = [
   {path: 'jobs', component: AvailableJobsComponent},
@@ -38,6 +39,10 @@ const routes: Routes = [
       {
         path: 'base',
         component: WizardBaseComponent
+      },
+      {
+        path: 'run',
+        component: ExecutionRunComponent
       }
     ]
   },

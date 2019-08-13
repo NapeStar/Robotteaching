@@ -6,7 +6,7 @@ export abstract class Base {
 
   constructor(name: string) {
     this._id = 0;
-    this._activationTimeout = 0;
+    this._activationTimeout = 50;
     this._name = name;
   }
 

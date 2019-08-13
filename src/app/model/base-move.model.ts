@@ -15,7 +15,4 @@ export class BaseMove extends Base {
   get goalPose(): number[] {
     return this._goalPose;
   }
-
-
-
 }

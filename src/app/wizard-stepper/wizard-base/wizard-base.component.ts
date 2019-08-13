@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {WizardStepperService} from '../wizard-stepper.service';
 import {WizardJobComponent} from '../wizard-job/wizard-job.component';
+import {BaseMove} from '../../model/base-move.model';
 
 @Component({
   selector: 'app-wizard-base',
@@ -10,19 +11,49 @@ import {WizardJobComponent} from '../wizard-job/wizard-job.component';
 })
 export class WizardBaseComponent extends WizardJobComponent implements OnInit, OnDestroy {
 
-  title = 'Base';
+  title = 'Base Movement';
 
-  disabled = false;
-  invert = false;
-  max = 100;
-  min = 0;
-  step = 1;
-  thumbLabel = true;
-  value = 50;
-  vertical = false;
+  baseMove = new BaseMove();
+
+  // slider Activation timout
+  disabledActTimeout = false;
+  invertActTimeout = false;
+  maxActTimeout = 100;
+  minActTimeout = 0;
+  stepActTimeout = 1;
+  thumbLabelActTimeout = true;
+  valueActTimeout = 50;
+  verticalActTimeout = false;
+
+  // mat-button next
+  isDisabledNext = true;
 
   constructor(router: Router,
               wizardStepperService: WizardStepperService) {
     super(router, wizardStepperService);
   }
-}
+
+  ngOnInit() {
+    super.ngOnInit();
+    this.baseMove = this.wizardStepperService.getWorkflowItem() as BaseMove;
+    this.valueActTimeout = this.baseMove.activationTimeout;
+  }
+
+  onNextClick(): void {
+    this.baseMove.activationTimeout = this.valueActTimeout;
+    this.wizardStepperService.updateWorkflowItem(this.baseMove);
+    if (this.counter < this.jobsUpdated.length - 1) {
+      this.wizardStepperService.increaseCount();
+      this.selectNextJob(this.jobsUpdated[this.counter]);
+      this.router.navigate([this.link]);
+    } else {
+      this.wizardStepperService.updateCount(this.counter = 0);
+      this.link += 'run';
+      this.router.navigate([this.link]);
+    }
+  }
+  onSavePoseClick(): void {
+    this.baseMove.goalPose = [1, 1, 1, 1, 1, 1, 1];
+    this.isDisabledNext = false;
+  }
+  }

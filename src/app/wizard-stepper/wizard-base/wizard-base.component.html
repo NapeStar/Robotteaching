@@ -1,34 +1,41 @@
+<h1>{{title}}</h1>
 <mat-card class="example-container">
-  <mat-card-title>{{title}}</mat-card-title>
-
+  <mat-card-subtitle>Activation Timeout</mat-card-subtitle>
   <mat-card-content>
-
     <section class="example-section">
       <mat-slider
         class="example-margin"
-        [disabled]="disabled"
-        [invert]="invert"
-        [max]="max"
-        [min]="min"
-        [step]="step"
-        [thumbLabel]="thumbLabel"
-        [(ngModel)]="value"
-        [vertical]="vertical">
+        [disabled]="disabledActTimeout"
+        [invert]="invertActTimeout"
+        [max]="maxActTimeout"
+        [min]="minActTimeout"
+        [step]="stepActTimeout"
+        [thumbLabel]="thumbLabelActTimeout"
+        [(ngModel)]="valueActTimeout"
+        [vertical]="verticalActTimeout">
       </mat-slider>
-
       <mat-form-field class="example-margin">
-        <input matInput type="number" placeholder="Value" [(ngModel)]="value">
+        <input matInput type="number" placeholder="Value" [(ngModel)]="valueActTimeout">
         <mat-hint>Timeout</mat-hint>
       </mat-form-field>
     </section>
   </mat-card-content>
+</mat-card>
+<br>
+<mat-card class="example-container">
+  <mat-card-subtitle>Goal Position</mat-card-subtitle>
+  <mat-card-content>
 
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-stroked-button color="primary" (click)="onSavePoseClick()">save goal position</button>
+  </mat-card-actions>
+</mat-card>
+<br>
+<mat-card class="example-container">
   <mat-card-actions align="end">
     <button mat-raised-button color="primary" (click)="onPreviousClick()">prev</button>
-
-    <button mat-raised-button color="primary" (click)="onNextClick()" align="end">next</button>
+    <div fxFlex></div>
+    <button mat-raised-button color="primary" (click)="onNextClick()" [disabled]="isDisabledNext">next</button>
   </mat-card-actions>
-
-
-
 </mat-card>

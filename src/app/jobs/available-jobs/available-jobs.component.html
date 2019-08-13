@@ -64,7 +64,7 @@
   </mat-card-actions>
 
   <mat-card-actions>
-    <button mat-raised-button color="primary" (click)="onNextClick()">next</button>
+    <button mat-raised-button color="primary" (click)="onNextClick()" [disabled]="isDisabledNext">next</button>
   </mat-card-actions>
 
 </mat-card>

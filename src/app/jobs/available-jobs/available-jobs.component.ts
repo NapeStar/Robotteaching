@@ -19,6 +19,10 @@ import {Workflow} from '../../model/workflow.model';
 })
 export class AvailableJobsComponent implements OnInit, OnDestroy {
 
+  // mat-button next
+  isDisabledNext = true;
+  isSet;
+
   httpResult: any;
   selectedJob: any;
   selectedJobs: Move[];
@@ -27,6 +31,7 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
   jobs: Job[] = [];
 
   workflow: Workflow;
+  private workflowSub: Subscription;
 
   jobsUpdated: Job[] = [];
   private jobsSub: Subscription;
@@ -50,10 +55,21 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
       .subscribe(counter => {
         this.counter = counter;
       });
+    this.workflowSub = this.wizardStepperService.getWorkflowListener()
+      .subscribe(workflow => {
+        this.workflow = workflow;
+      });
+    this.workflow = this.wizardStepperService.getWorkflow();
+    this.jobsUpdated = this.wizardStepperService.getJobs();
+    this.selectedJobs = this.wizardStepperService.getJobs();
+    this.wizardStepperService.updateCount(this.counter = 0);
+    // this.counter = this.wizardStepperService.getCounter();
+    console.log(this.counter);
   }
   ngOnDestroy() {
     this.jobsSub.unsubscribe();
     this.counterSub.unsubscribe();
+    this.workflowSub.unsubscribe();
   }
   onSelect(job: any): void {
     this.selectedJob = job;
@@ -69,12 +85,11 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
   onNextClick(): void {
     if (this.jobsUpdated.length > 0) {
       this.selectNextJob(this.jobsUpdated[this.counter]);
-      // this.wizardStepperService.increaseCount();
       this.router.navigate([this.link]);
     } else {
       alert('no jobs selected');
     }
-    console.log(this.counter);
+    // console.log(this.counter);
   }
 
   onClick() {
@@ -90,6 +105,8 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
   onSaveClick() {
     this.workflow = new Workflow();
     this.workflow.addJobs(this.jobsUpdated);
+    this.wizardStepperService.updateWorkflow(this.workflow);
+    this.isDisabledNext = false;
     console.log(this.workflow);
   }
 
@@ -143,7 +160,6 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
       this.getAvailableJobs();
     }
     this.wizardStepperService.updateJob(this.selectedJobs);
-    this.wizardStepperService.updateCount(this.counter = 0);
     console.log(this.jobsUpdated.length);
     console.log(this.counter);
   }

@@ -51,6 +51,13 @@ export class Workflow {
         }
       }
     }
+    updateJobs(jobs: Base, count: number) {
+      this._jobsObjects[count] = jobs;
+    }
+    getCurrentJob(count: number): Base {
+      return this._jobsObjects[count];
+    }
+
   get id(): number {
     return this._id;
   }

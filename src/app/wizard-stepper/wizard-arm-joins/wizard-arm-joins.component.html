@@ -1,8 +1,7 @@
+<h1>{{title}}</h1>
 <mat-card class="example-container">
-  <mat-card-title>{{title}}</mat-card-title>
-
+  <mat-card-subtitle>Activation Timeout</mat-card-subtitle>
   <mat-card-content>
-
     <section class="example-section">
       <mat-slider
         class="example-margin"
@@ -22,13 +21,12 @@
       </mat-form-field>
     </section>
   </mat-card-content>
-
+</mat-card>
+<br>
+<mat-card class="example-container">
   <mat-card-actions align="end">
     <button mat-raised-button color="primary" (click)="onPreviousClick()">prev</button>
-
-    <button mat-raised-button color="primary" (click)="onNextClick()" align="end">next</button>
+    <div fxFlex></div>
+    <button mat-raised-button color="primary" (click)="onNextClick()">next</button>
   </mat-card-actions>
-
-
-
 </mat-card>
