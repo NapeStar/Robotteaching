@@ -6,6 +6,8 @@ import {WizardJobComponent} from '../../wizard-stepper/wizard-job/wizard-job.com
 import {Workflow} from '../../model/workflow.model';
 import {Subscription} from 'rxjs';
 import {Job} from '../../jobs/job.model';
+import {HttpRequestService} from '../http-request.service';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-execution-run',
@@ -15,12 +17,21 @@ import {Job} from '../../jobs/job.model';
 export class ExecutionRunComponent extends WizardJobComponent implements OnInit, OnDestroy {
 
   constructor(protected router: Router,
-              protected wizardStepperService: WizardStepperService) {
+              protected wizardStepperService: WizardStepperService,
+              private http: HttpClient) {
     super(router, wizardStepperService);
   }
 
   ngOnInit() {
   super.ngOnInit();
+  }
+
+  sendWorkflow() {
+    this.http.post('http://localhost:3000/saveWorkflow', {jsondata: this.workflow});
+    console.log(this.workflow);
+  }
+  runOnClick() {
+    this.sendWorkflow();
   }
 
 }
