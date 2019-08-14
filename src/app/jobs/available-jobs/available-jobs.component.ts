@@ -21,7 +21,6 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
 
   // mat-button next
   isDisabledNext = true;
-  isSet;
 
   httpResult: any;
   selectedJob: any;
