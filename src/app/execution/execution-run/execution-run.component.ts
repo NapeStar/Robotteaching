@@ -27,7 +27,10 @@ export class ExecutionRunComponent extends WizardJobComponent implements OnInit,
   }
 
   sendWorkflow() {
-    this.http.post('http://localhost:3000/saveWorkflow', {jsondata: this.workflow});
+    this.http.post('http://localhost:3000/saveWorkflow', {jsondata: this.workflow}).subscribe(
+      (responseData) => {
+        console.log(responseData);
+      });
     console.log(this.workflow);
   }
   runOnClick() {
