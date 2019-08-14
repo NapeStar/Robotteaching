@@ -18,7 +18,8 @@ export class ExecutionRunComponent extends WizardJobComponent implements OnInit,
 
   constructor(protected router: Router,
               protected wizardStepperService: WizardStepperService,
-              private http: HttpClient) {
+              private http: HttpClient,
+              private httpRequest: HttpRequestService) {
     super(router, wizardStepperService);
   }
 
@@ -26,15 +27,11 @@ export class ExecutionRunComponent extends WizardJobComponent implements OnInit,
   super.ngOnInit();
   }
 
-  sendWorkflow() {
-    this.http.post('http://localhost:3000/saveWorkflow', {jsondata: this.workflow}).subscribe(
-      (responseData) => {
-        console.log(responseData);
-      });
-    console.log(this.workflow);
-  }
   runOnClick() {
-    this.sendWorkflow();
+    this.httpRequest.runWorkflow();
   }
 
+  saveOnClick() {
+    this.httpRequest.saveWorkflow(this.workflow);
+  }
 }

@@ -7,12 +7,12 @@ import {ArmTrajectory} from './arm-trajectory.model';
 import {ArmJoint} from './arm-joint.model';
 
 export class Workflow {
-    private _id: number;
+    private _id: string;
     private _created_at: number;
     private _jobsObjects: Base [];
 
     constructor() {
-      this._id = 0;
+      this._id = '0';
       this._created_at = 0;
       this._jobsObjects = [];
     }
@@ -58,11 +58,11 @@ export class Workflow {
       return this._jobsObjects[count];
     }
 
-  get id(): number {
+  get id(): string {
     return this._id;
   }
 
-  set id(value: number) {
+  set id(value: string) {
     this._id = value;
   }
 
