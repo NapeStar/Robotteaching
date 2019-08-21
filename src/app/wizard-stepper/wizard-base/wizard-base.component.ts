@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import {WizardStepperService} from '../wizard-stepper.service';
 import {WizardJobComponent} from '../wizard-job/wizard-job.component';
 import {BaseMove} from '../../model/base-move.model';
+import {WizardParentStepperService} from '../wizard-parent/wizard-parent-stepper.service';
 
 @Component({
   selector: 'app-wizard-base',
@@ -29,8 +30,9 @@ export class WizardBaseComponent extends WizardJobComponent implements OnInit, O
   isDisabledNext = true;
 
   constructor(router: Router,
-              wizardStepperService: WizardStepperService) {
-    super(router, wizardStepperService);
+              wizardStepperService: WizardStepperService,
+              eventEmitterService: WizardParentStepperService) {
+    super(router, wizardStepperService, eventEmitterService);
   }
 
   ngOnInit() {
@@ -48,8 +50,10 @@ export class WizardBaseComponent extends WizardJobComponent implements OnInit, O
       this.router.navigate([this.link]);
     } else {
       this.wizardStepperService.updateCount(this.counter = 0);
-      this.link += 'run';
+      this.link = 'wizard/run';
       this.router.navigate([this.link]);
+      this.eventEmitterService.onStepperNextClick();
+      console.log('GripperGrip onStepperNext wurde ausgeführt');
     }
   }
   onSavePoseClick(): void {

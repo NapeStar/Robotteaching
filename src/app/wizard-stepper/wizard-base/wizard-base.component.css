@@ -6,7 +6,11 @@
   vertical-align: top;
   padding: 1rem;
 }
-
+h1, h2, h3, h4, h5, h6{
+  margin-top:20px;
+  margin-bottom:10px;
+  margin-left: 10px;
+}
 .example-h2 {
   margin: 10px;
 }

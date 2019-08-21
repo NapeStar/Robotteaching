@@ -4,6 +4,8 @@ import {Router} from '@angular/router';
 import {WizardStepperService} from '../wizard-stepper.service';
 import {Subject, Subscription} from 'rxjs';
 import {Workflow} from '../../model/workflow.model';
+import { Output, EventEmitter } from '@angular/core';
+import {WizardParentStepperService} from '../wizard-parent/wizard-parent-stepper.service';
 
 @Component({
   selector: 'app-wizard-job',
@@ -11,7 +13,6 @@ import {Workflow} from '../../model/workflow.model';
   styleUrls: ['./wizard-job.component.css']
 })
 export class WizardJobComponent implements OnInit, OnDestroy {
-
   link = 'wizard/';
 
   workflow: Workflow;
@@ -23,9 +24,18 @@ export class WizardJobComponent implements OnInit, OnDestroy {
   counter: number;
   private counterSub: Subscription;
 
+  // message: string = 'Hola Mundo';
+  //
+  // @Output() messageEvent = new EventEmitter<string>();
+  //
+  // sendMessage() {
+  //   console.log(this.message);
+  //   this.messageEvent.emit(this.message);
+  // }
 
   constructor(protected router: Router,
-              protected wizardStepperService: WizardStepperService) { }
+              protected wizardStepperService: WizardStepperService,
+              protected eventEmitterService: WizardParentStepperService  ) { }
 
   ngOnInit() {
     this.jobsSub = this.wizardStepperService.getJobsListener()
@@ -54,8 +64,9 @@ export class WizardJobComponent implements OnInit, OnDestroy {
       this.router.navigate([this.link]);
     } else if (this.counter === this.jobsUpdated.length) {
       this.wizardStepperService.updateCount(this.counter = 0);
-      this.link += 'run';
+      this.link = 'wizard/run';
       this.router.navigate([this.link]);
+      this.eventEmitterService.onStepperNextClick();
     }
   }
 
@@ -67,6 +78,7 @@ export class WizardJobComponent implements OnInit, OnDestroy {
     } else {
       this.link = 'jobs';
       this.router.navigate([this.link]);
+      this.eventEmitterService.onStepperBackClick();
     }
   }
 

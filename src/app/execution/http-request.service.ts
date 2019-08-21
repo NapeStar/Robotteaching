@@ -33,7 +33,6 @@ export class HttpRequestService {
       (responseData) => {
         console.log(responseData);
       });
-    // console.log(this.workflow);
   }
 
 }

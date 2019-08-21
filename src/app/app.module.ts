@@ -1,17 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+import {FormsModule, ReactiveFormsModule} from '@angular/forms'; // <-- NgModel lives here
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {
   MatInputModule,
   MatCardModule,
   MatButtonModule,
   MatToolbarModule,
-  MatExpansionModule, MatDividerModule
+  MatExpansionModule, MatDividerModule, MatIconModule
 } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatStepperModule} from '@angular/material/stepper';
+import { FormGroup} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AvailableJobsComponent } from './jobs/available-jobs/available-jobs.component';
@@ -61,7 +63,10 @@ import { ExecutionRunComponent } from './execution/execution-run/execution-run.c
     MatExpansionModule,
     MatSliderModule,
     MatDividerModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatStepperModule,
+    ReactiveFormsModule,
+    MatIconModule
   ],
   providers: [WizardStepperService],
   bootstrap: [AppComponent]

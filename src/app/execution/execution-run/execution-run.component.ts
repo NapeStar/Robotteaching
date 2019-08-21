@@ -8,6 +8,8 @@ import {Subscription} from 'rxjs';
 import {Job} from '../../jobs/job.model';
 import {HttpRequestService} from '../http-request.service';
 import {HttpClient} from '@angular/common/http';
+import { Output, EventEmitter } from '@angular/core';
+import {WizardParentStepperService} from '../../wizard-stepper/wizard-parent/wizard-parent-stepper.service';
 
 @Component({
   selector: 'app-execution-run',
@@ -16,11 +18,14 @@ import {HttpClient} from '@angular/common/http';
 })
 export class ExecutionRunComponent extends WizardJobComponent implements OnInit, OnDestroy {
 
+  isDisabledRun = true;
+
   constructor(protected router: Router,
               protected wizardStepperService: WizardStepperService,
               private http: HttpClient,
-              private httpRequest: HttpRequestService) {
-    super(router, wizardStepperService);
+              private httpRequest: HttpRequestService,
+              protected eventEmitterService: WizardParentStepperService) {
+    super(router, wizardStepperService, eventEmitterService);
   }
 
   ngOnInit() {
@@ -29,9 +34,20 @@ export class ExecutionRunComponent extends WizardJobComponent implements OnInit,
 
   runOnClick() {
     this.httpRequest.runWorkflow();
+    this.eventEmitterService.onStepperNextClick();
+    console.log('Next wurde ausgeführt');
   }
 
   saveOnClick() {
     this.httpRequest.saveWorkflow(this.workflow);
+    this.eventEmitterService.onStepperNextClick();
+    this.isDisabledRun = false;
+    console.log('Next wurde ausgeführt');
+  }
+  backOnClick() {
+    this.eventEmitterService.onStepperBackClick();
+    this.selectNextJob(this.jobsUpdated[this.counter]);
+    this.router.navigate([this.link]);
+    console.log('Back wurde ausgeführt');
   }
 }

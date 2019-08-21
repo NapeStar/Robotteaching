@@ -57,6 +57,9 @@ export class Workflow {
     getCurrentJob(count: number): Base {
       return this._jobsObjects[count];
     }
+    getJobs(): Base [] {
+      return this._jobsObjects;
+    }
 
   get id(): string {
     return this._id;

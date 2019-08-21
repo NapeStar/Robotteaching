@@ -4,6 +4,7 @@ import {WizardStepperService} from '../wizard-stepper.service';
 import {WizardJobComponent} from '../wizard-job/wizard-job.component';
 import {GripperGrip} from '../../model/gripper-grip.model';
 import {ArmCartesian} from '../../model/arm-cartesian.model';
+import {WizardParentStepperService} from '../wizard-parent/wizard-parent-stepper.service';
 
 @Component({
   selector: 'app-wizard-gripper-grip',
@@ -26,8 +27,9 @@ export class WizardGripperGripComponent extends WizardJobComponent implements On
   verticalActTimeout = false;
 
   constructor(router: Router,
-              wizardStepperService: WizardStepperService) {
-    super(router, wizardStepperService);
+              wizardStepperService: WizardStepperService,
+              eventEmitterService: WizardParentStepperService) {
+    super(router, wizardStepperService, eventEmitterService);
   }
   ngOnInit() {
     super.ngOnInit();
@@ -43,8 +45,10 @@ export class WizardGripperGripComponent extends WizardJobComponent implements On
       this.router.navigate([this.link]);
     } else {
       this.wizardStepperService.updateCount(this.counter = 0);
-      this.link += 'run';
+      this.link = 'wizard/run';
       this.router.navigate([this.link]);
+      this.eventEmitterService.onStepperNextClick();
+      console.log('GripperGrip onStepperNext wurde ausgeführt');
     }
   }
 }

@@ -1,6 +1,28 @@
-<mat-card class="example-container">
-  <mat-card-actions align="end">
+<h3>Workflow Name: tbd</h3>
+<h3>Workflow ID: {{workflow.id}}</h3>
+<mat-accordion class="example-container" multi="true">
+  <mat-expansion-panel *ngFor="let job of workflow.getJobs(); index as i" expanded="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{job.name}}
+      </mat-panel-title>
+      <mat-panel-description>
+        Set Parameters
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+      ID: {{job.id}}
+    <br>
+      Activation Timeout: {{job.activationTimeout}}
+  </mat-expansion-panel>
+</mat-accordion>
+<br>
+
+<mat-card class="example-container" >
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="backOnClick()">back</button>
+    <div fxFlex></div>
     <button mat-raised-button color="primary" (click)="saveOnClick()">save</button>
-    <button mat-raised-button color="primary" (click)="runOnClick()">run</button>
+    <button mat-raised-button color="primary" (click)="runOnClick()" [disabled]="isDisabledRun">run</button>
   </mat-card-actions>
 </mat-card>
+

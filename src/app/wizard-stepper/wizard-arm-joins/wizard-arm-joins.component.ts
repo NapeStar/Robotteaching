@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {WizardStepperService} from '../wizard-stepper.service';
 import {WizardJobComponent} from '../wizard-job/wizard-job.component';
+import {WizardParentStepperService} from '../wizard-parent/wizard-parent-stepper.service';
 
 @Component({
   selector: 'app-wizard-arm-joins',
@@ -22,7 +23,8 @@ export class WizardArmJoinsComponent extends WizardJobComponent implements OnIni
   vertical = false;
 
   constructor(router: Router,
-              wizardStepperService: WizardStepperService) {
-    super(router, wizardStepperService);
+              wizardStepperService: WizardStepperService,
+              eventEmitterService: WizardParentStepperService) {
+    super(router, wizardStepperService, eventEmitterService);
   }
 }

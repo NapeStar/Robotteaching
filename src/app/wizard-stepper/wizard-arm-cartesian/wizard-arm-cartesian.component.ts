@@ -4,6 +4,7 @@ import {WizardStepperService} from '../wizard-stepper.service';
 import {WizardJobComponent} from '../wizard-job/wizard-job.component';
 import {ArmCartesian} from '../../model/arm-cartesian.model';
 import {BaseMove} from '../../model/base-move.model';
+import {WizardParentStepperService} from '../wizard-parent/wizard-parent-stepper.service';
 
 @Component({
   selector: 'app-wizard-arm-cartesian',
@@ -31,8 +32,9 @@ export class WizardArmCartesianComponent extends WizardJobComponent implements O
 
 
   constructor(router: Router,
-              wizardStepperService: WizardStepperService) {
-    super(router, wizardStepperService);
+              wizardStepperService: WizardStepperService,
+              eventEmitterService: WizardParentStepperService) {
+    super(router, wizardStepperService, eventEmitterService);
   }
   ngOnInit() {
     super.ngOnInit();
@@ -47,9 +49,11 @@ export class WizardArmCartesianComponent extends WizardJobComponent implements O
       this.selectNextJob(this.jobsUpdated[this.counter]);
       this.router.navigate([this.link]);
     } else {
+      this.link = 'wizard/run';
       this.wizardStepperService.updateCount(this.counter = 0);
-      this.link += 'run';
       this.router.navigate([this.link]);
+      this.eventEmitterService.onStepperNextClick();
+      console.log('GripperGrip onStepperNext wurde ausgeführt');
     }
   }
   onSavePoseClick(): void {
