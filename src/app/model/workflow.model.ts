@@ -8,12 +8,13 @@ import {ArmJoint} from './arm-joint.model';
 
 export class Workflow {
     private _id: string;
-    // private _name: string;
+    private _name: string;
     private _created_at: number;
     private _jobsObjects: Base [];
 
     constructor() {
       this._id = '0';
+      this._name = 'no name';
       this._created_at = Date.now();
       this._jobsObjects = [];
     }
