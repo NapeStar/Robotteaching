@@ -63,6 +63,15 @@ export class Workflow {
       return this._jobsObjects;
     }
 
+
+  get name(): string {
+    return this._name;
+  }
+
+  set name(value: string) {
+    this._name = value;
+  }
+
   get id(): string {
     return this._id;
   }

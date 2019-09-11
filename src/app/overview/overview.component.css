@@ -1,0 +1,8 @@
+.example-container {
+  width: 300px;
+  max-width: 100%;
+  margin: 10px 10px 10px 10px;
+  display: inline-block;
+  vertical-align: top;
+  padding: 1rem;
+}

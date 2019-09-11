@@ -8,7 +8,7 @@ import {
   MatCardModule,
   MatButtonModule,
   MatToolbarModule,
-  MatExpansionModule, MatDividerModule, MatIconModule
+  MatExpansionModule, MatDividerModule, MatIconModule, MatListModule
 } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -68,7 +68,8 @@ import { OverviewComponent } from './overview/overview.component';
     FlexLayoutModule,
     MatStepperModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
+    MatListModule
   ],
   providers: [WizardStepperService],
   bootstrap: [AppComponent]

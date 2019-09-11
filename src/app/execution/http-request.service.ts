@@ -3,14 +3,23 @@ import {HttpClient} from '@angular/common/http';
 import {Workflow} from '../model/workflow.model';
 import {WizardStepperService} from '../wizard-stepper/wizard-stepper.service';
 import {Subscription} from 'rxjs';
+import { Subject } from 'rxjs';
+import {WorkflowListElement} from '../model/workflow-list-element.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpRequestService {
 
-  workflow: Workflow;
+
+  workflowList: WorkflowListElement[] = [{_id: '1', _name: 'ich', _created_at: 6}];
+  private workflowListSub = new Subject<WorkflowListElement[]>();
+
+
+    workflow: Workflow;
+
   private workflowSub: Subscription;
+  // private workflowSub = new Subject<Workflow>();
 
   constructor(private http: HttpClient,
               private wizardStepperService: WizardStepperService) {
