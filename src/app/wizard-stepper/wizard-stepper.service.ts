@@ -15,8 +15,8 @@ export class WizardStepperService {
   private workflow: Workflow;
   private workflowListener = new Subject<Workflow>();
 
-  private jobs: Job[] = [];
-  private jobsUpdated = new Subject<Job[]>();
+  private jobs: string[] = [];
+  private jobsUpdated = new Subject<string[]>();
 
   constructor() { }
 
@@ -60,14 +60,14 @@ export class WizardStepperService {
     this.counterListener.next(this.counter);
   }
 
-  getJobsListener(): Observable<Job[]> {
+  getJobsListener(): Observable<string[]> {
     return this.jobsUpdated.asObservable();
   }
-  getJobs(): Job[] {
+  getJobs(): string[] {
     return this.jobs;
   }
 
-  updateJob(jobs: Job[]) {
+  updateJob(jobs: string[]) {
     this.jobs = jobs;
     this.jobsUpdated.next([...this.jobs]);
   }

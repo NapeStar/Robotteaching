@@ -8,39 +8,40 @@ import {ArmJoint} from './arm-joint.model';
 
 export class Workflow {
     private _id: string;
+    // private _name: string;
     private _created_at: number;
     private _jobsObjects: Base [];
 
     constructor() {
       this._id = '0';
-      this._created_at = 0;
+      this._created_at = Date.now();
       this._jobsObjects = [];
     }
 
-    addJobs(jobsName: Job[]) {
+    addJobs(jobsName: string[]) {
       for (const jobName of jobsName) {
-        switch (jobName.id) {
-          case 0: {
+        switch (jobName) {
+          case 'GripperGripWorkflow': {
             this._jobsObjects.push(new GripperGrip());
             break;
           }
-          case 1: {
+          case 'MoveArmOnTrajectoryWorkflow': {
             this._jobsObjects.push(new ArmTrajectory());
             break;
           }
-          case 3: {
+          case 'MoveArmJointsWorkflow': {
             this._jobsObjects.push(new ArmJoint());
             break;
           }
-          case 4: {
+          case 'MoveToPositionWorkflow': {
             this._jobsObjects.push(new BaseMove());
             break;
           }
-          case 5: {
+          case 'MoveArmCartesianWorkflow': {
             this._jobsObjects.push(new ArmTrajectory());
             break;
           }
-          case 6: {
+          case 'GripperReleaseWorkflow': {
             this._jobsObjects.push(new GripperRelease());
             break;
           }

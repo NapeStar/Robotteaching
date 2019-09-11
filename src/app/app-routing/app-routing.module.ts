@@ -11,8 +11,11 @@ import {WizardArmJoinsComponent} from '../wizard-stepper/wizard-arm-joins/wizard
 import {WizardArmCartesianComponent} from '../wizard-stepper/wizard-arm-cartesian/wizard-arm-cartesian.component';
 import {WizardBaseComponent} from '../wizard-stepper/wizard-base/wizard-base.component';
 import {ExecutionRunComponent} from '../execution/execution-run/execution-run.component';
+import {OverviewComponent} from '../overview/overview.component';
 
 const routes: Routes = [
+
+  {path: 'overview', component: OverviewComponent},
   {path: 'jobs', component: AvailableJobsComponent},
   {path: '', redirectTo: '/jobs', pathMatch: 'full'},
   {path: 'wizard', component: WizardParentComponent,

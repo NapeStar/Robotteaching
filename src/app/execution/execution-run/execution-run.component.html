@@ -1,18 +1,28 @@
 <h3>Workflow Name: tbd</h3>
 <h3>Workflow ID: {{workflow.id}}</h3>
 <mat-accordion class="example-container" multi="true">
-  <mat-expansion-panel *ngFor="let job of workflow.getJobs(); index as i" expanded="true">
+  <mat-expansion-panel *ngFor="let job of workflow.getJobs(); index as i"
+                       [ngSwitch]="job.name" expanded="true">
+
     <mat-expansion-panel-header>
       <mat-panel-title>
         {{job.name}}
       </mat-panel-title>
       <mat-panel-description>
-        Set Parameters
+        Show Parameters
       </mat-panel-description>
     </mat-expansion-panel-header>
-      ID: {{job.id}}
-    <br>
-      Activation Timeout: {{job.activationTimeout}}
+    <div>
+      <label>Activation Timeout:</label>
+      <input matInput type="number" placeholder="Value" [(ngModel)]="job.activationTimeout">
+    </div>
+    <p  *ngSwitchCase="'BaseMove'"> Goal Position:
+      <br>
+      {{job.goalPose}}</p>
+    <p  *ngSwitchCase="'ArmCartesian'"> Goal Position:
+      <br>
+      {{job.goalPose}}</p>
+
   </mat-expansion-panel>
 </mat-accordion>
 <br>
@@ -21,7 +31,7 @@
   <mat-card-actions>
     <button mat-raised-button color="primary" (click)="backOnClick()">back</button>
     <div fxFlex></div>
-    <button mat-raised-button color="primary" (click)="saveOnClick()">save</button>
+    <button mat-raised-button color="primary" (click)="saveOnClick()">OK</button>
     <button mat-raised-button color="primary" (click)="runOnClick()" [disabled]="isDisabledRun">run</button>
   </mat-card-actions>
 </mat-card>

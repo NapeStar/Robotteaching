@@ -31,6 +31,7 @@ import { WizardBaseComponent } from './wizard-stepper/wizard-base/wizard-base.co
 import {WizardStepperService} from './wizard-stepper/wizard-stepper.service';
 import { WizardJobComponent } from './wizard-stepper/wizard-job/wizard-job.component';
 import { ExecutionRunComponent } from './execution/execution-run/execution-run.component';
+import { OverviewComponent } from './overview/overview.component';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { ExecutionRunComponent } from './execution/execution-run/execution-run.c
     WizardBaseComponent,
     WizardJobComponent,
     ExecutionRunComponent,
+    OverviewComponent,
   ],
   imports: [
     BrowserModule,

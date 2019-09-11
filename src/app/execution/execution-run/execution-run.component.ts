@@ -33,13 +33,21 @@ export class ExecutionRunComponent extends WizardJobComponent implements OnInit,
   }
 
   runOnClick() {
-    this.httpRequest.runWorkflow();
-    this.eventEmitterService.onStepperNextClick();
-    console.log('Next wurde ausgeführt');
+    this.httpRequest.createWorkflow(this.workflow);
+    setTimeout (() => {
+      this.httpRequest.runWorkflow();
+      this.eventEmitterService.onStepperNextClick();
+      console.log('Next wurde ausgeführt');
+      console.log('Hello from setTimeout');
+    }, 5000);
+
+    // this.httpRequest.runWorkflow();
+    // this.eventEmitterService.onStepperNextClick();
+    // console.log('Next wurde ausgeführt');
   }
 
   saveOnClick() {
-    this.httpRequest.saveWorkflow(this.workflow);
+    // this.httpRequest.saveWorkflow(this.workflow);
     this.eventEmitterService.onStepperNextClick();
     this.isDisabledRun = false;
     console.log('Next wurde ausgeführt');

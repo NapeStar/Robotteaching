@@ -18,7 +18,7 @@ export class WizardJobComponent implements OnInit, OnDestroy {
   workflow: Workflow;
   private workflowSub: Subscription;
 
-  jobsUpdated: Job[] = [];
+  jobsUpdated: string[] = [];
   private jobsSub: Subscription;
 
   counter: number;
@@ -88,34 +88,34 @@ export class WizardJobComponent implements OnInit, OnDestroy {
     this.workflowSub.unsubscribe();
   }
 
-  selectNextJob(job: Job) {
+  selectNextJob(job: string) {
     this.link = 'wizard/';
-    switch (job.id) {
-      case 0: {
+    switch (job) {
+      case 'GripperGripWorkflow': {
         this.link += 'gripper_grip';
         break;
       }
-      case 1: {
+      case 'MoveArmOnTrajectoryWorkflow': {
         this.link += 'arm_trajectory';
         break;
       }
-      case 2: {
+      case 'CustomWorkflow': {
         this.link += 'arm_trajectory';
         break;
       }
-      case 3: {
+      case 'MoveArmJointsWorkflow': {
         this.link += 'arm_joints';
         break;
       }
-      case 4: {
+      case 'MoveToPositionWorkflow': {
         this.link += 'base';
         break;
       }
-      case 5: {
+      case 'MoveArmCartesianWorkflow': {
         this.link += 'arm_cartesian';
         break;
       }
-      case 6: {
+      case 'GripperReleaseWorkflow': {
         this.link += 'gripper_release';
         break;
       }

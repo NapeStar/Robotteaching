@@ -28,11 +28,27 @@ export class HttpRequestService {
         this.wizardStepperService.updateWorkflow(this.workflow);
       });
   }
+
+  createWorkflow(workflow: Workflow) {
+    this.http.post('http://localhost:3000/createWorkflow', {jsondata: workflow}).subscribe(
+      (responseData) => {
+        console.log(responseData);
+        this.workflow.id = responseData + '';
+        this.wizardStepperService.updateWorkflow(this.workflow);
+      });
+  }
   runWorkflow() {
     this.http.post('http://localhost:3000/playWorkflow', {wf_id: this.workflow.id}).subscribe(
       (responseData) => {
         console.log(responseData);
       });
+  }
+  getAllWorkflows() {
+    this.http.post('http://localhost:3000/readWorkflow/readAll', null).subscribe(
+      (responseData) => {
+        console.log(responseData);
+      });
+
   }
 
 }

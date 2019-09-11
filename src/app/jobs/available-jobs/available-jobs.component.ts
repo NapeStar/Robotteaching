@@ -24,15 +24,18 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
 
   httpResult: any;
   selectedJob: any;
-  selectedJobs: Move[];
-  copiedJobs: Move[];
+  selectedJobs: string[];
+  copiedJobs: string[];
   ml: MoveList;
-  jobs: Job[] = [];
+  jobs: string[] = [];
+
+  private response: string[];
+  private responseSub = Subscription;
 
   workflow: Workflow;
   private workflowSub: Subscription;
 
-  jobsUpdated: Job[] = [];
+  jobsUpdated: string[] = [];
   private jobsSub: Subscription;
   link = 'wizard/';
 
@@ -41,10 +44,18 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
 
   constructor(private jobService: JobsService, private router: Router, private wizardStepperService: WizardStepperService) { }
 
+
   ngOnInit() {
-    this.getAvailableJobs();
+    // this.getAvailableJobs();
+    this.jobService.getJobsFromServer();
+    // @ts-ignore
+    this.responseSub = this.jobService.responseListener
+      .subscribe((response: string[]) => {
+      this.response = response;
+    });
     this.selectedJobs = [];
     this.copiedJobs = [...this.selectedJobs];
+
     this.jobsSub = this.wizardStepperService.getJobsListener()
       .subscribe(jobsUpdated => {
         this.jobsUpdated = jobsUpdated;
@@ -58,6 +69,7 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
       .subscribe(workflow => {
         this.workflow = workflow;
       });
+
     this.workflow = this.wizardStepperService.getWorkflow();
     this.jobsUpdated = this.wizardStepperService.getJobs();
     this.selectedJobs = this.wizardStepperService.getJobs();
@@ -66,6 +78,7 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
     console.log(this.counter);
   }
   ngOnDestroy() {
+    // this.responseSub.unsubscribe();
     this.jobsSub.unsubscribe();
     this.counterSub.unsubscribe();
     this.workflowSub.unsubscribe();
@@ -74,11 +87,13 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
     this.selectedJob = job;
   }
   getAvailableJobs(): void {
-    this.jobService.getWorkflows().subscribe(data => {
-      this.httpResult = data;
-      this.ml = new MoveList(this.httpResult);
-      console.log(this.httpResult);
-    });
+    this.jobService.getJobsFromServer();
+
+    // this.jobService.getWorkflows().subscribe(data => {
+    //   this.httpResult = data;
+    //   this.ml = new MoveList(this.httpResult);
+    //   console.log(this.httpResult);
+    // });
   }
 
   onNextClick(): void {
@@ -109,34 +124,34 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
     console.log(this.workflow);
   }
 
-  selectNextJob(job: Job) {
+  selectNextJob(job: string) {
     this.link = 'wizard/';
-    switch (job.id) {
-        case 0: {
+    switch (job) {
+        case 'GripperGripWorkflow': {
           this.link += 'gripper_grip';
           break;
         }
-        case 1: {
+        case 'MoveArmOnTrajectoryWorkflow': {
           this.link += 'arm_trajectory';
           break;
         }
-        case 2: {
+        case 'CustomWorkflow': {
           this.link += 'arm_trajectory';
           break;
         }
-        case 3: {
+        case 'MoveArmJointsWorkflow': {
           this.link += 'arm_joints';
           break;
         }
-        case 4: {
+        case 'MoveToPositionWorkflow': {
           this.link += 'base';
           break;
         }
-        case 5: {
+        case 'MoveArmCartesianWorkflow': {
           this.link += 'arm_cartesian';
           break;
         }
-        case 6: {
+        case 'GripperReleaseWorkflow': {
           this.link += 'gripper_release';
           break;
         }

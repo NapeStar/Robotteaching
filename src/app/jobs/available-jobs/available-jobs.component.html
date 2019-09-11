@@ -5,24 +5,42 @@
 </mat-card-header>
 <mat-card-content>
 
-<ul cdkDropList
-    cdkDropList
-    id = "list1"
-    [cdkDropListData]="ml?.moveList"
-    [cdkDropListConnectedTo]="['list2']"
-    class="robotmethods"
-    (cdkDropListDropped)="drop($event)"
-    >
+<!--<ul cdkDropList-->
+<!--    cdkDropList-->
+<!--    id = "list1"-->
+<!--    [cdkDropListData]="ml?.moveList"-->
+<!--    [cdkDropListConnectedTo]="['list2']"-->
+<!--    class="robotmethods"-->
+<!--    (cdkDropListDropped)="drop($event)"-->
+<!--    >-->
 
-  <li *ngFor="let move of ml?.moveList"
-      [class.selected]="move === selectedJob"
-      (click)="onSelect(move)" cdkDrag>
+<!--  <li *ngFor="let move of ml?.moveList"-->
+<!--      [class.selected]="move === selectedJob"-->
+<!--      (click)="onSelect(move)" cdkDrag>-->
 
-    <span class="badge">{{move.id}}</span>{{move.name}}
+<!--    <span class="badge">{{move.id}}</span>{{move.name}}-->
 
-  </li>
+<!--  </li>-->
 
-</ul>
+<!--</ul>-->
+  <ul cdkDropList
+      cdkDropList
+      id = "list1"
+      [cdkDropListData]="this?.response"
+      [cdkDropListConnectedTo]="['list2']"
+      class="robotmethods"
+      (cdkDropListDropped)="drop($event)"
+  >
+
+    <li *ngFor="let move of this?.response; let i = index"
+        [class.selected]="move === selectedJob"
+        (click)="onSelect(move)" cdkDrag>
+
+      <span class="badge">{{i}}</span>{{move}}
+
+    </li>
+
+  </ul>
 </mat-card-content>
 
 <mat-card-actions>
@@ -45,11 +63,11 @@
         (cdkDropListDropped)="drop($event)"
     >
 
-      <li *ngFor="let move of selectedJobs"
+      <li *ngFor="let move of selectedJobs let i = index"
           [class.selected]="move === selectedJob"
           (click)="onSelect(move)" cdkDrag>
 
-        <span class="badge">{{move.id}}</span> {{move.name}}
+        <span class="badge">{{i}}</span> {{move}}
 
       </li>
 
