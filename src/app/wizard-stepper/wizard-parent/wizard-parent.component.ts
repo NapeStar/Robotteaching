@@ -15,7 +15,7 @@ import {WizardParentStepperService} from './wizard-parent-stepper.service';
 })
 export class WizardParentComponent implements OnInit, OnDestroy {
 
-  title = 'Workflow Wizard';
+  title = 'Workflow Configurator';
   @ViewChild('stepper', {static: true}) stepper: MatStepper;
 
   constructor(private eventEmitterService: WizardParentStepperService) {
