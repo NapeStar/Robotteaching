@@ -12,7 +12,7 @@ import {WorkflowListElement} from '../model/workflow-list-element.model';
 export class HttpRequestService {
 
 
-  workflowList: WorkflowListElement[] = [{_id: '1', _name: 'ich', _created_at: 6}];
+  workflowList: WorkflowListElement[] = [];
   private workflowListSub = new Subject<WorkflowListElement[]>();
 
 
@@ -53,11 +53,19 @@ export class HttpRequestService {
       });
   }
   getAllWorkflows() {
-    this.http.post('http://localhost:3000/readWorkflow/readAll', null).subscribe(
+    this.http.post<WorkflowListElement[]>('http://localhost:3000/readWorkflow/readAll', null).subscribe(
       (responseData) => {
+        this.workflowList = responseData;
+        this.workflowListSub.next([...this.workflowList]);
         console.log(responseData);
+        console.log(this.workflowList);
       });
-
+  }
+  getWorkflowListUpdateListener() {
+    return this.workflowListSub.asObservable();
   }
 
+  deleteWorkflow(){
+
+  }
 }

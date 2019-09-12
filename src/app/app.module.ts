@@ -8,7 +8,7 @@ import {
   MatCardModule,
   MatButtonModule,
   MatToolbarModule,
-  MatExpansionModule, MatDividerModule, MatIconModule, MatListModule
+  MatExpansionModule, MatDividerModule, MatIconModule, MatListModule, MatTableModule
 } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -31,7 +31,8 @@ import { WizardBaseComponent } from './wizard-stepper/wizard-base/wizard-base.co
 import {WizardStepperService} from './wizard-stepper/wizard-stepper.service';
 import { WizardJobComponent } from './wizard-stepper/wizard-job/wizard-job.component';
 import { ExecutionRunComponent } from './execution/execution-run/execution-run.component';
-import { OverviewComponent } from './overview/overview.component';
+import {ScrollingModule} from '@angular/cdk/scrolling';
+import { WorkflowTableComponent } from './workflow-table/workflow-table.component';
 
 
 @NgModule({
@@ -49,7 +50,7 @@ import { OverviewComponent } from './overview/overview.component';
     WizardBaseComponent,
     WizardJobComponent,
     ExecutionRunComponent,
-    OverviewComponent,
+    WorkflowTableComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,7 +70,9 @@ import { OverviewComponent } from './overview/overview.component';
     MatStepperModule,
     ReactiveFormsModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    ScrollingModule,
+    MatTableModule
   ],
   providers: [WizardStepperService],
   bootstrap: [AppComponent]

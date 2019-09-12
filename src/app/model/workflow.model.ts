@@ -12,9 +12,9 @@ export class Workflow {
     private _created_at: number;
     private _jobsObjects: Base [];
 
-    constructor() {
+    constructor(name: string) {
       this._id = '0';
-      this._name = 'no name';
+      this._name = name;
       this._created_at = Date.now();
       this._jobsObjects = [];
     }

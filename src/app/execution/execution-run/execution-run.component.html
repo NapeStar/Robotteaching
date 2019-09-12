@@ -1,4 +1,4 @@
-<h3>Workflow Name: tbd</h3>
+<h3>Workflow Name: {{workflow.name}}</h3>
 <h3>Workflow ID: {{workflow.id}}</h3>
 <mat-accordion class="example-container" multi="true">
   <mat-expansion-panel *ngFor="let job of workflow.getJobs(); index as i"
@@ -29,10 +29,21 @@
 
 <mat-card class="example-container" >
   <mat-card-actions>
-    <button mat-raised-button color="primary" (click)="backOnClick()">back</button>
+    <button mat-icon-button color="primary" (click)="backOnClick()">
+      <mat-icon class="mat-18">navigate_before</mat-icon>
+    </button>
     <div fxFlex></div>
-    <button mat-raised-button color="primary" (click)="saveOnClick()">OK</button>
-    <button mat-raised-button color="primary" (click)="runOnClick()" [disabled]="isDisabledRun">run</button>
+    <button mat-icon-button color="primary" (click)="saveOnClick()">
+      <mat-icon class="mat-18">done</mat-icon>
+    </button>
+    <button mat-icon-button color="primary" (click)="runOnClick()" [disabled]="isDisabledRun">
+      <mat-icon class="mat-18">play_circle_outline</mat-icon>
+    </button>
+
+<!--    <button mat-raised-button color="primary" (click)="backOnClick()">back</button>-->
+<!--    <div fxFlex></div>-->
+<!--    <button mat-raised-button color="primary" (click)="saveOnClick()">OK</button>-->
+<!--    <button mat-raised-button color="primary" (click)="runOnClick()" [disabled]="isDisabledRun">run</button>-->
   </mat-card-actions>
 </mat-card>
 

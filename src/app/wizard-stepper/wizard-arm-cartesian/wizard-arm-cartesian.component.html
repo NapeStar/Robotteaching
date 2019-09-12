@@ -28,14 +28,25 @@
 
   </mat-card-content>
   <mat-card-actions>
-    <button mat-stroked-button color="primary" (click)="onSavePoseClick()">save goal position</button>
+    <button mat-icon-button color="primary" (click)="onSavePoseClick()">
+      <mat-icon class="mat-18">my_location</mat-icon>
+    </button>
+
+<!--    <button mat-stroked-button color="primary" (click)="onSavePoseClick()">save goal position</button>-->
   </mat-card-actions>
 </mat-card>
 <br>
 <mat-card class="example-container">
   <mat-card-actions align="end">
-    <button mat-raised-button color="primary" (click)="onPreviousClick()">prev</button>
+    <button mat-icon-button color="primary" (click)="onPreviousClick()">
+      <mat-icon class="mat-18">navigate_before</mat-icon>
+    </button>
     <div fxFlex></div>
-    <button mat-raised-button color="primary" (click)="onNextClick()" [disabled]="isDisabledNext">next</button>
+    <button mat-icon-button color="primary" (click)="onNextClick()" [disabled]="isDisabledNext">
+      <mat-icon class="mat-18">navigate_next</mat-icon>
+    </button>
+<!--    <button mat-raised-button color="primary" (click)="onPreviousClick()">prev</button>-->
+<!--    <div fxFlex></div>-->
+<!--    <button mat-raised-button color="primary" (click)="onNextClick()" [disabled]="isDisabledNext">next</button>-->
   </mat-card-actions>
 </mat-card>
