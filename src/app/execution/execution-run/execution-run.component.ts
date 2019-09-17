@@ -19,6 +19,8 @@ import {WizardParentStepperService} from '../../wizard-stepper/wizard-parent/wiz
 export class ExecutionRunComponent extends WizardJobComponent implements OnInit, OnDestroy {
 
   isDisabledRun = true;
+  // status: string;
+  // private statusSub: Subscription;
 
   constructor(protected router: Router,
               protected wizardStepperService: WizardStepperService,
@@ -30,6 +32,13 @@ export class ExecutionRunComponent extends WizardJobComponent implements OnInit,
 
   ngOnInit() {
   super.ngOnInit();
+  // this.statusSub = this.wizardStepperService.getStatusListener()
+  //     .subscribe(data => {
+  //       this.status = data;
+  //       console.log(this.status);
+  //     });
+  // this.status = this.wizardStepperService.getStatus();
+  // console.log(this.status);
   }
 
   runOnClick() {
@@ -52,10 +61,20 @@ export class ExecutionRunComponent extends WizardJobComponent implements OnInit,
     this.isDisabledRun = false;
     console.log('Next wurde ausgeführt');
   }
-  backOnClick() {
+  backCreateOnClick() {
     this.eventEmitterService.onStepperBackClick();
-    this.selectNextJob(this.jobsUpdated[this.counter]);
+    this.selectNextJob(this.workflow.getJobName(this.counter));
     this.router.navigate([this.link]);
-    console.log('Back wurde ausgeführt');
+    console.log('Back Create wurde ausgeführt');
+  }
+  backUpdateOnClick() {
+    this.eventEmitterService.onStepperBackClick();
+    this.selectNextJob(this.workflow.getJobName(this.counter));
+    this.router.navigate([this.link]);
+    console.log('Back Update wurde ausgeführt');
+  }
+  backRunOnClick() {
+    this.link = '';
+    this.router.navigate([this.link]);
   }
 }

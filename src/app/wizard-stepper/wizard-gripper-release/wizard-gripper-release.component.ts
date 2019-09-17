@@ -14,7 +14,8 @@ import {WizardParentStepperService} from '../wizard-parent/wizard-parent-stepper
 export class WizardGripperReleaseComponent extends WizardJobComponent implements OnInit, OnDestroy {
   title = 'Gripper Release';
 
-  gripperRelease = new GripperRelease();
+  gripperRelease: GripperRelease;
+  // gripperRelease = new GripperRelease();
 
   disabledActTimeout = false;
   invertActTimeout = false;
@@ -38,9 +39,9 @@ export class WizardGripperReleaseComponent extends WizardJobComponent implements
   onNextClick(): void {
     this.gripperRelease.activationTimeout = this.valueActTimeout;
     this.wizardStepperService.updateWorkflowItem(this.gripperRelease);
-    if (this.counter < this.jobsUpdated.length - 1) {
+    if (this.counter < this.workflow.getJobsLength() - 1) {
       this.wizardStepperService.increaseCount();
-      this.selectNextJob(this.jobsUpdated[this.counter]);
+      this.selectNextJob(this.workflow.getJobName(this.counter));
       this.router.navigate([this.link]);
     } else {
       this.wizardStepperService.updateCount(this.counter = 0);

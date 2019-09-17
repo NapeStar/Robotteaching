@@ -15,7 +15,8 @@ export class WizardGripperGripComponent extends WizardJobComponent implements On
 
   title = 'Gripper Grip';
 
-  gripperGrip = new GripperGrip();
+  gripperGrip: GripperGrip;
+  // gripperGrip = new GripperGrip();
 
   disabledActTimeout = false;
   invertActTimeout = false;
@@ -39,9 +40,10 @@ export class WizardGripperGripComponent extends WizardJobComponent implements On
   onNextClick(): void {
     this.gripperGrip.activationTimeout = this.valueActTimeout;
     this.wizardStepperService.updateWorkflowItem(this.gripperGrip);
-    if (this.counter < this.jobsUpdated.length - 1) {
+    if (this.counter < this.workflow.getJobsLength() - 1) {
       this.wizardStepperService.increaseCount();
-      this.selectNextJob(this.jobsUpdated[this.counter]);
+      this.selectNextJob(this.workflow.getJobName(this.counter));
+      // this.selectNextJob(this.jobsUpdated[this.counter]);
       this.router.navigate([this.link]);
     } else {
       this.wizardStepperService.updateCount(this.counter = 0);

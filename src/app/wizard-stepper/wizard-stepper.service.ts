@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import {Job} from '../jobs/job.model';
 import {Observable, Subject} from 'rxjs';
 import {Workflow} from '../model/workflow.model';
 import {Base} from '../model/base.model';
@@ -18,6 +17,9 @@ export class WizardStepperService {
   private jobs: string[] = [];
   private jobsUpdated = new Subject<string[]>();
 
+  private status: string;
+  private statusListener  = new Subject<string>();
+
   constructor() { }
 
   getWorkflowListener(): Observable<Workflow> {
@@ -27,6 +29,7 @@ export class WizardStepperService {
     return this.workflow;
   }
   getWorkflowItem(): Base {
+    console.log(this.workflow.getCurrentJob(this.counter));
     return this.workflow.getCurrentJob(this.counter);
   }
 
@@ -70,6 +73,17 @@ export class WizardStepperService {
   updateJob(jobs: string[]) {
     this.jobs = jobs;
     this.jobsUpdated.next([...this.jobs]);
+  }
+
+  getStatusListener(): Observable<string> {
+    return this.statusListener.asObservable();
+  }
+  getStatus(): string {
+    return this.status;
+  }
+  updateStatus(status: string) {
+    this.status = status;
+    this.statusListener.next(this.status);
   }
 
 }

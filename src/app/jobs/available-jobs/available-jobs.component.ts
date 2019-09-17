@@ -60,7 +60,9 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
   counter: number;
   counterSub: Subscription;
 
-  constructor(private jobService: JobsService, private router: Router, private wizardStepperService: WizardStepperService) { }
+  constructor(private jobService: JobsService,
+              private router: Router,
+              private wizardStepperService: WizardStepperService) { }
 
   ngOnInit() {
     // this.getAvailableJobs();
@@ -122,7 +124,8 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
 
   onNextClick(): void {
     if (this.jobsUpdated.length > 0) {
-      this.selectNextJob(this.jobsUpdated[this.counter]);
+      this.selectNextJob(this.workflow.getJobName(0));
+      // this.selectNextJob(this.jobsUpdated[this.counter]);
       this.router.navigate([this.link]);
     } else {
       alert('no jobs selected');
@@ -156,11 +159,11 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
   selectNextJob(job: string) {
     this.link = 'wizard/';
     switch (job) {
-        case 'GripperGripWorkflow': {
+        case 'GripperGrip': {
           this.link += 'gripper_grip';
           break;
         }
-        case 'MoveArmOnTrajectoryWorkflow': {
+        case 'MoveArmOnTrajectory': {
           this.link += 'arm_trajectory';
           break;
         }
@@ -180,7 +183,7 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
           this.link += 'arm_cartesian';
           break;
         }
-        case 'GripperReleaseWorkflow': {
+        case 'GripperRelease': {
           this.link += 'gripper_release';
           break;
         }

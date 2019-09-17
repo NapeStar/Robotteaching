@@ -5,6 +5,7 @@ import {GripperRelease} from './gripper-release.model';
 import {BaseMove} from './base-move.model';
 import {ArmTrajectory} from './arm-trajectory.model';
 import {ArmJoint} from './arm-joint.model';
+import {ArmCartesian} from './arm-cartesian.model';
 
 export class Workflow {
     private _id: string;
@@ -19,11 +20,12 @@ export class Workflow {
       this._jobsObjects = [];
     }
 
+
     addJobs(jobsName: string[]) {
       for (const jobName of jobsName) {
         switch (jobName) {
           case 'GripperGripWorkflow': {
-            this._jobsObjects.push(new GripperGrip());
+            this._jobsObjects.push(new GripperGrip(jobsName));
             break;
           }
           case 'MoveArmOnTrajectoryWorkflow': {
@@ -39,11 +41,11 @@ export class Workflow {
             break;
           }
           case 'MoveArmCartesianWorkflow': {
-            this._jobsObjects.push(new ArmTrajectory());
+            this._jobsObjects.push(new ArmCartesian());
             break;
           }
           case 'GripperReleaseWorkflow': {
-            this._jobsObjects.push(new GripperRelease());
+            this._jobsObjects.push(new GripperRelease(jobsName));
             break;
           }
           default: {
@@ -53,14 +55,56 @@ export class Workflow {
         }
       }
     }
+  addJobsFormWorkflow(job: any) {
+      switch (job._name) {
+        case 'GripperGrip': {
+          console.log(job);
+          this._jobsObjects.push(new GripperGrip(job));
+          break;
+        }
+        case 'MoveArmOnTrajectoryWorkflow': {
+          this._jobsObjects.push(new ArmTrajectory());
+          break;
+        }
+        case 'MoveArmJointsWorkflow': {
+          this._jobsObjects.push(new ArmJoint());
+          break;
+        }
+        case 'MoveToPositionWorkflow': {
+          this._jobsObjects.push(new BaseMove());
+          break;
+        }
+        case 'MoveArmCartesianWorkflow': {
+          this._jobsObjects.push(new ArmCartesian());
+          break;
+        }
+        case 'GripperRelease': {
+          this._jobsObjects.push(new GripperRelease(job));
+          break;
+        }
+        default: {
+          this._jobsObjects.push(new BaseMove());
+          break;
+        }
+    }
+  }
+
     updateJobs(jobs: Base, count: number) {
       this._jobsObjects[count] = jobs;
     }
     getCurrentJob(count: number): Base {
+      console.log(this._jobsObjects[count]);
       return this._jobsObjects[count];
     }
+    getJobName(count: number): string {
+      return this._jobsObjects[count].name;
+    }
+
     getJobs(): Base [] {
       return this._jobsObjects;
+    }
+    getJobsLength(): number {
+      return this._jobsObjects.length;
     }
 
 

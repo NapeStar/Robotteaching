@@ -27,9 +27,9 @@
 </mat-accordion>
 <br>
 
-<mat-card class="example-container" >
-  <mat-card-actions>
-    <button mat-icon-button color="primary" (click)="backOnClick()">
+<mat-card class="example-container" [ngSwitch]="this.status" >
+  <mat-card-actions *ngSwitchCase="'create'">
+    <button mat-icon-button color="primary" (click)="backCreateOnClick()">
       <mat-icon class="mat-18">navigate_before</mat-icon>
     </button>
     <div fxFlex></div>
@@ -39,11 +39,29 @@
     <button mat-icon-button color="primary" (click)="runOnClick()" [disabled]="isDisabledRun">
       <mat-icon class="mat-18">play_circle_outline</mat-icon>
     </button>
+  </mat-card-actions>
 
-<!--    <button mat-raised-button color="primary" (click)="backOnClick()">back</button>-->
-<!--    <div fxFlex></div>-->
-<!--    <button mat-raised-button color="primary" (click)="saveOnClick()">OK</button>-->
-<!--    <button mat-raised-button color="primary" (click)="runOnClick()" [disabled]="isDisabledRun">run</button>-->
+  <mat-card-actions *ngSwitchCase="'update'">
+    <button mat-icon-button color="primary" (click)="backUpdateOnClick()">
+      <mat-icon class="mat-18">navigate_before</mat-icon>
+    </button>
+    <div fxFlex></div>
+    <button mat-icon-button color="primary" (click)="saveOnClick()">
+      <mat-icon class="mat-18">save</mat-icon>
+    </button>
+    <button mat-icon-button color="primary" (click)="runOnClick()" [disabled]="isDisabledRun">
+      <mat-icon class="mat-18">play_circle_outline</mat-icon>
+    </button>
+  </mat-card-actions>
+
+  <mat-card-actions *ngSwitchCase="'play'">
+    <button mat-icon-button color="primary" (click)="backRunOnClick()">
+      <mat-icon class="mat-18">navigate_before</mat-icon>
+    </button>
+    <div fxFlex></div>
+    <button mat-icon-button color="primary" (click)="runOnClick()">
+      <mat-icon class="mat-18">play_circle_outline</mat-icon>
+    </button>
   </mat-card-actions>
 </mat-card>
 

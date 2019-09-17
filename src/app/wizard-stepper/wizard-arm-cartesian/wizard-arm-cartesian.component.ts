@@ -5,6 +5,7 @@ import {WizardJobComponent} from '../wizard-job/wizard-job.component';
 import {ArmCartesian} from '../../model/arm-cartesian.model';
 import {BaseMove} from '../../model/base-move.model';
 import {WizardParentStepperService} from '../wizard-parent/wizard-parent-stepper.service';
+import {HttpRequestService} from '../../execution/http-request.service';
 
 @Component({
   selector: 'app-wizard-arm-cartesian',
@@ -33,7 +34,8 @@ export class WizardArmCartesianComponent extends WizardJobComponent implements O
 
   constructor(router: Router,
               wizardStepperService: WizardStepperService,
-              eventEmitterService: WizardParentStepperService) {
+              eventEmitterService: WizardParentStepperService,
+              private httpRequest: HttpRequestService) {
     super(router, wizardStepperService, eventEmitterService);
   }
   ngOnInit() {
@@ -56,8 +58,12 @@ export class WizardArmCartesianComponent extends WizardJobComponent implements O
       console.log('GripperGrip onStepperNext wurde ausgeführt');
     }
   }
-  onSavePoseClick(): void {
-    this.armCartesian.goalPose = [1, 1, 1, 1, 1, 1, 1];
-    this.isDisabledNext = false;
+  onGetPostionClick() {
+    this.httpRequest.getBasePosition().subscribe(
+      (responseData: number[]) =>  {
+        this.armCartesian.goalPose = [];
+        this.armCartesian.goalPose = responseData;
+        this.isDisabledNext = false;
+      });
   }
 }

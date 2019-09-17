@@ -4,6 +4,7 @@ import {WizardStepperService} from '../wizard-stepper.service';
 import {WizardJobComponent} from '../wizard-job/wizard-job.component';
 import {BaseMove} from '../../model/base-move.model';
 import {WizardParentStepperService} from '../wizard-parent/wizard-parent-stepper.service';
+import {HttpRequestService} from '../../execution/http-request.service';
 
 @Component({
   selector: 'app-wizard-base',
@@ -31,7 +32,8 @@ export class WizardBaseComponent extends WizardJobComponent implements OnInit, O
 
   constructor(router: Router,
               wizardStepperService: WizardStepperService,
-              eventEmitterService: WizardParentStepperService) {
+              eventEmitterService: WizardParentStepperService,
+              private httpRequest: HttpRequestService) {
     super(router, wizardStepperService, eventEmitterService);
   }
 
@@ -56,8 +58,12 @@ export class WizardBaseComponent extends WizardJobComponent implements OnInit, O
       console.log('GripperGrip onStepperNext wurde ausgeführt');
     }
   }
-  onSavePoseClick(): void {
-    this.baseMove.goalPose = [1, 1, 1, 1, 1, 1, 1];
-    this.isDisabledNext = false;
+  onGetPostionClick() {
+    this.httpRequest.getBasePosition().subscribe(
+      (responseData: number[]) =>  {
+        this.baseMove.goalPose = [];
+        this.baseMove.goalPose = responseData;
+        this.isDisabledNext = false;
+      });
   }
   }
