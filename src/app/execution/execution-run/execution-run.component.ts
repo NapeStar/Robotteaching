@@ -10,6 +10,7 @@ import {HttpRequestService} from '../http-request.service';
 import {HttpClient} from '@angular/common/http';
 import { Output, EventEmitter } from '@angular/core';
 import {WizardParentStepperService} from '../../wizard-stepper/wizard-parent/wizard-parent-stepper.service';
+import {createElementCssSelector} from '@angular/compiler';
 
 @Component({
   selector: 'app-execution-run',
@@ -19,6 +20,7 @@ import {WizardParentStepperService} from '../../wizard-stepper/wizard-parent/wiz
 export class ExecutionRunComponent extends WizardJobComponent implements OnInit, OnDestroy {
 
   isDisabledRun = true;
+  isAlreadySave = false;
   // status: string;
   // private statusSub: Subscription;
 
@@ -42,7 +44,7 @@ export class ExecutionRunComponent extends WizardJobComponent implements OnInit,
   }
 
   runOnClick() {
-    this.httpRequest.createWorkflow(this.workflow);
+    this.httpRequest.updateWorkflow(this.workflow);
     setTimeout (() => {
       this.httpRequest.runWorkflow();
       this.eventEmitterService.onStepperNextClick();
@@ -55,11 +57,26 @@ export class ExecutionRunComponent extends WizardJobComponent implements OnInit,
     // console.log('Next wurde ausgeführt');
   }
 
-  saveOnClick() {
-    // this.httpRequest.saveWorkflow(this.workflow);
+  saveCreateOnClick() {
     this.eventEmitterService.onStepperNextClick();
     this.isDisabledRun = false;
-    console.log('Next wurde ausgeführt');
+    if (this.isAlreadySave === false) {
+      this.httpRequest.createWorkflow(this.workflow);
+      this.isAlreadySave = true;
+    } else {
+    }
+    console.log('Next Create wurde ausgeführt');
+  }
+
+  saveUpdateOnClick() {
+    this.eventEmitterService.onStepperNextClick();
+    this.isDisabledRun = false;
+    if (this.isAlreadySave === false) {
+      this.httpRequest.updateWorkflow(this.workflow);
+      this.isAlreadySave = true;
+    } else {
+    }
+    console.log('Next Update wurde ausgeführt');
   }
   backCreateOnClick() {
     this.eventEmitterService.onStepperBackClick();

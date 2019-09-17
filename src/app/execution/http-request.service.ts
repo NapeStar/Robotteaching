@@ -50,6 +50,14 @@ export class HttpRequestService {
         console.log(responseData);
       });
   }
+  updateWorkflow(workflow: Workflow) {
+    this.http.post('http://localhost:3000/updateWorkflow', {jsondata: workflow}).subscribe(
+      (responseData) => {
+        console.log(responseData);
+        this.workflow.id = responseData + '';
+        this.wizardStepperService.updateWorkflow(this.workflow);
+      });
+  }
   getAllWorkflows() {
     this.http.post<WorkflowListElement[]>('http://localhost:3000/readWorkflow/readAll', null).subscribe(
       (responseData) => {
