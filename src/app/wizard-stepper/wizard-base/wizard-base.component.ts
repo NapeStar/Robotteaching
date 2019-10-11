@@ -26,6 +26,7 @@ export class WizardBaseComponent extends WizardJobComponent implements OnInit, O
   thumbLabelActTimeout = true;
   valueActTimeout = 50;
   verticalActTimeout = false;
+  goalPose;
 
   // mat-button next
   isDisabledNext = true;
@@ -41,21 +42,25 @@ export class WizardBaseComponent extends WizardJobComponent implements OnInit, O
     super.ngOnInit();
     this.baseMove = this.wizardStepperService.getWorkflowItem() as BaseMove;
     this.valueActTimeout = this.baseMove.activationTimeout;
+    this.goalPose = this.baseMove.goalPose;
   }
 
   onNextClick(): void {
     this.baseMove.activationTimeout = this.valueActTimeout;
+    // this.baseMove.goalPose = this.goalPose;
+    // console.log(this.baseMove);
     this.wizardStepperService.updateWorkflowItem(this.baseMove);
-    if (this.counter < this.jobsUpdated.length - 1) {
+    if (this.counter < this.workflow.getJobsLength() - 1) {
       this.wizardStepperService.increaseCount();
-      this.selectNextJob(this.jobsUpdated[this.counter]);
+      this.selectNextJob(this.workflow.getJobName(this.counter));
+      // this.selectNextJob(this.jobsUpdated[this.counter]);
       this.router.navigate([this.link]);
     } else {
       this.wizardStepperService.updateCount(this.counter = 0);
       this.link = 'wizard/run';
       this.router.navigate([this.link]);
       this.eventEmitterService.onStepperNextClick();
-      console.log('GripperGrip onStepperNext wurde ausgeführt');
+      console.log('MoveBase onStepperNext wurde ausgeführt');
     }
   }
   onGetPostionClick() {
@@ -63,7 +68,9 @@ export class WizardBaseComponent extends WizardJobComponent implements OnInit, O
       (responseData: number[]) =>  {
         this.baseMove.goalPose = [];
         this.baseMove.goalPose = responseData;
+        this.goalPose = this.baseMove.goalPose;
         this.isDisabledNext = false;
+        console.log(this.baseMove.goalPose);
       });
   }
   }

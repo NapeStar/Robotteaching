@@ -51,11 +51,12 @@ export class HttpRequestService {
       });
   }
   updateWorkflow(workflow: Workflow) {
-    this.http.post('http://localhost:3000/updateWorkflow', {jsondata: workflow}).subscribe(
+    console.log(this.workflow);
+    this.http.post('http://localhost:3000/createWorkflow/updateWorkflow', {jsondata: workflow}).subscribe(
       (responseData) => {
         console.log(responseData);
-        this.workflow.id = responseData + '';
-        this.wizardStepperService.updateWorkflow(this.workflow);
+        // this.workflow.id = responseData + '';
+        // this.wizardStepperService.updateWorkflow(this.workflow);
       });
   }
   getAllWorkflows() {
@@ -70,8 +71,8 @@ export class HttpRequestService {
   getWorkflowListUpdateListener() {
     return this.workflowListSub.asObservable();
   }
-  deleteWorkflow() {
-
+  deleteWorkflow(id: number) {
+    return this.http.post('http://localhost:3000/createWorkflow/delteWorkflow', {wf_id: id});
   }
   // Observable<number[]>
 

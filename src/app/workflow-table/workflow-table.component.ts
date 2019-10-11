@@ -79,7 +79,14 @@ export class WorkflowTableComponent implements OnInit {
         this.router.navigate([this.link]);
       });
   }
-
+  onDeleteClick(id: number): void {
+    this.httpRequest.deleteWorkflow(id).subscribe((data: any) => {
+      console.log(data);
+      setTimeout (() => {
+        this.httpRequest.getAllWorkflows();
+      }, 500);
+    });
+  }
   onPlayClick(id: number): void {
 
     this.status = 'play';

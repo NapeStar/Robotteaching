@@ -27,6 +27,7 @@ export class WizardArmCartesianComponent extends WizardJobComponent implements O
   thumbLabelActTimeout = true;
   valueActTimeout = 50;
   verticalActTimeout = false;
+  goalPose;
 
   // mat-button next
   isDisabledNext = true;
@@ -42,20 +43,24 @@ export class WizardArmCartesianComponent extends WizardJobComponent implements O
     super.ngOnInit();
     this.armCartesian = this.wizardStepperService.getWorkflowItem() as ArmCartesian;
     this.valueActTimeout = this.armCartesian.activationTimeout;
+    this.goalPose = this.armCartesian.goalPose;
   }
   onNextClick(): void {
     this.armCartesian.activationTimeout = this.valueActTimeout;
+    // this.baseMove.goalPose = this.goalPose;
+    // console.log(this.baseMove);
     this.wizardStepperService.updateWorkflowItem(this.armCartesian);
-    if (this.counter < this.jobsUpdated.length - 1) {
+    if (this.counter < this.workflow.getJobsLength() - 1) {
       this.wizardStepperService.increaseCount();
-      this.selectNextJob(this.jobsUpdated[this.counter]);
+      this.selectNextJob(this.workflow.getJobName(this.counter));
+      // this.selectNextJob(this.jobsUpdated[this.counter]);
       this.router.navigate([this.link]);
     } else {
-      this.link = 'wizard/run';
       this.wizardStepperService.updateCount(this.counter = 0);
+      this.link = 'wizard/run';
       this.router.navigate([this.link]);
       this.eventEmitterService.onStepperNextClick();
-      console.log('GripperGrip onStepperNext wurde ausgeführt');
+      console.log('ArmCatesian onStepperNext wurde ausgeführt');
     }
   }
   onGetPostionClick() {
@@ -63,7 +68,9 @@ export class WizardArmCartesianComponent extends WizardJobComponent implements O
       (responseData: number[]) =>  {
         this.armCartesian.goalPose = [];
         this.armCartesian.goalPose = responseData;
+        this.goalPose = this.armCartesian.goalPose;
         this.isDisabledNext = false;
+        console.log(this.armCartesian.goalPose);
       });
   }
 }
