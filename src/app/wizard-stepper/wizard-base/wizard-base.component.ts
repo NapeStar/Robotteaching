@@ -49,6 +49,7 @@ export class WizardBaseComponent extends WizardJobComponent implements OnInit, O
     this.baseMove.activationTimeout = this.valueActTimeout;
     // this.baseMove.goalPose = this.goalPose;
     // console.log(this.baseMove);
+    // console.log
     this.wizardStepperService.updateWorkflowItem(this.baseMove);
     if (this.counter < this.workflow.getJobsLength() - 1) {
       this.wizardStepperService.increaseCount();

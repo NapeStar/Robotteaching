@@ -49,6 +49,7 @@ export class WizardArmCartesianComponent extends WizardJobComponent implements O
     this.armCartesian.activationTimeout = this.valueActTimeout;
     // this.baseMove.goalPose = this.goalPose;
     // console.log(this.baseMove);
+    // asdfas
     this.wizardStepperService.updateWorkflowItem(this.armCartesian);
     if (this.counter < this.workflow.getJobsLength() - 1) {
       this.wizardStepperService.increaseCount();
