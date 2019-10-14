@@ -5,7 +5,7 @@ export class ArmCartesian extends Base {
 
   constructor() {
     super('ArmCartesian');
-    this._goalPose = [0, 0, 0, 0, 0, 0, 0];
+    // this._goalPose = [0, 0, 0, 0, 0, 0, 0];
   }
 
   set goalPose(value: number[]) {

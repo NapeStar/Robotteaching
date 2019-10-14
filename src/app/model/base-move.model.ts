@@ -5,7 +5,8 @@ export class BaseMove extends Base {
 
   constructor() {
     super('BaseMove');
-    this._goalPose = [0, 0, 0, 0, 0, 0, 0];
+    // this._goalPose = [0, 0, 0, 0, 0, 0, 0];
+    console.log(this._goalPose);
   }
 
   set goalPose(value: number[]) {
