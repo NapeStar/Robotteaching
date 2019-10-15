@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Workflow} from '../model/workflow.model';
 import {WizardStepperService} from '../wizard-stepper/wizard-stepper.service';
 import {Observable, Subscription} from 'rxjs';
-import { Subject } from 'rxjs';
+import {Subject} from 'rxjs';
 import {WorkflowListElement} from '../model/workflow-list-element.model';
 import {map} from 'rxjs/operators';
 import {Move} from '../jobs/move.data';
@@ -18,6 +18,7 @@ export class HttpRequestService {
   private workflowListSub = new Subject<WorkflowListElement[]>();
   workflow: Workflow;
   private workflowSub: Subscription;
+
   // private workflowSub = new Subject<Workflow>();
 
   constructor(private http: HttpClient,
@@ -28,6 +29,7 @@ export class HttpRequestService {
       });
     this.workflow = this.wizardStepperService.getWorkflow();
   }
+
   saveWorkflow(workflow: Workflow) {
     this.http.post('http://localhost:3000/saveWorkflow', {jsondata: workflow}).subscribe(
       (responseData) => {
@@ -36,6 +38,7 @@ export class HttpRequestService {
         this.wizardStepperService.updateWorkflow(this.workflow);
       });
   }
+
   createWorkflow(workflow: Workflow) {
     this.http.post('http://localhost:3000/createWorkflow', {jsondata: workflow}).subscribe(
       (responseData) => {
@@ -44,21 +47,24 @@ export class HttpRequestService {
         this.wizardStepperService.updateWorkflow(this.workflow);
       });
   }
+
   runWorkflow() {
     this.http.post('http://localhost:3000/playWorkflow', {wf_id: this.workflow.id}).subscribe(
       (responseData) => {
         console.log(responseData);
       });
   }
+
   updateWorkflow(workflow: Workflow) {
     console.log(this.workflow);
-    this.http.post('http://localhost:3000/createWorkflow/updateWorkflow', {jsondata: workflow}).subscribe(
+    this.http.post('http://localhost:3000/updateWorkflow', {jsondata: workflow}).subscribe(
       (responseData) => {
         console.log(responseData);
         // this.workflow.id = responseData + '';
         // this.wizardStepperService.updateWorkflow(this.workflow);
       });
   }
+
   getAllWorkflows() {
     this.http.post<WorkflowListElement[]>('http://localhost:3000/readWorkflow/readAll', null).subscribe(
       (responseData) => {
@@ -68,18 +74,22 @@ export class HttpRequestService {
         console.log(this.workflowList);
       });
   }
+
   getWorkflowListUpdateListener() {
     return this.workflowListSub.asObservable();
   }
+
   deleteWorkflow(id: number) {
-    return this.http.post('http://localhost:3000/createWorkflow/delteWorkflow', {wf_id: id});
+    return this.http.post('http://localhost:3000/deleteWorkflow/deleteOne', {wf_id: id});
   }
+
   // Observable<number[]>
 
   getArmPosition() {
     return this.http.post('http://localhost:3000/RobotDataService/getBasePosition', null);
-      // .pipe(map(data => {}));
+    // .pipe(map(data => {}));
   }
+
   getBasePosition() {
     return this.http.post('http://localhost:3000/RobotDataService/getBasePosition', null);
     // this.http.post<WorkflowListElement[]>('http://localhost:3000/RobotDataService/getBasePosition', null)
@@ -88,7 +98,9 @@ export class HttpRequestService {
     //     console.log(responseData);
     //   });
   }
+
   getWorkflow(id: number) {
     return this.http.post('http://localhost:3000/readWorkflow/readOne', {wf_id: id});
   }
 }
+

@@ -131,11 +131,11 @@ export class WorkflowTableComponent implements OnInit {
         this.link += 'arm_joints';
         break;
       }
-      case 'MoveToPositionWorkflow': {
+      case 'BaseMove': {
         this.link += 'base';
         break;
       }
-      case 'MoveArmCartesianWorkflow': {
+      case 'ArmCartesian': {
         this.link += 'arm_cartesian';
         break;
       }
