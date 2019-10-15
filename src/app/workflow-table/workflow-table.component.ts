@@ -69,6 +69,7 @@ export class WorkflowTableComponent implements OnInit {
           this.workflow.addJobsFormWorkflow(workflow);
         }
         console.log(this.workflow);
+
         this.wizardStepperService.updateWorkflow(this.workflow);
         this.wizardStepperService.updateCount( 0);
         this.wizardStepperService.updateStatus(this.status);

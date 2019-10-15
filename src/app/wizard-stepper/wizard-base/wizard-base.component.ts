@@ -5,6 +5,7 @@ import {WizardJobComponent} from '../wizard-job/wizard-job.component';
 import {BaseMove} from '../../model/base-move.model';
 import {WizardParentStepperService} from '../wizard-parent/wizard-parent-stepper.service';
 import {HttpRequestService} from '../../execution/http-request.service';
+import {GripperGrip} from '../../model/gripper-grip.model';
 
 @Component({
   selector: 'app-wizard-base',
@@ -15,7 +16,8 @@ export class WizardBaseComponent extends WizardJobComponent implements OnInit, O
 
   title = 'Base Movement';
 
-  baseMove = new BaseMove();
+  baseMove: BaseMove;
+  // baseMove = new BaseMove();
 
   // slider Activation timout
   disabledActTimeout = false;

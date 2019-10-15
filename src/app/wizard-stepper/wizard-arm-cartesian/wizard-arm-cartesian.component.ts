@@ -17,7 +17,8 @@ export class WizardArmCartesianComponent extends WizardJobComponent implements O
 
   title = 'Arm Cartesian';
 
-  armCartesian = new ArmCartesian();
+  armCartesian: ArmCartesian;
+  // armCartesian = new ArmCartesian();
 
   disabledActTimeout = false;
   invertActTimeout = false;

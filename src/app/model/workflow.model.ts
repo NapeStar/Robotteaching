@@ -37,11 +37,11 @@ export class Workflow {
             break;
           }
           case 'MoveToPositionWorkflow': {
-            this._jobsObjects.push(new BaseMove());
+            this._jobsObjects.push(new BaseMove(jobsName));
             break;
           }
           case 'MoveArmCartesianWorkflow': {
-            this._jobsObjects.push(new ArmCartesian());
+            this._jobsObjects.push(new ArmCartesian(jobsName));
             break;
           }
           case 'GripperReleaseWorkflow': {
@@ -49,7 +49,7 @@ export class Workflow {
             break;
           }
           default: {
-            this._jobsObjects.push(new BaseMove());
+            this._jobsObjects.push(new BaseMove(jobsName));
             break;
           }
         }
@@ -72,11 +72,11 @@ export class Workflow {
         }
         case 'BaseMove': {
 
-          this._jobsObjects.push(new BaseMove());
+          this._jobsObjects.push(new BaseMove(job));
           break;
         }
         case 'ArmCartesian': {
-          this._jobsObjects.push(new ArmCartesian());
+          this._jobsObjects.push(new ArmCartesian(job));
           break;
         }
         case 'GripperRelease': {
@@ -84,7 +84,7 @@ export class Workflow {
           break;
         }
         default: {
-          this._jobsObjects.push(new BaseMove());
+          this._jobsObjects.push(new BaseMove(job));
           break;
         }
     }
