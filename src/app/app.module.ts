@@ -8,7 +8,7 @@ import {
   MatCardModule,
   MatButtonModule,
   MatToolbarModule,
-  MatExpansionModule, MatDividerModule, MatIconModule, MatListModule, MatTableModule
+  MatExpansionModule, MatDividerModule, MatIconModule, MatListModule, MatTableModule, MatProgressSpinnerModule
 } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -33,6 +33,7 @@ import { WizardJobComponent } from './wizard-stepper/wizard-job/wizard-job.compo
 import { ExecutionRunComponent } from './execution/execution-run/execution-run.component';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import { WorkflowTableComponent } from './workflow-table/workflow-table.component';
+import {SocketDataService} from './sockets/websocket.service';
 
 
 @NgModule({
@@ -72,9 +73,10 @@ import { WorkflowTableComponent } from './workflow-table/workflow-table.componen
     MatIconModule,
     MatListModule,
     ScrollingModule,
-    MatTableModule
+    MatTableModule,
+    MatProgressSpinnerModule
   ],
-  providers: [WizardStepperService],
+  providers: [WizardStepperService, SocketDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

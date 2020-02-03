@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {WorkflowListElement} from '../model/workflow-list-element.model';
 import {Subscription} from 'rxjs';
@@ -25,24 +25,31 @@ export class WorkflowTableComponent implements OnInit {
 
   status: string;
 
+
   displayedColumns: string[] = ['id', 'name', 'created', 'action'];
   dataSource = this.workflowList;
 
   constructor(protected router: Router,
               private wizardStepperService: WizardStepperService,
-              private httpRequest: HttpRequestService) { }
+              private httpRequest: HttpRequestService,
+  ) {
+  }
 
-  ngOnInit() {this.httpRequest.getAllWorkflows();
-              this.httpRequest.getWorkflowListUpdateListener()
-                .subscribe((workflowList: WorkflowListElement[]) => {
-                  this.workflowList = workflowList;
-                  this.dataSource = this.workflowList;
-                });
-              // this.workflowSub = this.wizardStepperService.getWorkflowListener()
-              //   .subscribe(workflow => {
-              //     this.workflow = workflow;
-              //   });
-              // this.workflow = this.wizardStepperService.getWorkflow();
+  ngOnInit() {
+    this.httpRequest.getAllWorkflows();
+    this.httpRequest.getWorkflowListUpdateListener()
+      .subscribe((workflowList: WorkflowListElement[]) => {
+        this.workflowList = workflowList;
+        this.dataSource = this.workflowList;
+      });
+    // this.workflowSub = this.wizardStepperService.getWorkflowListener()
+    //   .subscribe(workflow => {
+    //     this.workflow = workflow;
+    //   });
+    // this.workflow = this.wizardStepperService.getWorkflow();
+    // this.SocketDataService.connect();
+
+
   }
 
   addNew(): void {
@@ -51,6 +58,7 @@ export class WorkflowTableComponent implements OnInit {
     console.log(this.wizardStepperService.getStatus());
     this.router.navigate(['jobs']);
   }
+
   onUpdateClick(id: number): void {
 
     // console.log(id);
@@ -58,39 +66,6 @@ export class WorkflowTableComponent implements OnInit {
     //   console.log(data);
     // });
     this.status = 'update';
-    this.httpRequest.getWorkflow(id).subscribe((data: any) => {
-        this.workflow = new Workflow(data._name);
-        this.workflow.id = data._id;
-        this.workflow.created_at = data._created_at;
-
-        for (const workflow of data._jobsObjects) {
-          console.log(workflow._name);
-          console.log(workflow);
-          this.workflow.addJobsFormWorkflow(workflow);
-        }
-        console.log(this.workflow);
-
-        this.wizardStepperService.updateWorkflow(this.workflow);
-        this.wizardStepperService.updateCount( 0);
-        this.wizardStepperService.updateStatus(this.status);
-        console.log(data);
-        console.log(this.wizardStepperService.getCounter());
-        console.log(this.wizardStepperService.getStatus());
-        this.selectNextJob(this.workflow.getJobName(0));
-        this.router.navigate([this.link]);
-      });
-  }
-  onDeleteClick(id: number): void {
-    this.httpRequest.deleteWorkflow(id).subscribe((data: any) => {
-      console.log(data);
-      setTimeout (() => {
-        this.httpRequest.getAllWorkflows();
-      }, 500);
-    });
-  }
-  onPlayClick(id: number): void {
-
-    this.status = 'play';
     this.httpRequest.getWorkflow(id).subscribe((data: any) => {
       this.workflow = new Workflow(data._name);
       this.workflow.id = data._id;
@@ -102,8 +77,44 @@ export class WorkflowTableComponent implements OnInit {
         this.workflow.addJobsFormWorkflow(workflow);
       }
       console.log(this.workflow);
+
       this.wizardStepperService.updateWorkflow(this.workflow);
-      this.wizardStepperService.updateCount( 0);
+      this.wizardStepperService.updateCount(0);
+      this.wizardStepperService.updateStatus(this.status);
+      console.log(data);
+      console.log(this.wizardStepperService.getCounter());
+      console.log(this.wizardStepperService.getStatus());
+      this.selectNextJob(this.workflow.getJobName(0));
+      this.router.navigate([this.link]);
+    });
+  }
+
+  onDeleteClick(id: number): void {
+    this.httpRequest.deleteWorkflow(id).subscribe((data: any) => {
+      console.log(data);
+      setTimeout(() => {
+        this.httpRequest.getAllWorkflows();
+      }, 500);
+    });
+  }
+
+  onPlayClick(id: number): void {
+
+    this.status = 'play';
+    this.httpRequest.getWorkflow(id).subscribe((data: any) => {
+      this.workflow = new Workflow(data._name);
+      this.workflow.id = data._id;
+      this.workflow.created_at = data._created_at;
+
+
+      for (const workflow of data._jobsObjects) {
+        console.log(workflow._name);
+        console.log(workflow);
+        this.workflow.addJobsFormWorkflow(workflow);
+      }
+      console.log(this.workflow);
+      this.wizardStepperService.updateWorkflow(this.workflow);
+      this.wizardStepperService.updateCount(0);
       this.wizardStepperService.updateStatus(this.status);
       console.log(data);
       console.log(this.wizardStepperService.getCounter());
