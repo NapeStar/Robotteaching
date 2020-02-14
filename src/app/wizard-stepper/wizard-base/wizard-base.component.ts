@@ -46,7 +46,6 @@ export class WizardBaseComponent extends WizardJobComponent implements OnInit, O
     this.valueActTimeout = this.baseMove.activationTimeout;
     this.goalPose = this.baseMove.goalPose;
   }
-
   onNextClick(): void {
     this.baseMove.activationTimeout = this.valueActTimeout;
     // this.baseMove.goalPose = this.goalPose;

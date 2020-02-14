@@ -12,6 +12,7 @@ import {Output, EventEmitter} from '@angular/core';
 import {WizardParentStepperService} from '../../wizard-stepper/wizard-parent/wizard-parent-stepper.service';
 import {createElementCssSelector} from '@angular/compiler';
 import {SocketDataService} from '../../sockets/websocket.service';
+import {NgxSpinnerService} from 'ngx-spinner';
 
 
 @Component({
@@ -23,8 +24,10 @@ export class ExecutionRunComponent extends WizardJobComponent implements OnInit,
 
   isDisabledRun = true;
   isAlreadySave = false;
-  isLoading = true;
+  isLoading = false;
   workflowProgress = 0;
+  spinnerText: string;
+  displaySpinner = false;
 
   message: string;
   messages: string[] = [];
@@ -37,10 +40,12 @@ export class ExecutionRunComponent extends WizardJobComponent implements OnInit,
               private http: HttpClient,
               private httpRequest: HttpRequestService,
               protected eventEmitterService: WizardParentStepperService,
-              private SocketDataService: SocketDataService
+              private SocketDataService: SocketDataService,
+              private spinner: NgxSpinnerService
   ) {
     super(router, wizardStepperService, eventEmitterService);
   }
+
 
   ngOnInit() {
     super.ngOnInit();
@@ -65,19 +70,31 @@ export class ExecutionRunComponent extends WizardJobComponent implements OnInit,
             console.log("HAPPPP");
             this.messages.push(message);
           });
-
-
      */
   }
 
 
+  showSpinner() {
+    this.spinner.show();
+  }
+  hideSpinner(){
+    this.spinner.hide();
+  }
+
   setWorkflowProgress(msg) {
 
     this.workflowProgress = parseInt(msg, 10);
+    this.spinnerText = 'Executing Workflow! Finished: ' + this.workflowProgress +' %';
+    if (this.workflowProgress === 100) {
+      this.hideSpinner();
+      this.workflowProgress = 0;
+    }
   }
 
   runOnClick() {
 
+    this.showSpinner();
+    this.spinnerText = 'Executing Workflow! Finished: 0%';
     this.SocketDataService.sendMessage(this.workflow.name);
     this.httpRequest.updateWorkflow(this.workflow);
     setTimeout(() => {

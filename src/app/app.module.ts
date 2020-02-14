@@ -34,6 +34,7 @@ import { ExecutionRunComponent } from './execution/execution-run/execution-run.c
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import { WorkflowTableComponent } from './workflow-table/workflow-table.component';
 import {SocketDataService} from './sockets/websocket.service';
+import {NgxSpinnerModule} from 'ngx-spinner';
 
 
 @NgModule({
@@ -74,7 +75,8 @@ import {SocketDataService} from './sockets/websocket.service';
     MatListModule,
     ScrollingModule,
     MatTableModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    NgxSpinnerModule
   ],
   providers: [WizardStepperService, SocketDataService],
   bootstrap: [AppComponent]

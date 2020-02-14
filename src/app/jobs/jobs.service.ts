@@ -42,7 +42,7 @@ export class JobsService {
       (responseData) => {
         this._response = responseData.workflows;
         this._responseListener.next([...this._response]);
-        // console.log(responseData);
+        console.log(responseData);
         // console.log(this._response);
       });
   }

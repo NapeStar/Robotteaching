@@ -65,17 +65,13 @@
   </mat-card-actions>
 </mat-card>
 
-<mat-card *ngIf="isLoading"
-          style="display: flex; justify-content: center; align-items: center">
-  <mat-progress-spinner
-    color="primary"
-    mode="indeterminate">
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+>
+  <p style="font-size: 20px; color: white"> {{spinnerText}}</p>
+</ngx-spinner>
 
-  </mat-progress-spinner>
-  <p> {{workflowProgress}}</p>
-
-  <div *ngFor="let message of messages">
-    {{message}}
-  </div>
-</mat-card>
 

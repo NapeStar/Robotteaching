@@ -70,12 +70,11 @@ export class Workflow {
           this._jobsObjects.push(new ArmJoint());
           break;
         }
-        case 'BaseMove': {
-
+        case 'MoveToPositionWorkflow': {
           this._jobsObjects.push(new BaseMove(job));
           break;
         }
-        case 'ArmCartesian': {
+        case 'MoveArmCartesianWorkflow': {
           this._jobsObjects.push(new ArmCartesian(job));
           break;
         }
