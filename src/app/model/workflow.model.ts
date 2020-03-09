@@ -74,7 +74,7 @@ export class Workflow {
           this._jobsObjects.push(new BaseMove(job));
           break;
         }
-        case 'MoveArmCartesianWorkflow': {
+        case 'ArmCartesian': {
           this._jobsObjects.push(new ArmCartesian(job));
           break;
         }
