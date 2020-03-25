@@ -3,11 +3,19 @@ import {Observable, Subject} from 'rxjs';
 import {Workflow} from '../model/workflow.model';
 import {Base} from '../model/base.model';
 
+/**
+ * this service keeps
+ * 1. workflow (list of jobs with all parameters)
+ * 2. counter (index of current job in workflwo displayed)
+ * 3. jobs (list of job names in workflow)
+ *
+ * synchronized
+ */
 @Injectable({
   providedIn: 'root'
 })
-export class WizardStepperService {
 
+export class WizardStepperService {
   /**
    * index of current displayed job
    */
@@ -78,7 +86,10 @@ export class WizardStepperService {
     this.workflowListener.next(this.workflow);
     console.log(this.workflow);
   }
-
+  /**
+   * Setter for local and observed jobs
+   *  * @param {Base} item
+   */
   updateWorkflowItem(item: Base) {
     this.workflow.updateJobs(item, this.counter);
     this.workflowListener.next(this.workflow);

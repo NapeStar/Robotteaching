@@ -20,7 +20,10 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
     return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
   }
 }
-
+/**
+ * This component provides the view for drag&drop the choosen methods (jobs).
+ * The order of the single jobs (methods) can be defined and a name for the workflow has to be entered.
+ */
 @Component({
   selector: 'app-available-jobs',
   templateUrl: './available-jobs.component.html',
@@ -58,26 +61,47 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
 
   private response: string[];
   private responseSub = Subscription;
-
+  /**
+   * locally stored workflow
+   */
   workflow: Workflow;
+  /**
+   * Subscription for observed workflowSub -> synchronized and shared workflow
+   */
   private workflowSub: Subscription;
 
   jobsUpdated: string[] = [];
   private jobsSub: Subscription;
   /**
-   * string used later for routing/redirecting
+   * string used for routing/redirecting
    */
   link = 'wizard/';
   /**
-   * used to store number of jobs in workflow list
+   * locally stored counter
+   *
+   * index for navigating through wizard
    */
   counter: number;
+  /**
+   * Subscription for counterSub -> synchronized and shared counter
+   */
   counterSub: Subscription;
 
+  /**
+   * constructor
+   * @param {JobsService} jobService
+   * @param {Router} router For redirecting
+   * @param {WizardStepperService} wizardStepperService For Sharing Workflow Information
+   */
   constructor(private jobService: JobsService,
               private router: Router,
               private wizardStepperService: WizardStepperService) { }
-
+  /**
+   * ngOnInit is a lifecycle hook
+   * - executed after constructor
+   *
+   * declaration of all necessary variables for this component
+   */
   ngOnInit() {
     this.jobService.getJobsFromServer();
     // @ts-ignore
@@ -114,11 +138,9 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
     console.log('OnInit wurde ausgeführt');
   }
   /**
-   * ngOnDestroy is a lifecycle hook
+   * ngOnDestroy is a lifecycle hook - is called when a directive, pipe, or service is destroyed
    *
-   * is called when a directive, pipe, or service is destroyed
-   *
-   * Use for any custom cleanup that needs to occure when the instance is destroyed
+   * resets variables and unsubscribes Subscriptions
    */
   ngOnDestroy() {
     this.selectedJobs = [];
@@ -152,14 +174,12 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
       alert('no jobs selected');
     }
   }
-
   /**
    * refreshes available Jobs from backend
    */
   onClick() {
     this.getAvailableJobs();
   }
-
   /**
    * resets selected jobs
    */
@@ -168,7 +188,6 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
     this.wizardStepperService.updateJob(this.selectedJobs);
     console.log(this.jobsUpdated);
   }
-
   /**
    * stores selected list of jobs in wizardStepperService
    */
@@ -185,7 +204,7 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
   }
   /**
    * stores 1st job's routing-link under link
-   * @param {string} name Name of 1st job in selected workflow
+   * @param {string} job Name of 1st job in selected workflow
    */
   selectNextJob(job: string) {
     this.link = 'wizard/';

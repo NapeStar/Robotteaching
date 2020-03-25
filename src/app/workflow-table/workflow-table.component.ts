@@ -18,16 +18,29 @@ export class WorkflowTableComponent implements OnInit {
   workflowList: WorkflowListElement[] = [];
 
   private workflowListSub: Subscription;
-
+  /**
+   * string used for routing/redirecting
+   */
   link: string;
-
+  /**
+   * locally stored workflow
+   */
   workflow: Workflow;
-
+  /**
+   * locally stored status e.g. 'create'
+   *
+   * important to navigate through wizard via back and forward buttons
+   */
   status: string;
 
   displayedColumns: string[] = ['id', 'name', 'created', 'action'];
   dataSource = this.workflowList;
-
+  /**
+   * constructor
+   * @param {Router} router For redirecting
+   * @param {WizardStepperService} wizardStepperService For Sharing Workflow Information
+   * @param {HttpRequestService} httpRequest For communicating with backend
+   */
   constructor(protected router: Router,
               private wizardStepperService: WizardStepperService,
               private httpRequest: HttpRequestService,

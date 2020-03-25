@@ -4,6 +4,10 @@ import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
 import { MatStepper } from '@angular/material';
 import {WizardParentStepperService} from './wizard-parent-stepper.service';
 
+/**
+ * This component is the ParentView in the "Workflow Configurator".
+ * The view of the component contains the "wizard-stepper" {@link https://material.angular.io/components/stepper/overview}
+ */
 @Component({
   selector: 'app-wizard-parent',
   templateUrl: './wizard-parent.component.html',

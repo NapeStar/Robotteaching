@@ -7,26 +7,65 @@ import {Workflow} from '../../model/workflow.model';
 import { Output, EventEmitter } from '@angular/core';
 import {WizardParentStepperService} from '../wizard-parent/wizard-parent-stepper.service';
 
+/**
+ * This component is the Parent Component of all "Wizard" Componets e.g. WizardGripperGripComponent. It contains
+ * all basic functionalities, which may be overrided by the Child Components
+ */
 @Component({
   selector: 'app-wizard-job',
   templateUrl: './wizard-job.component.html',
   styleUrls: ['./wizard-job.component.css']
 })
 export class WizardJobComponent implements OnInit, OnDestroy {
+  /**
+   * string used for routing/redirecting
+   */
   link = 'wizard/';
-
+  /**
+   * locally stored workflow
+   */
   workflow: Workflow;
+  /**
+   * Subscription for observed workflowSub -> synchronized and shared workflow
+   */
   private workflowSub: Subscription;
+  /**
+   * locally stored counter
+   *
+   * index for navigating through wizard
+   */
   counter: number;
+  /**
+   * Subscription for counterSub -> synchronized and shared counter
+   */
   private counterSub: Subscription;
+
+  /**
+   * locally stored status e.g. 'create'
+   *
+   * important to navigate through wizard via back and forward buttons
+   */
   status: string;
+  /**
+   * Subscription for stusSub -> synchronized and shared status
+   */
   private statusSub: Subscription;
 
-
+  /**
+   * constructor
+   * @param {Router} router For redirecting
+   * @param {WizardStepperService} wizardStepperService For Sharing Workflow Information
+   * @param {WizardParentStepperService} eventEmitterService For Sharing Angular Material Stepper View
+   */
   constructor(protected router: Router,
               protected wizardStepperService: WizardStepperService,
               protected eventEmitterService: WizardParentStepperService  ) { }
-
+  /**
+   * ngOnInit is a lifecycle hook
+   * - executed after constructor
+   *
+   * declaration of all necessary variables for this component
+   */
   ngOnInit() {
     this.counterSub = this.wizardStepperService.getCounterListener()
       .subscribe(counter => {
@@ -48,7 +87,10 @@ export class WizardJobComponent implements OnInit, OnDestroy {
     console.log(this.counter);
     console.log(this.workflow);
   }
-
+  /**
+   * updates all necessary variables and Observables
+   * before redirects to next wizard job component
+   */
   onNextClick(): void {
     if (this.counter < this.workflow.getJobsLength() - 1) {
       this.wizardStepperService.increaseCount();
@@ -61,7 +103,10 @@ export class WizardJobComponent implements OnInit, OnDestroy {
       this.eventEmitterService.onStepperNextClick();
     }
   }
-
+  /**
+   * updates all necessary variables and Oberservables
+   * before redirects to "previous" wizard job component
+   */
   onPreviousClick(): void {
     this.wizardStepperService.decreaseCount();
     if (this.counter >= 0) {
@@ -78,13 +123,21 @@ export class WizardJobComponent implements OnInit, OnDestroy {
     }
   }
 
+  /**
+   * ngOnDestroy is a lifecycle hook - is called when a directive, pipe, or service is destroyed
+   *
+   * unsubscribes Subscriptions
+   */
   ngOnDestroy() {
     this.counterSub.unsubscribe();
     this.workflowSub.unsubscribe();
     this.statusSub.unsubscribe();
     console.log('Destroy Job ausgeführt');
   }
-
+  /**
+   * stores 1st job's routing-link under link
+   * @param {string} job Name of 1st job in selected workflow
+   */
   selectNextJob(job: string) {
     this.link = 'wizard/';
     switch (job) {

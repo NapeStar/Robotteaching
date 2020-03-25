@@ -1,27 +1,27 @@
-# RobotTeaching
+# Robot Teaching 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.1.
+## Workflows Table - Home
 
-## Development server
+![WFTable](screenshots/workflows_overview.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Jobs Selection – Drag and Drop
 
-## Code scaffolding
+![JobsSelection](screenshots/jobs_selection.png) 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Configurator - Gripper Grip 
 
-## Build
+![JobsSelection](screenshots/gripper_grip.png) 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Configurator - Arm Cartesian 
 
-## Running unit tests
+![JobsSelection](screenshots/arm_cartesian.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Confirmed Workflow - Ready for Executing   
 
-## Running end-to-end tests
+![JobsSelection](screenshots/execution_overview.png) 
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Executing Workflow - Progress Display
 
-## Further help
+![JobsSelection](screenshots/execution_50.png) 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+

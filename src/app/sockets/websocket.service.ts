@@ -1,6 +1,8 @@
 import * as io from 'socket.io-client';
 import {Observable, Observer} from 'rxjs';
-
+/**
+ * This service provides a websocket needed for viewing progress of backend
+ */
 export class SocketDataService {
   private url = 'http://localhost:3030';
   private socket;
