@@ -28,15 +28,25 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class AvailableJobsComponent implements OnInit, OnDestroy {
 
+  /**
+   * used in view to validate/check if name of workflow is entered
+   */
   nameFormControl = new FormControl('', [
     Validators.required,
   ]);
-
+  /**
+   * used in view to handel error if name of workflow is not entered
+   */
   matcher = new MyErrorStateMatcher();
 
+  /**
+   * in this variable name of workflow is stored
+   */
   name = '';
 
-  // mat-button next
+  /**
+   * used in view to enable and disable Next button
+   */
   isDisabledNext = true;
 
   httpResult: any;
@@ -54,8 +64,13 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
 
   jobsUpdated: string[] = [];
   private jobsSub: Subscription;
+  /**
+   * string used later for routing/redirecting
+   */
   link = 'wizard/';
-
+  /**
+   * used to store number of jobs in workflow list
+   */
   counter: number;
   counterSub: Subscription;
 
@@ -98,6 +113,13 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
     console.log(this.counter);
     console.log('OnInit wurde ausgeführt');
   }
+  /**
+   * ngOnDestroy is a lifecycle hook
+   *
+   * is called when a directive, pipe, or service is destroyed
+   *
+   * Use for any custom cleanup that needs to occure when the instance is destroyed
+   */
   ngOnDestroy() {
     this.selectedJobs = [];
     this.copiedJobs = [...this.selectedJobs];
@@ -106,13 +128,22 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
     this.workflowSub.unsubscribe();
     console.log('OnDestroy wurde ausgeführt');
   }
+  /**
+   * stores selected jobe name for Drag&Drop
+   * @param {any} job Jobname of of selected job
+   */
   onSelect(job: any): void {
     this.selectedJob = job;
   }
+  /**
+   * requests available Jobs from backend
+   */
   getAvailableJobs(): void {
     this.jobService.getJobsFromServer();
   }
-
+  /**
+   * choose 1st job in workflow list and redirects to this job (job configurator)
+   */
   onNextClick(): void {
     if (this.jobsUpdated.length > 0) {
       this.selectNextJob(this.workflow.getJobName(0));
@@ -122,16 +153,25 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
     }
   }
 
+  /**
+   * refreshes available Jobs from backend
+   */
   onClick() {
     this.getAvailableJobs();
   }
 
+  /**
+   * resets selected jobs
+   */
   onResetClick() {
     this.selectedJobs = [];
     this.wizardStepperService.updateJob(this.selectedJobs);
     console.log(this.jobsUpdated);
   }
 
+  /**
+   * stores selected list of jobs in wizardStepperService
+   */
   onSaveClick() {
     if (this.jobsUpdated.length > 0) {
       this.workflow = new Workflow(this.name);
@@ -143,7 +183,10 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
       alert('no jobs selected');
     }
   }
-
+  /**
+   * stores 1st job's routing-link under link
+   * @param {string} name Name of 1st job in selected workflow
+   */
   selectNextJob(job: string) {
     this.link = 'wizard/';
     switch (job) {
@@ -181,7 +224,10 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
       }
     console.log(this.link);
   }
-
+  /**
+   * Drag&Drop from Angular Material {@link https://material.angular.io/cdk/drag-drop/overview}
+   * @param {CdkDragDrop} event
+   */
   drop(event: CdkDragDrop<Move[]>) {
     if (event.previousContainer.id === event.container.id) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);

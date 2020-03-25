@@ -14,7 +14,7 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   /**
-   * The default "constructor"
+   * default constructor
    */
   constructor() { }
 
