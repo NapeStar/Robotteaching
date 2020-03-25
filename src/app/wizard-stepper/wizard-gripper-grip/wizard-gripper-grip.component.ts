@@ -16,7 +16,6 @@ export class WizardGripperGripComponent extends WizardJobComponent implements On
   title = 'Gripper Grip';
 
   gripperGrip: GripperGrip;
-  // gripperGrip = new GripperGrip();
 
   disabledActTimeout = false;
   invertActTimeout = false;

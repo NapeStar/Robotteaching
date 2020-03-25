@@ -43,7 +43,6 @@ export class WizardJobComponent implements OnInit, OnDestroy {
       });
     this.status = this.wizardStepperService.getStatus();
     this.workflow = this.wizardStepperService.getWorkflow();
-    // this.jobsUpdated = this.wizardStepperService.getJobs();
     this.counter = this.wizardStepperService.getCounter();
     console.log(this.status);
     console.log(this.counter);
@@ -54,7 +53,6 @@ export class WizardJobComponent implements OnInit, OnDestroy {
     if (this.counter < this.workflow.getJobsLength() - 1) {
       this.wizardStepperService.increaseCount();
       this.selectNextJob(this.workflow.getJobName(this.counter));
-      // this.selectNextJob(this.jobsUpdated[this.counter]);
       this.router.navigate([this.link]);
     } else if (this.counter === this.workflow.getJobsLength()) {
       this.wizardStepperService.updateCount(this.counter = 0);
@@ -81,7 +79,6 @@ export class WizardJobComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    // this.jobsSub.unsubscribe();
     this.counterSub.unsubscribe();
     this.workflowSub.unsubscribe();
     this.statusSub.unsubscribe();

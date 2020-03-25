@@ -25,20 +25,16 @@ export class WizardParentComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     console.log(this.eventEmitterService.subsNextVar);
-    // if (this.eventEmitterService.subsNextVar === undefined) {
       this.eventEmitterService.subsNextVar = this.eventEmitterService.invokeNextFunction
         .subscribe((name: string) => {
         this.goForward(this.stepper);
         console.log(this.stepper);
       });
-    // }
-    // if (this.eventEmitterService.subsBackVar === undefined) {
       this.eventEmitterService.subsBackVar = this.eventEmitterService.invokeBackFunction
         .subscribe((name: string) => {
           this.goBack(this.stepper);
           console.log(this.stepper);
         });
-    // }
     console.log(this.eventEmitterService.subsNextVar);
     console.log('OnInit wurde ausgführt');
   }
@@ -49,12 +45,6 @@ export class WizardParentComponent implements OnInit, OnDestroy {
     console.log('OnDestroy wurde ausgeführt');
   }
   goBack(stepper: MatStepper) {
-      // stepper.selected.completed = false;
-      // const index = stepper.selectedIndex;
-      // if (index > 0) {
-      //   stepper.selectedIndex = index - 1;
-      //   stepper.selected.completed = false;
-      // }
     stepper.reset();
     console.log('GoBAck wurde ausgefürht');
   }

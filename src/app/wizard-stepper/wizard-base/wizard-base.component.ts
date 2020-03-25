@@ -17,7 +17,6 @@ export class WizardBaseComponent extends WizardJobComponent implements OnInit, O
   title = 'Base Movement';
 
   baseMove: BaseMove;
-  // baseMove = new BaseMove();
 
   // slider Activation timout
   disabledActTimeout = false;
@@ -48,14 +47,10 @@ export class WizardBaseComponent extends WizardJobComponent implements OnInit, O
   }
   onNextClick(): void {
     this.baseMove.activationTimeout = this.valueActTimeout;
-    // this.baseMove.goalPose = this.goalPose;
-    // console.log(this.baseMove);
-    // console.log
     this.wizardStepperService.updateWorkflowItem(this.baseMove);
     if (this.counter < this.workflow.getJobsLength() - 1) {
       this.wizardStepperService.increaseCount();
       this.selectNextJob(this.workflow.getJobName(this.counter));
-      // this.selectNextJob(this.jobsUpdated[this.counter]);
       this.router.navigate([this.link]);
     } else {
       this.wizardStepperService.updateCount(this.counter = 0);

@@ -6,28 +6,14 @@
   </span>
 </mat-toolbar>
 
-<!--<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">-->
-<!--  {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}-->
-<!--</button>-->
+<!-- Steps display -->
 <mat-horizontal-stepper linear="true" #stepper>
   <mat-step label="Teach Robot" completed="false">
-<!--    <div>-->
-<!--      <button mat-button matStepperNext>Next</button>-->
-<!--    </div>-->
   </mat-step>
   <mat-step label="Confirm Workflow" completed="false">
-<!--    <div>-->
-<!--      <button mat-button matStepperPrevious>Back</button>-->
-<!--      <button mat-button matStepperNext>Next</button>-->
-<!--    </div>-->
   </mat-step>
   <mat-step label="Run Workflow" completed="false">
-<!--    <div>-->
-<!--      <button mat-button matStepperPrevious>Back</button>-->
-<!--      <button mat-button matStepperNext>Next</button>-->
-<!--    </div>-->
   </mat-step>
-
   <!-- Icon overrides. -->
   <ng-template matStepperIcon="phone">
     <mat-icon>call_end</mat-icon>
@@ -36,11 +22,5 @@
     <mat-icon>forum</mat-icon>
   </ng-template>
 </mat-horizontal-stepper>
-
-<!--<div>-->
-<!--  <button (click)="goBack(stepper)" type="button">Back</button>-->
-<!--  <button (click)="goForward(stepper)" type="button">Next</button>-->
-<!--</div>-->
-
-
+<!-- Calls and displays Child Display. e.g. Wizard-gripper-grip -->
 <router-outlet></router-outlet>

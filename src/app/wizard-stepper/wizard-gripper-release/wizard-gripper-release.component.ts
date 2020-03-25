@@ -15,7 +15,6 @@ export class WizardGripperReleaseComponent extends WizardJobComponent implements
   title = 'Gripper Release';
 
   gripperRelease: GripperRelease;
-  // gripperRelease = new GripperRelease();
 
   disabledActTimeout = false;
   invertActTimeout = false;

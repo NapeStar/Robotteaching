@@ -20,7 +20,6 @@ export class Workflow {
       this._jobsObjects = [];
     }
 
-
     addJobs(jobsName: string[]) {
       for (const jobName of jobsName) {
         switch (jobName) {
@@ -55,6 +54,7 @@ export class Workflow {
         }
       }
     }
+
   addJobsFormWorkflow(job: any) {
       switch (job._name) {
         case 'GripperGrip': {
@@ -106,7 +106,6 @@ export class Workflow {
     getJobsLength(): number {
       return this._jobsObjects.length;
     }
-
 
   get name(): string {
     return this._name;

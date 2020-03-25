@@ -25,8 +25,6 @@ export class SocketDataService {
     }
     */
 
-
-
   onNewMessage() {
     return new Observable((observer) => {
       this.socket.on('message', msg => {

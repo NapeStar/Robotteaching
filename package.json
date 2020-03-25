@@ -1,7 +1,7 @@
 {
   "name": "robot-teaching",
   "version": "0.0.0",
-  "proxy" : "http://localhost:3000/",
+  "proxy": "http://localhost:3000/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

@@ -19,8 +19,6 @@ export class HttpRequestService {
   workflow: Workflow;
   private workflowSub: Subscription;
 
-  // private workflowSub = new Subject<Workflow>();
-
   constructor(private http: HttpClient,
               private wizardStepperService: WizardStepperService) {
     this.workflowSub = this.wizardStepperService.getWorkflowListener()
@@ -60,8 +58,6 @@ export class HttpRequestService {
     this.http.post('http://localhost:3000/updateWorkflow', {jsondata: workflow}).subscribe(
       (responseData) => {
         console.log(responseData);
-        // this.workflow.id = responseData + '';
-        // this.wizardStepperService.updateWorkflow(this.workflow);
       });
   }
 
@@ -83,20 +79,12 @@ export class HttpRequestService {
     return this.http.post('http://localhost:3000/deleteWorkflow/deleteOne', {wf_id: id});
   }
 
-  // Observable<number[]>
-
   getArmPosition() {
     return this.http.post('http://localhost:3000/RobotDataService/getBasePosition', null);
-    // .pipe(map(data => {}));
   }
 
   getBasePosition() {
     return this.http.post('http://localhost:3000/RobotDataService/getBasePosition', null);
-    // this.http.post<WorkflowListElement[]>('http://localhost:3000/RobotDataService/getBasePosition', null)
-    //   .subscribe(
-    //   (responseData) => {
-    //     console.log(responseData);
-    //   });
   }
 
   getWorkflow(id: number) {

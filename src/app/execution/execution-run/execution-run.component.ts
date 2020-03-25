@@ -32,51 +32,32 @@ export class ExecutionRunComponent extends WizardJobComponent implements OnInit,
   message: string;
   messages: string[] = [];
   connection;
-  // status: string;
-  // private statusSub: Subscription;
 
   constructor(protected router: Router,
               protected wizardStepperService: WizardStepperService,
               private http: HttpClient,
               private httpRequest: HttpRequestService,
               protected eventEmitterService: WizardParentStepperService,
+              // tslint:disable-next-line:no-shadowed-variable
               private SocketDataService: SocketDataService,
               private spinner: NgxSpinnerService
   ) {
     super(router, wizardStepperService, eventEmitterService);
   }
 
-
   ngOnInit() {
     super.ngOnInit();
-    // this.statusSub = this.wizardStepperService.getStatusListener()
-    //     .subscribe(data => {
-    //       this.status = data;
-    //       console.log(this.status);
-    //     });
-    // this.status = this.wizardStepperService.getStatus();
-    // console.log(this.status);
 
     this.SocketDataService.onNewMessage().subscribe(msg => {
       console.log('Workflow Progress: ' + msg);
       this.setWorkflowProgress(msg);
     });
-
-
-    /*
-        this.SocketDataService
-          .getMessages()
-          .subscribe((message: string) => {
-            console.log("HAPPPP");
-            this.messages.push(message);
-          });
-     */
   }
-
 
   showSpinner() {
     this.spinner.show();
   }
+
   hideSpinner(){
     this.spinner.hide();
   }
@@ -103,11 +84,6 @@ export class ExecutionRunComponent extends WizardJobComponent implements OnInit,
       console.log('Next wurde ausgeführt');
       console.log('Hello from setTimeout');
     }, 5000);
-
-
-    // this.httpRequest.runWorkflow();
-    // this.eventEmitterService.onStepperNextClick();
-    // console.log('Next wurde ausgeführt');
   }
 
   saveCreateOnClick() {

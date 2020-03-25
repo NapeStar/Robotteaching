@@ -24,23 +24,12 @@
         (click)="onSelect(move)" cdkDrag>
 
       <span class="badge">{{i}}</span>{{move}}
-<!--      <span class="badge">-->
-<!--        <mat-icon>drag_indicator</mat-icon>-->
-<!--      </span>{{move}}-->
-
     </li>
 
   </ul>
 </mat-card-content>
 
-<!--<mat-card-actions>-->
-<!--&lt;!&ndash;  <button mat-raised-button color="primary" (click)="onClick()">refresh Workflows</button>&ndash;&gt;-->
-<!--  <button mat-icon-button color="primary" (click)="onClick()">-->
-<!--    <mat-icon class="mat-18">refresh</mat-icon>-->
-<!--  </button>-->
-<!--</mat-card-actions>-->
 </mat-card>
-
 <mat-card class = example-container>
   <mat-card-header>
     <mat-card-title>Selected Methods</mat-card-title>
@@ -52,9 +41,6 @@
         <input matInput placeholder="Name of Workflow" [formControl]="nameFormControl" [(ngModel)]="name"
                [errorStateMatcher]="matcher">
         <mat-hint>Enter Name</mat-hint>
-<!--        <mat-error *ngIf="nameFormControl.hasError('email') && !nameFormControl.hasError('required')">-->
-<!--          Please enter a valid name for the workflow-->
-<!--        </mat-error>-->
         <mat-error *ngIf="nameFormControl.hasError('required')">
           Name is <strong>required</strong>
         </mat-error>
@@ -74,12 +60,10 @@
       <li *ngFor="let move of selectedJobs let i = index"
           [class.selected]="move === selectedJob"
           (click)="onSelect(move)" cdkDrag>
-
         <span class="badge">{{i}}</span> {{move}}
-
       </li>
-
     </ul>
+
   </mat-card-content>
   <mat-card-actions>
     <div class="example-button-row">
@@ -93,13 +77,6 @@
       <button mat-icon-button color="primary" (click)="onNextClick()" [disabled]="isDisabledNext">
         <mat-icon class="mat-18">navigate_next</mat-icon>
       </button>
-<!--      <button mat-raised-button color="warn" (click)="onResetClick()">reset Workflow</button>-->
-<!--      <button mat-raised-button color="primary" (click)="onSaveClick()">save Workflow</button>-->
     </div>
   </mat-card-actions>
-
-<!--  <mat-card-actions>-->
-<!--    <button mat-raised-button color="primary" (click)="onNextClick()" [disabled]="isDisabledNext">next</button>-->
-<!--  </mat-card-actions>-->
-
 </mat-card>

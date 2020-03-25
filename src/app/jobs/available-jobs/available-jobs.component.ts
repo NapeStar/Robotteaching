@@ -30,7 +30,6 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
 
   nameFormControl = new FormControl('', [
     Validators.required,
-    // Validators.email,
   ]);
 
   matcher = new MyErrorStateMatcher();
@@ -65,7 +64,6 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
               private wizardStepperService: WizardStepperService) { }
 
   ngOnInit() {
-    // this.getAvailableJobs();
     this.jobService.getJobsFromServer();
     // @ts-ignore
     this.responseSub = this.jobService.responseListener
@@ -101,7 +99,6 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
     console.log('OnInit wurde ausgeführt');
   }
   ngOnDestroy() {
-    // this.responseSub.unsubscribe();
     this.selectedJobs = [];
     this.copiedJobs = [...this.selectedJobs];
     this.jobsSub.unsubscribe();
@@ -114,23 +111,15 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
   }
   getAvailableJobs(): void {
     this.jobService.getJobsFromServer();
-
-    // this.jobService.getWorkflows().subscribe(data => {
-    //   this.httpResult = data;
-    //   this.ml = new MoveList(this.httpResult);
-    //   console.log(this.httpResult);
-    // });
   }
 
   onNextClick(): void {
     if (this.jobsUpdated.length > 0) {
       this.selectNextJob(this.workflow.getJobName(0));
-      // this.selectNextJob(this.jobsUpdated[this.counter]);
       this.router.navigate([this.link]);
     } else {
       alert('no jobs selected');
     }
-    // console.log(this.counter);
   }
 
   onClick() {
@@ -144,7 +133,6 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
   }
 
   onSaveClick() {
-
     if (this.jobsUpdated.length > 0) {
       this.workflow = new Workflow(this.name);
       this.workflow.addJobs(this.jobsUpdated);
@@ -209,9 +197,4 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
     console.log(this.jobsUpdated.length);
     console.log(this.counter);
   }
-
-  /*addToList(event: CdkDragDrop<string[]>){
-    this.item3.push(this.item2[event.previousIndex]);
-    */
-
 }

@@ -16,15 +16,14 @@ import {Move} from '../jobs/move.data';
 export class WorkflowTableComponent implements OnInit {
 
   workflowList: WorkflowListElement[] = [];
+
   private workflowListSub: Subscription;
 
   link: string;
 
   workflow: Workflow;
-  // private workflowSub: Subscription;
 
   status: string;
-
 
   displayedColumns: string[] = ['id', 'name', 'created', 'action'];
   dataSource = this.workflowList;
@@ -42,15 +41,11 @@ export class WorkflowTableComponent implements OnInit {
         this.workflowList = workflowList;
         this.dataSource = this.workflowList;
       });
-    // this.workflowSub = this.wizardStepperService.getWorkflowListener()
-    //   .subscribe(workflow => {
-    //     this.workflow = workflow;
-    //   });
-    // this.workflow = this.wizardStepperService.getWorkflow();
-    // this.SocketDataService.connect();
-
-
   }
+
+  /**
+   * redirects to available-jobs component
+   */
 
   addNew(): void {
     this.status = 'create';
@@ -59,12 +54,13 @@ export class WorkflowTableComponent implements OnInit {
     this.router.navigate(['jobs']);
   }
 
+  /**
+   * requests workflow data for selected workflow from backend
+   * and stores the wf data in "workflow" and
+   * redirects to component of 1st job in workflow list
+   * @param {number} id ID of selected workflow
+   */
   onUpdateClick(id: number): void {
-
-    // console.log(id);
-    // this.httpRequest.getWorkflow(id).subscribe((data: any) => {
-    //   console.log(data);
-    // });
     this.status = 'update';
     this.httpRequest.getWorkflow(id).subscribe((data: any) => {
       this.workflow = new Workflow(data._name);
@@ -89,6 +85,12 @@ export class WorkflowTableComponent implements OnInit {
     });
   }
 
+  /**
+   * deletes workflow from workflow-table and
+   * sends the wf-id to be deleted to backend
+   * @param {number} id ID of selected workflow
+   */
+
   onDeleteClick(id: number): void {
     this.httpRequest.deleteWorkflow(id).subscribe((data: any) => {
       console.log(data);
@@ -98,6 +100,12 @@ export class WorkflowTableComponent implements OnInit {
     });
   }
 
+  /**
+   * requests workflow data for selected workflow from backend
+   * and stores the wf data in "workflow" and
+   * redirects to execution-run component
+   * @param {number} id ID of selected workflow
+   */
   onPlayClick(id: number): void {
 
     this.status = 'play';
@@ -124,6 +132,10 @@ export class WorkflowTableComponent implements OnInit {
     });
   }
 
+  /**
+   * stores 1st job's routing-link under link
+   * @param {string} name Name of 1st job in selected workflow
+   */
   selectNextJob(job: string) {
     this.link = 'wizard/';
     switch (job) {
