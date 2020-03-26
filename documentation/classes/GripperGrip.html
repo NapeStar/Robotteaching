@@ -63,6 +63,14 @@
             <code>src/app/model/gripper-grip.model.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>This class/model extends Base</p>
+<p>It contains all parameters and methods for GripperGrip</p>
+
+            </p>
 
             <p class="comment">
                 <h3>Extends</h3>
@@ -121,12 +129,15 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="3" class="link-to-prism">src/app/model/gripper-grip.model.ts:3</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/app/model/gripper-grip.model.ts:7</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>constructor calls constructor of Base</p>
+<p>if id and activationTimout is not passed, default values are used.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -300,8 +311,18 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Base} from &#x27;./base.model&#x27;;
-
+/**
+ * This class/model extends Base
+ *
+ * It contains all parameters and methods for GripperGrip
+ */
 export class GripperGrip extends Base {
+  /**
+   * constructor calls constructor of Base
+   *
+   * if id and activationTimout is not passed, default values are used.
+   * @param {any} data
+   */
   constructor(data: any) {
     super(&#x27;GripperGrip&#x27;);
     this.id &#x3D; data._id;

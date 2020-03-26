@@ -11,13 +11,9 @@ The changes are shown using code snipets and there is always a link to the depen
 
 ## Main Changes to be made to add new robot method
 
-- add new model NewMethodModel
+- create new model NewMethodModel
 - add new model in workflow model   
-- add new component NewMethodComponent
+- create new component NewMethodComponent
 - add new path to routing module NewMethodRoutingPath
-- adjust methods used for routing 
+- update methods used for routing 
 - services??? 
-
-## For the links 
-
-A todo is displayed using todo component [TodoComponent](../components/TodoComponent.html).

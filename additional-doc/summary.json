@@ -5,23 +5,15 @@
     },
     {
         "title": "Steps adding new method",
-        "file": "all_changes.md",
+        "file": "steps.md",
         "children": [
             {
-                "title": "Creation of a todo",
-                "file": "all_changes/creation.md"
+                "title": "1. Creation of new Model",
+                "file": "steps/createNewMethodModel.md"
             },
             {
-                "title": "Edition of a todo",
-                "file": "all_changes/edition.md"
-            },
-            {
-                "title": "Delete a todo",
-                "file": "all_changes/delete.md"
-            },
-            {
-                "title": "Update the status of a todo",
-                "file": "all_changes/status.md"
+                "title": "2. Add Model to Workflow Model ",
+                "file": "steps/addToWorkflow.md"
             }
         ]
     }

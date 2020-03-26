@@ -55,23 +55,17 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <li class="chapter inner">
                                         <a data-type="chapter-link" href="additional-documentation/steps-adding-new-method.html" data-context-id="additional">
                                             <div class="menu-toggler linked" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#additional-page-65084e5bc29ee30e5d9c49b4df269f45"' : 'data-target="#xs-additional-page-65084e5bc29ee30e5d9c49b4df269f45"' }>
+                                            'data-target="#additional-page-827ba1805f5fe1b02642abdd96b99557"' : 'data-target="#xs-additional-page-827ba1805f5fe1b02642abdd96b99557"' }>
                                                 <span class="link-name">Steps adding new method</span>
                                                 <span class="icon ion-ios-arrow-down"></span>
                                             </div>
                                         </a>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="additional-page-65084e5bc29ee30e5d9c49b4df269f45"' : 'id="xs-additional-page-65084e5bc29ee30e5d9c49b4df269f45"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="additional-page-827ba1805f5fe1b02642abdd96b99557"' : 'id="xs-additional-page-827ba1805f5fe1b02642abdd96b99557"' }>
                                             <li class="link for-chapter2">
-                                                <a href="additional-documentation/steps-adding-new-method/creation-of-a-todo.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">Creation of a todo</a>
+                                                <a href="additional-documentation/steps-adding-new-method/1.-creation-of-new-model.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">1. Creation of new Model</a>
                                             </li>
                                             <li class="link for-chapter2">
-                                                <a href="additional-documentation/steps-adding-new-method/edition-of-a-todo.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">Edition of a todo</a>
-                                            </li>
-                                            <li class="link for-chapter2">
-                                                <a href="additional-documentation/steps-adding-new-method/delete-a-todo.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">Delete a todo</a>
-                                            </li>
-                                            <li class="link for-chapter2">
-                                                <a href="additional-documentation/steps-adding-new-method/update-the-status-of-a-todo.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">Update the status of a todo</a>
+                                                <a href="additional-documentation/steps-adding-new-method/2.-add-model-to-workflow-model-.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">2. Add Model to Workflow Model </a>
                                             </li>
                                         </ul>
                                     </li>

@@ -5,9 +5,10 @@ import {BaseMove} from './base-move.model';
 import {ArmTrajectory} from './arm-trajectory.model';
 import {ArmJoint} from './arm-joint.model';
 import {ArmCartesian} from './arm-cartesian.model';
-// NewMethod has to be imported
+/**
+ * NewMethod must be imported
+ */
 import {NewMethod} from './new-method.model';
-
 /**
  * This class is a model for a workflow.
  * This class contains all properties, methods to handle a worklow internally.
@@ -51,6 +52,13 @@ export class Workflow {
     addJobs(jobsName: string[]) {
       for (const jobName of jobsName) {
         switch (jobName) {
+          /**
+           * Here you have to add a new case for NewMethod
+           */
+          case 'NewMethodWorkflow': {
+            this._jobsObjects.push(new NewMethod(jobsName));
+            break;
+          }
           case 'GripperGripWorkflow': {
             this._jobsObjects.push(new GripperGrip(jobsName));
             break;
@@ -75,13 +83,6 @@ export class Workflow {
             this._jobsObjects.push(new GripperRelease(jobsName));
             break;
           }
-          /**
-           * Here you have to add a new case for NewMethod
-           */
-          case 'NewMethodWorkflow': {
-            this._jobsObjects.push(new NewMethod(jobsName));
-            break;
-          }
           default: {
             this._jobsObjects.push(new BaseMove(jobsName));
             break;
@@ -97,6 +98,13 @@ export class Workflow {
    */
   addJobsFormWorkflow(job: any) {
       switch (job._name) {
+        /**
+         * Here you have to add a new case for NewMethod
+         */
+        case 'NewMethod': {
+          this._jobsObjects.push(new NewMethod(job));
+          break;
+        }
         case 'GripperGrip': {
           console.log(job);
           this._jobsObjects.push(new GripperGrip(job));
@@ -120,13 +128,6 @@ export class Workflow {
         }
         case 'GripperRelease': {
           this._jobsObjects.push(new GripperRelease(job));
-          break;
-        }
-        /**
-         * Here you have to add a new case for NewMethod
-         */
-        case 'NewMethod': {
-          this._jobsObjects.push(new NewMethod(job));
           break;
         }
         default: {

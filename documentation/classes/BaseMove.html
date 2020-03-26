@@ -63,6 +63,14 @@
             <code>src/app/model/base-move.model.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>This class/model extends Base</p>
+<p>It contains all parameters and methods for BaseMove</p>
+
+            </p>
 
             <p class="comment">
                 <h3>Extends</h3>
@@ -139,12 +147,15 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="4" class="link-to-prism">src/app/model/base-move.model.ts:4</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/model/base-move.model.ts:11</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>constructor calls constructor of Base</p>
+<p>if id and activationTimout is not passed, default values are used.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -203,10 +214,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="4" class="link-to-prism">src/app/model/base-move.model.ts:4</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/model/base-move.model.ts:11</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>to stores cartesian coordinates</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -361,9 +378,22 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/model/base-move.model.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/model/base-move.model.ts:38</a></div>
                                 </td>
                             </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Getter for _goalPose</p>
+</div>
+
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>number[]</code>
+
+                                </div>
+                        </td>
+                    </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -372,11 +402,13 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/model/base-move.model.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/model/base-move.model.ts:31</a></div>
                                 </td>
                             </tr>
                     <tr>
                         <td class="col-md-4">
+                                <div class="io-description"><p>Setter for _goalPose</p>
+</div>
 
                                 <div class="io-description">
                                         <b>Parameters :</b>
@@ -386,6 +418,7 @@
                                                     <td>Name</td>
                                                         <td>Type</td>
                                                     <td>Optional</td>
+                                                        <td>Description</td>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -400,6 +433,10 @@
                                                                 No
                                                         </td>
                                                         
+                                                            <td>
+                                                                    <code><p>Set cartesian coordinates</p>
+</code>
+                                                            </td>
                                                     </tr>
                                             </tbody>
                                         </table>
@@ -420,10 +457,22 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Base} from &#x27;./base.model&#x27;;
-
+/**
+ * This class/model extends Base
+ *
+ * It contains all parameters and methods for BaseMove
+ */
 export class BaseMove extends Base {
+  /**
+   * to stores cartesian coordinates
+   */
   private _goalPose: number [];
-
+  /**
+   * constructor calls constructor of Base
+   *
+   * if id and activationTimout is not passed, default values are used.
+   * @param {any} data
+   */
   constructor(data: any) {
     super(&#x27;BaseMove&#x27;);
     this.id &#x3D; data._id;
@@ -433,11 +482,17 @@ export class BaseMove extends Base {
     this.activationTimeout &#x3D; (typeof this.activationTimeout &#x3D;&#x3D;&#x3D; &#x27;undefined&#x27;) ? 50 : this.activationTimeout;
     console.log(this._goalPose);
   }
-
+  /**
+   * Setter for _goalPose
+   * @param {number} value Set cartesian coordinates
+   */
   set goalPose(value: number[]) {
     this._goalPose &#x3D; value;
   }
-
+  /**
+   * Getter for _goalPose
+   * @returns The _goalPose
+   */
   get goalPose(): number[] {
     return this._goalPose;
   }

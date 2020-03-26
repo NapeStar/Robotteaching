@@ -63,6 +63,14 @@
             <code>src/app/model/arm-joint.model.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>This class/model extends Base</p>
+<p>This class has to be adjusted - mistakes in provided API</p>
+
+            </p>
 
             <p class="comment">
                 <h3>Extends</h3>
@@ -139,10 +147,17 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="5" class="link-to-prism">src/app/model/arm-joint.model.ts:5</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/model/arm-joint.model.ts:11</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>constructor calls constructor of Base</p>
+<p>default constructor has to be adjusted</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -173,10 +188,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="5" class="link-to-prism">src/app/model/arm-joint.model.ts:5</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/model/arm-joint.model.ts:11</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>to stores _jointVales according to API</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -331,9 +352,22 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/model/arm-joint.model.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/model/arm-joint.model.ts:25</a></div>
                                 </td>
                             </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Getter for _jointValues</p>
+</div>
+
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>number[]</code>
+
+                                </div>
+                        </td>
+                    </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -342,11 +376,13 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/model/arm-joint.model.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/model/arm-joint.model.ts:32</a></div>
                                 </td>
                             </tr>
                     <tr>
                         <td class="col-md-4">
+                                <div class="io-description"><p>Setter for _jointValues</p>
+</div>
 
                                 <div class="io-description">
                                         <b>Parameters :</b>
@@ -356,6 +392,7 @@
                                                     <td>Name</td>
                                                         <td>Type</td>
                                                     <td>Optional</td>
+                                                        <td>Description</td>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -370,6 +407,10 @@
                                                                 No
                                                         </td>
                                                         
+                                                            <td>
+                                                                    <code><p>Set _jointValues</p>
+</code>
+                                                            </td>
                                                     </tr>
                                             </tbody>
                                         </table>
@@ -390,20 +431,36 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Base} from &#x27;./base.model&#x27;;
-
+/**
+ * This class/model extends Base
+ *
+ * This class has to be adjusted - mistakes in provided API
+ */
 export class ArmJoint extends Base {
-
+  /**
+   * to stores _jointVales according to API
+   */
   private _jointValues: number[];
-
+  /**
+   * constructor calls constructor of Base
+   *
+   * default constructor has to be adjusted
+   */
   constructor() {
     super(&#x27;ArmJoint&#x27;);
     this._jointValues &#x3D; [0, 0, 0, 0];
   }
-
+  /**
+   * Getter for _jointValues
+   * @returns The _jointValues
+   */
   get jointValues(): number[] {
     return this._jointValues;
   }
-
+  /**
+   * Setter for _jointValues
+   * @param {number} value Set _jointValues
+   */
   set jointValues(value: number[]) {
     this._jointValues &#x3D; value;
   }
