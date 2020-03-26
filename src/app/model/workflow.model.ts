@@ -1,5 +1,4 @@
 import {Base} from './base.model';
-import {Job} from '../jobs/job.model';
 import {GripperGrip} from './gripper-grip.model';
 import {GripperRelease} from './gripper-release.model';
 import {BaseMove} from './base-move.model';

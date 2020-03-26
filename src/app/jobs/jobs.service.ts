@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Move} from './move.data';
-import {Job} from './job.model';
+import {HttpClient} from '@angular/common/http';
 import {Subject} from 'rxjs';
 
 @Injectable({

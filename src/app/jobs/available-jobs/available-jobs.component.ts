@@ -1,13 +1,9 @@
 import {Component, OnInit, OnDestroy, SimpleChange} from '@angular/core';
 import { JobsService} from '../jobs.service';
-import {Jobs2Service} from '../jobs2.service';
 import {CdkDragDrop, moveItemInArray, transferArrayItem, copyArrayItem} from '@angular/cdk/drag-drop';
-import {MoveList} from '../data.moveList';
 import {Move} from '../move.data';
-import {Job} from '../job.model';
-import {Subject, Subscription} from 'rxjs';
+import {Subscription} from 'rxjs';
 import {Router} from '@angular/router';
-import { NgModule } from '@angular/core';
 import { WizardStepperService} from '../../wizard-stepper/wizard-stepper.service';
 import {Workflow} from '../../model/workflow.model';
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
@@ -56,7 +52,6 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
   selectedJob: any;
   selectedJobs: string[];
   copiedJobs: string[];
-  ml: MoveList;
   jobs: string[] = [];
 
   private response: string[];

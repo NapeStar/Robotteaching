@@ -5,7 +5,6 @@ import {WizardStepperService} from '../../wizard-stepper/wizard-stepper.service'
 import {WizardJobComponent} from '../../wizard-stepper/wizard-job/wizard-job.component';
 import {Workflow} from '../../model/workflow.model';
 import {Subscription} from 'rxjs';
-import {Job} from '../../jobs/job.model';
 import {HttpRequestService} from '../http-request.service';
 import {HttpClient} from '@angular/common/http';
 import {Output, EventEmitter} from '@angular/core';

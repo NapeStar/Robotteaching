@@ -1,10 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Job} from '../../jobs/job.model';
 import {Router} from '@angular/router';
 import {WizardStepperService} from '../wizard-stepper.service';
-import {Subject, Subscription} from 'rxjs';
+import {Subscription} from 'rxjs';
 import {Workflow} from '../../model/workflow.model';
-import { Output, EventEmitter } from '@angular/core';
 import {WizardParentStepperService} from '../wizard-parent/wizard-parent-stepper.service';
 
 /**
