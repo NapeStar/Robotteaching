@@ -63,6 +63,15 @@
             <code>src/app/model/workflow.model.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>This class is a model for a workflow.
+This class contains all properties, methods to handle a worklow internally.
+E.g. adding selected jobs to the workflow</p>
+
+            </p>
 
 
 
@@ -171,12 +180,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/model/workflow.model.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/model/workflow.model.ts:32</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>constructor</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -185,6 +196,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -199,6 +211,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>The name of the workflow</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -235,10 +251,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/model/workflow.model.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/model/workflow.model.ts:28</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>creation date of workflow ind DB (backend)</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -263,10 +285,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/model/workflow.model.ts:10</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/model/workflow.model.ts:20</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>id of workflow</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -291,10 +319,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/model/workflow.model.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/model/workflow.model.ts:32</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>containing jobs of workflow. Array of jobs in this workflow</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -319,10 +353,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/model/workflow.model.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/model/workflow.model.ts:24</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>name of workflow</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -355,14 +395,17 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/app/model/workflow.model.ts:22</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">src/app/model/workflow.model.ts:51</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>adds all jobs in list to _jobsObjects including instancing the single jobs</p>
+<p>This methods is used in case of creating the workflow first time.</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -372,6 +415,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -386,6 +430,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>An Array of the name of the selected jobs</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -425,14 +473,17 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="57"
-                            class="link-to-prism">src/app/model/workflow.model.ts:57</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="98"
+                            class="link-to-prism">src/app/model/workflow.model.ts:98</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Adds all jobs in list to _jobsObjects including instancing the single jobs</p>
+<p>This methods is used when receiving alredy stored workflow from backend</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -495,14 +546,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="94"
-                            class="link-to-prism">src/app/model/workflow.model.ts:94</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="151"
+                            class="link-to-prism">src/app/model/workflow.model.ts:151</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Getter for specific job Object in _jobsObjects array</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -512,6 +565,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -526,6 +580,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>The index in _jobsObjects</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -537,7 +595,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>The job object</p>
+
                     </div>
                 </td>
             </tr>
@@ -565,14 +624,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="98"
-                            class="link-to-prism">src/app/model/workflow.model.ts:98</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="160"
+                            class="link-to-prism">src/app/model/workflow.model.ts:160</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Getter for name of a specific job Object in _jobsObjects array</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -582,6 +643,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -596,6 +658,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>The index in _jobsObjects</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -607,7 +673,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>The job object&#39;s name</p>
+
                     </div>
                 </td>
             </tr>
@@ -635,17 +702,25 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="102"
-                            class="link-to-prism">src/app/model/workflow.model.ts:102</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="167"
+                            class="link-to-prism">src/app/model/workflow.model.ts:167</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Getter for _jobsObjects (all job objects) array</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="../classes/Base.html" target="_self" >Base[]</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The _jobObjects</p>
 
                     </div>
                 </td>
@@ -674,17 +749,25 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="105"
-                            class="link-to-prism">src/app/model/workflow.model.ts:105</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="174"
+                            class="link-to-prism">src/app/model/workflow.model.ts:174</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Getter for the length of _jobsObjects array</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The length of _jobObjects</p>
 
                     </div>
                 </td>
@@ -713,14 +796,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="91"
-                            class="link-to-prism">src/app/model/workflow.model.ts:91</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="143"
+                            class="link-to-prism">src/app/model/workflow.model.ts:143</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Updates a jobs Object in the _jobsObjects array</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -730,6 +815,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -744,6 +830,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>The updated job Object</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>count</td>
@@ -756,6 +846,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>The index in _jobsObjects</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -799,9 +893,22 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="109" class="link-to-prism">src/app/model/workflow.model.ts:109</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="181" class="link-to-prism">src/app/model/workflow.model.ts:181</a></div>
                                 </td>
                             </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Getter for the _name of the workflow</p>
+</div>
+
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -810,11 +917,13 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="113" class="link-to-prism">src/app/model/workflow.model.ts:113</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="188" class="link-to-prism">src/app/model/workflow.model.ts:188</a></div>
                                 </td>
                             </tr>
                     <tr>
                         <td class="col-md-4">
+                                <div class="io-description"><p>Setter for the _name of the workflow</p>
+</div>
 
                                 <div class="io-description">
                                         <b>Parameters :</b>
@@ -824,6 +933,7 @@
                                                     <td>Name</td>
                                                         <td>Type</td>
                                                     <td>Optional</td>
+                                                        <td>Description</td>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -838,6 +948,10 @@
                                                                 No
                                                         </td>
                                                         
+                                                            <td>
+                                                                    <code><p>name of workflow</p>
+</code>
+                                                            </td>
                                                     </tr>
                                             </tbody>
                                         </table>
@@ -868,9 +982,22 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="117" class="link-to-prism">src/app/model/workflow.model.ts:117</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="195" class="link-to-prism">src/app/model/workflow.model.ts:195</a></div>
                                 </td>
                             </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Getter for the _id of the workflow</p>
+</div>
+
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -879,11 +1006,13 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="121" class="link-to-prism">src/app/model/workflow.model.ts:121</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="202" class="link-to-prism">src/app/model/workflow.model.ts:202</a></div>
                                 </td>
                             </tr>
                     <tr>
                         <td class="col-md-4">
+                                <div class="io-description"><p>Setter for the _id of the workflow</p>
+</div>
 
                                 <div class="io-description">
                                         <b>Parameters :</b>
@@ -893,6 +1022,7 @@
                                                     <td>Name</td>
                                                         <td>Type</td>
                                                     <td>Optional</td>
+                                                        <td>Description</td>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -907,6 +1037,10 @@
                                                                 No
                                                         </td>
                                                         
+                                                            <td>
+                                                                    <code><p>_id of workflow</p>
+</code>
+                                                            </td>
                                                     </tr>
                                             </tbody>
                                         </table>
@@ -937,9 +1071,22 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="125" class="link-to-prism">src/app/model/workflow.model.ts:125</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="209" class="link-to-prism">src/app/model/workflow.model.ts:209</a></div>
                                 </td>
                             </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Getter for the _created_at of the workflow</p>
+</div>
+
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -948,11 +1095,13 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="129" class="link-to-prism">src/app/model/workflow.model.ts:129</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="216" class="link-to-prism">src/app/model/workflow.model.ts:216</a></div>
                                 </td>
                             </tr>
                     <tr>
                         <td class="col-md-4">
+                                <div class="io-description"><p>Setter for the _created_at of the workflow</p>
+</div>
 
                                 <div class="io-description">
                                         <b>Parameters :</b>
@@ -962,6 +1111,7 @@
                                                     <td>Name</td>
                                                         <td>Type</td>
                                                     <td>Optional</td>
+                                                        <td>Description</td>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -976,6 +1126,10 @@
                                                                 No
                                                         </td>
                                                         
+                                                            <td>
+                                                                    <code><p>creation date of workflow</p>
+</code>
+                                                            </td>
                                                     </tr>
                                             </tbody>
                                         </table>
@@ -1002,13 +1156,36 @@ import {BaseMove} from &#x27;./base-move.model&#x27;;
 import {ArmTrajectory} from &#x27;./arm-trajectory.model&#x27;;
 import {ArmJoint} from &#x27;./arm-joint.model&#x27;;
 import {ArmCartesian} from &#x27;./arm-cartesian.model&#x27;;
+// NewMethod has to be imported
+import {NewMethod} from &#x27;./new-method.model&#x27;;
 
+/**
+ * This class is a model for a workflow.
+ * This class contains all properties, methods to handle a worklow internally.
+ * E.g. adding selected jobs to the workflow
+ */
 export class Workflow {
+  /**
+   * id of workflow
+   */
     private _id: string;
+  /**
+   * name of workflow
+   */
     private _name: string;
+  /**
+   * creation date of workflow ind DB (backend)
+   */
     private _created_at: number;
+  /**
+   * containing jobs of workflow. Array of jobs in this workflow
+   */
     private _jobsObjects: Base [];
 
+  /**
+   * constructor
+   * @param {string} name The name of the workflow
+   */
     constructor(name: string) {
       this._id &#x3D; &#x27;0&#x27;;
       this._name &#x3D; name;
@@ -1016,6 +1193,12 @@ export class Workflow {
       this._jobsObjects &#x3D; [];
     }
 
+  /**
+   * adds all jobs in list to _jobsObjects including instancing the single jobs
+   *
+   * This methods is used in case of creating the workflow first time.
+   * @param {string[]} jobsName An Array of the name of the selected jobs
+   */
     addJobs(jobsName: string[]) {
       for (const jobName of jobsName) {
         switch (jobName) {
@@ -1043,6 +1226,13 @@ export class Workflow {
             this._jobsObjects.push(new GripperRelease(jobsName));
             break;
           }
+          /**
+           * Here you have to add a new case for NewMethod
+           */
+          case &#x27;NewMethodWorkflow&#x27;: {
+            this._jobsObjects.push(new NewMethod(jobsName));
+            break;
+          }
           default: {
             this._jobsObjects.push(new BaseMove(jobsName));
             break;
@@ -1050,7 +1240,12 @@ export class Workflow {
         }
       }
     }
-
+  /**
+   * Adds all jobs in list to _jobsObjects including instancing the single jobs
+   *
+   * This methods is used when receiving alredy stored workflow from backend
+   * @param {string[]} jobsName An Array of the name of the selected jobs
+   */
   addJobsFormWorkflow(job: any) {
       switch (job._name) {
         case &#x27;GripperGrip&#x27;: {
@@ -1078,54 +1273,100 @@ export class Workflow {
           this._jobsObjects.push(new GripperRelease(job));
           break;
         }
+        /**
+         * Here you have to add a new case for NewMethod
+         */
+        case &#x27;NewMethod&#x27;: {
+          this._jobsObjects.push(new NewMethod(job));
+          break;
+        }
         default: {
           this._jobsObjects.push(new BaseMove(job));
           break;
         }
     }
   }
-
+  /**
+   * Updates a jobs Object in the _jobsObjects array
+   * @param {Base} jobs The updated job Object
+   * @param {number} count The index in _jobsObjects
+   */
     updateJobs(jobs: Base, count: number) {
       this._jobsObjects[count] &#x3D; jobs;
     }
+  /**
+   * Getter for specific job Object in _jobsObjects array
+   * @param {number} count The index in _jobsObjects
+   * @returns The job object
+   */
     getCurrentJob(count: number): Base {
       console.log(this._jobsObjects[count]);
       return this._jobsObjects[count];
     }
+  /**
+   * Getter for name of a specific job Object in _jobsObjects array
+   * @param {number} count The index in _jobsObjects
+   * @returns The job object&#x27;s name
+   */
     getJobName(count: number): string {
       return this._jobsObjects[count].name;
     }
-
+  /**
+   * Getter for _jobsObjects (all job objects) array
+   * @returns The _jobObjects
+   */
     getJobs(): Base [] {
       return this._jobsObjects;
     }
+  /**
+   * Getter for the length of _jobsObjects array
+   * @returns The length of _jobObjects
+   */
     getJobsLength(): number {
       return this._jobsObjects.length;
     }
-
-  get name(): string {
-    return this._name;
-  }
-
-  set name(value: string) {
-    this._name &#x3D; value;
-  }
-
-  get id(): string {
-    return this._id;
-  }
-
-  set id(value: string) {
-    this._id &#x3D; value;
-  }
-
-  get created_at(): number {
-    return this._created_at;
-  }
-
-  set created_at(value: number) {
-    this._created_at &#x3D; value;
-  }
+  /**
+   * Getter for the _name of the workflow
+   * @returns The _name of the workflow
+   */
+    get name(): string {
+      return this._name;
+    }
+  /**
+   * Setter for the _name of the workflow
+   * @param {string} value name of workflow
+   */
+    set name(value: string) {
+      this._name &#x3D; value;
+    }
+  /**
+   * Getter for the _id of the workflow
+   * @returns The _id of the workflow
+   */
+    get id(): string {
+      return this._id;
+    }
+  /**
+   * Setter for the _id of the workflow
+   * @param {string} value _id of workflow
+   */
+    set id(value: string) {
+      this._id &#x3D; value;
+    }
+  /**
+   * Getter for the _created_at of the workflow
+   * @returns The creation date of the workflow
+   */
+    get created_at(): number {
+      return this._created_at;
+    }
+  /**
+   * Setter for the _created_at of the workflow
+   * @param {string} value creation date of workflow
+   */
+    set created_at(value: number) {
+      this._created_at &#x3D; value;
+    }
 }
 
 </code></pre>
