@@ -139,6 +139,13 @@ export class WizardJobComponent implements OnInit, OnDestroy {
   selectNextJob(job: string) {
     this.link = 'wizard/';
     switch (job) {
+      /**
+       * enter new case for 'NewMethod' with 'new_method_path
+       */
+      case 'NewMethod': {
+        this.link += 'new_method_path';
+        break;
+      }
       case 'GripperGrip': {
         this.link += 'gripper_grip';
         break;

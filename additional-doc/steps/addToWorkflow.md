@@ -1,18 +1,18 @@
-# Add NewMethod to Workflow Model 
+# Add NewMethod to Workflow Model   
 
-In the model folder update the class workflow.   
+In the model folder update the class workflow.      
 
-1. Import NewMethod 
+1. Import NewMethod    
 
-![Screenshot-1](../../screenshots/steps/adjust-workflow-import.png)
+![Screenshot-1](../../screenshots/steps/adjust-workflow-import.png)    
 
-2. Add NewMethod to addjobs(...)
+2. Add NewMethod to addjobs(...)    
 
-![Screenshot-2](../../screenshots/steps/adjust-worfkow-addjobs.png)
+![Screenshot-2](../../screenshots/steps/adjust-worfkow-addjobs.png)     
 
-3. Add NewMethod to addJobsFormWorkflow(...) 
+3. Add NewMethod to addJobsFormWorkflow(...)    
 
-![Screenshot-3](../../screenshots/steps/adjust-workflow-addfromjobs.png)
+![Screenshot-3](../../screenshots/steps/adjust-workflow-addfromjobs.png)  
 
-Link to class [NewMethod](../../classes/Workflow.html).
+Link to class [NewMethod](../../classes/Workflow.html).   
 

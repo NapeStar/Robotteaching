@@ -81,7 +81,6 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
    * Subscription for counterSub -> synchronized and shared counter
    */
   counterSub: Subscription;
-
   /**
    * constructor
    * @param {JobsService} jobService
@@ -204,6 +203,13 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
   selectNextJob(job: string) {
     this.link = 'wizard/';
     switch (job) {
+        /**
+         * enter new case for 'NewMethod' with 'new_method_path
+         */
+        case 'NewMethod': {
+          this.link += 'new_method_path';
+          break;
+        }
         case 'GripperGrip': {
           this.link += 'gripper_grip';
           break;

@@ -58,26 +58,42 @@ export class WizardArmCartesianComponent extends WizardJobComponent implements O
    * view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
    */
   verticalActTimeout = false;
-
-
+  /*
+   * cartesian coordinates of robot component
+   */
   goalPose;
-
-  // mat-button next
+  /**
+   * next button - parameter for Angular Material Button  {@link https://material.angular.io/components/button/overview}
+   */
   isDisabledNext = true;
-
-
+  /**
+   * constructor - calls constructor of parent WizardJobComponent
+   * @param {Router} router For redirecting
+   * @param {WizardStepperService} wizardStepperService For Sharing Workflow Information
+   * @param {WizardParentStepperService} eventEmitterService For Sharing Angular Material Stepper View
+   * @param {HttpRequestService} httpRequest For getting actual position from robot arm
+   */
   constructor(router: Router,
               wizardStepperService: WizardStepperService,
               eventEmitterService: WizardParentStepperService,
               private httpRequest: HttpRequestService) {
     super(router, wizardStepperService, eventEmitterService);
   }
+  /**
+   * ngOnInit is a lifecycle hook - executed after constructor
+   *
+   * overrides parent ngOninit() declares additional necessary variables for this component
+   */
   ngOnInit() {
     super.ngOnInit();
     this.armCartesian = this.wizardStepperService.getWorkflowItem() as ArmCartesian;
     this.valueActTimeout = this.armCartesian.activationTimeout;
     this.goalPose = this.armCartesian.goalPose;
   }
+  /**
+   * overrides parent onNextClick() - updates all necessary variables and Observables
+   * before redirects to next wizard job component
+   */
   onNextClick(): void {
     this.armCartesian.activationTimeout = this.valueActTimeout;
     this.wizardStepperService.updateWorkflowItem(this.armCartesian);
@@ -93,6 +109,9 @@ export class WizardArmCartesianComponent extends WizardJobComponent implements O
       console.log('ArmCatesian onStepperNext wurde ausgeführt');
     }
   }
+  /**
+   * requests actual position form backend and stores the value
+   */
   onGetPostionClick() {
     this.httpRequest.getBasePosition().subscribe(
       (responseData: number[]) =>  {

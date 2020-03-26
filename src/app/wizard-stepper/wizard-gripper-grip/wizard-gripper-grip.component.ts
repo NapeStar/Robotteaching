@@ -3,9 +3,14 @@ import {Router} from '@angular/router';
 import {WizardStepperService} from '../wizard-stepper.service';
 import {WizardJobComponent} from '../wizard-job/wizard-job.component';
 import {GripperGrip} from '../../model/gripper-grip.model';
-import {ArmCartesian} from '../../model/arm-cartesian.model';
 import {WizardParentStepperService} from '../wizard-parent/wizard-parent-stepper.service';
-
+/**
+ * This component is a Child Component of "Wizard-Job".
+ *
+ * It presents the view of method GripperGrip in the configurator ("Wizard-Parent").
+ * To present and enter values Angular Material Design Components where used in the view
+ * {@link https://material.angular.io/components/categories}
+ */
 @Component({
   selector: 'app-wizard-gripper-grip',
   templateUrl: './wizard-gripper-grip.component.html',
@@ -52,17 +57,31 @@ export class WizardGripperGripComponent extends WizardJobComponent implements On
    * view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
    */
   verticalActTimeout = false;
-
+  /**
+   * constructor - calls constructor of parent WizardJobComponent
+   * @param {Router} router For redirecting
+   * @param {WizardStepperService} wizardStepperService For Sharing Workflow Information
+   * @param {WizardParentStepperService} eventEmitterService For Sharing Angular Material Stepper View
+   */
   constructor(router: Router,
               wizardStepperService: WizardStepperService,
               eventEmitterService: WizardParentStepperService) {
     super(router, wizardStepperService, eventEmitterService);
   }
+  /**
+   * ngOnInit is a lifecycle hook - executed after constructor
+   *
+   * overrides parent ngOninit() declares additional necessary variables for this component
+   */
   ngOnInit() {
     super.ngOnInit();
     this.gripperGrip = this.wizardStepperService.getWorkflowItem() as GripperGrip;
     this.valueActTimeout = this.gripperGrip.activationTimeout;
   }
+  /**
+   * overrides parent onNextClick() - updates all necessary variables and Observables
+   * before redirects to next wizard job component
+   */
   onNextClick(): void {
     this.gripperGrip.activationTimeout = this.valueActTimeout;
     this.wizardStepperService.updateWorkflowItem(this.gripperGrip);

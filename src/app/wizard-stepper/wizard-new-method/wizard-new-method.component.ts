@@ -5,9 +5,9 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {WizardStepperService} from '../wizard-stepper.service';
 import {WizardJobComponent} from '../wizard-job/wizard-job.component';
-import {ArmCartesian} from '../../model/arm-cartesian.model';
 import {WizardParentStepperService} from '../wizard-parent/wizard-parent-stepper.service';
 import {HttpRequestService} from '../../execution/http-request.service';
+import {NewMethod} from '../../model/new-method.model';
 /**
  * This component is a Child Component of "Wizard-Job".
  *
@@ -28,7 +28,7 @@ export class WizardNewMethodComponent extends WizardJobComponent implements OnIn
   /**
    * local instance of NewMethod
    */
-  armCartesian: ArmCartesian;
+  newMethod: NewMethod;
   /**
    * e.g. view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
    */
@@ -61,28 +61,45 @@ export class WizardNewMethodComponent extends WizardJobComponent implements OnIn
    * e.g. view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
    */
   verticalActTimeout = false;
-
+  /*
+   * cartesian coordinates of robot component
+   */
   goalPose;
-
-  // mat-button next
+  /**
+   * next button - parameter for Angular Material Button  {@link https://material.angular.io/components/button/overview}
+   */
   isDisabledNext = true;
-
-
+  /**
+   * constructor - calls constructor of parent WizardJobComponent
+   * @param {Router} router For redirecting
+   * @param {WizardStepperService} wizardStepperService For Sharing Workflow Information
+   * @param {WizardParentStepperService} eventEmitterService For Sharing Angular Material Stepper View
+   * @param {HttpRequestService} httpRequest For getting actual position from robot arm
+   */
   constructor(router: Router,
               wizardStepperService: WizardStepperService,
               eventEmitterService: WizardParentStepperService,
               private httpRequest: HttpRequestService) {
     super(router, wizardStepperService, eventEmitterService);
   }
+  /**
+   * ngOnInit is a lifecycle hook - executed after constructor
+   *
+   * overrides parent ngOninit() declares additional necessary variables for this component
+   */
   ngOnInit() {
     super.ngOnInit();
-    this.armCartesian = this.wizardStepperService.getWorkflowItem() as ArmCartesian;
-    this.valueActTimeout = this.armCartesian.activationTimeout;
-    this.goalPose = this.armCartesian.goalPose;
+    this.newMethod = this.wizardStepperService.getWorkflowItem() as NewMethod;
+    this.valueActTimeout = this.newMethod.activationTimeout;
+    this.goalPose = this.newMethod.goalPose;
   }
+  /**
+   * overrides parent onNextClick() - updates all necessary variables and Observables
+   * before redirects to next wizard job component
+   */
   onNextClick(): void {
-    this.armCartesian.activationTimeout = this.valueActTimeout;
-    this.wizardStepperService.updateWorkflowItem(this.armCartesian);
+    this.newMethod.activationTimeout = this.valueActTimeout;
+    this.wizardStepperService.updateWorkflowItem(this.newMethod);
     if (this.counter < this.workflow.getJobsLength() - 1) {
       this.wizardStepperService.increaseCount();
       this.selectNextJob(this.workflow.getJobName(this.counter));
@@ -95,14 +112,17 @@ export class WizardNewMethodComponent extends WizardJobComponent implements OnIn
       console.log('ArmCatesian onStepperNext wurde ausgeführt');
     }
   }
+  /**
+   * requests actual position form backend and stores the value
+   */
   onGetPostionClick() {
     this.httpRequest.getBasePosition().subscribe(
       (responseData: number[]) =>  {
-        this.armCartesian.goalPose = [];
-        this.armCartesian.goalPose = responseData;
-        this.goalPose = this.armCartesian.goalPose;
+        this.newMethod.goalPose = [];
+        this.newMethod.goalPose = responseData;
+        this.goalPose = this.newMethod.goalPose;
         this.isDisabledNext = false;
-        console.log(this.armCartesian.goalPose);
+        console.log(this.newMethod.goalPose);
       });
   }
 }

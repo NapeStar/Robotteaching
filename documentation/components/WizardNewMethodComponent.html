@@ -147,9 +147,6 @@ E.g. to present and enter values Angular Material Design Components where used i
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#armCartesian">armCartesian</a>
-                            </li>
-                            <li>
                                 <a href="#disabledActTimeout">disabledActTimeout</a>
                             </li>
                             <li>
@@ -166,6 +163,9 @@ E.g. to present and enter values Angular Material Design Components where used i
                             </li>
                             <li>
                                 <a href="#minActTimeout">minActTimeout</a>
+                            </li>
+                            <li>
+                                <a href="#newMethod">newMethod</a>
                             </li>
                             <li>
                                 <a href="#stepActTimeout">stepActTimeout</a>
@@ -265,12 +265,14 @@ E.g. to present and enter values Angular Material Design Components where used i
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/app/wizard-stepper/wizard-new-method/wizard-new-method.component.ts:68</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/app/wizard-stepper/wizard-new-method/wizard-new-method.component.ts:71</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>constructor - calls constructor of parent WizardJobComponent</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -279,6 +281,7 @@ E.g. to present and enter values Angular Material Design Components where used i
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -293,6 +296,10 @@ E.g. to present and enter values Angular Material Design Components where used i
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>For redirecting</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>wizardStepperService</td>
@@ -305,6 +312,10 @@ E.g. to present and enter values Angular Material Design Components where used i
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>For Sharing Workflow Information</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>eventEmitterService</td>
@@ -317,6 +328,10 @@ E.g. to present and enter values Angular Material Design Components where used i
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>For Sharing Angular Material Stepper View</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>httpRequest</td>
@@ -329,6 +344,10 @@ E.g. to present and enter values Angular Material Design Components where used i
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>For getting actual position from robot arm</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -370,14 +389,17 @@ E.g. to present and enter values Angular Material Design Components where used i
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="77"
-                            class="link-to-prism">src/app/wizard-stepper/wizard-new-method/wizard-new-method.component.ts:77</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="90"
+                            class="link-to-prism">src/app/wizard-stepper/wizard-new-method/wizard-new-method.component.ts:90</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>ngOnInit is a lifecycle hook - executed after constructor</p>
+<p>overrides parent ngOninit() declares additional necessary variables for this component</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -409,14 +431,16 @@ E.g. to present and enter values Angular Material Design Components where used i
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="98"
-                            class="link-to-prism">src/app/wizard-stepper/wizard-new-method/wizard-new-method.component.ts:98</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="118"
+                            class="link-to-prism">src/app/wizard-stepper/wizard-new-method/wizard-new-method.component.ts:118</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>requests actual position form backend and stores the value</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -448,14 +472,17 @@ E.g. to present and enter values Angular Material Design Components where used i
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="83"
-                            class="link-to-prism">src/app/wizard-stepper/wizard-new-method/wizard-new-method.component.ts:83</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="100"
+                            class="link-to-prism">src/app/wizard-stepper/wizard-new-method/wizard-new-method.component.ts:100</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>overrides parent onNextClick() - updates all necessary variables and Observables
+before redirects to next wizard job component</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -753,39 +780,6 @@ before redirects to &quot;previous&quot; wizard job component</p>
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="armCartesian"></a>
-                        <span class="name">
-                            <b>
-                            armCartesian</b>
-                            <a href="#armCartesian"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="../classes/ArmCartesian.html" target="_self" >ArmCartesian</a></code>
-
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/wizard-stepper/wizard-new-method/wizard-new-method.component.ts:31</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>local instance of NewMethod</p>
-</div>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
                         <a name="disabledActTimeout"></a>
                         <span class="name">
                             <b>
@@ -828,7 +822,7 @@ before redirects to &quot;previous&quot; wizard job component</p>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/app/wizard-stepper/wizard-new-method/wizard-new-method.component.ts:65</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">src/app/wizard-stepper/wizard-new-method/wizard-new-method.component.ts:67</a></div>
                             </td>
                         </tr>
 
@@ -886,10 +880,16 @@ before redirects to &quot;previous&quot; wizard job component</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/app/wizard-stepper/wizard-new-method/wizard-new-method.component.ts:68</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/app/wizard-stepper/wizard-new-method/wizard-new-method.component.ts:71</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>next button - parameter for Angular Material Button  <a href="https://material.angular.io/components/button/overview">https://material.angular.io/components/button/overview</a></p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -963,6 +963,39 @@ before redirects to &quot;previous&quot; wizard job component</p>
                 <tr>
                     <td class="col-md-4">
                         <div class="io-description"><p>e.g. view parameter for Angular Material Slider <a href="https://material.angular.io/components/slider/overview">https://material.angular.io/components/slider/overview</a></p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="newMethod"></a>
+                        <span class="name">
+                            <b>
+                            newMethod</b>
+                            <a href="#newMethod"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/NewMethod.html" target="_self" >NewMethod</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/wizard-stepper/wizard-new-method/wizard-new-method.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>local instance of NewMethod</p>
 </div>
                     </td>
                 </tr>
@@ -1447,9 +1480,9 @@ before redirects to &quot;previous&quot; wizard job component</p>
 import {Router} from &#x27;@angular/router&#x27;;
 import {WizardStepperService} from &#x27;../wizard-stepper.service&#x27;;
 import {WizardJobComponent} from &#x27;../wizard-job/wizard-job.component&#x27;;
-import {ArmCartesian} from &#x27;../../model/arm-cartesian.model&#x27;;
 import {WizardParentStepperService} from &#x27;../wizard-parent/wizard-parent-stepper.service&#x27;;
 import {HttpRequestService} from &#x27;../../execution/http-request.service&#x27;;
+import {NewMethod} from &#x27;../../model/new-method.model&#x27;;
 /**
  * This component is a Child Component of &quot;Wizard-Job&quot;.
  *
@@ -1470,7 +1503,7 @@ export class WizardNewMethodComponent extends WizardJobComponent implements OnIn
   /**
    * local instance of NewMethod
    */
-  armCartesian: ArmCartesian;
+  newMethod: NewMethod;
   /**
    * e.g. view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
    */
@@ -1503,28 +1536,45 @@ export class WizardNewMethodComponent extends WizardJobComponent implements OnIn
    * e.g. view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
    */
   verticalActTimeout &#x3D; false;
-
+  /*
+   * cartesian coordinates of robot component
+   */
   goalPose;
-
-  // mat-button next
+  /**
+   * next button - parameter for Angular Material Button  {@link https://material.angular.io/components/button/overview}
+   */
   isDisabledNext &#x3D; true;
-
-
+  /**
+   * constructor - calls constructor of parent WizardJobComponent
+   * @param {Router} router For redirecting
+   * @param {WizardStepperService} wizardStepperService For Sharing Workflow Information
+   * @param {WizardParentStepperService} eventEmitterService For Sharing Angular Material Stepper View
+   * @param {HttpRequestService} httpRequest For getting actual position from robot arm
+   */
   constructor(router: Router,
               wizardStepperService: WizardStepperService,
               eventEmitterService: WizardParentStepperService,
               private httpRequest: HttpRequestService) {
     super(router, wizardStepperService, eventEmitterService);
   }
+  /**
+   * ngOnInit is a lifecycle hook - executed after constructor
+   *
+   * overrides parent ngOninit() declares additional necessary variables for this component
+   */
   ngOnInit() {
     super.ngOnInit();
-    this.armCartesian &#x3D; this.wizardStepperService.getWorkflowItem() as ArmCartesian;
-    this.valueActTimeout &#x3D; this.armCartesian.activationTimeout;
-    this.goalPose &#x3D; this.armCartesian.goalPose;
+    this.newMethod &#x3D; this.wizardStepperService.getWorkflowItem() as NewMethod;
+    this.valueActTimeout &#x3D; this.newMethod.activationTimeout;
+    this.goalPose &#x3D; this.newMethod.goalPose;
   }
+  /**
+   * overrides parent onNextClick() - updates all necessary variables and Observables
+   * before redirects to next wizard job component
+   */
   onNextClick(): void {
-    this.armCartesian.activationTimeout &#x3D; this.valueActTimeout;
-    this.wizardStepperService.updateWorkflowItem(this.armCartesian);
+    this.newMethod.activationTimeout &#x3D; this.valueActTimeout;
+    this.wizardStepperService.updateWorkflowItem(this.newMethod);
     if (this.counter &lt; this.workflow.getJobsLength() - 1) {
       this.wizardStepperService.increaseCount();
       this.selectNextJob(this.workflow.getJobName(this.counter));
@@ -1537,14 +1587,17 @@ export class WizardNewMethodComponent extends WizardJobComponent implements OnIn
       console.log(&#x27;ArmCatesian onStepperNext wurde ausgeführt&#x27;);
     }
   }
+  /**
+   * requests actual position form backend and stores the value
+   */
   onGetPostionClick() {
     this.httpRequest.getBasePosition().subscribe(
       (responseData: number[]) &#x3D;&gt;  {
-        this.armCartesian.goalPose &#x3D; [];
-        this.armCartesian.goalPose &#x3D; responseData;
-        this.goalPose &#x3D; this.armCartesian.goalPose;
+        this.newMethod.goalPose &#x3D; [];
+        this.newMethod.goalPose &#x3D; responseData;
+        this.goalPose &#x3D; this.newMethod.goalPose;
         this.isDisabledNext &#x3D; false;
-        console.log(this.armCartesian.goalPose);
+        console.log(this.newMethod.goalPose);
       });
   }
 }
@@ -1552,7 +1605,57 @@ export class WizardNewMethodComponent extends WizardJobComponent implements OnIn
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;p&gt;wizard-new-method works!&lt;/p&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;h1&gt;{{title}}&lt;/h1&gt;
+&lt;mat-card class&#x3D;&quot;example-container&quot;&gt;
+  &lt;mat-card-subtitle&gt;Activation Timeout&lt;/mat-card-subtitle&gt;
+  &lt;mat-card-content&gt;
+    &lt;section class&#x3D;&quot;example-section&quot;&gt;
+      &lt;mat-slider
+        class&#x3D;&quot;example-margin&quot;
+        [disabled]&#x3D;&quot;disabledActTimeout&quot;
+        [invert]&#x3D;&quot;invertActTimeout&quot;
+        [max]&#x3D;&quot;maxActTimeout&quot;
+        [min]&#x3D;&quot;minActTimeout&quot;
+        [step]&#x3D;&quot;stepActTimeout&quot;
+        [thumbLabel]&#x3D;&quot;thumbLabelActTimeout&quot;
+        [(ngModel)]&#x3D;&quot;valueActTimeout&quot;
+        [vertical]&#x3D;&quot;verticalActTimeout&quot;&gt;
+      &lt;/mat-slider&gt;
+      &lt;mat-form-field class&#x3D;&quot;example-margin&quot;&gt;
+        &lt;input matInput type&#x3D;&quot;number&quot; placeholder&#x3D;&quot;Value&quot; [(ngModel)]&#x3D;&quot;valueActTimeout&quot;&gt;
+        &lt;mat-hint&gt;Timeout&lt;/mat-hint&gt;
+      &lt;/mat-form-field&gt;
+    &lt;/section&gt;
+  &lt;/mat-card-content&gt;
+&lt;/mat-card&gt;
+&lt;br&gt;
+&lt;mat-card class&#x3D;&quot;example-container&quot;&gt;
+  &lt;mat-card-subtitle&gt;Goal Position&lt;/mat-card-subtitle&gt;
+  &lt;mat-card-content&gt;
+
+  &lt;/mat-card-content&gt;
+  &lt;mat-card-actions&gt;
+    &lt;button mat-icon-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;onGetPostionClick()&quot;&gt;
+      &lt;mat-icon class&#x3D;&quot;mat-18&quot;&gt;my_location&lt;/mat-icon&gt;
+    &lt;/button&gt;
+    {{goalPose}}
+  &lt;/mat-card-actions&gt;
+&lt;/mat-card&gt;
+&lt;br&gt;
+&lt;mat-card class&#x3D;&quot;example-container&quot; [ngSwitch]&#x3D;&quot;this.goalPose&quot;&gt;
+  &lt;mat-card-actions align&#x3D;&quot;end&quot;&gt;
+    &lt;button mat-icon-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;onPreviousClick()&quot;&gt;
+      &lt;mat-icon class&#x3D;&quot;mat-18&quot;&gt;navigate_before&lt;/mat-icon&gt;
+    &lt;/button&gt;
+    &lt;div fxFlex&gt;&lt;/div&gt;
+    &lt;button mat-icon-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;onNextClick()&quot; *ngSwitchCase&#x3D;&quot;null&quot; [disabled]&#x3D;&quot;isDisabledNext&quot;&gt;
+      &lt;mat-icon class&#x3D;&quot;mat-18&quot;&gt;navigate_next&lt;/mat-icon&gt;
+    &lt;/button&gt;
+    &lt;button mat-icon-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;onNextClick()&quot; *ngSwitchDefault&gt;
+      &lt;mat-icon class&#x3D;&quot;mat-18&quot;&gt;navigate_next&lt;/mat-icon&gt;
+    &lt;/button&gt;
+  &lt;/mat-card-actions&gt;
+&lt;/mat-card&gt;
 </code></pre>
     </div>
 
@@ -1560,7 +1663,42 @@ export class WizardNewMethodComponent extends WizardJobComponent implements OnIn
                 <p class="comment">
                     <code>./wizard-new-method.component.css</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">.example-container {
+  width: 600px;
+  max-width: 100%;
+  margin: 10px 10px 10px 10px;
+  display: inline-block;
+  vertical-align: top;
+  padding: 1rem;
+}
+h1, h2, h3, h4, h5, h6{
+  margin-top:20px;
+  margin-bottom:10px;
+  margin-left: 10px;
+}
+.example-h2 {
+  margin: 10px;
+}
+
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.example-margin {
+  margin: 30px;
+}
+
+.mat-slider-horizontal {
+  width: 100px;
+}
+
+.fxFlex{
+  flex: 100 1 auto;
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -1588,7 +1726,7 @@ export class WizardNewMethodComponent extends WizardJobComponent implements OnIn
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><p>wizard-new-method works!</p></div>'
+        var COMPONENT_TEMPLATE = '<div><h1>{{title}}</h1><mat-card class="example-container">  <mat-card-subtitle>Activation Timeout</mat-card-subtitle>  <mat-card-content>    <section class="example-section">      <mat-slider        class="example-margin"        [disabled]="disabledActTimeout"        [invert]="invertActTimeout"        [max]="maxActTimeout"        [min]="minActTimeout"        [step]="stepActTimeout"        [thumbLabel]="thumbLabelActTimeout"        [(ngModel)]="valueActTimeout"        [vertical]="verticalActTimeout">      </mat-slider>      <mat-form-field class="example-margin">        <input matInput type="number" placeholder="Value" [(ngModel)]="valueActTimeout">        <mat-hint>Timeout</mat-hint>      </mat-form-field>    </section>  </mat-card-content></mat-card><br><mat-card class="example-container">  <mat-card-subtitle>Goal Position</mat-card-subtitle>  <mat-card-content>  </mat-card-content>  <mat-card-actions>    <button mat-icon-button color="primary" (click)="onGetPostionClick()">      <mat-icon class="mat-18">my_location</mat-icon>    </button>    {{goalPose}}  </mat-card-actions></mat-card><br><mat-card class="example-container" [ngSwitch]="this.goalPose">  <mat-card-actions align="end">    <button mat-icon-button color="primary" (click)="onPreviousClick()">      <mat-icon class="mat-18">navigate_before</mat-icon>    </button>    <div fxFlex></div>    <button mat-icon-button color="primary" (click)="onNextClick()" *ngSwitchCase="null" [disabled]="isDisabledNext">      <mat-icon class="mat-18">navigate_next</mat-icon>    </button>    <button mat-icon-button color="primary" (click)="onNextClick()" *ngSwitchDefault>      <mat-icon class="mat-18">navigate_next</mat-icon>    </button>  </mat-card-actions></mat-card></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AvailableJobsComponent', 'selector': 'app-available-jobs'},{'name': 'ExecutionRunComponent', 'selector': 'app-execution-run'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'NoPageFoundComponent', 'selector': 'app-no-page-found'},{'name': 'WizardArmCartesianComponent', 'selector': 'app-wizard-arm-cartesian'},{'name': 'WizardArmJoinsComponent', 'selector': 'app-wizard-arm-joins'},{'name': 'WizardArmTrajectoryComponent', 'selector': 'app-wizard-arm-trajectory-movement'},{'name': 'WizardBaseComponent', 'selector': 'app-wizard-base'},{'name': 'WizardGripperGripComponent', 'selector': 'app-wizard-gripper-grip'},{'name': 'WizardGripperReleaseComponent', 'selector': 'app-wizard-gripper-release'},{'name': 'WizardJobComponent', 'selector': 'app-wizard-job'},{'name': 'WizardNewMethodComponent', 'selector': 'app-wizard-new-method'},{'name': 'WizardParentComponent', 'selector': 'app-wizard-parent'},{'name': 'WorkflowTableComponent', 'selector': 'app-workflow-table'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'WizardNewMethodComponent'};

@@ -48,10 +48,21 @@
 
 
 
-<h1 id="adding-routes-to-new-method-component">Adding routes to new method component</h1>
-<p>Go to foler &quot;app-routing&quot; and open &quot;app-routing.module.ts&quot;.<br>Add a new path: &quot;new_method_path&quot; and link to component: &quot;WizardNewMethodComponent&quot;.  </p>
-<p><img src="../../screenshots/steps/add-routes.png" alt="Screenshot" class="img-responsive"></p>
-<p>Link to Routing Module <a href="../../modules/AppRoutingModule.html">AppRoutingModule</a>.</p>
+<h1 id="adjust-all-selectnextjob-methods-in-several-components">Adjust all selectNextJob(...) methods in several components</h1>
+<ol>
+<li><p>Go to &quot;jobs/available-jobs/available-jobs.component.ts&quot;.   </p>
+</li>
+<li><p>Add &#39;new_method_path&#39; in selectNextJob(...) in &quot;available-jobs.component.ts&quot;     </p>
+</li>
+</ol>
+<p><img src="../../screenshots/steps/adjust-nextjob-availablejobs.png" alt="Screenshot-1" class="img-responsive">   </p>
+<p>Link to available-jobs component <a href="../../components/AvailableJobsComponent.html">available-jobs</a>.         
+3. Go to &quot;wizzard-step/wizzard-job/wizard-job.component.ts&quot;. </p>
+<ol start="4">
+<li>Add &#39;new_method_path&#39; in selectNextJob(...) in &quot;wizard-job.component.ts&quot;     </li>
+</ol>
+<p><img src="../../screenshots/steps/adjust-nextjob-job.png" alt="Screenshot-1" class="img-responsive">     </p>
+<p>Link to wizard-job component <a href="../../components/WizardJobComponent.html">wizard-job</a>.</p>
 
                    </div><div class="search-results">
     <div class="has-results">

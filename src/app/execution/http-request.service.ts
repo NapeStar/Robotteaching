@@ -2,11 +2,9 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Workflow} from '../model/workflow.model';
 import {WizardStepperService} from '../wizard-stepper/wizard-stepper.service';
-import {Observable, Subscription} from 'rxjs';
+import {Subscription} from 'rxjs';
 import {Subject} from 'rxjs';
 import {WorkflowListElement} from '../model/workflow-list-element.model';
-import {map} from 'rxjs/operators';
-import {Move} from '../jobs/move.data';
 /**
  * this service provides the communication with backend.
  * The communication for all CRUD (CREATE, READ, UPDATE, DELETE) + Execute(Run) operations are provided.
@@ -16,11 +14,14 @@ import {Move} from '../jobs/move.data';
   providedIn: 'root'
 })
 export class HttpRequestService {
-
-
+  /**
+   * local array of all Workflows presented in Workflow table
+   */
   workflowList: WorkflowListElement[] = [];
+  /**
+   * Subscription for observed workflowListSub -> synchronized and shared WorkflowListElement Array
+   */
   private workflowListSub = new Subject<WorkflowListElement[]>();
-
   /**
    * locally stored workflow
    */
