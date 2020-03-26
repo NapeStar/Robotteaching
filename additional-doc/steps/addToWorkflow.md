@@ -15,3 +15,4 @@ In the model folder update the class workflow.
 ![Screenshot-3](../../screenshots/steps/adjust-workflow-addfromjobs.png)
 
 Link to class [NewMethod](../../classes/Workflow.html).
+

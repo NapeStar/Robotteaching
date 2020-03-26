@@ -1,6 +1,6 @@
-# All Changes to be made to add new robot method
+# Lists all steps for adding a new robot method in Angular project 
 
-- [creation](./actions/creation-of-a-todo.html)
-- [edition](./actions/edition-of-a-todo.html)
-- [delete](./actions/delete-a-todo.html)
-- [change status](./actions/update-the-status-of-a-todo.html)
+- [CreateNewModel](./steps/createNewMethodModel.md)
+- [AddToWorkflowModel](./steps/addToWorkflow.md)
+- [CreateComponent](./steps/createNewComponent.md)
+- [AddRoutes](./steps/addNewRoutes.md)

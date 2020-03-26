@@ -35,6 +35,7 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
 import { WorkflowTableComponent } from './workflow-table/workflow-table.component';
 import {SocketDataService} from './sockets/websocket.service';
 import {NgxSpinnerModule} from 'ngx-spinner';
+import { WizardNewMethodComponent } from './wizard-stepper/wizard-new-method/wizard-new-method.component';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import {NgxSpinnerModule} from 'ngx-spinner';
     WizardJobComponent,
     ExecutionRunComponent,
     WorkflowTableComponent,
+    WizardNewMethodComponent,
   ],
   imports: [
     BrowserModule,

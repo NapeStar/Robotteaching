@@ -12,14 +12,23 @@ import {WizardArmCartesianComponent} from '../wizard-stepper/wizard-arm-cartesia
 import {WizardBaseComponent} from '../wizard-stepper/wizard-base/wizard-base.component';
 import {ExecutionRunComponent} from '../execution/execution-run/execution-run.component';
 import {WorkflowTableComponent} from '../workflow-table/workflow-table.component';
-
+/**
+ * you must import new method component
+ */
+import {WizardNewMethodComponent} from '../wizard-stepper/wizard-new-method/wizard-new-method.component';
+/**
+ * you must add the path "new_method" and connnect to component "WizardNewMethodComponent"
+ */
 const routes: Routes = [
-
   {path: 'workflows_table', component: WorkflowTableComponent},
   {path: '', redirectTo: '/workflows_table', pathMatch: 'full'},
   {path: 'jobs', component: AvailableJobsComponent},
   {path: 'wizard', component: WizardParentComponent,
     children: [{
+        path: 'new_method_path',
+        component: WizardNewMethodComponent
+      },
+      {
         path: 'gripper_grip',
         component: WizardGripperGripComponent
       },

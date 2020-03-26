@@ -13,20 +13,47 @@ import {GripperGrip} from '../../model/gripper-grip.model';
   styleUrls: ['./wizard-base.component.css']
 })
 export class WizardBaseComponent extends WizardJobComponent implements OnInit, OnDestroy {
-
+  /**
+   * displayed titel of the component
+   */
   title = 'Base Movement';
-
+  /**
+   * local instance of BaseMove
+   */
   baseMove: BaseMove;
-
-  // slider Activation timout
+  /**
+   * view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
+   */
   disabledActTimeout = false;
+  /**
+   * view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
+   */
   invertActTimeout = false;
+  /**
+   * view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
+   */
   maxActTimeout = 100;
+  /**
+   * view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
+   */
   minActTimeout = 0;
+  /**
+   * view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
+   */
   stepActTimeout = 1;
+  /**
+   * view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
+   */
   thumbLabelActTimeout = true;
+  /**
+   * view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
+   */
   valueActTimeout = 50;
+  /**
+   * view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
+   */
   verticalActTimeout = false;
+
   goalPose;
 
   // mat-button next

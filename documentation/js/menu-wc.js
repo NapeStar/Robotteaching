@@ -65,7 +65,16 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                                 <a href="additional-documentation/steps-adding-new-method/1.-creation-of-new-model.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">1. Creation of new Model</a>
                                             </li>
                                             <li class="link for-chapter2">
-                                                <a href="additional-documentation/steps-adding-new-method/2.-add-model-to-workflow-model-.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">2. Add Model to Workflow Model </a>
+                                                <a href="additional-documentation/steps-adding-new-method/2.-add-model-to-workflow-model.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">2. Add Model to Workflow Model</a>
+                                            </li>
+                                            <li class="link for-chapter2">
+                                                <a href="additional-documentation/steps-adding-new-method/3.-create-new-method-component.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">3. Create New Method Component</a>
+                                            </li>
+                                            <li class="link for-chapter2">
+                                                <a href="additional-documentation/steps-adding-new-method/4.-add-routes-for-new-method-component.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">4. Add Routes for New Method Component</a>
+                                            </li>
+                                            <li class="link for-chapter2">
+                                                <a href="additional-documentation/steps-adding-new-method/5.-update-all-routing-methods-of-components.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">5. Update all Routing Methods of Components</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -85,13 +94,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-AppModule-277063a6ca0dfc0c2b703f9e64ebfe4b"' : 'data-target="#xs-components-links-module-AppModule-277063a6ca0dfc0c2b703f9e64ebfe4b"' }>
+                                            'data-target="#components-links-module-AppModule-efd58c70f1e141cdef6d70afbafe1885"' : 'data-target="#xs-components-links-module-AppModule-efd58c70f1e141cdef6d70afbafe1885"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-277063a6ca0dfc0c2b703f9e64ebfe4b"' :
-                                            'id="xs-components-links-module-AppModule-277063a6ca0dfc0c2b703f9e64ebfe4b"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-efd58c70f1e141cdef6d70afbafe1885"' :
+                                            'id="xs-components-links-module-AppModule-efd58c70f1e141cdef6d70afbafe1885"' }>
                                             <li class="link">
                                                 <a href="components/AppComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -141,6 +150,10 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">WizardJobComponent</a>
                                             </li>
                                             <li class="link">
+                                                <a href="components/WizardNewMethodComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">WizardNewMethodComponent</a>
+                                            </li>
+                                            <li class="link">
                                                 <a href="components/WizardParentComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">WizardParentComponent</a>
                                             </li>
@@ -152,13 +165,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-AppModule-277063a6ca0dfc0c2b703f9e64ebfe4b"' : 'data-target="#xs-injectables-links-module-AppModule-277063a6ca0dfc0c2b703f9e64ebfe4b"' }>
+                                        'data-target="#injectables-links-module-AppModule-efd58c70f1e141cdef6d70afbafe1885"' : 'data-target="#xs-injectables-links-module-AppModule-efd58c70f1e141cdef6d70afbafe1885"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Injectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-AppModule-277063a6ca0dfc0c2b703f9e64ebfe4b"' :
-                                        'id="xs-injectables-links-module-AppModule-277063a6ca0dfc0c2b703f9e64ebfe4b"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-AppModule-efd58c70f1e141cdef6d70afbafe1885"' :
+                                        'id="xs-injectables-links-module-AppModule-efd58c70f1e141cdef6d70afbafe1885"' }>
                                         <li class="link">
                                             <a href="injectables/WizardStepperService.html"
                                                 data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>WizardStepperService</a>

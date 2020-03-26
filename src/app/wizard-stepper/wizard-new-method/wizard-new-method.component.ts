@@ -1,3 +1,6 @@
+/**
+ * All necessary classes, models, services hast not be imported
+ */
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {WizardStepperService} from '../wizard-stepper.service';
@@ -8,57 +11,56 @@ import {HttpRequestService} from '../../execution/http-request.service';
 /**
  * This component is a Child Component of "Wizard-Job".
  *
- * It presents the view of method ArmCartesian in the configurator ("Wizard-Parent").
- * To present and enter values Angular Material Design Components where used in the view
+ * It presents the view of new the method to be added in the configurator ("Wizard-Parent").
+ * E.g. to present and enter values Angular Material Design Components where used in the view
  * {@link https://material.angular.io/components/categories}
  */
 @Component({
-  selector: 'app-wizard-arm-cartesian',
-  templateUrl: './wizard-arm-cartesian.component.html',
-  styleUrls: ['./wizard-arm-cartesian.component.css']
+  selector: 'app-wizard-new-method',
+  templateUrl: './wizard-new-method.component.html',
+  styleUrls: ['./wizard-new-method.component.css']
 })
-export class WizardArmCartesianComponent extends WizardJobComponent implements OnInit,  OnDestroy {
+export class WizardNewMethodComponent extends WizardJobComponent implements OnInit,  OnDestroy {
   /**
-   * displayed titel of the component
+   * displayed titel of the new component
    */
-  title = 'Arm Cartesian';
+  title = 'New Method';
   /**
-   * local instance of ArmCartesian
+   * local instance of NewMethod
    */
   armCartesian: ArmCartesian;
   /**
-   * view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
+   * e.g. view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
    */
   disabledActTimeout = false;
   /**
-   * view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
+   * e.g. view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
    */
   invertActTimeout = false;
   /**
-   * view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
+   * e.g. view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
    */
   maxActTimeout = 100;
   /**
-   * view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
+   * e.g. view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
    */
   minActTimeout = 0;
   /**
-   * view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
+   * e.g. view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
    */
   stepActTimeout = 1;
   /**
-   * view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
+   * e.g. view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
    */
   thumbLabelActTimeout = true;
   /**
-   * view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
+   * e.g. view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
    */
   valueActTimeout = 50;
   /**
-   * view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
+   * e.g. view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
    */
   verticalActTimeout = false;
-
 
   goalPose;
 

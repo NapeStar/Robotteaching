@@ -1,8 +1,8 @@
 # Creation of a NewMethod model 
 
-In the model folder create a new class with the name of the method e.g. NewMethod
+Create a new class/model e.g. NewMethod within the "model" folder
   
-  
+ 
 ![Screenshot](../../screenshots/steps/new-method-model.png)
   
 

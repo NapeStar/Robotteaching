@@ -6,7 +6,7 @@ import {Workflow} from '../../model/workflow.model';
 import {WizardParentStepperService} from '../wizard-parent/wizard-parent-stepper.service';
 
 /**
- * This component is the Parent Component of all "Wizard" Componets e.g. WizardGripperGripComponent. It contains
+ * This component is the Parent Component of all "Wizard" Components e.g. WizardGripperGripComponent. It contains
  * all basic functionalities, which may be overrided by the Child Components
  */
 @Component({

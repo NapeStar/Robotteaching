@@ -35,7 +35,7 @@
 
 <ol class="breadcrumb">
   <li>Components</li>
-  <li>WizardArmTrajectoryComponent</li>
+  <li>WizardNewMethodComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -61,9 +61,19 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/wizard-stepper/wizard-arm-trajectory/wizard-arm-trajectory.component.ts</code>
+    <code>src/app/wizard-stepper/wizard-new-method/wizard-new-method.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>This component is a Child Component of &quot;Wizard-Job&quot;.</p>
+<p>It presents the view of new the method to be added in the configurator (&quot;Wizard-Parent&quot;).
+E.g. to present and enter values Angular Material Design Components where used in the view
+<a href="https://material.angular.io/components/categories">https://material.angular.io/components/categories</a></p>
+
+    </p>
 
     <p class="comment">
         <h3>Extends</h3>
@@ -98,19 +108,19 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-wizard-arm-trajectory-movement</code></td>
+                <td class="col-md-9"><code>app-wizard-new-method</code></td>
             </tr>
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./wizard-arm-trajectory.component.css</code></td>
+                <td class="col-md-9"><code>./wizard-new-method.component.css</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./wizard-arm-trajectory.component.html</code></td>
+                <td class="col-md-9"><code>./wizard-new-method.component.html</code></td>
             </tr>
 
 
@@ -137,31 +147,40 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#disabled">disabled</a>
+                                <a href="#armCartesian">armCartesian</a>
                             </li>
                             <li>
-                                <a href="#invert">invert</a>
+                                <a href="#disabledActTimeout">disabledActTimeout</a>
                             </li>
                             <li>
-                                <a href="#max">max</a>
+                                <a href="#goalPose">goalPose</a>
                             </li>
                             <li>
-                                <a href="#min">min</a>
+                                <a href="#invertActTimeout">invertActTimeout</a>
                             </li>
                             <li>
-                                <a href="#step">step</a>
+                                <a href="#isDisabledNext">isDisabledNext</a>
                             </li>
                             <li>
-                                <a href="#thumbLabel">thumbLabel</a>
+                                <a href="#maxActTimeout">maxActTimeout</a>
+                            </li>
+                            <li>
+                                <a href="#minActTimeout">minActTimeout</a>
+                            </li>
+                            <li>
+                                <a href="#stepActTimeout">stepActTimeout</a>
+                            </li>
+                            <li>
+                                <a href="#thumbLabelActTimeout">thumbLabelActTimeout</a>
                             </li>
                             <li>
                                 <a href="#title">title</a>
                             </li>
                             <li>
-                                <a href="#value">value</a>
+                                <a href="#valueActTimeout">valueActTimeout</a>
                             </li>
                             <li>
-                                <a href="#vertical">vertical</a>
+                                <a href="#verticalActTimeout">verticalActTimeout</a>
                             </li>
                             <li>
                                 <a href="#counter">counter</a>
@@ -200,6 +219,15 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onGetPostionClick">onGetPostionClick</a>
+                            </li>
+                            <li>
+                                <a href="#onNextClick">onNextClick</a>
+                            </li>
+                            <li>
                                 <a href="#ngOnDestroy">ngOnDestroy</a>
                             </li>
                             <li>
@@ -232,12 +260,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, wizardStepperService: <a href="../injectables/WizardStepperService.html">WizardStepperService</a>, eventEmitterService: <a href="../injectables/WizardParentStepperService.html">WizardParentStepperService</a>)</code>
+<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, wizardStepperService: <a href="../injectables/WizardStepperService.html">WizardStepperService</a>, eventEmitterService: <a href="../injectables/WizardParentStepperService.html">WizardParentStepperService</a>, httpRequest: <a href="../injectables/HttpRequestService.html">HttpRequestService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/wizard-stepper/wizard-arm-trajectory/wizard-arm-trajectory.component.ts:48</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/app/wizard-stepper/wizard-new-method/wizard-new-method.component.ts:68</a></div>
                             </td>
                         </tr>
 
@@ -290,6 +318,18 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>httpRequest</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/HttpRequestService.html" target="_self" >HttpRequestService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -308,6 +348,123 @@
     <h3 id="methods">
         Methods
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="77"
+                            class="link-to-prism">src/app/wizard-stepper/wizard-new-method/wizard-new-method.component.ts:77</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onGetPostionClick"></a>
+                    <span class="name">
+                        <b>
+                            onGetPostionClick
+                        </b>
+                        <a href="#onGetPostionClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onGetPostionClick()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="98"
+                            class="link-to-prism">src/app/wizard-stepper/wizard-new-method/wizard-new-method.component.ts:98</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onNextClick"></a>
+                    <span class="name">
+                        <b>
+                            onNextClick
+                        </b>
+                        <a href="#onNextClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onNextClick()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="83"
+                            class="link-to-prism">src/app/wizard-stepper/wizard-new-method/wizard-new-method.component.ts:83</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -596,28 +753,29 @@ before redirects to &quot;previous&quot; wizard job component</p>
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="disabled"></a>
+                        <a name="armCartesian"></a>
                         <span class="name">
                             <b>
-                            disabled</b>
-                            <a href="#disabled"><span class="icon ion-ios-link"></span></a>
+                            armCartesian</b>
+                            <a href="#armCartesian"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>false</code>
+                            <i>Type : </i>        <code><a href="../classes/ArmCartesian.html" target="_self" >ArmCartesian</a></code>
+
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/wizard-stepper/wizard-arm-trajectory/wizard-arm-trajectory.component.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/wizard-stepper/wizard-new-method/wizard-new-method.component.ts:31</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>view parameter for Angular Material Slider <a href="https://material.angular.io/components/slider/overview">https://material.angular.io/components/slider/overview</a></p>
+                        <div class="io-description"><p>local instance of NewMethod</p>
 </div>
                     </td>
                 </tr>
@@ -628,11 +786,11 @@ before redirects to &quot;previous&quot; wizard job component</p>
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="invert"></a>
+                        <a name="disabledActTimeout"></a>
                         <span class="name">
                             <b>
-                            invert</b>
-                            <a href="#invert"><span class="icon ion-ios-link"></span></a>
+                            disabledActTimeout</b>
+                            <a href="#disabledActTimeout"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -643,13 +801,13 @@ before redirects to &quot;previous&quot; wizard job component</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/wizard-stepper/wizard-arm-trajectory/wizard-arm-trajectory.component.ts:24</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/wizard-stepper/wizard-new-method/wizard-new-method.component.ts:35</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>view parameter for Angular Material Slider <a href="https://material.angular.io/components/slider/overview">https://material.angular.io/components/slider/overview</a></p>
+                        <div class="io-description"><p>e.g. view parameter for Angular Material Slider <a href="https://material.angular.io/components/slider/overview">https://material.angular.io/components/slider/overview</a></p>
 </div>
                     </td>
                 </tr>
@@ -660,11 +818,90 @@ before redirects to &quot;previous&quot; wizard job component</p>
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="max"></a>
+                        <a name="goalPose"></a>
                         <span class="name">
                             <b>
-                            max</b>
-                            <a href="#max"><span class="icon ion-ios-link"></span></a>
+                            goalPose</b>
+                            <a href="#goalPose"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/app/wizard-stepper/wizard-new-method/wizard-new-method.component.ts:65</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="invertActTimeout"></a>
+                        <span class="name">
+                            <b>
+                            invertActTimeout</b>
+                            <a href="#invertActTimeout"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/wizard-stepper/wizard-new-method/wizard-new-method.component.ts:39</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>e.g. view parameter for Angular Material Slider <a href="https://material.angular.io/components/slider/overview">https://material.angular.io/components/slider/overview</a></p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isDisabledNext"></a>
+                        <span class="name">
+                            <b>
+                            isDisabledNext</b>
+                            <a href="#isDisabledNext"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/app/wizard-stepper/wizard-new-method/wizard-new-method.component.ts:68</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="maxActTimeout"></a>
+                        <span class="name">
+                            <b>
+                            maxActTimeout</b>
+                            <a href="#maxActTimeout"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -681,13 +918,13 @@ before redirects to &quot;previous&quot; wizard job component</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/wizard-stepper/wizard-arm-trajectory/wizard-arm-trajectory.component.ts:28</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/wizard-stepper/wizard-new-method/wizard-new-method.component.ts:43</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>view parameter for Angular Material Slider <a href="https://material.angular.io/components/slider/overview">https://material.angular.io/components/slider/overview</a></p>
+                        <div class="io-description"><p>e.g. view parameter for Angular Material Slider <a href="https://material.angular.io/components/slider/overview">https://material.angular.io/components/slider/overview</a></p>
 </div>
                     </td>
                 </tr>
@@ -698,11 +935,11 @@ before redirects to &quot;previous&quot; wizard job component</p>
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="min"></a>
+                        <a name="minActTimeout"></a>
                         <span class="name">
                             <b>
-                            min</b>
-                            <a href="#min"><span class="icon ion-ios-link"></span></a>
+                            minActTimeout</b>
+                            <a href="#minActTimeout"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -719,13 +956,13 @@ before redirects to &quot;previous&quot; wizard job component</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/wizard-stepper/wizard-arm-trajectory/wizard-arm-trajectory.component.ts:32</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/wizard-stepper/wizard-new-method/wizard-new-method.component.ts:47</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>view parameter for Angular Material Slider <a href="https://material.angular.io/components/slider/overview">https://material.angular.io/components/slider/overview</a></p>
+                        <div class="io-description"><p>e.g. view parameter for Angular Material Slider <a href="https://material.angular.io/components/slider/overview">https://material.angular.io/components/slider/overview</a></p>
 </div>
                     </td>
                 </tr>
@@ -736,11 +973,11 @@ before redirects to &quot;previous&quot; wizard job component</p>
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="step"></a>
+                        <a name="stepActTimeout"></a>
                         <span class="name">
                             <b>
-                            step</b>
-                            <a href="#step"><span class="icon ion-ios-link"></span></a>
+                            stepActTimeout</b>
+                            <a href="#stepActTimeout"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -757,13 +994,13 @@ before redirects to &quot;previous&quot; wizard job component</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/wizard-stepper/wizard-arm-trajectory/wizard-arm-trajectory.component.ts:36</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/wizard-stepper/wizard-new-method/wizard-new-method.component.ts:51</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>view parameter for Angular Material Slider <a href="https://material.angular.io/components/slider/overview">https://material.angular.io/components/slider/overview</a></p>
+                        <div class="io-description"><p>e.g. view parameter for Angular Material Slider <a href="https://material.angular.io/components/slider/overview">https://material.angular.io/components/slider/overview</a></p>
 </div>
                     </td>
                 </tr>
@@ -774,11 +1011,11 @@ before redirects to &quot;previous&quot; wizard job component</p>
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="thumbLabel"></a>
+                        <a name="thumbLabelActTimeout"></a>
                         <span class="name">
                             <b>
-                            thumbLabel</b>
-                            <a href="#thumbLabel"><span class="icon ion-ios-link"></span></a>
+                            thumbLabelActTimeout</b>
+                            <a href="#thumbLabelActTimeout"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -789,13 +1026,13 @@ before redirects to &quot;previous&quot; wizard job component</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/wizard-stepper/wizard-arm-trajectory/wizard-arm-trajectory.component.ts:40</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/wizard-stepper/wizard-new-method/wizard-new-method.component.ts:55</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>view parameter for Angular Material Slider <a href="https://material.angular.io/components/slider/overview">https://material.angular.io/components/slider/overview</a></p>
+                        <div class="io-description"><p>e.g. view parameter for Angular Material Slider <a href="https://material.angular.io/components/slider/overview">https://material.angular.io/components/slider/overview</a></p>
 </div>
                     </td>
                 </tr>
@@ -822,18 +1059,18 @@ before redirects to &quot;previous&quot; wizard job component</p>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>&#x27;Arm Trajectory&#x27;</code>
+                            <i>Default value : </i><code>&#x27;New Method&#x27;</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/wizard-stepper/wizard-arm-trajectory/wizard-arm-trajectory.component.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/wizard-stepper/wizard-new-method/wizard-new-method.component.ts:27</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>displayed titel of the component</p>
+                        <div class="io-description"><p>displayed titel of the new component</p>
 </div>
                     </td>
                 </tr>
@@ -844,11 +1081,11 @@ before redirects to &quot;previous&quot; wizard job component</p>
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="value"></a>
+                        <a name="valueActTimeout"></a>
                         <span class="name">
                             <b>
-                            value</b>
-                            <a href="#value"><span class="icon ion-ios-link"></span></a>
+                            valueActTimeout</b>
+                            <a href="#valueActTimeout"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -865,13 +1102,13 @@ before redirects to &quot;previous&quot; wizard job component</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/wizard-stepper/wizard-arm-trajectory/wizard-arm-trajectory.component.ts:44</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/wizard-stepper/wizard-new-method/wizard-new-method.component.ts:59</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>view parameter for Angular Material Slider <a href="https://material.angular.io/components/slider/overview">https://material.angular.io/components/slider/overview</a></p>
+                        <div class="io-description"><p>e.g. view parameter for Angular Material Slider <a href="https://material.angular.io/components/slider/overview">https://material.angular.io/components/slider/overview</a></p>
 </div>
                     </td>
                 </tr>
@@ -882,11 +1119,11 @@ before redirects to &quot;previous&quot; wizard job component</p>
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="vertical"></a>
+                        <a name="verticalActTimeout"></a>
                         <span class="name">
                             <b>
-                            vertical</b>
-                            <a href="#vertical"><span class="icon ion-ios-link"></span></a>
+                            verticalActTimeout</b>
+                            <a href="#verticalActTimeout"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -897,13 +1134,13 @@ before redirects to &quot;previous&quot; wizard job component</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/wizard-stepper/wizard-arm-trajectory/wizard-arm-trajectory.component.ts:48</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/wizard-stepper/wizard-new-method/wizard-new-method.component.ts:63</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>view parameter for Angular Material Slider <a href="https://material.angular.io/components/slider/overview">https://material.angular.io/components/slider/overview</a></p>
+                        <div class="io-description"><p>e.g. view parameter for Angular Material Slider <a href="https://material.angular.io/components/slider/overview">https://material.angular.io/components/slider/overview</a></p>
 </div>
                     </td>
                 </tr>
@@ -1210,141 +1447,120 @@ before redirects to &quot;previous&quot; wizard job component</p>
 import {Router} from &#x27;@angular/router&#x27;;
 import {WizardStepperService} from &#x27;../wizard-stepper.service&#x27;;
 import {WizardJobComponent} from &#x27;../wizard-job/wizard-job.component&#x27;;
+import {ArmCartesian} from &#x27;../../model/arm-cartesian.model&#x27;;
 import {WizardParentStepperService} from &#x27;../wizard-parent/wizard-parent-stepper.service&#x27;;
-
+import {HttpRequestService} from &#x27;../../execution/http-request.service&#x27;;
+/**
+ * This component is a Child Component of &quot;Wizard-Job&quot;.
+ *
+ * It presents the view of new the method to be added in the configurator (&quot;Wizard-Parent&quot;).
+ * E.g. to present and enter values Angular Material Design Components where used in the view
+ * {@link https://material.angular.io/components/categories}
+ */
 @Component({
-  selector: &#x27;app-wizard-arm-trajectory-movement&#x27;,
-  templateUrl: &#x27;./wizard-arm-trajectory.component.html&#x27;,
-  styleUrls: [&#x27;./wizard-arm-trajectory.component.css&#x27;]
+  selector: &#x27;app-wizard-new-method&#x27;,
+  templateUrl: &#x27;./wizard-new-method.component.html&#x27;,
+  styleUrls: [&#x27;./wizard-new-method.component.css&#x27;]
 })
-export class WizardArmTrajectoryComponent extends WizardJobComponent implements OnInit, OnDestroy {
+export class WizardNewMethodComponent extends WizardJobComponent implements OnInit,  OnDestroy {
   /**
-   * displayed titel of the component
+   * displayed titel of the new component
    */
-  title &#x3D; &#x27;Arm Trajectory&#x27;;
+  title &#x3D; &#x27;New Method&#x27;;
   /**
-   * view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
+   * local instance of NewMethod
    */
-  disabled &#x3D; false;
+  armCartesian: ArmCartesian;
   /**
-   * view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
+   * e.g. view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
    */
-  invert &#x3D; false;
+  disabledActTimeout &#x3D; false;
   /**
-   * view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
+   * e.g. view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
    */
-  max &#x3D; 100;
+  invertActTimeout &#x3D; false;
   /**
-   * view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
+   * e.g. view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
    */
-  min &#x3D; 0;
+  maxActTimeout &#x3D; 100;
   /**
-   * view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
+   * e.g. view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
    */
-  step &#x3D; 1;
+  minActTimeout &#x3D; 0;
   /**
-   * view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
+   * e.g. view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
    */
-  thumbLabel &#x3D; true;
+  stepActTimeout &#x3D; 1;
   /**
-   * view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
+   * e.g. view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
    */
-  value &#x3D; 50;
+  thumbLabelActTimeout &#x3D; true;
   /**
-   * view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
+   * e.g. view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
    */
-  vertical &#x3D; false;
+  valueActTimeout &#x3D; 50;
+  /**
+   * e.g. view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
+   */
+  verticalActTimeout &#x3D; false;
+
+  goalPose;
+
+  // mat-button next
+  isDisabledNext &#x3D; true;
+
 
   constructor(router: Router,
               wizardStepperService: WizardStepperService,
-              eventEmitterService: WizardParentStepperService) {
+              eventEmitterService: WizardParentStepperService,
+              private httpRequest: HttpRequestService) {
     super(router, wizardStepperService, eventEmitterService);
+  }
+  ngOnInit() {
+    super.ngOnInit();
+    this.armCartesian &#x3D; this.wizardStepperService.getWorkflowItem() as ArmCartesian;
+    this.valueActTimeout &#x3D; this.armCartesian.activationTimeout;
+    this.goalPose &#x3D; this.armCartesian.goalPose;
+  }
+  onNextClick(): void {
+    this.armCartesian.activationTimeout &#x3D; this.valueActTimeout;
+    this.wizardStepperService.updateWorkflowItem(this.armCartesian);
+    if (this.counter &lt; this.workflow.getJobsLength() - 1) {
+      this.wizardStepperService.increaseCount();
+      this.selectNextJob(this.workflow.getJobName(this.counter));
+      this.router.navigate([this.link]);
+    } else {
+      this.wizardStepperService.updateCount(this.counter &#x3D; 0);
+      this.link &#x3D; &#x27;wizard/run&#x27;;
+      this.router.navigate([this.link]);
+      this.eventEmitterService.onStepperNextClick();
+      console.log(&#x27;ArmCatesian onStepperNext wurde ausgeführt&#x27;);
+    }
+  }
+  onGetPostionClick() {
+    this.httpRequest.getBasePosition().subscribe(
+      (responseData: number[]) &#x3D;&gt;  {
+        this.armCartesian.goalPose &#x3D; [];
+        this.armCartesian.goalPose &#x3D; responseData;
+        this.goalPose &#x3D; this.armCartesian.goalPose;
+        this.isDisabledNext &#x3D; false;
+        console.log(this.armCartesian.goalPose);
+      });
   }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;h1&gt;{{title}}&lt;/h1&gt;
-&lt;mat-card class&#x3D;&quot;example-container&quot;&gt;
-  &lt;mat-card-subtitle&gt;Activation Timeout&lt;/mat-card-subtitle&gt;
-  &lt;mat-card-content&gt;
-
-    &lt;section class&#x3D;&quot;example-section&quot;&gt;
-      &lt;mat-slider
-        class&#x3D;&quot;example-margin&quot;
-        [disabled]&#x3D;&quot;disabled&quot;
-        [invert]&#x3D;&quot;invert&quot;
-        [max]&#x3D;&quot;max&quot;
-        [min]&#x3D;&quot;min&quot;
-        [step]&#x3D;&quot;step&quot;
-        [thumbLabel]&#x3D;&quot;thumbLabel&quot;
-        [(ngModel)]&#x3D;&quot;value&quot;
-        [vertical]&#x3D;&quot;vertical&quot;&gt;
-      &lt;/mat-slider&gt;
-
-      &lt;mat-form-field class&#x3D;&quot;example-margin&quot;&gt;
-        &lt;input matInput type&#x3D;&quot;number&quot; placeholder&#x3D;&quot;Value&quot; [(ngModel)]&#x3D;&quot;value&quot;&gt;
-        &lt;mat-hint&gt;Timeout&lt;/mat-hint&gt;
-      &lt;/mat-form-field&gt;
-    &lt;/section&gt;
-  &lt;/mat-card-content&gt;
-&lt;/mat-card&gt;
-&lt;br&gt;
-&lt;mat-card class&#x3D;&quot;example-container&quot;&gt;
-  &lt;mat-card-actions align&#x3D;&quot;end&quot;&gt;
-    &lt;button mat-icon-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;onPreviousClick()&quot;&gt;
-      &lt;mat-icon class&#x3D;&quot;mat-18&quot;&gt;navigate_before&lt;/mat-icon&gt;
-    &lt;/button&gt;
-    &lt;div fxFlex&gt;&lt;/div&gt;
-    &lt;button mat-icon-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;onNextClick()&quot;&gt;
-      &lt;mat-icon class&#x3D;&quot;mat-18&quot;&gt;navigate_next&lt;/mat-icon&gt;
-    &lt;/button&gt;
-  &lt;/mat-card-actions&gt;
-&lt;/mat-card&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;p&gt;wizard-new-method works!&lt;/p&gt;
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
-                    <code>./wizard-arm-trajectory.component.css</code>
+                    <code>./wizard-new-method.component.css</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">.example-container {
-  width: 600px;
-  max-width: 100%;
-  margin: 10px 10px 10px 10px;
-  display: inline-block;
-  vertical-align: top;
-  padding: 1rem;
-}
-h1, h2, h3, h4, h5, h6{
-  margin-top:20px;
-  margin-bottom:10px;
-  margin-left: 10px;
-}
-.example-h2 {
-  margin: 10px;
-}
-
-.example-section {
-  display: flex;
-  align-content: center;
-  align-items: center;
-  height: 60px;
-}
-
-.example-margin {
-  margin: 30px;
-}
-
-.mat-slider-horizontal {
-  width: 100px;
-}
-
-.fxFlex{
-  flex: 100 1 auto;
-}
-</code></pre>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -1372,10 +1588,10 @@ h1, h2, h3, h4, h5, h6{
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><h1>{{title}}</h1><mat-card class="example-container">  <mat-card-subtitle>Activation Timeout</mat-card-subtitle>  <mat-card-content>    <section class="example-section">      <mat-slider        class="example-margin"        [disabled]="disabled"        [invert]="invert"        [max]="max"        [min]="min"        [step]="step"        [thumbLabel]="thumbLabel"        [(ngModel)]="value"        [vertical]="vertical">      </mat-slider>      <mat-form-field class="example-margin">        <input matInput type="number" placeholder="Value" [(ngModel)]="value">        <mat-hint>Timeout</mat-hint>      </mat-form-field>    </section>  </mat-card-content></mat-card><br><mat-card class="example-container">  <mat-card-actions align="end">    <button mat-icon-button color="primary" (click)="onPreviousClick()">      <mat-icon class="mat-18">navigate_before</mat-icon>    </button>    <div fxFlex></div>    <button mat-icon-button color="primary" (click)="onNextClick()">      <mat-icon class="mat-18">navigate_next</mat-icon>    </button>  </mat-card-actions></mat-card></div>'
+        var COMPONENT_TEMPLATE = '<div><p>wizard-new-method works!</p></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AvailableJobsComponent', 'selector': 'app-available-jobs'},{'name': 'ExecutionRunComponent', 'selector': 'app-execution-run'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'NoPageFoundComponent', 'selector': 'app-no-page-found'},{'name': 'WizardArmCartesianComponent', 'selector': 'app-wizard-arm-cartesian'},{'name': 'WizardArmJoinsComponent', 'selector': 'app-wizard-arm-joins'},{'name': 'WizardArmTrajectoryComponent', 'selector': 'app-wizard-arm-trajectory-movement'},{'name': 'WizardBaseComponent', 'selector': 'app-wizard-base'},{'name': 'WizardGripperGripComponent', 'selector': 'app-wizard-gripper-grip'},{'name': 'WizardGripperReleaseComponent', 'selector': 'app-wizard-gripper-release'},{'name': 'WizardJobComponent', 'selector': 'app-wizard-job'},{'name': 'WizardNewMethodComponent', 'selector': 'app-wizard-new-method'},{'name': 'WizardParentComponent', 'selector': 'app-wizard-parent'},{'name': 'WorkflowTableComponent', 'selector': 'app-workflow-table'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'WizardArmTrajectoryComponent'};
+    var ACTUAL_COMPONENT = {'name': 'WizardNewMethodComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -1410,7 +1626,7 @@ h1, h2, h3, h4, h5, h6{
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'WizardArmTrajectoryComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'WizardNewMethodComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

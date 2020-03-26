@@ -12,18 +12,45 @@ import {WizardParentStepperService} from '../wizard-parent/wizard-parent-stepper
   styleUrls: ['./wizard-gripper-grip.component.css']
 })
 export class WizardGripperGripComponent extends WizardJobComponent implements OnInit, OnDestroy {
-
+  /**
+   * displayed titel of the component
+   */
   title = 'Gripper Grip';
-
+  /**
+   * local instance of GripperGrip
+   */
   gripperGrip: GripperGrip;
-
+  /**
+   * view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
+   */
   disabledActTimeout = false;
+  /**
+   * view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
+   */
   invertActTimeout = false;
+  /**
+   * view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
+   */
   maxActTimeout = 100;
+  /**
+   * view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
+   */
   minActTimeout = 0;
+  /**
+   * view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
+   */
   stepActTimeout = 1;
+  /**
+   * view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
+   */
   thumbLabelActTimeout = true;
+  /**
+   * view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
+   */
   valueActTimeout = 50;
+  /**
+   * view parameter for Angular Material Slider {@link https://material.angular.io/components/slider/overview}
+   */
   verticalActTimeout = false;
 
   constructor(router: Router,
