@@ -1,0 +1,1974 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>robot-teaching documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">robot-teaching documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>AvailableJobsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/jobs/available-jobs/available-jobs.component.ts</code>
+</p>
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>This component provides the view for drag&amp;drop the choosen methods (jobs).
+The order of the single jobs (methods) can be defined and a name for the workflow has to be entered.</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-available-jobs</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./available-jobs.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./available-jobs.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#copiedJobs">copiedJobs</a>
+                            </li>
+                            <li>
+                                <a href="#counter">counter</a>
+                            </li>
+                            <li>
+                                <a href="#counterSub">counterSub</a>
+                            </li>
+                            <li>
+                                <a href="#httpResult">httpResult</a>
+                            </li>
+                            <li>
+                                <a href="#isDisabledNext">isDisabledNext</a>
+                            </li>
+                            <li>
+                                <a href="#jobs">jobs</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#jobsSub">jobsSub</a>
+                            </li>
+                            <li>
+                                <a href="#jobsUpdated">jobsUpdated</a>
+                            </li>
+                            <li>
+                                <a href="#link">link</a>
+                            </li>
+                            <li>
+                                <a href="#matcher">matcher</a>
+                            </li>
+                            <li>
+                                <a href="#name">name</a>
+                            </li>
+                            <li>
+                                <a href="#nameFormControl">nameFormControl</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#response">response</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#responseSub">responseSub</a>
+                            </li>
+                            <li>
+                                <a href="#selectedJob">selectedJob</a>
+                            </li>
+                            <li>
+                                <a href="#selectedJobs">selectedJobs</a>
+                            </li>
+                            <li>
+                                <a href="#workflow">workflow</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#workflowSub">workflowSub</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#drop">drop</a>
+                            </li>
+                            <li>
+                                <a href="#getAvailableJobs">getAvailableJobs</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onClick">onClick</a>
+                            </li>
+                            <li>
+                                <a href="#onNextClick">onNextClick</a>
+                            </li>
+                            <li>
+                                <a href="#onResetClick">onResetClick</a>
+                            </li>
+                            <li>
+                                <a href="#onSaveClick">onSaveClick</a>
+                            </li>
+                            <li>
+                                <a href="#onSelect">onSelect</a>
+                            </li>
+                            <li>
+                                <a href="#selectNextJob">selectNextJob</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(jobService: <a href="../injectables/JobsService.html">JobsService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, wizardStepperService: <a href="../injectables/WizardStepperService.html">WizardStepperService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/app/jobs/available-jobs/available-jobs.component.ts:83</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>constructor</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>jobService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/JobsService.html" target="_self" >JobsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>For redirecting</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>wizardStepperService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/WizardStepperService.html" target="_self" >WizardStepperService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>For Sharing Workflow Information</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="drop"></a>
+                    <span class="name">
+                        <b>
+                            drop
+                        </b>
+                        <a href="#drop"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>drop(event: <a href="../classes/Move.html">CdkDragDrop<Move[]></a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="245"
+                            class="link-to-prism">src/app/jobs/available-jobs/available-jobs.component.ts:245</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Drag&amp;Drop from Angular Material <a href="https://material.angular.io/cdk/drag-drop/overview">https://material.angular.io/cdk/drag-drop/overview</a></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                                <code><a href="../classes/Move.html" target="_self" >CdkDragDrop&lt;Move[]&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAvailableJobs"></a>
+                    <span class="name">
+                        <b>
+                            getAvailableJobs
+                        </b>
+                        <a href="#getAvailableJobs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getAvailableJobs()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="158"
+                            class="link-to-prism">src/app/jobs/available-jobs/available-jobs.component.ts:158</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>requests available Jobs from backend</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <b>
+                            ngOnDestroy
+                        </b>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="140"
+                            class="link-to-prism">src/app/jobs/available-jobs/available-jobs.component.ts:140</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>ngOnDestroy is a lifecycle hook - is called when a directive, pipe, or service is destroyed</p>
+<p>resets variables and unsubscribes Subscriptions</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="100"
+                            class="link-to-prism">src/app/jobs/available-jobs/available-jobs.component.ts:100</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>ngOnInit is a lifecycle hook</p>
+<ul>
+<li>executed after constructor</li>
+</ul>
+<p>declaration of all necessary variables for this component</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onClick"></a>
+                    <span class="name">
+                        <b>
+                            onClick
+                        </b>
+                        <a href="#onClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onClick()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="175"
+                            class="link-to-prism">src/app/jobs/available-jobs/available-jobs.component.ts:175</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>refreshes available Jobs from backend</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onNextClick"></a>
+                    <span class="name">
+                        <b>
+                            onNextClick
+                        </b>
+                        <a href="#onNextClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onNextClick()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="164"
+                            class="link-to-prism">src/app/jobs/available-jobs/available-jobs.component.ts:164</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>choose 1st job in workflow list and redirects to this job (job configurator)</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onResetClick"></a>
+                    <span class="name">
+                        <b>
+                            onResetClick
+                        </b>
+                        <a href="#onResetClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onResetClick()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="181"
+                            class="link-to-prism">src/app/jobs/available-jobs/available-jobs.component.ts:181</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>resets selected jobs</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSaveClick"></a>
+                    <span class="name">
+                        <b>
+                            onSaveClick
+                        </b>
+                        <a href="#onSaveClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSaveClick()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="189"
+                            class="link-to-prism">src/app/jobs/available-jobs/available-jobs.component.ts:189</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>stores selected list of jobs in wizardStepperService</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSelect"></a>
+                    <span class="name">
+                        <b>
+                            onSelect
+                        </b>
+                        <a href="#onSelect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSelect(job: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="152"
+                            class="link-to-prism">src/app/jobs/available-jobs/available-jobs.component.ts:152</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>stores selected jobe name for Drag&amp;Drop</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>job</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Jobname of of selected job</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectNextJob"></a>
+                    <span class="name">
+                        <b>
+                            selectNextJob
+                        </b>
+                        <a href="#selectNextJob"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>selectNextJob(job: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="204"
+                            class="link-to-prism">src/app/jobs/available-jobs/available-jobs.component.ts:204</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>stores 1st job&#39;s routing-link under link</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>job</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Name of 1st job in selected workflow</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="copiedJobs"></a>
+                        <span class="name">
+                            <b>
+                            copiedJobs</b>
+                            <a href="#copiedJobs"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string[]</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/jobs/available-jobs/available-jobs.component.ts:54</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="counter"></a>
+                        <span class="name">
+                            <b>
+                            counter</b>
+                            <a href="#counter"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="79" class="link-to-prism">src/app/jobs/available-jobs/available-jobs.component.ts:79</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>locally stored counter</p>
+<p>index for navigating through wizard</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="counterSub"></a>
+                        <span class="name">
+                            <b>
+                            counterSub</b>
+                            <a href="#counterSub"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Subscription</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/app/jobs/available-jobs/available-jobs.component.ts:83</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Subscription for counterSub -&gt; synchronized and shared counter</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="httpResult"></a>
+                        <span class="name">
+                            <b>
+                            httpResult</b>
+                            <a href="#httpResult"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/jobs/available-jobs/available-jobs.component.ts:51</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isDisabledNext"></a>
+                        <span class="name">
+                            <b>
+                            isDisabledNext</b>
+                            <a href="#isDisabledNext"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/jobs/available-jobs/available-jobs.component.ts:49</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>used in view to enable and disable Next button</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="jobs"></a>
+                        <span class="name">
+                            <b>
+                            jobs</b>
+                            <a href="#jobs"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/jobs/available-jobs/available-jobs.component.ts:55</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="jobsSub"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            jobsSub</b>
+                            <a href="#jobsSub"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Subscription</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/app/jobs/available-jobs/available-jobs.component.ts:69</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="jobsUpdated"></a>
+                        <span class="name">
+                            <b>
+                            jobsUpdated</b>
+                            <a href="#jobsUpdated"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/app/jobs/available-jobs/available-jobs.component.ts:68</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="link"></a>
+                        <span class="name">
+                            <b>
+                            link</b>
+                            <a href="#link"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;wizard/&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">src/app/jobs/available-jobs/available-jobs.component.ts:73</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>string used for routing/redirecting</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="matcher"></a>
+                        <span class="name">
+                            <b>
+                            matcher</b>
+                            <a href="#matcher"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new MyErrorStateMatcher()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/jobs/available-jobs/available-jobs.component.ts:39</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>used in view to handel error if name of workflow is not entered</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="name"></a>
+                        <span class="name">
+                            <b>
+                            name</b>
+                            <a href="#name"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/jobs/available-jobs/available-jobs.component.ts:44</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>in this variable name of workflow is stored</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="nameFormControl"></a>
+                        <span class="name">
+                            <b>
+                            nameFormControl</b>
+                            <a href="#nameFormControl"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new FormControl(&#x27;&#x27;, [
+    Validators.required,
+  ])</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/jobs/available-jobs/available-jobs.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>used in view to validate/check if name of workflow is entered</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="response"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            response</b>
+                            <a href="#response"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string[]</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/jobs/available-jobs/available-jobs.component.ts:57</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="responseSub"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            responseSub</b>
+                            <a href="#responseSub"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>Subscription</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/jobs/available-jobs/available-jobs.component.ts:58</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectedJob"></a>
+                        <span class="name">
+                            <b>
+                            selectedJob</b>
+                            <a href="#selectedJob"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/jobs/available-jobs/available-jobs.component.ts:52</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectedJobs"></a>
+                        <span class="name">
+                            <b>
+                            selectedJobs</b>
+                            <a href="#selectedJobs"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string[]</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/jobs/available-jobs/available-jobs.component.ts:53</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="workflow"></a>
+                        <span class="name">
+                            <b>
+                            workflow</b>
+                            <a href="#workflow"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Workflow.html" target="_self" >Workflow</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/jobs/available-jobs/available-jobs.component.ts:62</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>locally stored workflow</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="workflowSub"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            workflowSub</b>
+                            <a href="#workflowSub"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Subscription</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/app/jobs/available-jobs/available-jobs.component.ts:66</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Subscription for observed workflowSub -&gt; synchronized and shared workflow</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, OnInit, OnDestroy, SimpleChange} from &#x27;@angular/core&#x27;;
+import { JobsService} from &#x27;../jobs.service&#x27;;
+import {CdkDragDrop, moveItemInArray, transferArrayItem, copyArrayItem} from &#x27;@angular/cdk/drag-drop&#x27;;
+import {Move} from &#x27;../move.data&#x27;;
+import {Subscription} from &#x27;rxjs&#x27;;
+import {Router} from &#x27;@angular/router&#x27;;
+import { WizardStepperService} from &#x27;../../wizard-stepper/wizard-stepper.service&#x27;;
+import {Workflow} from &#x27;../../model/workflow.model&#x27;;
+import {FormControl, FormGroupDirective, NgForm, Validators} from &#x27;@angular/forms&#x27;;
+import {ErrorStateMatcher} from &#x27;@angular/material&#x27;;
+
+/** Error when invalid control is dirty, touched, or submitted. */
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted &#x3D; form &amp;&amp; form.submitted;
+    return !!(control &amp;&amp; control.invalid &amp;&amp; (control.dirty || control.touched || isSubmitted));
+  }
+}
+/**
+ * This component provides the view for drag&amp;drop the choosen methods (jobs).
+ * The order of the single jobs (methods) can be defined and a name for the workflow has to be entered.
+ */
+@Component({
+  selector: &#x27;app-available-jobs&#x27;,
+  templateUrl: &#x27;./available-jobs.component.html&#x27;,
+  styleUrls: [&#x27;./available-jobs.component.css&#x27;]
+})
+export class AvailableJobsComponent implements OnInit, OnDestroy {
+
+  /**
+   * used in view to validate/check if name of workflow is entered
+   */
+  nameFormControl &#x3D; new FormControl(&#x27;&#x27;, [
+    Validators.required,
+  ]);
+  /**
+   * used in view to handel error if name of workflow is not entered
+   */
+  matcher &#x3D; new MyErrorStateMatcher();
+
+  /**
+   * in this variable name of workflow is stored
+   */
+  name &#x3D; &#x27;&#x27;;
+
+  /**
+   * used in view to enable and disable Next button
+   */
+  isDisabledNext &#x3D; true;
+
+  httpResult: any;
+  selectedJob: any;
+  selectedJobs: string[];
+  copiedJobs: string[];
+  jobs: string[] &#x3D; [];
+
+  private response: string[];
+  private responseSub &#x3D; Subscription;
+  /**
+   * locally stored workflow
+   */
+  workflow: Workflow;
+  /**
+   * Subscription for observed workflowSub -&gt; synchronized and shared workflow
+   */
+  private workflowSub: Subscription;
+
+  jobsUpdated: string[] &#x3D; [];
+  private jobsSub: Subscription;
+  /**
+   * string used for routing/redirecting
+   */
+  link &#x3D; &#x27;wizard/&#x27;;
+  /**
+   * locally stored counter
+   *
+   * index for navigating through wizard
+   */
+  counter: number;
+  /**
+   * Subscription for counterSub -&gt; synchronized and shared counter
+   */
+  counterSub: Subscription;
+
+  /**
+   * constructor
+   * @param {JobsService} jobService
+   * @param {Router} router For redirecting
+   * @param {WizardStepperService} wizardStepperService For Sharing Workflow Information
+   */
+  constructor(private jobService: JobsService,
+              private router: Router,
+              private wizardStepperService: WizardStepperService) { }
+  /**
+   * ngOnInit is a lifecycle hook
+   * - executed after constructor
+   *
+   * declaration of all necessary variables for this component
+   */
+  ngOnInit() {
+    this.jobService.getJobsFromServer();
+    // @ts-ignore
+    this.responseSub &#x3D; this.jobService.responseListener
+      .subscribe((response: string[]) &#x3D;&gt; {
+      this.response &#x3D; response;
+    });
+    this.selectedJobs &#x3D; [];
+    this.copiedJobs &#x3D; [...this.selectedJobs];
+
+    this.jobsSub &#x3D; this.wizardStepperService.getJobsListener()
+      .subscribe(jobsUpdated &#x3D;&gt; {
+        this.jobsUpdated &#x3D; jobsUpdated;
+      });
+
+    this.counterSub &#x3D; this.wizardStepperService.getCounterListener()
+      .subscribe(counter &#x3D;&gt; {
+        this.counter &#x3D; counter;
+      });
+    this.workflowSub &#x3D; this.wizardStepperService.getWorkflowListener()
+      .subscribe(workflow &#x3D;&gt; {
+        this.workflow &#x3D; workflow;
+      });
+
+    this.workflow &#x3D; this.wizardStepperService.getWorkflow();
+    this.name &#x3D; typeof this.workflow &#x3D;&#x3D;&#x3D; &#x27;undefined&#x27; ? &#x27;&#x27; : this.workflow.name;
+    this.jobsUpdated &#x3D; this.wizardStepperService.getJobs();
+    this.selectedJobs &#x3D; this.wizardStepperService.getJobs();
+    this.wizardStepperService.updateCount(this.counter &#x3D; 0);
+    this.counter &#x3D; this.wizardStepperService.getCounter();
+
+    console.log(this.workflow);
+    console.log(this.counter);
+    console.log(&#x27;OnInit wurde ausgeführt&#x27;);
+  }
+  /**
+   * ngOnDestroy is a lifecycle hook - is called when a directive, pipe, or service is destroyed
+   *
+   * resets variables and unsubscribes Subscriptions
+   */
+  ngOnDestroy() {
+    this.selectedJobs &#x3D; [];
+    this.copiedJobs &#x3D; [...this.selectedJobs];
+    this.jobsSub.unsubscribe();
+    this.counterSub.unsubscribe();
+    this.workflowSub.unsubscribe();
+    console.log(&#x27;OnDestroy wurde ausgeführt&#x27;);
+  }
+  /**
+   * stores selected jobe name for Drag&amp;Drop
+   * @param {any} job Jobname of of selected job
+   */
+  onSelect(job: any): void {
+    this.selectedJob &#x3D; job;
+  }
+  /**
+   * requests available Jobs from backend
+   */
+  getAvailableJobs(): void {
+    this.jobService.getJobsFromServer();
+  }
+  /**
+   * choose 1st job in workflow list and redirects to this job (job configurator)
+   */
+  onNextClick(): void {
+    if (this.jobsUpdated.length &gt; 0) {
+      this.selectNextJob(this.workflow.getJobName(0));
+      this.router.navigate([this.link]);
+    } else {
+      alert(&#x27;no jobs selected&#x27;);
+    }
+  }
+  /**
+   * refreshes available Jobs from backend
+   */
+  onClick() {
+    this.getAvailableJobs();
+  }
+  /**
+   * resets selected jobs
+   */
+  onResetClick() {
+    this.selectedJobs &#x3D; [];
+    this.wizardStepperService.updateJob(this.selectedJobs);
+    console.log(this.jobsUpdated);
+  }
+  /**
+   * stores selected list of jobs in wizardStepperService
+   */
+  onSaveClick() {
+    if (this.jobsUpdated.length &gt; 0) {
+      this.workflow &#x3D; new Workflow(this.name);
+      this.workflow.addJobs(this.jobsUpdated);
+      this.wizardStepperService.updateWorkflow(this.workflow);
+      this.isDisabledNext &#x3D; false;
+      console.log(this.workflow);
+    } else {
+      alert(&#x27;no jobs selected&#x27;);
+    }
+  }
+  /**
+   * stores 1st job&#x27;s routing-link under link
+   * @param {string} job Name of 1st job in selected workflow
+   */
+  selectNextJob(job: string) {
+    this.link &#x3D; &#x27;wizard/&#x27;;
+    switch (job) {
+        case &#x27;GripperGrip&#x27;: {
+          this.link +&#x3D; &#x27;gripper_grip&#x27;;
+          break;
+        }
+        case &#x27;MoveArmOnTrajectory&#x27;: {
+          this.link +&#x3D; &#x27;arm_trajectory&#x27;;
+          break;
+        }
+        case &#x27;CustomWorkflow&#x27;: {
+          this.link +&#x3D; &#x27;arm_trajectory&#x27;;
+          break;
+        }
+        case &#x27;MoveArmJointsWorkflow&#x27;: {
+          this.link +&#x3D; &#x27;arm_joints&#x27;;
+          break;
+        }
+        case &#x27;BaseMove&#x27;: {
+          this.link +&#x3D; &#x27;base&#x27;;
+          break;
+        }
+        case &#x27;ArmCartesian&#x27;: {
+          this.link +&#x3D; &#x27;arm_cartesian&#x27;;
+          break;
+        }
+        case &#x27;GripperRelease&#x27;: {
+          this.link +&#x3D; &#x27;gripper_release&#x27;;
+          break;
+        }
+        default: {
+          break;
+        }
+      }
+    console.log(this.link);
+  }
+  /**
+   * Drag&amp;Drop from Angular Material {@link https://material.angular.io/cdk/drag-drop/overview}
+   * @param {CdkDragDrop} event
+   */
+  drop(event: CdkDragDrop&lt;Move[]&gt;) {
+    if (event.previousContainer.id &#x3D;&#x3D;&#x3D; event.container.id) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      copyArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex);
+      this.getAvailableJobs();
+    }
+    this.wizardStepperService.updateJob(this.selectedJobs);
+    console.log(this.jobsUpdated.length);
+    console.log(this.counter);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">
+&lt;mat-card class &#x3D; example-container&gt;
+&lt;mat-card-header&gt;
+  &lt;mat-card-title&gt;Available Methods
+    &lt;button mat-icon-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;onClick()&quot;&gt;
+      &lt;mat-icon class&#x3D;&quot;mat-18&quot;&gt;refresh&lt;/mat-icon&gt;
+    &lt;/button&gt;
+  &lt;/mat-card-title&gt;
+
+&lt;/mat-card-header&gt;
+&lt;mat-card-content&gt;
+
+  &lt;ul cdkDropList
+      cdkDropList
+      id &#x3D; &quot;list1&quot;
+      [cdkDropListData]&#x3D;&quot;this?.response&quot;
+      [cdkDropListConnectedTo]&#x3D;&quot;[&#x27;list2&#x27;]&quot;
+      class&#x3D;&quot;robotmethods&quot;
+      (cdkDropListDropped)&#x3D;&quot;drop($event)&quot;
+  &gt;
+
+    &lt;li *ngFor&#x3D;&quot;let move of this?.response; let i &#x3D; index&quot;
+        [class.selected]&#x3D;&quot;move &#x3D;&#x3D;&#x3D; selectedJob&quot;
+        (click)&#x3D;&quot;onSelect(move)&quot; cdkDrag&gt;
+
+      &lt;span class&#x3D;&quot;badge&quot;&gt;{{i}}&lt;/span&gt;{{move}}
+    &lt;/li&gt;
+
+  &lt;/ul&gt;
+&lt;/mat-card-content&gt;
+
+&lt;/mat-card&gt;
+&lt;mat-card class &#x3D; example-container&gt;
+  &lt;mat-card-header&gt;
+    &lt;mat-card-title&gt;Selected Methods&lt;/mat-card-title&gt;
+  &lt;/mat-card-header&gt;
+
+  &lt;mat-card-content&gt;
+    &lt;form class&#x3D;&quot;example-form&quot;&gt;
+      &lt;mat-form-field class&#x3D;&quot;example-full-width&quot;&gt;
+        &lt;input matInput placeholder&#x3D;&quot;Name of Workflow&quot; [formControl]&#x3D;&quot;nameFormControl&quot; [(ngModel)]&#x3D;&quot;name&quot;
+               [errorStateMatcher]&#x3D;&quot;matcher&quot;&gt;
+        &lt;mat-hint&gt;Enter Name&lt;/mat-hint&gt;
+        &lt;mat-error *ngIf&#x3D;&quot;nameFormControl.hasError(&#x27;required&#x27;)&quot;&gt;
+          Name is &lt;strong&gt;required&lt;/strong&gt;
+        &lt;/mat-error&gt;
+      &lt;/mat-form-field&gt;
+    &lt;/form&gt;
+
+    &lt;br&gt;
+    &lt;ul cdkDropList
+        cdkDropList
+        id &#x3D; &quot;list2&quot;
+        [cdkDropListData]&#x3D;&quot;selectedJobs&quot;
+        [cdkDropListConnectedTo]&#x3D;&quot;[&#x27;list1&#x27;]&quot;
+        class&#x3D;&quot;robotmethods&quot;
+        (cdkDropListDropped)&#x3D;&quot;drop($event)&quot;
+    &gt;
+
+      &lt;li *ngFor&#x3D;&quot;let move of selectedJobs let i &#x3D; index&quot;
+          [class.selected]&#x3D;&quot;move &#x3D;&#x3D;&#x3D; selectedJob&quot;
+          (click)&#x3D;&quot;onSelect(move)&quot; cdkDrag&gt;
+        &lt;span class&#x3D;&quot;badge&quot;&gt;{{i}}&lt;/span&gt; {{move}}
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+  &lt;/mat-card-content&gt;
+  &lt;mat-card-actions&gt;
+    &lt;div class&#x3D;&quot;example-button-row&quot;&gt;
+      &lt;button mat-icon-button color&#x3D;&quot;warn&quot; (click)&#x3D;&quot;onResetClick()&quot;&gt;
+        &lt;mat-icon class&#x3D;&quot;mat-18&quot;&gt;delete&lt;/mat-icon&gt;
+      &lt;/button&gt;
+      &lt;button mat-icon-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;onSaveClick()&quot; [disabled]&#x3D;&quot;!nameFormControl.valid&quot;&gt;
+        &lt;mat-icon class&#x3D;&quot;mat-18&quot;&gt;done&lt;/mat-icon&gt;
+      &lt;/button&gt;
+      &lt;div fxFlex&gt;&lt;/div&gt;
+      &lt;button mat-icon-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;onNextClick()&quot; [disabled]&#x3D;&quot;isDisabledNext&quot;&gt;
+        &lt;mat-icon class&#x3D;&quot;mat-18&quot;&gt;navigate_next&lt;/mat-icon&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/mat-card-actions&gt;
+&lt;/mat-card&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./available-jobs.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">/* AvailableJobsComponent&#x27;s private CSS styles */
+.example-container {
+  width: 300px;
+  max-width: 100%;
+  margin: 10px 10px 10px 10px;
+  display: inline-block;
+  vertical-align: top;
+  padding: 1rem;
+}
+
+
+.selected {
+  background-color: #CFD8DC !important;
+  color: white;
+}
+.robotmethods {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 5px;
+  width: 18em;
+  border: 1px solid #EEE;
+}
+.robotmethods li {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.8em;
+  border-radius: 4px;
+}
+.robotmethods li.selected:hover {
+  background-color: #BBD8DC !important;
+  color: white;
+}
+.robotmethods li:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+.robotmethods .text {
+  position: relative;
+  top: -3px;
+}
+.robotmethods .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color:#405061;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+  0 8px 10px 1px rgba(0, 0, 0, 0.14),
+  0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+  background: #607D8B;
+  padding: 20px;
+  text-indent: -9999px;
+  opacity: 0;
+}
+
+/* Animate an item that has been dropped. */
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+.example-button-row button {
+  margin-right: 8px;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><mat-card class = example-container><mat-card-header>  <mat-card-title>Available Methods    <button mat-icon-button color="primary" (click)="onClick()">      <mat-icon class="mat-18">refresh</mat-icon>    </button>  </mat-card-title></mat-card-header><mat-card-content>  <ul cdkDropList      cdkDropList      id = "list1"      [cdkDropListData]="this?.response"      [cdkDropListConnectedTo]="[\'list2\']"      class="robotmethods"      (cdkDropListDropped)="drop($event)"  >    <li *ngFor="let move of this?.response; let i = index"        [class.selected]="move === selectedJob"        (click)="onSelect(move)" cdkDrag>      <span class="badge">{{i}}</span>{{move}}    </li>  </ul></mat-card-content></mat-card><mat-card class = example-container>  <mat-card-header>    <mat-card-title>Selected Methods</mat-card-title>  </mat-card-header>  <mat-card-content>    <form class="example-form">      <mat-form-field class="example-full-width">        <input matInput placeholder="Name of Workflow" [formControl]="nameFormControl" [(ngModel)]="name"               [errorStateMatcher]="matcher">        <mat-hint>Enter Name</mat-hint>        <mat-error *ngIf="nameFormControl.hasError(\'required\')">          Name is <strong>required</strong>        </mat-error>      </mat-form-field>    </form>    <br>    <ul cdkDropList        cdkDropList        id = "list2"        [cdkDropListData]="selectedJobs"        [cdkDropListConnectedTo]="[\'list1\']"        class="robotmethods"        (cdkDropListDropped)="drop($event)"    >      <li *ngFor="let move of selectedJobs let i = index"          [class.selected]="move === selectedJob"          (click)="onSelect(move)" cdkDrag>        <span class="badge">{{i}}</span> {{move}}      </li>    </ul>  </mat-card-content>  <mat-card-actions>    <div class="example-button-row">      <button mat-icon-button color="warn" (click)="onResetClick()">        <mat-icon class="mat-18">delete</mat-icon>      </button>      <button mat-icon-button color="primary" (click)="onSaveClick()" [disabled]="!nameFormControl.valid">        <mat-icon class="mat-18">done</mat-icon>      </button>      <div fxFlex></div>      <button mat-icon-button color="primary" (click)="onNextClick()" [disabled]="isDisabledNext">        <mat-icon class="mat-18">navigate_next</mat-icon>      </button>    </div>  </mat-card-actions></mat-card></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AvailableJobsComponent', 'selector': 'app-available-jobs'},{'name': 'ExecutionRunComponent', 'selector': 'app-execution-run'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'NoPageFoundComponent', 'selector': 'app-no-page-found'},{'name': 'WizardArmCartesianComponent', 'selector': 'app-wizard-arm-cartesian'},{'name': 'WizardArmJoinsComponent', 'selector': 'app-wizard-arm-joins'},{'name': 'WizardArmTrajectoryComponent', 'selector': 'app-wizard-arm-trajectory-movement'},{'name': 'WizardBaseComponent', 'selector': 'app-wizard-base'},{'name': 'WizardGripperGripComponent', 'selector': 'app-wizard-gripper-grip'},{'name': 'WizardGripperReleaseComponent', 'selector': 'app-wizard-gripper-release'},{'name': 'WizardJobComponent', 'selector': 'app-wizard-job'},{'name': 'WizardParentComponent', 'selector': 'app-wizard-parent'},{'name': 'WorkflowTableComponent', 'selector': 'app-workflow-table'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AvailableJobsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AvailableJobsComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

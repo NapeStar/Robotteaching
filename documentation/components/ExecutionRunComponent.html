@@ -1,0 +1,2026 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>robot-teaching documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">robot-teaching documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>ExecutionRunComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/execution/execution-run/execution-run.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Extends</h3>
+    </p>
+    <p class="comment">
+                <code><a href="../components/WizardJobComponent.html" target="_self" >WizardJobComponent</a></code>
+    </p>
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-execution-run</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./execution-run.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./execution-run.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#connection">connection</a>
+                            </li>
+                            <li>
+                                <a href="#displaySpinner">displaySpinner</a>
+                            </li>
+                            <li>
+                                <a href="#isAlreadySave">isAlreadySave</a>
+                            </li>
+                            <li>
+                                <a href="#isDisabledRun">isDisabledRun</a>
+                            </li>
+                            <li>
+                                <a href="#isLoading">isLoading</a>
+                            </li>
+                            <li>
+                                <a href="#message">message</a>
+                            </li>
+                            <li>
+                                <a href="#messages">messages</a>
+                            </li>
+                            <li>
+                                <a href="#spinnerText">spinnerText</a>
+                            </li>
+                            <li>
+                                <a href="#workflowProgress">workflowProgress</a>
+                            </li>
+                            <li>
+                                <a href="#counter">counter</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#counterSub">counterSub</a>
+                            </li>
+                            <li>
+                                <a href="#link">link</a>
+                            </li>
+                            <li>
+                                <a href="#status">status</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#statusSub">statusSub</a>
+                            </li>
+                            <li>
+                                <a href="#workflow">workflow</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#workflowSub">workflowSub</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#backCreateOnClick">backCreateOnClick</a>
+                            </li>
+                            <li>
+                                <a href="#backRunOnClick">backRunOnClick</a>
+                            </li>
+                            <li>
+                                <a href="#backUpdateOnClick">backUpdateOnClick</a>
+                            </li>
+                            <li>
+                                <a href="#hideSpinner">hideSpinner</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#runOnClick">runOnClick</a>
+                            </li>
+                            <li>
+                                <a href="#saveCreateOnClick">saveCreateOnClick</a>
+                            </li>
+                            <li>
+                                <a href="#saveUpdateOnClick">saveUpdateOnClick</a>
+                            </li>
+                            <li>
+                                <a href="#setWorkflowProgress">setWorkflowProgress</a>
+                            </li>
+                            <li>
+                                <a href="#showSpinner">showSpinner</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onNextClick">onNextClick</a>
+                            </li>
+                            <li>
+                                <a href="#onPreviousClick">onPreviousClick</a>
+                            </li>
+                            <li>
+                                <a href="#selectNextJob">selectNextJob</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, wizardStepperService: <a href="../injectables/WizardStepperService.html">WizardStepperService</a>, http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, httpRequest: <a href="../injectables/HttpRequestService.html">HttpRequestService</a>, eventEmitterService: <a href="../injectables/WizardParentStepperService.html">WizardParentStepperService</a>, SocketDataService: <a href="../classes/SocketDataService.html">SocketDataService</a>, spinner: NgxSpinnerService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>wizardStepperService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/WizardStepperService.html" target="_self" >WizardStepperService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>httpRequest</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/HttpRequestService.html" target="_self" >HttpRequestService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>eventEmitterService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/WizardParentStepperService.html" target="_self" >WizardParentStepperService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>SocketDataService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/SocketDataService.html" target="_self" >SocketDataService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>spinner</td>
+                                                  
+                                                        <td>
+                                                                    <code>NgxSpinnerService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="backCreateOnClick"></a>
+                    <span class="name">
+                        <b>
+                            backCreateOnClick
+                        </b>
+                        <a href="#backCreateOnClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>backCreateOnClick()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="110"
+                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:110</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="backRunOnClick"></a>
+                    <span class="name">
+                        <b>
+                            backRunOnClick
+                        </b>
+                        <a href="#backRunOnClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>backRunOnClick()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="124"
+                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:124</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="backUpdateOnClick"></a>
+                    <span class="name">
+                        <b>
+                            backUpdateOnClick
+                        </b>
+                        <a href="#backUpdateOnClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>backUpdateOnClick()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="117"
+                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:117</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hideSpinner"></a>
+                    <span class="name">
+                        <b>
+                            hideSpinner
+                        </b>
+                        <a href="#hideSpinner"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>hideSpinner()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:60</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="47"
+                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:47</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="runOnClick"></a>
+                    <span class="name">
+                        <b>
+                            runOnClick
+                        </b>
+                        <a href="#runOnClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>runOnClick()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="74"
+                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:74</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveCreateOnClick"></a>
+                    <span class="name">
+                        <b>
+                            saveCreateOnClick
+                        </b>
+                        <a href="#saveCreateOnClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>saveCreateOnClick()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="88"
+                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:88</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveUpdateOnClick"></a>
+                    <span class="name">
+                        <b>
+                            saveUpdateOnClick
+                        </b>
+                        <a href="#saveUpdateOnClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>saveUpdateOnClick()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="99"
+                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:99</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setWorkflowProgress"></a>
+                    <span class="name">
+                        <b>
+                            setWorkflowProgress
+                        </b>
+                        <a href="#setWorkflowProgress"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setWorkflowProgress(msg)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="64"
+                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:64</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>msg</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showSpinner"></a>
+                    <span class="name">
+                        <b>
+                            showSpinner
+                        </b>
+                        <a href="#showSpinner"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>showSpinner()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="56"
+                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:56</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <b>
+                            ngOnDestroy
+                        </b>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../components/WizardJobComponent.html" target="_self" >WizardJobComponent</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../components/WizardJobComponent.html#source" target="_self" >WizardJobComponent:129</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>ngOnDestroy is a lifecycle hook - is called when a directive, pipe, or service is destroyed</p>
+<p>unsubscribes Subscriptions</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../components/WizardJobComponent.html" target="_self" >WizardJobComponent</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../components/WizardJobComponent.html#source" target="_self" >WizardJobComponent:67</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>ngOnInit is a lifecycle hook</p>
+<ul>
+<li>executed after constructor</li>
+</ul>
+<p>declaration of all necessary variables for this component</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onNextClick"></a>
+                    <span class="name">
+                        <b>
+                            onNextClick
+                        </b>
+                        <a href="#onNextClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onNextClick()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../components/WizardJobComponent.html" target="_self" >WizardJobComponent</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../components/WizardJobComponent.html#source" target="_self" >WizardJobComponent:92</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>updates all necessary variables and Observables
+before redirects to next wizard job component</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onPreviousClick"></a>
+                    <span class="name">
+                        <b>
+                            onPreviousClick
+                        </b>
+                        <a href="#onPreviousClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onPreviousClick()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../components/WizardJobComponent.html" target="_self" >WizardJobComponent</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../components/WizardJobComponent.html#source" target="_self" >WizardJobComponent:108</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>updates all necessary variables and Oberservables
+before redirects to &quot;previous&quot; wizard job component</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectNextJob"></a>
+                    <span class="name">
+                        <b>
+                            selectNextJob
+                        </b>
+                        <a href="#selectNextJob"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>selectNextJob(job: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../components/WizardJobComponent.html" target="_self" >WizardJobComponent</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../components/WizardJobComponent.html#source" target="_self" >WizardJobComponent:139</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>stores 1st job&#39;s routing-link under link</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>job</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Name of 1st job in selected workflow</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="connection"></a>
+                        <span class="name">
+                            <b>
+                            connection</b>
+                            <a href="#connection"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="displaySpinner"></a>
+                        <span class="name">
+                            <b>
+                            displaySpinner</b>
+                            <a href="#displaySpinner"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isAlreadySave"></a>
+                        <span class="name">
+                            <b>
+                            isAlreadySave</b>
+                            <a href="#isAlreadySave"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isDisabledRun"></a>
+                        <span class="name">
+                            <b>
+                            isDisabledRun</b>
+                            <a href="#isDisabledRun"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isLoading"></a>
+                        <span class="name">
+                            <b>
+                            isLoading</b>
+                            <a href="#isLoading"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="message"></a>
+                        <span class="name">
+                            <b>
+                            message</b>
+                            <a href="#message"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="messages"></a>
+                        <span class="name">
+                            <b>
+                            messages</b>
+                            <a href="#messages"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:32</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="spinnerText"></a>
+                        <span class="name">
+                            <b>
+                            spinnerText</b>
+                            <a href="#spinnerText"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="workflowProgress"></a>
+                        <span class="name">
+                            <b>
+                            workflowProgress</b>
+                            <a href="#workflowProgress"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>0</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="counter"></a>
+                        <span class="name">
+                            <b>
+                            counter</b>
+                            <a href="#counter"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../components/WizardJobComponent.html" target="_self" >WizardJobComponent</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../components/WizardJobComponent.html#source" target="_self" >WizardJobComponent:35</a></code>
+</div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>locally stored counter</p>
+<p>index for navigating through wizard</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="counterSub"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            counterSub</b>
+                            <a href="#counterSub"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Subscription</code>
+
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../components/WizardJobComponent.html" target="_self" >WizardJobComponent</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../components/WizardJobComponent.html#source" target="_self" >WizardJobComponent:39</a></code>
+</div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Subscription for counterSub -&gt; synchronized and shared counter</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="link"></a>
+                        <span class="name">
+                            <b>
+                            link</b>
+                            <a href="#link"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;wizard/&#x27;</code>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../components/WizardJobComponent.html" target="_self" >WizardJobComponent</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../components/WizardJobComponent.html#source" target="_self" >WizardJobComponent:21</a></code>
+</div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>string used for routing/redirecting</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="status"></a>
+                        <span class="name">
+                            <b>
+                            status</b>
+                            <a href="#status"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../components/WizardJobComponent.html" target="_self" >WizardJobComponent</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../components/WizardJobComponent.html#source" target="_self" >WizardJobComponent:46</a></code>
+</div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>locally stored status e.g. &#39;create&#39;</p>
+<p>important to navigate through wizard via back and forward buttons</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="statusSub"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            statusSub</b>
+                            <a href="#statusSub"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Subscription</code>
+
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../components/WizardJobComponent.html" target="_self" >WizardJobComponent</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../components/WizardJobComponent.html#source" target="_self" >WizardJobComponent:50</a></code>
+</div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Subscription for stusSub -&gt; synchronized and shared status</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="workflow"></a>
+                        <span class="name">
+                            <b>
+                            workflow</b>
+                            <a href="#workflow"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Workflow.html" target="_self" >Workflow</a></code>
+
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../components/WizardJobComponent.html" target="_self" >WizardJobComponent</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../components/WizardJobComponent.html#source" target="_self" >WizardJobComponent:25</a></code>
+</div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>locally stored workflow</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="workflowSub"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            workflowSub</b>
+                            <a href="#workflowSub"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Subscription</code>
+
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../components/WizardJobComponent.html" target="_self" >WizardJobComponent</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../components/WizardJobComponent.html#source" target="_self" >WizardJobComponent:29</a></code>
+</div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Subscription for observed workflowSub -&gt; synchronized and shared workflow</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, OnDestroy, OnInit} from &#x27;@angular/core&#x27;;
+import {JobsService} from &#x27;../../jobs/jobs.service&#x27;;
+import {Router} from &#x27;@angular/router&#x27;;
+import {WizardStepperService} from &#x27;../../wizard-stepper/wizard-stepper.service&#x27;;
+import {WizardJobComponent} from &#x27;../../wizard-stepper/wizard-job/wizard-job.component&#x27;;
+import {Workflow} from &#x27;../../model/workflow.model&#x27;;
+import {Subscription} from &#x27;rxjs&#x27;;
+import {HttpRequestService} from &#x27;../http-request.service&#x27;;
+import {HttpClient} from &#x27;@angular/common/http&#x27;;
+import {Output, EventEmitter} from &#x27;@angular/core&#x27;;
+import {WizardParentStepperService} from &#x27;../../wizard-stepper/wizard-parent/wizard-parent-stepper.service&#x27;;
+import {createElementCssSelector} from &#x27;@angular/compiler&#x27;;
+import {SocketDataService} from &#x27;../../sockets/websocket.service&#x27;;
+import {NgxSpinnerService} from &#x27;ngx-spinner&#x27;;
+
+
+@Component({
+  selector: &#x27;app-execution-run&#x27;,
+  templateUrl: &#x27;./execution-run.component.html&#x27;,
+  styleUrls: [&#x27;./execution-run.component.css&#x27;]
+})
+export class ExecutionRunComponent extends WizardJobComponent implements OnInit, OnDestroy {
+
+  isDisabledRun &#x3D; true;
+  isAlreadySave &#x3D; false;
+  isLoading &#x3D; false;
+  workflowProgress &#x3D; 0;
+  spinnerText: string;
+  displaySpinner &#x3D; false;
+
+  message: string;
+  messages: string[] &#x3D; [];
+  connection;
+
+  constructor(protected router: Router,
+              protected wizardStepperService: WizardStepperService,
+              private http: HttpClient,
+              private httpRequest: HttpRequestService,
+              protected eventEmitterService: WizardParentStepperService,
+              // tslint:disable-next-line:no-shadowed-variable
+              private SocketDataService: SocketDataService,
+              private spinner: NgxSpinnerService
+  ) {
+    super(router, wizardStepperService, eventEmitterService);
+  }
+
+  ngOnInit() {
+    super.ngOnInit();
+
+    this.SocketDataService.onNewMessage().subscribe(msg &#x3D;&gt; {
+      console.log(&#x27;Workflow Progress: &#x27; + msg);
+      this.setWorkflowProgress(msg);
+    });
+  }
+
+  showSpinner() {
+    this.spinner.show();
+  }
+
+  hideSpinner(){
+    this.spinner.hide();
+  }
+
+  setWorkflowProgress(msg) {
+
+    this.workflowProgress &#x3D; parseInt(msg, 10);
+    this.spinnerText &#x3D; &#x27;Executing Workflow! Finished: &#x27; + this.workflowProgress +&#x27; %&#x27;;
+    if (this.workflowProgress &#x3D;&#x3D;&#x3D; 100) {
+      this.hideSpinner();
+      this.workflowProgress &#x3D; 0;
+    }
+  }
+
+  runOnClick() {
+
+    this.showSpinner();
+    this.spinnerText &#x3D; &#x27;Executing Workflow! Finished: 0%&#x27;;
+    this.SocketDataService.sendMessage(this.workflow.name);
+    this.httpRequest.updateWorkflow(this.workflow);
+    setTimeout(() &#x3D;&gt; {
+      this.httpRequest.runWorkflow();
+      this.eventEmitterService.onStepperNextClick();
+      console.log(&#x27;Next wurde ausgeführt&#x27;);
+      console.log(&#x27;Hello from setTimeout&#x27;);
+    }, 5000);
+  }
+
+  saveCreateOnClick() {
+    this.eventEmitterService.onStepperNextClick();
+    this.isDisabledRun &#x3D; false;
+    if (this.isAlreadySave &#x3D;&#x3D;&#x3D; false) {
+      this.httpRequest.createWorkflow(this.workflow);
+      this.isAlreadySave &#x3D; true;
+    } else {
+    }
+    console.log(&#x27;Next Create wurde ausgeführt&#x27;);
+  }
+
+  saveUpdateOnClick() {
+    this.eventEmitterService.onStepperNextClick();
+    this.isDisabledRun &#x3D; false;
+    if (this.isAlreadySave &#x3D;&#x3D;&#x3D; false) {
+      this.httpRequest.updateWorkflow(this.workflow);
+      this.isAlreadySave &#x3D; true;
+    } else {
+    }
+    console.log(&#x27;Next Update wurde ausgeführt&#x27;);
+  }
+
+  backCreateOnClick() {
+    this.eventEmitterService.onStepperBackClick();
+    this.selectNextJob(this.workflow.getJobName(this.counter));
+    this.router.navigate([this.link]);
+    console.log(&#x27;Back Create wurde ausgeführt&#x27;);
+  }
+
+  backUpdateOnClick() {
+    this.eventEmitterService.onStepperBackClick();
+    this.selectNextJob(this.workflow.getJobName(this.counter));
+    this.router.navigate([this.link]);
+    console.log(&#x27;Back Update wurde ausgeführt&#x27;);
+  }
+
+  backRunOnClick() {
+    this.link &#x3D; &#x27;&#x27;;
+    this.router.navigate([this.link]);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;h3&gt;Workflow Name: {{workflow.name}}&lt;/h3&gt;
+&lt;h3&gt;Workflow ID: {{workflow.id}}&lt;/h3&gt;
+&lt;mat-accordion class&#x3D;&quot;example-container&quot; multi&#x3D;&quot;true&quot;&gt;
+  &lt;mat-expansion-panel *ngFor&#x3D;&quot;let job of workflow.getJobs(); index as i&quot;
+                       [ngSwitch]&#x3D;&quot;job.name&quot; expanded&#x3D;&quot;true&quot;&gt;
+
+    &lt;mat-expansion-panel-header&gt;
+      &lt;mat-panel-title&gt;
+        {{job.name}}
+      &lt;/mat-panel-title&gt;
+      &lt;mat-panel-description&gt;
+        Show Parameters
+      &lt;/mat-panel-description&gt;
+    &lt;/mat-expansion-panel-header&gt;
+    &lt;div&gt;
+      &lt;label&gt;Activation Timeout:&lt;/label&gt;
+      &lt;input matInput type&#x3D;&quot;number&quot; placeholder&#x3D;&quot;Value&quot; [(ngModel)]&#x3D;&quot;job.activationTimeout&quot;&gt;
+    &lt;/div&gt;
+    &lt;p  *ngSwitchCase&#x3D;&quot;&#x27;BaseMove&#x27;&quot;&gt; Goal Position:
+      &lt;br&gt;
+      {{job.goalPose}}&lt;/p&gt;
+    &lt;p  *ngSwitchCase&#x3D;&quot;&#x27;ArmCartesian&#x27;&quot;&gt; Goal Position:
+      &lt;br&gt;
+      {{job.goalPose}}&lt;/p&gt;
+
+  &lt;/mat-expansion-panel&gt;
+&lt;/mat-accordion&gt;
+&lt;br&gt;
+
+&lt;mat-card class&#x3D;&quot;example-container&quot; [ngSwitch]&#x3D;&quot;this.status&quot; &gt;
+  &lt;mat-card-actions *ngSwitchCase&#x3D;&quot;&#x27;create&#x27;&quot;&gt;
+    &lt;button mat-icon-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;backCreateOnClick()&quot;&gt;
+      &lt;mat-icon class&#x3D;&quot;mat-18&quot;&gt;navigate_before&lt;/mat-icon&gt;
+    &lt;/button&gt;
+    &lt;div fxFlex&gt;&lt;/div&gt;
+    &lt;button mat-icon-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;saveCreateOnClick()&quot;&gt;
+      &lt;mat-icon class&#x3D;&quot;mat-18&quot;&gt;done&lt;/mat-icon&gt;
+    &lt;/button&gt;
+    &lt;button mat-icon-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;runOnClick()&quot; [disabled]&#x3D;&quot;isDisabledRun&quot;&gt;
+      &lt;mat-icon class&#x3D;&quot;mat-18&quot;&gt;play_circle_outline&lt;/mat-icon&gt;
+    &lt;/button&gt;
+  &lt;/mat-card-actions&gt;
+
+  &lt;mat-card-actions *ngSwitchCase&#x3D;&quot;&#x27;update&#x27;&quot;&gt;
+    &lt;button mat-icon-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;backUpdateOnClick()&quot;&gt;
+      &lt;mat-icon class&#x3D;&quot;mat-18&quot;&gt;navigate_before&lt;/mat-icon&gt;
+    &lt;/button&gt;
+    &lt;div fxFlex&gt;&lt;/div&gt;
+    &lt;button mat-icon-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;saveUpdateOnClick()&quot;&gt;
+      &lt;mat-icon class&#x3D;&quot;mat-18&quot;&gt;save&lt;/mat-icon&gt;
+    &lt;/button&gt;
+    &lt;button mat-icon-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;runOnClick()&quot; [disabled]&#x3D;&quot;isDisabledRun&quot;&gt;
+      &lt;mat-icon class&#x3D;&quot;mat-18&quot;&gt;play_circle_outline&lt;/mat-icon&gt;
+    &lt;/button&gt;
+  &lt;/mat-card-actions&gt;
+
+  &lt;mat-card-actions *ngSwitchCase&#x3D;&quot;&#x27;play&#x27;&quot;&gt;
+    &lt;button mat-icon-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;backRunOnClick()&quot;&gt;
+      &lt;mat-icon class&#x3D;&quot;mat-18&quot;&gt;navigate_before&lt;/mat-icon&gt;
+    &lt;/button&gt;
+    &lt;div fxFlex&gt;&lt;/div&gt;
+    &lt;button mat-icon-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;runOnClick()&quot;&gt;
+      &lt;mat-icon class&#x3D;&quot;mat-18&quot;&gt;play_circle_outline&lt;/mat-icon&gt;
+    &lt;/button&gt;
+  &lt;/mat-card-actions&gt;
+&lt;/mat-card&gt;
+
+&lt;ngx-spinner
+  bdColor&#x3D;&quot;rgba(51,51,51,0.8)&quot;
+  size&#x3D;&quot;medium&quot;
+  color&#x3D;&quot;#fff&quot;
+  type&#x3D;&quot;ball-scale-multiple&quot;
+&gt;
+  &lt;p style&#x3D;&quot;font-size: 20px; color: white&quot;&gt; {{spinnerText}}&lt;/p&gt;
+&lt;/ngx-spinner&gt;
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./execution-run.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.example-container {
+  width: 600px;
+  max-width: 100%;
+  margin: 10px 10px 10px 10px;
+  display: inline-block;
+  vertical-align: top;
+  padding: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6{
+  margin-top:20px;
+  margin-bottom:10px;
+  margin-left: 10px;
+}
+
+.selected {
+  background-color: #CFD8DC !important;
+  color: white;
+}
+.robotmethods {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 5px;
+  width: 18em;
+  /*border: 1px solid #EEE;*/
+}
+.robotmethods li {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.8em;
+  border-radius: 4px;
+}
+
+.robotmethods .text {
+  position: relative;
+  top: -3px;
+}
+.robotmethods .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color:#405061;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
+
+.example-h2 {
+  margin: 10px;
+}
+
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.example-margin {
+  margin: 30px;
+}
+
+.mat-slider-horizontal {
+  width: 100px;
+}
+
+.fxFlex{
+  flex: 100 1 auto;
+}
+
+.spinnerStyle{
+
+  width: 40%;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><h3>Workflow Name: {{workflow.name}}</h3><h3>Workflow ID: {{workflow.id}}</h3><mat-accordion class="example-container" multi="true">  <mat-expansion-panel *ngFor="let job of workflow.getJobs(); index as i"                       [ngSwitch]="job.name" expanded="true">    <mat-expansion-panel-header>      <mat-panel-title>        {{job.name}}      </mat-panel-title>      <mat-panel-description>        Show Parameters      </mat-panel-description>    </mat-expansion-panel-header>    <div>      <label>Activation Timeout:</label>      <input matInput type="number" placeholder="Value" [(ngModel)]="job.activationTimeout">    </div>    <p  *ngSwitchCase="\'BaseMove\'"> Goal Position:      <br>      {{job.goalPose}}</p>    <p  *ngSwitchCase="\'ArmCartesian\'"> Goal Position:      <br>      {{job.goalPose}}</p>  </mat-expansion-panel></mat-accordion><br><mat-card class="example-container" [ngSwitch]="this.status" >  <mat-card-actions *ngSwitchCase="\'create\'">    <button mat-icon-button color="primary" (click)="backCreateOnClick()">      <mat-icon class="mat-18">navigate_before</mat-icon>    </button>    <div fxFlex></div>    <button mat-icon-button color="primary" (click)="saveCreateOnClick()">      <mat-icon class="mat-18">done</mat-icon>    </button>    <button mat-icon-button color="primary" (click)="runOnClick()" [disabled]="isDisabledRun">      <mat-icon class="mat-18">play_circle_outline</mat-icon>    </button>  </mat-card-actions>  <mat-card-actions *ngSwitchCase="\'update\'">    <button mat-icon-button color="primary" (click)="backUpdateOnClick()">      <mat-icon class="mat-18">navigate_before</mat-icon>    </button>    <div fxFlex></div>    <button mat-icon-button color="primary" (click)="saveUpdateOnClick()">      <mat-icon class="mat-18">save</mat-icon>    </button>    <button mat-icon-button color="primary" (click)="runOnClick()" [disabled]="isDisabledRun">      <mat-icon class="mat-18">play_circle_outline</mat-icon>    </button>  </mat-card-actions>  <mat-card-actions *ngSwitchCase="\'play\'">    <button mat-icon-button color="primary" (click)="backRunOnClick()">      <mat-icon class="mat-18">navigate_before</mat-icon>    </button>    <div fxFlex></div>    <button mat-icon-button color="primary" (click)="runOnClick()">      <mat-icon class="mat-18">play_circle_outline</mat-icon>    </button>  </mat-card-actions></mat-card><ngx-spinner  bdColor="rgba(51,51,51,0.8)"  size="medium"  color="#fff"  type="ball-scale-multiple">  <p style="font-size: 20px; color: white"> {{spinnerText}}</p></ngx-spinner></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AvailableJobsComponent', 'selector': 'app-available-jobs'},{'name': 'ExecutionRunComponent', 'selector': 'app-execution-run'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'NoPageFoundComponent', 'selector': 'app-no-page-found'},{'name': 'WizardArmCartesianComponent', 'selector': 'app-wizard-arm-cartesian'},{'name': 'WizardArmJoinsComponent', 'selector': 'app-wizard-arm-joins'},{'name': 'WizardArmTrajectoryComponent', 'selector': 'app-wizard-arm-trajectory-movement'},{'name': 'WizardBaseComponent', 'selector': 'app-wizard-base'},{'name': 'WizardGripperGripComponent', 'selector': 'app-wizard-gripper-grip'},{'name': 'WizardGripperReleaseComponent', 'selector': 'app-wizard-gripper-release'},{'name': 'WizardJobComponent', 'selector': 'app-wizard-job'},{'name': 'WizardParentComponent', 'selector': 'app-wizard-parent'},{'name': 'WorkflowTableComponent', 'selector': 'app-workflow-table'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ExecutionRunComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ExecutionRunComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,1264 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>robot-teaching documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">robot-teaching documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>WorkflowTableComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/workflow-table/workflow-table.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-workflow-table</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./workflow-table.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./workflow-table.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#dataSource">dataSource</a>
+                            </li>
+                            <li>
+                                <a href="#displayedColumns">displayedColumns</a>
+                            </li>
+                            <li>
+                                <a href="#link">link</a>
+                            </li>
+                            <li>
+                                <a href="#status">status</a>
+                            </li>
+                            <li>
+                                <a href="#workflow">workflow</a>
+                            </li>
+                            <li>
+                                <a href="#workflowList">workflowList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#workflowListSub">workflowListSub</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addNew">addNew</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onDeleteClick">onDeleteClick</a>
+                            </li>
+                            <li>
+                                <a href="#onPlayClick">onPlayClick</a>
+                            </li>
+                            <li>
+                                <a href="#onUpdateClick">onUpdateClick</a>
+                            </li>
+                            <li>
+                                <a href="#selectNextJob">selectNextJob</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, wizardStepperService: <a href="../injectables/WizardStepperService.html">WizardStepperService</a>, httpRequest: <a href="../injectables/HttpRequestService.html">HttpRequestService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/workflow-table/workflow-table.component.ts:37</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>constructor</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>For redirecting</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>wizardStepperService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/WizardStepperService.html" target="_self" >WizardStepperService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>For Sharing Workflow Information</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>httpRequest</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/HttpRequestService.html" target="_self" >HttpRequestService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>For communicating with backend</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addNew"></a>
+                    <span class="name">
+                        <b>
+                            addNew
+                        </b>
+                        <a href="#addNew"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addNew()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="63"
+                            class="link-to-prism">src/app/workflow-table/workflow-table.component.ts:63</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>redirects to available-jobs component</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="50"
+                            class="link-to-prism">src/app/workflow-table/workflow-table.component.ts:50</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onDeleteClick"></a>
+                    <span class="name">
+                        <b>
+                            onDeleteClick
+                        </b>
+                        <a href="#onDeleteClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onDeleteClick(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="107"
+                            class="link-to-prism">src/app/workflow-table/workflow-table.component.ts:107</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>deletes workflow from workflow-table and
+sends the wf-id to be deleted to backend</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>ID of selected workflow</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onPlayClick"></a>
+                    <span class="name">
+                        <b>
+                            onPlayClick
+                        </b>
+                        <a href="#onPlayClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onPlayClick(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="122"
+                            class="link-to-prism">src/app/workflow-table/workflow-table.component.ts:122</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>requests workflow data for selected workflow from backend
+and stores the wf data in &quot;workflow&quot; and
+redirects to execution-run component</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>ID of selected workflow</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onUpdateClick"></a>
+                    <span class="name">
+                        <b>
+                            onUpdateClick
+                        </b>
+                        <a href="#onUpdateClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onUpdateClick(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="76"
+                            class="link-to-prism">src/app/workflow-table/workflow-table.component.ts:76</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>requests workflow data for selected workflow from backend
+and stores the wf data in &quot;workflow&quot; and
+redirects to component of 1st job in workflow list</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>ID of selected workflow</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectNextJob"></a>
+                    <span class="name">
+                        <b>
+                            selectNextJob
+                        </b>
+                        <a href="#selectNextJob"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>selectNextJob(job: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="152"
+                            class="link-to-prism">src/app/workflow-table/workflow-table.component.ts:152</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>stores 1st job&#39;s routing-link under link</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>job</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dataSource"></a>
+                        <span class="name">
+                            <b>
+                            dataSource</b>
+                            <a href="#dataSource"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.workflowList</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/workflow-table/workflow-table.component.ts:37</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="displayedColumns"></a>
+                        <span class="name">
+                            <b>
+                            displayedColumns</b>
+                            <a href="#displayedColumns"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[&#x27;id&#x27;, &#x27;name&#x27;, &#x27;created&#x27;, &#x27;action&#x27;]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/workflow-table/workflow-table.component.ts:36</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="link"></a>
+                        <span class="name">
+                            <b>
+                            link</b>
+                            <a href="#link"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/workflow-table/workflow-table.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>string used for routing/redirecting</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="status"></a>
+                        <span class="name">
+                            <b>
+                            status</b>
+                            <a href="#status"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/workflow-table/workflow-table.component.ts:34</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>locally stored status e.g. &#39;create&#39;</p>
+<p>important to navigate through wizard via back and forward buttons</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="workflow"></a>
+                        <span class="name">
+                            <b>
+                            workflow</b>
+                            <a href="#workflow"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Workflow.html" target="_self" >Workflow</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/workflow-table/workflow-table.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>locally stored workflow</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="workflowList"></a>
+                        <span class="name">
+                            <b>
+                            workflowList</b>
+                            <a href="#workflowList"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>WorkflowListElement[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/workflow-table/workflow-table.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="workflowListSub"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            workflowListSub</b>
+                            <a href="#workflowListSub"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Subscription</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/workflow-table/workflow-table.component.ts:20</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, OnInit} from &#x27;@angular/core&#x27;;
+import {Router} from &#x27;@angular/router&#x27;;
+import {WorkflowListElement} from &#x27;../model/workflow-list-element.model&#x27;;
+import {Subscription} from &#x27;rxjs&#x27;;
+import {HttpRequestService} from &#x27;../execution/http-request.service&#x27;;
+import {Workflow} from &#x27;../model/workflow.model&#x27;;
+import {WizardStepperService} from &#x27;../wizard-stepper/wizard-stepper.service&#x27;;
+import {Move} from &#x27;../jobs/move.data&#x27;;
+
+
+@Component({
+  selector: &#x27;app-workflow-table&#x27;,
+  templateUrl: &#x27;./workflow-table.component.html&#x27;,
+  styleUrls: [&#x27;./workflow-table.component.css&#x27;]
+})
+export class WorkflowTableComponent implements OnInit {
+
+  workflowList: WorkflowListElement[] &#x3D; [];
+
+  private workflowListSub: Subscription;
+  /**
+   * string used for routing/redirecting
+   */
+  link: string;
+  /**
+   * locally stored workflow
+   */
+  workflow: Workflow;
+  /**
+   * locally stored status e.g. &#x27;create&#x27;
+   *
+   * important to navigate through wizard via back and forward buttons
+   */
+  status: string;
+
+  displayedColumns: string[] &#x3D; [&#x27;id&#x27;, &#x27;name&#x27;, &#x27;created&#x27;, &#x27;action&#x27;];
+  dataSource &#x3D; this.workflowList;
+  /**
+   * constructor
+   * @param {Router} router For redirecting
+   * @param {WizardStepperService} wizardStepperService For Sharing Workflow Information
+   * @param {HttpRequestService} httpRequest For communicating with backend
+   */
+  constructor(protected router: Router,
+              private wizardStepperService: WizardStepperService,
+              private httpRequest: HttpRequestService,
+  ) {
+  }
+
+  ngOnInit() {
+    this.httpRequest.getAllWorkflows();
+    this.httpRequest.getWorkflowListUpdateListener()
+      .subscribe((workflowList: WorkflowListElement[]) &#x3D;&gt; {
+        this.workflowList &#x3D; workflowList;
+        this.dataSource &#x3D; this.workflowList;
+      });
+  }
+
+  /**
+   * redirects to available-jobs component
+   */
+
+  addNew(): void {
+    this.status &#x3D; &#x27;create&#x27;;
+    this.wizardStepperService.updateStatus(this.status);
+    console.log(this.wizardStepperService.getStatus());
+    this.router.navigate([&#x27;jobs&#x27;]);
+  }
+
+  /**
+   * requests workflow data for selected workflow from backend
+   * and stores the wf data in &quot;workflow&quot; and
+   * redirects to component of 1st job in workflow list
+   * @param {number} id ID of selected workflow
+   */
+  onUpdateClick(id: number): void {
+    this.status &#x3D; &#x27;update&#x27;;
+    this.httpRequest.getWorkflow(id).subscribe((data: any) &#x3D;&gt; {
+      this.workflow &#x3D; new Workflow(data._name);
+      this.workflow.id &#x3D; data._id;
+      this.workflow.created_at &#x3D; data._created_at;
+
+      for (const workflow of data._jobsObjects) {
+        console.log(workflow._name);
+        console.log(workflow);
+        this.workflow.addJobsFormWorkflow(workflow);
+      }
+      console.log(this.workflow);
+
+      this.wizardStepperService.updateWorkflow(this.workflow);
+      this.wizardStepperService.updateCount(0);
+      this.wizardStepperService.updateStatus(this.status);
+      console.log(data);
+      console.log(this.wizardStepperService.getCounter());
+      console.log(this.wizardStepperService.getStatus());
+      this.selectNextJob(this.workflow.getJobName(0));
+      this.router.navigate([this.link]);
+    });
+  }
+
+  /**
+   * deletes workflow from workflow-table and
+   * sends the wf-id to be deleted to backend
+   * @param {number} id ID of selected workflow
+   */
+
+  onDeleteClick(id: number): void {
+    this.httpRequest.deleteWorkflow(id).subscribe((data: any) &#x3D;&gt; {
+      console.log(data);
+      setTimeout(() &#x3D;&gt; {
+        this.httpRequest.getAllWorkflows();
+      }, 500);
+    });
+  }
+
+  /**
+   * requests workflow data for selected workflow from backend
+   * and stores the wf data in &quot;workflow&quot; and
+   * redirects to execution-run component
+   * @param {number} id ID of selected workflow
+   */
+  onPlayClick(id: number): void {
+
+    this.status &#x3D; &#x27;play&#x27;;
+    this.httpRequest.getWorkflow(id).subscribe((data: any) &#x3D;&gt; {
+      this.workflow &#x3D; new Workflow(data._name);
+      this.workflow.id &#x3D; data._id;
+      this.workflow.created_at &#x3D; data._created_at;
+
+
+      for (const workflow of data._jobsObjects) {
+        console.log(workflow._name);
+        console.log(workflow);
+        this.workflow.addJobsFormWorkflow(workflow);
+      }
+      console.log(this.workflow);
+      this.wizardStepperService.updateWorkflow(this.workflow);
+      this.wizardStepperService.updateCount(0);
+      this.wizardStepperService.updateStatus(this.status);
+      console.log(data);
+      console.log(this.wizardStepperService.getCounter());
+      console.log(this.wizardStepperService.getStatus());
+      this.link &#x3D; &#x27;wizard/run&#x27;;
+      this.router.navigate([this.link]);
+    });
+  }
+
+  /**
+   * stores 1st job&#x27;s routing-link under link
+   * @param {string} name Name of 1st job in selected workflow
+   */
+  selectNextJob(job: string) {
+    this.link &#x3D; &#x27;wizard/&#x27;;
+    switch (job) {
+      case &#x27;GripperGrip&#x27;: {
+        this.link +&#x3D; &#x27;gripper_grip&#x27;;
+        break;
+      }
+      case &#x27;MoveArmOnTrajectoryWorkflow&#x27;: {
+        this.link +&#x3D; &#x27;arm_trajectory&#x27;;
+        break;
+      }
+      case &#x27;CustomWorkflow&#x27;: {
+        this.link +&#x3D; &#x27;arm_trajectory&#x27;;
+        break;
+      }
+      case &#x27;MoveArmJointsWorkflow&#x27;: {
+        this.link +&#x3D; &#x27;arm_joints&#x27;;
+        break;
+      }
+      case &#x27;BaseMove&#x27;: {
+        this.link +&#x3D; &#x27;base&#x27;;
+        break;
+      }
+      case &#x27;ArmCartesian&#x27;: {
+        this.link +&#x3D; &#x27;arm_cartesian&#x27;;
+        break;
+      }
+      case &#x27;GripperRelease&#x27;: {
+        this.link +&#x3D; &#x27;gripper_release&#x27;;
+        break;
+      }
+      default: {
+        break;
+      }
+    }
+    console.log(this.link);
+  }
+
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;table mat-table [dataSource]&#x3D;&quot;dataSource&quot; class&#x3D;&quot;mat-elevation-z8&quot;&gt;
+
+  &lt;!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition&quot; --&gt;
+
+  &lt;!-- id Column --&gt;
+  &lt;ng-container matColumnDef&#x3D;&quot;id&quot;&gt;
+    &lt;th mat-header-cell *matHeaderCellDef&gt; id &lt;/th&gt;
+    &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt; {{element._id}} &lt;/td&gt;
+  &lt;/ng-container&gt;
+
+  &lt;!-- Name Column --&gt;
+  &lt;ng-container matColumnDef&#x3D;&quot;name&quot;&gt;
+    &lt;th mat-header-cell *matHeaderCellDef&gt; name &lt;/th&gt;
+    &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt; {{element._name}} &lt;/td&gt;
+  &lt;/ng-container&gt;
+
+  &lt;!-- created Column --&gt;
+  &lt;ng-container matColumnDef&#x3D;&quot;created&quot;&gt;
+    &lt;th mat-header-cell *matHeaderCellDef&gt; created &lt;/th&gt;
+    &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt; {{element._created_at | date}} &lt;/td&gt;
+  &lt;/ng-container&gt;
+
+
+  &lt;!-- action Column --&gt;
+  &lt;ng-container matColumnDef&#x3D;&quot;action&quot;&gt;
+    &lt;th mat-header-cell *matHeaderCellDef&gt;
+      &lt;button mat-icon-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;addNew()&quot;&gt;
+        &lt;mat-icon class&#x3D;&quot;mat-18&quot;&gt; add &lt;/mat-icon&gt;
+      &lt;/button&gt;
+    &lt;/th&gt;
+
+    &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;
+      &lt;button mat-icon-button color&#x3D;&quot;primary&quot; (click) &#x3D;&quot;onPlayClick(element._id)&quot;&gt;
+        &lt;mat-icon class&#x3D;&quot;mat-18&quot;&gt; play_circle_outline&lt;/mat-icon&gt;
+      &lt;/button&gt;
+      &lt;button mat-icon-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;onUpdateClick(element._id)&quot;&gt;
+        &lt;mat-icon class&#x3D;&quot;mat-18&quot;&gt; border_color&lt;/mat-icon&gt;
+      &lt;/button&gt;
+      &lt;button mat-icon-button color&#x3D;&quot;accent&quot; (click)&#x3D;&quot;onDeleteClick(element._id)&quot;&gt;
+        &lt;mat-icon class&#x3D;&quot;mat-18&quot;&gt;delete_forever&lt;/mat-icon&gt;
+      &lt;/button&gt;
+
+    &lt;/td&gt;
+  &lt;/ng-container&gt;
+
+  &lt;tr mat-header-row *matHeaderRowDef&#x3D;&quot;displayedColumns&quot;&gt;&lt;/tr&gt;
+  &lt;tr mat-row *matRowDef&#x3D;&quot;let row; columns: displayedColumns;&quot;&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./workflow-table.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">table {
+  width: 100%;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><table mat-table [dataSource]="dataSource" class="mat-elevation-z8">  <!--- Note that these columns can be defined in any order.        The actual rendered columns are set as a property on the row definition" -->  <!-- id Column -->  <ng-container matColumnDef="id">    <th mat-header-cell *matHeaderCellDef> id </th>    <td mat-cell *matCellDef="let element"> {{element._id}} </td>  </ng-container>  <!-- Name Column -->  <ng-container matColumnDef="name">    <th mat-header-cell *matHeaderCellDef> name </th>    <td mat-cell *matCellDef="let element"> {{element._name}} </td>  </ng-container>  <!-- created Column -->  <ng-container matColumnDef="created">    <th mat-header-cell *matHeaderCellDef> created </th>    <td mat-cell *matCellDef="let element"> {{element._created_at | date}} </td>  </ng-container>  <!-- action Column -->  <ng-container matColumnDef="action">    <th mat-header-cell *matHeaderCellDef>      <button mat-icon-button color="primary" (click)="addNew()">        <mat-icon class="mat-18"> add </mat-icon>      </button>    </th>    <td mat-cell *matCellDef="let element">      <button mat-icon-button color="primary" (click) ="onPlayClick(element._id)">        <mat-icon class="mat-18"> play_circle_outline</mat-icon>      </button>      <button mat-icon-button color="primary" (click)="onUpdateClick(element._id)">        <mat-icon class="mat-18"> border_color</mat-icon>      </button>      <button mat-icon-button color="accent" (click)="onDeleteClick(element._id)">        <mat-icon class="mat-18">delete_forever</mat-icon>      </button>    </td>  </ng-container>  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr></table></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AvailableJobsComponent', 'selector': 'app-available-jobs'},{'name': 'ExecutionRunComponent', 'selector': 'app-execution-run'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'NoPageFoundComponent', 'selector': 'app-no-page-found'},{'name': 'WizardArmCartesianComponent', 'selector': 'app-wizard-arm-cartesian'},{'name': 'WizardArmJoinsComponent', 'selector': 'app-wizard-arm-joins'},{'name': 'WizardArmTrajectoryComponent', 'selector': 'app-wizard-arm-trajectory-movement'},{'name': 'WizardBaseComponent', 'selector': 'app-wizard-base'},{'name': 'WizardGripperGripComponent', 'selector': 'app-wizard-gripper-grip'},{'name': 'WizardGripperReleaseComponent', 'selector': 'app-wizard-gripper-release'},{'name': 'WizardJobComponent', 'selector': 'app-wizard-job'},{'name': 'WizardParentComponent', 'selector': 'app-wizard-parent'},{'name': 'WorkflowTableComponent', 'selector': 'app-workflow-table'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'WorkflowTableComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'WorkflowTableComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
