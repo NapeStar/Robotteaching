@@ -408,8 +408,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="110"
-                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:110</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="108"
+                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:108</a></div>
                 </td>
             </tr>
 
@@ -447,8 +447,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="124"
-                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:124</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="122"
+                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:122</a></div>
                 </td>
             </tr>
 
@@ -486,8 +486,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="117"
-                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:117</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="115"
+                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:115</a></div>
                 </td>
             </tr>
 
@@ -642,8 +642,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="88"
-                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:88</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="86"
+                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:86</a></div>
                 </td>
             </tr>
 
@@ -681,8 +681,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="99"
-                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:99</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="97"
+                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:97</a></div>
                 </td>
             </tr>
 
@@ -1700,7 +1700,6 @@ export class ExecutionRunComponent extends WizardJobComponent implements OnInit,
   }
 
   runOnClick() {
-
     this.showSpinner();
     this.spinnerText &#x3D; &#x27;Executing Workflow! Finished: 0%&#x27;;
     this.SocketDataService.sendMessage(this.workflow.name);
@@ -1712,7 +1711,6 @@ export class ExecutionRunComponent extends WizardJobComponent implements OnInit,
       console.log(&#x27;Hello from setTimeout&#x27;);
     }, 5000);
   }
-
   saveCreateOnClick() {
     this.eventEmitterService.onStepperNextClick();
     this.isDisabledRun &#x3D; false;
