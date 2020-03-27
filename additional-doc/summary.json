@@ -12,19 +12,19 @@
                 "file": "steps/createNewMethodModel.md"
             },
             {
-                "title": "2. Add Model to Workflow Model",
+                "title": "2. Add Model to Workflow",
                 "file": "steps/addToWorkflow.md"
             },
                 {
-                "title": "3. Create New Method Component",
+                "title": "3. Create New Component",
                 "file": "steps/createNewComponent.md"
             },
                  {
-                "title": "4. Add Routes for New Method Component",
+                "title": "4. Add Route",
                 "file": "steps/addNewRoutes.md"
             },
             {
-                "title": "5. Update all Routing Methods of Components",
+                "title": "5. Update all Routing Methods",
                 "file": "steps/updateRoutingMethods.md"
             }
         ]

@@ -14,10 +14,14 @@ The web application is based on the "MEAN" Stack and stands for
 For the documentation of the "Front-End" [Compodoc](https://compodoc.app/) was used.     
 Compodoc is a documentation tool for Angular applications. Basically it generates a static documentation for the application. 
 
-
 For this application the documentation was extended. Under [Additional Documentation](../../additional-documentation/introduction.html) you will find detailed instructions for adding new robot methods. 
 In the manner of a tutorial every single step is explained in detail. Screenshots and direct links to the affected code passages help the developer to understand how to extend the program. 
 
+The description for installation you find [here](https://compodoc.app/guides/installation.html).  
+To consider the additional documentation in the generated documentation you have run compodoc like this:  
+  
+> compodoc -p tsconfig.json -s -a screenshots --includes additional-doc
+   
 # Components Structure  
 
 In the following, the structure of the components will be illustrated.   
@@ -26,31 +30,50 @@ In the following, the structure of the components will be illustrated.
 
 ![WFTable](screenshots/workflowtable-structure.png)
 
-Link to [Header](../../components/HeaderComponent.html).   
+Link to [Header](../../components/HeaderComponent.html) component.   
    
-Link to [Workflow Table](../../components/WorkflowTableComponent.html).      
+Link to [Workflow Table](../../components/WorkflowTableComponent.html) component.      
 
 
 ## Jobs Selection – Drag and Drop
 
 ![JobsSelection](screenshots/availablejobs-structure.png) 
 
-Link to [Available Jobs](../../components/AvailableJobsComponent.html).   
+Link to [Available Jobs](../../components/AvailableJobsComponent.html) component.   
 
 ## Configurator - Gripper Grip 
 
-![JobsSelection](screenshots/gripper_grip.png) 
+![JobsSelection](screenshots/gripper-grip-structure.png)   
+
+Link to [Wizard Parent](../../components/WizardParentComponent.html) parent component. 
+
+Link to [Wizard Gripper Grip](../../components/WizardGripperGripComponent.html) child component.  
 
 ## Configurator - Arm Cartesian 
 
-![JobsSelection](screenshots/arm_cartesian.png)
+![JobsSelection](screenshots/arm-cartesian-structure.png)    
+
+Link to [Wizard Parent](../../components/WizardParentComponent.html) parent component.   
+
+Link to [Wizard Arm Cartesian](../../components/WizardArmCartesianComponent.html) child component.    
 
 ## Confirmed Workflow - Ready for Executing   
 
-![JobsSelection](screenshots/execution_overview.png) 
+![JobsSelection](screenshots/execution-structure.png)    
+
+Link to [Wizard Parent](../../components/WizardParentComponent.html) parent component.    
+
+Link to [Execution Run](../../components/ExecutionRunComponent.html) child component.    
 
 ## Executing Workflow - Progress Display
 
 ![JobsSelection](screenshots/execution_50.png) 
 
+Link to [Execution Run](../../components/ExecutionRunComponent.html) component.   
+    
+
+
+
+
+              
 

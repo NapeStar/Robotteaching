@@ -42,23 +42,35 @@
 <p>For the documentation of the &quot;Front-End&quot; <a href="https://compodoc.app/">Compodoc</a> was used.<br>Compodoc is a documentation tool for Angular applications. Basically it generates a static documentation for the application. </p>
 <p>For this application the documentation was extended. Under <a href="../../additional-documentation/introduction.html">Additional Documentation</a> you will find detailed instructions for adding new robot methods. 
 In the manner of a tutorial every single step is explained in detail. Screenshots and direct links to the affected code passages help the developer to understand how to extend the program. </p>
+<p>The description for installation you find <a href="https://compodoc.app/guides/installation.html">here</a>.  
+To consider the additional documentation in the generated documentation you have run compodoc like this:  </p>
+<blockquote>
+<p>compodoc -p tsconfig.json -s -a screenshots --includes additional-doc</p>
+</blockquote>
 <h1 id="components-structure">Components Structure</h1>
 <p>In the following, the structure of the components will be illustrated.   </p>
 <h2 id="workflows-table---home">Workflows Table - Home</h2>
 <p><img src="screenshots/workflowtable-structure.png" alt="WFTable" class="img-responsive"></p>
-<p>Link to <a href="../../components/HeaderComponent.html">Header</a>.   </p>
-<p>Link to <a href="../../components/WorkflowTableComponent.html">Workflow Table</a>.      </p>
+<p>Link to <a href="../../components/HeaderComponent.html">Header</a> component.   </p>
+<p>Link to <a href="../../components/WorkflowTableComponent.html">Workflow Table</a> component.      </p>
 <h2 id="jobs-selection--drag-and-drop">Jobs Selection – Drag and Drop</h2>
 <p><img src="screenshots/availablejobs-structure.png" alt="JobsSelection" class="img-responsive"> </p>
-<p>Link to <a href="../../components/AvailableJobsComponent.html">Available Jobs</a>.   </p>
+<p>Link to <a href="../../components/AvailableJobsComponent.html">Available Jobs</a> component.   </p>
 <h2 id="configurator---gripper-grip">Configurator - Gripper Grip</h2>
-<p><img src="screenshots/gripper_grip.png" alt="JobsSelection" class="img-responsive"> </p>
+<p><img src="screenshots/gripper-grip-structure.png" alt="JobsSelection" class="img-responsive">   </p>
+<p>Link to <a href="../../components/WizardParentComponent.html">Wizard Parent</a> parent component. </p>
+<p>Link to <a href="../../components/WizardGripperGripComponent.html">Wizard Gripper Grip</a> child component.  </p>
 <h2 id="configurator---arm-cartesian">Configurator - Arm Cartesian</h2>
-<p><img src="screenshots/arm_cartesian.png" alt="JobsSelection" class="img-responsive"></p>
+<p><img src="screenshots/arm-cartesian-structure.png" alt="JobsSelection" class="img-responsive">    </p>
+<p>Link to <a href="../../components/WizardParentComponent.html">Wizard Parent</a> parent component.   </p>
+<p>Link to <a href="../../components/WizardArmCartesianComponent.html">Wizard Arm Cartesian</a> child component.    </p>
 <h2 id="confirmed-workflow---ready-for-executing">Confirmed Workflow - Ready for Executing</h2>
-<p><img src="screenshots/execution_overview.png" alt="JobsSelection" class="img-responsive"> </p>
+<p><img src="screenshots/execution-structure.png" alt="JobsSelection" class="img-responsive">    </p>
+<p>Link to <a href="../../components/WizardParentComponent.html">Wizard Parent</a> parent component.    </p>
+<p>Link to <a href="../../components/ExecutionRunComponent.html">Execution Run</a> child component.    </p>
 <h2 id="executing-workflow---progress-display">Executing Workflow - Progress Display</h2>
 <p><img src="screenshots/execution_50.png" alt="JobsSelection" class="img-responsive"> </p>
+<p>Link to <a href="../../components/ExecutionRunComponent.html">Execution Run</a> component.   </p>
 
 
 

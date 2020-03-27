@@ -65,16 +65,16 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                                 <a href="additional-documentation/steps-adding-new-method/1.-creation-of-new-model.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">1. Creation of new Model</a>
                                             </li>
                                             <li class="link for-chapter2">
-                                                <a href="additional-documentation/steps-adding-new-method/2.-add-model-to-workflow-model.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">2. Add Model to Workflow Model</a>
+                                                <a href="additional-documentation/steps-adding-new-method/2.-add-model-to-workflow.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">2. Add Model to Workflow</a>
                                             </li>
                                             <li class="link for-chapter2">
-                                                <a href="additional-documentation/steps-adding-new-method/3.-create-new-method-component.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">3. Create New Method Component</a>
+                                                <a href="additional-documentation/steps-adding-new-method/3.-create-new-component.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">3. Create New Component</a>
                                             </li>
                                             <li class="link for-chapter2">
-                                                <a href="additional-documentation/steps-adding-new-method/4.-add-routes-for-new-method-component.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">4. Add Routes for New Method Component</a>
+                                                <a href="additional-documentation/steps-adding-new-method/4.-add-route.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">4. Add Route</a>
                                             </li>
                                             <li class="link for-chapter2">
-                                                <a href="additional-documentation/steps-adding-new-method/5.-update-all-routing-methods-of-components.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">5. Update all Routing Methods of Components</a>
+                                                <a href="additional-documentation/steps-adding-new-method/5.-update-all-routing-methods.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">5. Update all Routing Methods</a>
                                             </li>
                                         </ul>
                                     </li>
