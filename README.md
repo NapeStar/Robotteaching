@@ -18,17 +18,24 @@ Compodoc is a documentation tool for Angular applications. Basically it generate
 For this application the documentation was extended. Under [Additional Documentation](../../additional-documentation/introduction.html) you will find detailed instructions for adding new robot methods. 
 In the manner of a tutorial every single step is explained in detail. Screenshots and direct links to the affected code passages help the developer to understand how to extend the program. 
 
-## Components Structure  
+# Components Structure  
 
 In the following, the structure of the components will be illustrated.   
 
 ## Workflows Table - Home
 
-![WFTable](screenshots/workflows_overview.png)
+![WFTable](screenshots/workflowtable-structure.png)
+
+Link to [Header](../../components/HeaderComponent.html).   
+   
+Link to [Workflow Table](../../components/WorkflowTableComponent.html).      
+
 
 ## Jobs Selection – Drag and Drop
 
-![JobsSelection](screenshots/jobs_selection.png) 
+![JobsSelection](screenshots/availablejobs-structure.png) 
+
+Link to [Available Jobs](../../components/AvailableJobsComponent.html).   
 
 ## Configurator - Gripper Grip 
 
