@@ -12,9 +12,15 @@ The web application is based on the "MEAN" Stack and stands for
 - N        [Node.js](https://nodejs.org/en/)   
 
 For the documentation of the "Front-End" [Compodoc](https://compodoc.app/) was used.     
-Compodoc is a documentation tool for Angular applications. It generates static documentation for the application. 
+Compodoc is a documentation tool for Angular applications. Basically it generates a static documentation for the application. 
 
 
+For this application the documentation was extended. Under [Additional Documentation](../../additional-documentation/introduction.html) you will find detailed instructions for adding new robot methods. 
+In the manner of a tutorial every single step is explained in detail. Screenshots and direct links to the affected code passages help the developer to understand how to extend the program. 
+
+## Components Structure  
+
+In the following, the structure of the components will be illustrated.   
 
 ## Workflows Table - Home
 
