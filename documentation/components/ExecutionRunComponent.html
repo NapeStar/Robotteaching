@@ -64,6 +64,14 @@
     <code>src/app/execution/execution-run/execution-run.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>This component shows the configurated workflow and list all containing jobs.</p>
+<p>It communicates with backend for saving, updating, and executing the workflow</p>
+
+    </p>
 
     <p class="comment">
         <h3>Extends</h3>
@@ -137,9 +145,6 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#connection">connection</a>
-                            </li>
-                            <li>
                                 <a href="#displaySpinner">displaySpinner</a>
                             </li>
                             <li>
@@ -149,13 +154,7 @@
                                 <a href="#isDisabledRun">isDisabledRun</a>
                             </li>
                             <li>
-                                <a href="#isLoading">isLoading</a>
-                            </li>
-                            <li>
                                 <a href="#message">message</a>
-                            </li>
-                            <li>
-                                <a href="#messages">messages</a>
                             </li>
                             <li>
                                 <a href="#spinnerText">spinnerText</a>
@@ -267,12 +266,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:33</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:49</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>constructor - calls constructor of parent WizardJobComponent</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -281,6 +282,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -295,6 +297,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>For redirecting</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>wizardStepperService</td>
@@ -307,6 +313,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>For Sharing Workflow Information</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>http</td>
@@ -319,6 +329,8 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>httpRequest</td>
@@ -331,6 +343,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>For getting actual position from robot arm</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>eventEmitterService</td>
@@ -343,6 +359,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>For Sharing Angular Material Stepper View</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>SocketDataService</td>
@@ -355,6 +375,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>For getting actual progress from backend</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>spinner</td>
@@ -367,6 +391,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>For Progress Spinner</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -408,14 +436,17 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="108"
-                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:108</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="161"
+                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:161</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>When 1st creation and clicked on Back button.</p>
+<p>redirects accordingly and reset counter</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -447,14 +478,17 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="122"
-                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:122</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="183"
+                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:183</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>When executing Workflow and clicked on Back button.</p>
+<p>redirects accordingly and reset counter</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -486,14 +520,17 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="115"
-                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:115</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="172"
+                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:172</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>When updated Workflow and clicked on Back button.</p>
+<p>redirects accordingly and reset counter</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -525,14 +562,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="60"
-                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:60</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="94"
+                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:94</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>hides spinner in view</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -564,14 +603,17 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="47"
-                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:47</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="78"
+                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:78</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>ngOnInit is a lifecycle hook - executed after constructor</p>
+<p>overrides parent ngOninit() declares additional necessary variables for this component (WebSocket for Spinner)</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -603,14 +645,19 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="74"
-                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:74</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="115"
+                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:115</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>When clicked on Play button.
+Activates spinner,
+communicates with backend -&gt; send execution request and
+ask for progress via socket</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -642,14 +689,18 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="86"
-                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:86</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="132"
+                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:132</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>When 1st creation und clicked on Save button.
+Communicates with backend -&gt; send workflow to be saved and
+receives workflow ID from backend</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -681,14 +732,17 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="97"
-                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:97</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="146"
+                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:146</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>When already stored Workflow and clicked on Save button.
+Communicates with backend -&gt; send workflow to be updated and</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -720,14 +774,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="64"
-                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:64</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="101"
+                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:101</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Sets worflowProgess for spinner</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -786,14 +842,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="56"
-                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:56</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="88"
+                            class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:88</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>activates spinner in view</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -1091,27 +1149,6 @@ before redirects to &quot;previous&quot; wizard job component</p>
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="connection"></a>
-                        <span class="name">
-                            <b>
-                            connection</b>
-                            <a href="#connection"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:33</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
                         <a name="displaySpinner"></a>
                         <span class="name">
                             <b>
@@ -1127,10 +1164,16 @@ before redirects to &quot;previous&quot; wizard job component</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:29</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:45</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>status for spinner</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -1153,10 +1196,16 @@ before redirects to &quot;previous&quot; wizard job component</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:25</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:35</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>status if already saved in backend</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -1179,36 +1228,16 @@ before redirects to &quot;previous&quot; wizard job component</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:24</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:31</a></div>
                             </td>
                         </tr>
 
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="isLoading"></a>
-                        <span class="name">
-                            <b>
-                            isLoading</b>
-                            <a href="#isLoading"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <div class="io-description"><p>before workflow ist not saved run button not displayed</p>
+</div>
                     </td>
                 </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>false</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:26</a></div>
-                            </td>
-                        </tr>
-
 
             </tbody>
         </table>
@@ -1232,42 +1261,16 @@ before redirects to &quot;previous&quot; wizard job component</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:31</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:49</a></div>
                             </td>
                         </tr>
 
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="messages"></a>
-                        <span class="name">
-                            <b>
-                            messages</b>
-                            <a href="#messages"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <div class="io-description"><p>massage for websocket</p>
+</div>
                     </td>
                 </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code>string[]</code>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>[]</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:32</a></div>
-                            </td>
-                        </tr>
-
 
             </tbody>
         </table>
@@ -1291,10 +1294,16 @@ before redirects to &quot;previous&quot; wizard job component</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:28</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:41</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>displayed text of spinner</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -1323,7 +1332,7 @@ before redirects to &quot;previous&quot; wizard job component</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:27</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/execution/execution-run/execution-run.component.ts:37</a></div>
                             </td>
                         </tr>
 
@@ -1641,7 +1650,11 @@ import {WizardParentStepperService} from &#x27;../../wizard-stepper/wizard-paren
 import {SocketDataService} from &#x27;../../sockets/websocket.service&#x27;;
 import {NgxSpinnerService} from &#x27;ngx-spinner&#x27;;
 
-
+/**
+ * This component shows the configurated workflow and list all containing jobs.
+ *
+ * It communicates with backend for saving, updating, and executing the workflow
+ */
 @Component({
   selector: &#x27;app-execution-run&#x27;,
   templateUrl: &#x27;./execution-run.component.html&#x27;,
@@ -1649,17 +1662,40 @@ import {NgxSpinnerService} from &#x27;ngx-spinner&#x27;;
 })
 export class ExecutionRunComponent extends WizardJobComponent implements OnInit, OnDestroy {
 
+  /**
+   * before workflow ist not saved run button not displayed
+   */
   isDisabledRun &#x3D; true;
+  /**
+   * status if already saved in backend
+   */
   isAlreadySave &#x3D; false;
-  isLoading &#x3D; false;
+  // isLoading &#x3D; false;
   workflowProgress &#x3D; 0;
+  /**
+   * displayed text of spinner
+   */
   spinnerText: string;
+  /**
+   * status for spinner
+   */
   displaySpinner &#x3D; false;
-
+  /**
+   * massage for websocket
+   */
   message: string;
-  messages: string[] &#x3D; [];
-  connection;
+  // messages: string[] &#x3D; [];
+  // connection;
 
+  /**
+   * constructor - calls constructor of parent WizardJobComponent
+   * @param {Router} router For redirecting
+   * @param {WizardStepperService} wizardStepperService For Sharing Workflow Information
+   * @param {HttpRequestService} httpRequest For getting actual position from robot arm
+   * @param {WizardParentStepperService} eventEmitterService For Sharing Angular Material Stepper View
+   * @param {SocketDataService} SocketDataService For getting actual progress from backend
+   * @param {NgxSpinnerService} spinner For Progress Spinner
+   */
   constructor(protected router: Router,
               protected wizardStepperService: WizardStepperService,
               private http: HttpClient,
@@ -1671,26 +1707,35 @@ export class ExecutionRunComponent extends WizardJobComponent implements OnInit,
   ) {
     super(router, wizardStepperService, eventEmitterService);
   }
-
+  /**
+   * ngOnInit is a lifecycle hook - executed after constructor
+   *
+   * overrides parent ngOninit() declares additional necessary variables for this component (WebSocket for Spinner)
+   */
   ngOnInit() {
     super.ngOnInit();
-
     this.SocketDataService.onNewMessage().subscribe(msg &#x3D;&gt; {
       console.log(&#x27;Workflow Progress: &#x27; + msg);
       this.setWorkflowProgress(msg);
     });
   }
-
+  /**
+   * activates spinner in view
+   */
   showSpinner() {
     this.spinner.show();
   }
-
+  /**
+   * hides spinner in view
+   */
   hideSpinner(){
     this.spinner.hide();
   }
-
+  /**
+   * Sets worflowProgess for spinner
+   * @param {any} msg
+   */
   setWorkflowProgress(msg) {
-
     this.workflowProgress &#x3D; parseInt(msg, 10);
     this.spinnerText &#x3D; &#x27;Executing Workflow! Finished: &#x27; + this.workflowProgress +&#x27; %&#x27;;
     if (this.workflowProgress &#x3D;&#x3D;&#x3D; 100) {
@@ -1698,7 +1743,12 @@ export class ExecutionRunComponent extends WizardJobComponent implements OnInit,
       this.workflowProgress &#x3D; 0;
     }
   }
-
+  /**
+   * When clicked on Play button.
+   * Activates spinner,
+   * communicates with backend -&gt; send execution request and
+   * ask for progress via socket
+   */
   runOnClick() {
     this.showSpinner();
     this.spinnerText &#x3D; &#x27;Executing Workflow! Finished: 0%&#x27;;
@@ -1711,6 +1761,11 @@ export class ExecutionRunComponent extends WizardJobComponent implements OnInit,
       console.log(&#x27;Hello from setTimeout&#x27;);
     }, 5000);
   }
+  /**
+   * When 1st creation und clicked on Save button.
+   * Communicates with backend -&gt; send workflow to be saved and
+   * receives workflow ID from backend
+   */
   saveCreateOnClick() {
     this.eventEmitterService.onStepperNextClick();
     this.isDisabledRun &#x3D; false;
@@ -1721,7 +1776,10 @@ export class ExecutionRunComponent extends WizardJobComponent implements OnInit,
     }
     console.log(&#x27;Next Create wurde ausgeführt&#x27;);
   }
-
+  /**
+   * When already stored Workflow and clicked on Save button.
+   * Communicates with backend -&gt; send workflow to be updated and
+   */
   saveUpdateOnClick() {
     this.eventEmitterService.onStepperNextClick();
     this.isDisabledRun &#x3D; false;
@@ -1732,21 +1790,33 @@ export class ExecutionRunComponent extends WizardJobComponent implements OnInit,
     }
     console.log(&#x27;Next Update wurde ausgeführt&#x27;);
   }
-
+  /**
+   * When 1st creation and clicked on Back button.
+   *
+   * redirects accordingly and reset counter
+   */
   backCreateOnClick() {
     this.eventEmitterService.onStepperBackClick();
     this.selectNextJob(this.workflow.getJobName(this.counter));
     this.router.navigate([this.link]);
     console.log(&#x27;Back Create wurde ausgeführt&#x27;);
   }
-
+  /**
+   * When updated Workflow and clicked on Back button.
+   *
+   * redirects accordingly and reset counter
+   */
   backUpdateOnClick() {
     this.eventEmitterService.onStepperBackClick();
     this.selectNextJob(this.workflow.getJobName(this.counter));
     this.router.navigate([this.link]);
     console.log(&#x27;Back Update wurde ausgeführt&#x27;);
   }
-
+  /**
+   * When executing Workflow and clicked on Back button.
+   *
+   * redirects accordingly and reset counter
+   */
   backRunOnClick() {
     this.link &#x3D; &#x27;&#x27;;
     this.router.navigate([this.link]);
