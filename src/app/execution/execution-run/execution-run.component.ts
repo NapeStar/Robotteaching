@@ -72,7 +72,6 @@ export class ExecutionRunComponent extends WizardJobComponent implements OnInit,
   }
 
   runOnClick() {
-
     this.showSpinner();
     this.spinnerText = 'Executing Workflow! Finished: 0%';
     this.SocketDataService.sendMessage(this.workflow.name);
@@ -84,7 +83,6 @@ export class ExecutionRunComponent extends WizardJobComponent implements OnInit,
       console.log('Hello from setTimeout');
     }, 5000);
   }
-
   saveCreateOnClick() {
     this.eventEmitterService.onStepperNextClick();
     this.isDisabledRun = false;

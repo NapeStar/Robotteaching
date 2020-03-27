@@ -102,11 +102,13 @@ export class HttpRequestService {
         console.log(this.workflowList);
       });
   }
-
+  /**
+   * Getter for oberservable worflowListSub
+   * @returns The worflowListSub
+   */
   getWorkflowListUpdateListener() {
     return this.workflowListSub.asObservable();
   }
-
   /**
    * Sends workflow id to backend to be deleted – (Backend - DELETE workflow in DB)
    * @param {number} id ID of workflow

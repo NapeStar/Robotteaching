@@ -5,19 +5,25 @@ import {Subscription} from 'rxjs';
 import {HttpRequestService} from '../execution/http-request.service';
 import {Workflow} from '../model/workflow.model';
 import {WizardStepperService} from '../wizard-stepper/wizard-stepper.service';
-import {Move} from '../jobs/move.data';
 
-
+/**
+ * This component is the first page the users see.
+ *
+ * It presents all workflows, which are stored in backend, in a list.
+ * Via clicking icons all CRUD operations are possible for the workflows
+ */
 @Component({
   selector: 'app-workflow-table',
   templateUrl: './workflow-table.component.html',
   styleUrls: ['./workflow-table.component.css']
 })
 export class WorkflowTableComponent implements OnInit {
-
+  /**
+   * list of all display workflows in overview table
+   */
   workflowList: WorkflowListElement[] = [];
 
-  private workflowListSub: Subscription;
+  // private workflowListSub: Subscription;
   /**
    * string used for routing/redirecting
    */
@@ -32,8 +38,13 @@ export class WorkflowTableComponent implements OnInit {
    * important to navigate through wizard via back and forward buttons
    */
   status: string;
-
+  /**
+   * column names in view
+   */
   displayedColumns: string[] = ['id', 'name', 'created', 'action'];
+  /**
+   * view variable - list of all display workflows in overview table
+   */
   dataSource = this.workflowList;
   /**
    * constructor
@@ -46,7 +57,12 @@ export class WorkflowTableComponent implements OnInit {
               private httpRequest: HttpRequestService,
   ) {
   }
-
+  /**
+   * ngOnInit is a lifecycle hook
+   * - executed after constructor
+   *
+   * declaration of all necessary variables for this component
+   */
   ngOnInit() {
     this.httpRequest.getAllWorkflows();
     this.httpRequest.getWorkflowListUpdateListener()
@@ -55,18 +71,15 @@ export class WorkflowTableComponent implements OnInit {
         this.dataSource = this.workflowList;
       });
   }
-
   /**
    * redirects to available-jobs component
    */
-
   addNew(): void {
     this.status = 'create';
     this.wizardStepperService.updateStatus(this.status);
     console.log(this.wizardStepperService.getStatus());
     this.router.navigate(['jobs']);
   }
-
   /**
    * requests workflow data for selected workflow from backend
    * and stores the wf data in "workflow" and
@@ -97,13 +110,11 @@ export class WorkflowTableComponent implements OnInit {
       this.router.navigate([this.link]);
     });
   }
-
   /**
    * deletes workflow from workflow-table and
    * sends the wf-id to be deleted to backend
    * @param {number} id ID of selected workflow
    */
-
   onDeleteClick(id: number): void {
     this.httpRequest.deleteWorkflow(id).subscribe((data: any) => {
       console.log(data);
@@ -112,7 +123,6 @@ export class WorkflowTableComponent implements OnInit {
       }, 500);
     });
   }
-
   /**
    * requests workflow data for selected workflow from backend
    * and stores the wf data in "workflow" and
@@ -120,13 +130,11 @@ export class WorkflowTableComponent implements OnInit {
    * @param {number} id ID of selected workflow
    */
   onPlayClick(id: number): void {
-
     this.status = 'play';
     this.httpRequest.getWorkflow(id).subscribe((data: any) => {
       this.workflow = new Workflow(data._name);
       this.workflow.id = data._id;
       this.workflow.created_at = data._created_at;
-
 
       for (const workflow of data._jobsObjects) {
         console.log(workflow._name);
@@ -144,7 +152,6 @@ export class WorkflowTableComponent implements OnInit {
       this.router.navigate([this.link]);
     });
   }
-
   /**
    * stores 1st job's routing-link under link
    * @param {string} name Name of 1st job in selected workflow
@@ -186,6 +193,4 @@ export class WorkflowTableComponent implements OnInit {
     }
     console.log(this.link);
   }
-
-
 }

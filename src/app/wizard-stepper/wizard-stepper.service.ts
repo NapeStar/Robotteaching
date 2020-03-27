@@ -24,7 +24,6 @@ export class WizardStepperService {
    * listens current index of displayed job
    */
   private counterListener = new Subject<number>();
-
   /**
    * locally Workflow
    */
@@ -33,7 +32,6 @@ export class WizardStepperService {
    * Workflow Listener
    */
   private workflowListener = new Subject<Workflow>();
-
   /**
    * name array jobs in workflow
    */
@@ -42,7 +40,6 @@ export class WizardStepperService {
    * listen to update of jobs array
    */
   private jobsUpdated = new Subject<string[]>();
-
   /**
    * which status
    */
@@ -51,7 +48,6 @@ export class WizardStepperService {
    * status listener
    */
   private statusListener  = new Subject<string>();
-
   /**
    * default constructor
    */

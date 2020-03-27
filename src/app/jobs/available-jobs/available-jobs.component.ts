@@ -9,8 +9,16 @@ import {Workflow} from '../../model/workflow.model';
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material';
 
-/** Error when invalid control is dirty, touched, or submitted. */
+/**
+ * Error when invalid control is dirty, touched, or submitted.
+ */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
+  /**
+   * constructor
+   * @param {FormControl} control
+   * @param {FormGroupDirective} form
+   * @returns True if it is an error
+   */
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
     const isSubmitted = form && form.submitted;
     return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
@@ -19,6 +27,8 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 /**
  * This component provides the view for drag&drop the choosen methods (jobs).
  * The order of the single jobs (methods) can be defined and a name for the workflow has to be entered.
+ *
+ * For drag and drop Angular Material CDK {@link https://material.angular.io/cdk/drag-drop/overview} was used.
  */
 @Component({
   selector: 'app-available-jobs',
@@ -26,7 +36,6 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./available-jobs.component.css']
 })
 export class AvailableJobsComponent implements OnInit, OnDestroy {
-
   /**
    * used in view to validate/check if name of workflow is entered
    */
@@ -37,24 +46,36 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
    * used in view to handel error if name of workflow is not entered
    */
   matcher = new MyErrorStateMatcher();
-
   /**
    * in this variable name of workflow is stored
    */
   name = '';
-
   /**
    * used in view to enable and disable Next button
    */
   isDisabledNext = true;
-
-  httpResult: any;
+  /**
+   * used in view for one selected job - Drag&Drop
+   */
   selectedJob: any;
-  selectedJobs: string[];
-  copiedJobs: string[];
-  jobs: string[] = [];
 
+  /**
+   * used in view for table on the right - selected jobs list
+   */
+  selectedJobs: string[];
+  /**
+   * used for interim storage
+   */
+  copiedJobs: string[];
+
+  // jobs: string[] = [];
+  /**
+   * locally stored response
+   */
   private response: string[];
+  /**
+   * Subscription for observed responseSub -> synchronized and shared response
+   */
   private responseSub = Subscription;
   /**
    * locally stored workflow
@@ -64,8 +85,13 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
    * Subscription for observed workflowSub -> synchronized and shared workflow
    */
   private workflowSub: Subscription;
-
+  /**
+   * locally stored list of jobs -> for drag&drop in view
+   */
   jobsUpdated: string[] = [];
+  /**
+   * Subscription for observed jobsSub -> synchronized and shared list of jobs
+   */
   private jobsSub: Subscription;
   /**
    * string used for routing/redirecting

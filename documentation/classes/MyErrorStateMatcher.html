@@ -67,7 +67,7 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Error when invalid control is dirty, touched, or submitted. </p>
+                <p>Error when invalid control is dirty, touched, or submitted.</p>
 
             </p>
 
@@ -137,14 +137,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/app/jobs/available-jobs/available-jobs.component.ts:14</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/app/jobs/available-jobs/available-jobs.component.ts:22</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>constructor</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -191,7 +193,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>True if it is an error</p>
+
                     </div>
                 </td>
             </tr>
@@ -218,8 +221,16 @@ import {Workflow} from &#x27;../../model/workflow.model&#x27;;
 import {FormControl, FormGroupDirective, NgForm, Validators} from &#x27;@angular/forms&#x27;;
 import {ErrorStateMatcher} from &#x27;@angular/material&#x27;;
 
-/** Error when invalid control is dirty, touched, or submitted. */
+/**
+ * Error when invalid control is dirty, touched, or submitted.
+ */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
+  /**
+   * constructor
+   * @param {FormControl} control
+   * @param {FormGroupDirective} form
+   * @returns True if it is an error
+   */
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
     const isSubmitted &#x3D; form &amp;&amp; form.submitted;
     return !!(control &amp;&amp; control.invalid &amp;&amp; (control.dirty || control.touched || isSubmitted));
@@ -228,6 +239,8 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 /**
  * This component provides the view for drag&amp;drop the choosen methods (jobs).
  * The order of the single jobs (methods) can be defined and a name for the workflow has to be entered.
+ *
+ * For drag and drop Angular Material CDK {@link https://material.angular.io/cdk/drag-drop/overview} was used.
  */
 @Component({
   selector: &#x27;app-available-jobs&#x27;,
@@ -235,7 +248,6 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: [&#x27;./available-jobs.component.css&#x27;]
 })
 export class AvailableJobsComponent implements OnInit, OnDestroy {
-
   /**
    * used in view to validate/check if name of workflow is entered
    */
@@ -246,24 +258,36 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
    * used in view to handel error if name of workflow is not entered
    */
   matcher &#x3D; new MyErrorStateMatcher();
-
   /**
    * in this variable name of workflow is stored
    */
   name &#x3D; &#x27;&#x27;;
-
   /**
    * used in view to enable and disable Next button
    */
   isDisabledNext &#x3D; true;
-
-  httpResult: any;
+  /**
+   * used in view for one selected job - Drag&amp;Drop
+   */
   selectedJob: any;
-  selectedJobs: string[];
-  copiedJobs: string[];
-  jobs: string[] &#x3D; [];
 
+  /**
+   * used in view for table on the right - selected jobs list
+   */
+  selectedJobs: string[];
+  /**
+   * used for interim storage
+   */
+  copiedJobs: string[];
+
+  // jobs: string[] &#x3D; [];
+  /**
+   * locally stored response
+   */
   private response: string[];
+  /**
+   * Subscription for observed responseSub -&gt; synchronized and shared response
+   */
   private responseSub &#x3D; Subscription;
   /**
    * locally stored workflow
@@ -273,8 +297,13 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
    * Subscription for observed workflowSub -&gt; synchronized and shared workflow
    */
   private workflowSub: Subscription;
-
+  /**
+   * locally stored list of jobs -&gt; for drag&amp;drop in view
+   */
   jobsUpdated: string[] &#x3D; [];
+  /**
+   * Subscription for observed jobsSub -&gt; synchronized and shared list of jobs
+   */
   private jobsSub: Subscription;
   /**
    * string used for routing/redirecting

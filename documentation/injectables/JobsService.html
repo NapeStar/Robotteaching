@@ -59,6 +59,14 @@
             <code>src/app/jobs/jobs.service.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>This service is only used in available-jobs component.</p>
+<p>Requests available jobs (methods) from backend and</p>
+
+            </p>
 
 
 
@@ -137,12 +145,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/jobs/jobs.service.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/jobs/jobs.service.ts:21</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>constructor</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -151,6 +161,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -165,6 +176,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Service for for communication with backend</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -202,17 +217,25 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="16"
-                            class="link-to-prism">src/app/jobs/jobs.service.ts:16</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/jobs/jobs.service.ts:32</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>requests available jobs (methods) from backend and store them locally and observable</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The list of available jobs (methods)</p>
 
                     </div>
                 </td>
@@ -246,10 +269,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/jobs/jobs.service.ts:10</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/jobs/jobs.service.ts:16</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>locally stored response from backend in array</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -273,10 +302,17 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/jobs/jobs.service.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/jobs/jobs.service.ts:21</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Subjects are both observer and observable.
+here to share the response between components</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -302,9 +338,22 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/jobs/jobs.service.ts:25</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/jobs/jobs.service.ts:44</a></div>
                                 </td>
                             </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Getter for responseListener</p>
+</div>
+
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>Subject&lt;string[]&gt;</code>
+
+                                </div>
+                        </td>
+                    </tr>
 
             </tbody>
         </table>
@@ -324,9 +373,22 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/jobs/jobs.service.ts:29</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/jobs/jobs.service.ts:51</a></div>
                                 </td>
                             </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Getter for response</p>
+</div>
+
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>string[]</code>
+
+                                </div>
+                        </td>
+                    </tr>
 
             </tbody>
         </table>
@@ -338,31 +400,53 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 import {HttpClient} from &#x27;@angular/common/http&#x27;;
 import {Subject} from &#x27;rxjs&#x27;;
-
+/**
+ * This service is only used in available-jobs component.
+ *
+ * Requests available jobs (methods) from backend and
+ */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
 export class JobsService {
-
+  /**
+   * locally stored response from backend in array
+   */
   private _response: string[];
+  /**
+   * Subjects are both observer and observable.
+   * here to share the response between components
+   */
   private _responseListener &#x3D; new Subject&lt;string[]&gt;();
-
+  /**
+   * constructor
+   * @param {HttpClient} http Service for for communication with backend
+   */
   constructor(private http: HttpClient) {
   }
-
+  /**
+   * requests available jobs (methods) from backend and store them locally and observable
+   * @returns The list of available jobs (methods)
+   */
   getJobsFromServer() {
     return this.http.post&lt;{workflows: string[]}&gt;(&#x27;http://localhost:3000/RobotDataService/getAvailableJobs&#x27;, null).subscribe(
       (responseData) &#x3D;&gt; {
         this._response &#x3D; responseData.workflows;
         this._responseListener.next([...this._response]);
         console.log(responseData);
-        // console.log(this._response);
       });
   }
+  /**
+   * Getter for responseListener
+   * @returns The responseListener - list of available jobs
+   */
   get responseListener(): Subject&lt;string[]&gt; {
     return this._responseListener;
   }
-
+  /**
+   * Getter for response
+   * @returns The response - list of available jobs
+   */
   get response(): string[] {
     return this._response;
   }
