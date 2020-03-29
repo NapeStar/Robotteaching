@@ -1,9 +1,7 @@
 # Introduction
 
-The documentation in this section is designed as a tutorial for extending the Angular code.  
-The best way to explain how to add a new robot method is to simply do it.  
-
-For this reason we have added a dummy robot method "NewMethod" in the code, considered all dependencies and documented everything.
+The documentation in this section is designed as a tutorial and explains how to integrate a new method.  
+The best way to explain how to integrate a new robot method in code is to simply integrate a new method and document each step. Therefore we have added a dummy robot method "NewMethod" in code. 
     
 ![Screenshot](../../screenshots/steps/availablejobs-new-method.png)   
 

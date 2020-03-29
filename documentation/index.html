@@ -32,7 +32,7 @@
 
 <h1 id="robot-teaching">Robot Teaching</h1>
 <p>Robot Teaching is a web-based user interface for programming mobile manipulators like CHIMERA.<br>The so-called &quot;Teach-In&quot; procedure is used to program the robot. </p>
-<p>The web application is based on the &quot;MEAN&quot; Stack and stands for   </p>
+<p>The web application is based on the &quot;MEAN&quot; Stack which stands for   </p>
 <ul>
 <li>M        <a href="https://www.mongodb.com/de">MongoDB</a></li>
 <li>E        <a href="https://expressjs.com/de/">Express.js</a></li>
@@ -42,11 +42,16 @@
 <p>For the documentation of the &quot;Front-End&quot; <a href="https://compodoc.app/">Compodoc</a> was used.<br>Compodoc is a documentation tool for Angular applications. Basically it generates a static documentation for the application. </p>
 <p>For this application the documentation was extended. Under <a href="../../additional-documentation/introduction.html">Additional Documentation</a> you will find detailed instructions for adding new robot methods. 
 In the manner of a tutorial every single step is explained in detail. Screenshots and direct links to the affected code passages help the developer to understand how to extend the program. </p>
-<p>The description for installation you find <a href="https://compodoc.app/guides/installation.html">here</a>.  
-To consider the additional documentation in the generated documentation you have run compodoc like this:  </p>
+<p>To install Compodoc enter   </p>
 <blockquote>
-<p>compodoc -p tsconfig.json -s -a screenshots --includes additional-doc</p>
+<p>npm install -g @compodoc/compodoc  </p>
 </blockquote>
+<p>in terminal. A detailed description you find <a href="https://compodoc.app/guides/installation.html">here</a>.    
+If you change the code and want to generate an updated documentation enter:</p>
+<blockquote>
+<p>compodoc -p tsconfig.json -s -a screenshots --includes additional-doc  </p>
+</blockquote>
+<p>This command also includes the part of the <a href="../../additional-documentation/introduction.html">Additional Documentation</a> in the updated documentation.  </p>
 <h1 id="components-structure">Components Structure</h1>
 <p>In the following, the structure of the components will be illustrated.   </p>
 <h2 id="workflows-table---home">Workflows Table - Home</h2>

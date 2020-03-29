@@ -4,7 +4,7 @@ Robot Teaching is a web-based user interface for programming mobile manipulators
 The so-called "Teach-In" procedure is used to program the robot. 
 
 
-The web application is based on the "MEAN" Stack and stands for   
+The web application is based on the "MEAN" Stack which stands for   
 
 - M        [MongoDB](https://www.mongodb.com/de)
 - E        [Express.js](https://expressjs.com/de/)
@@ -17,10 +17,18 @@ Compodoc is a documentation tool for Angular applications. Basically it generate
 For this application the documentation was extended. Under [Additional Documentation](../../additional-documentation/introduction.html) you will find detailed instructions for adding new robot methods. 
 In the manner of a tutorial every single step is explained in detail. Screenshots and direct links to the affected code passages help the developer to understand how to extend the program. 
 
-The description for installation you find [here](https://compodoc.app/guides/installation.html).  
-To consider the additional documentation in the generated documentation you have run compodoc like this:  
+To install Compodoc enter   
+
+> npm install -g @compodoc/compodoc  
   
-> compodoc -p tsconfig.json -s -a screenshots --includes additional-doc
+in terminal. A detailed description you find [here](https://compodoc.app/guides/installation.html).    
+If you change the code and want to generate an updated documentation enter:
+
+  
+> compodoc -p tsconfig.json -s -a screenshots --includes additional-doc  
+    
+This command also includes the part of the [Additional Documentation](../../additional-documentation/introduction.html) in the updated documentation.  
+
    
 # Components Structure  
 
