@@ -94,11 +94,12 @@ export class WizardJobComponent implements OnInit, OnDestroy {
       this.wizardStepperService.increaseCount();
       this.selectNextJob(this.workflow.getJobName(this.counter));
       this.router.navigate([this.link]);
-    } else if (this.counter === this.workflow.getJobsLength()) {
+    } else {
       this.wizardStepperService.updateCount(this.counter = 0);
       this.link = 'wizard/run';
       this.router.navigate([this.link]);
       this.eventEmitterService.onStepperNextClick();
+      console.log('onStepperNext wurde ausgeführt');
     }
   }
   /**

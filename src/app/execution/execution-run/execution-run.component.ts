@@ -88,7 +88,7 @@ export class ExecutionRunComponent extends WizardJobComponent implements OnInit,
   /**
    * hides spinner in view
    */
-  hideSpinner(){
+  hideSpinner() {
     this.spinner.hide();
   }
   /**

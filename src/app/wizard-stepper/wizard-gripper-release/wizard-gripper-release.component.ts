@@ -85,17 +85,7 @@ export class WizardGripperReleaseComponent extends WizardJobComponent implements
   onNextClick(): void {
     this.gripperRelease.activationTimeout = this.valueActTimeout;
     this.wizardStepperService.updateWorkflowItem(this.gripperRelease);
-    if (this.counter < this.workflow.getJobsLength() - 1) {
-      this.wizardStepperService.increaseCount();
-      this.selectNextJob(this.workflow.getJobName(this.counter));
-      this.router.navigate([this.link]);
-    } else {
-      this.wizardStepperService.updateCount(this.counter = 0);
-      this.link = 'wizard/run';
-      this.router.navigate([this.link]);
-      this.eventEmitterService.onStepperNextClick();
-      console.log('GripperGrip onStepperNext wurde ausgeführt');
-    }
+    super.onNextClick();
   }
 
 }

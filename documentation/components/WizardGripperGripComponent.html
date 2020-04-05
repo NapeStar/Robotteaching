@@ -454,7 +454,7 @@ before redirects to next wizard job component</p>
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../components/WizardJobComponent.html#source" target="_self" >WizardJobComponent:129</a></code>
+                        <div class="io-line">Defined in         <code><a href="../components/WizardJobComponent.html#source" target="_self" >WizardJobComponent:130</a></code>
 </div>
                 </td>
             </tr>
@@ -601,7 +601,7 @@ before redirects to next wizard job component</p>
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../components/WizardJobComponent.html#source" target="_self" >WizardJobComponent:108</a></code>
+                        <div class="io-line">Defined in         <code><a href="../components/WizardJobComponent.html#source" target="_self" >WizardJobComponent:109</a></code>
 </div>
                 </td>
             </tr>
@@ -649,7 +649,7 @@ before redirects to &quot;previous&quot; wizard job component</p>
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../components/WizardJobComponent.html#source" target="_self" >WizardJobComponent:139</a></code>
+                        <div class="io-line">Defined in         <code><a href="../components/WizardJobComponent.html#source" target="_self" >WizardJobComponent:140</a></code>
 </div>
                 </td>
             </tr>
@@ -1444,17 +1444,7 @@ export class WizardGripperGripComponent extends WizardJobComponent implements On
   onNextClick(): void {
     this.gripperGrip.activationTimeout &#x3D; this.valueActTimeout;
     this.wizardStepperService.updateWorkflowItem(this.gripperGrip);
-    if (this.counter &lt; this.workflow.getJobsLength() - 1) {
-      this.wizardStepperService.increaseCount();
-      this.selectNextJob(this.workflow.getJobName(this.counter));
-      this.router.navigate([this.link]);
-    } else {
-      this.wizardStepperService.updateCount(this.counter &#x3D; 0);
-      this.link &#x3D; &#x27;wizard/run&#x27;;
-      this.router.navigate([this.link]);
-      this.eventEmitterService.onStepperNextClick();
-      console.log(&#x27;GripperGrip onStepperNext wurde ausgeführt&#x27;);
-    }
+    super.onNextClick();
   }
 }
 </code></pre>

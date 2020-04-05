@@ -83,6 +83,9 @@ export class Workflow {
             this._jobsObjects.push(new GripperRelease(jobsName));
             break;
           }
+          default: {
+            break;
+          }
         }
       }
     }
@@ -124,6 +127,9 @@ export class Workflow {
         }
         case 'GripperRelease': {
           this._jobsObjects.push(new GripperRelease(job));
+          break;
+        }
+        default: {
           break;
         }
     }

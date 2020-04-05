@@ -431,8 +431,8 @@ E.g. to present and enter values Angular Material Design Components where used i
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="118"
-                            class="link-to-prism">src/app/wizard-stepper/wizard-new-method/wizard-new-method.component.ts:118</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="108"
+                            class="link-to-prism">src/app/wizard-stepper/wizard-new-method/wizard-new-method.component.ts:108</a></div>
                 </td>
             </tr>
 
@@ -520,7 +520,7 @@ before redirects to next wizard job component</p>
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../components/WizardJobComponent.html#source" target="_self" >WizardJobComponent:129</a></code>
+                        <div class="io-line">Defined in         <code><a href="../components/WizardJobComponent.html#source" target="_self" >WizardJobComponent:130</a></code>
 </div>
                 </td>
             </tr>
@@ -667,7 +667,7 @@ before redirects to next wizard job component</p>
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../components/WizardJobComponent.html#source" target="_self" >WizardJobComponent:108</a></code>
+                        <div class="io-line">Defined in         <code><a href="../components/WizardJobComponent.html#source" target="_self" >WizardJobComponent:109</a></code>
 </div>
                 </td>
             </tr>
@@ -715,7 +715,7 @@ before redirects to &quot;previous&quot; wizard job component</p>
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../components/WizardJobComponent.html#source" target="_self" >WizardJobComponent:139</a></code>
+                        <div class="io-line">Defined in         <code><a href="../components/WizardJobComponent.html#source" target="_self" >WizardJobComponent:140</a></code>
 </div>
                 </td>
             </tr>
@@ -1575,17 +1575,7 @@ export class WizardNewMethodComponent extends WizardJobComponent implements OnIn
   onNextClick(): void {
     this.newMethod.activationTimeout &#x3D; this.valueActTimeout;
     this.wizardStepperService.updateWorkflowItem(this.newMethod);
-    if (this.counter &lt; this.workflow.getJobsLength() - 1) {
-      this.wizardStepperService.increaseCount();
-      this.selectNextJob(this.workflow.getJobName(this.counter));
-      this.router.navigate([this.link]);
-    } else {
-      this.wizardStepperService.updateCount(this.counter &#x3D; 0);
-      this.link &#x3D; &#x27;wizard/run&#x27;;
-      this.router.navigate([this.link]);
-      this.eventEmitterService.onStepperNextClick();
-      console.log(&#x27;ArmCatesian onStepperNext wurde ausgeführt&#x27;);
-    }
+    super.onNextClick();
   }
   /**
    * requests actual position form backend and stores the value

@@ -320,8 +320,8 @@ all basic functionalities, which may be overrided by the Child Components</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="129"
-                            class="link-to-prism">src/app/wizard-stepper/wizard-job/wizard-job.component.ts:129</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="130"
+                            class="link-to-prism">src/app/wizard-stepper/wizard-job/wizard-job.component.ts:130</a></div>
                 </td>
             </tr>
 
@@ -449,8 +449,8 @@ before redirects to next wizard job component</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="108"
-                            class="link-to-prism">src/app/wizard-stepper/wizard-job/wizard-job.component.ts:108</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="109"
+                            class="link-to-prism">src/app/wizard-stepper/wizard-job/wizard-job.component.ts:109</a></div>
                 </td>
             </tr>
 
@@ -491,8 +491,8 @@ before redirects to &quot;previous&quot; wizard job component</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="139"
-                            class="link-to-prism">src/app/wizard-stepper/wizard-job/wizard-job.component.ts:139</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="140"
+                            class="link-to-prism">src/app/wizard-stepper/wizard-job/wizard-job.component.ts:140</a></div>
                 </td>
             </tr>
 
@@ -895,11 +895,12 @@ export class WizardJobComponent implements OnInit, OnDestroy {
       this.wizardStepperService.increaseCount();
       this.selectNextJob(this.workflow.getJobName(this.counter));
       this.router.navigate([this.link]);
-    } else if (this.counter &#x3D;&#x3D;&#x3D; this.workflow.getJobsLength()) {
+    } else {
       this.wizardStepperService.updateCount(this.counter &#x3D; 0);
       this.link &#x3D; &#x27;wizard/run&#x27;;
       this.router.navigate([this.link]);
       this.eventEmitterService.onStepperNextClick();
+      console.log(&#x27;onStepperNext wurde ausgeführt&#x27;);
     }
   }
   /**
