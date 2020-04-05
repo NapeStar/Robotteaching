@@ -1,13 +1,10 @@
 import * as io from 'socket.io-client';
-import {Observable, Observer} from 'rxjs';
+import {Observable} from 'rxjs';
+import {EnvironmentUrlService} from '../environment-url.service';
 /**
  * This service provides a websocket needed for viewing progress of backend
  */
 export class SocketDataService {
-  /**
-   * url
-   */
-  private url = 'http://localhost:3030';
   /**
    * web socket
    */
@@ -15,8 +12,8 @@ export class SocketDataService {
   /**
    * default constructor - instantiate socket
    */
-  constructor() {
-    this.socket = io(this.url);
+  constructor(private envUrl: EnvironmentUrlService) {
+    this.socket = io(this.envUrl.urlSpinner);
   }
   /**
    * not used, but you can send a message to the socket

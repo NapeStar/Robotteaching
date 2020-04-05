@@ -47,9 +47,6 @@ export class ExecutionRunComponent extends WizardJobComponent implements OnInit,
    * massage for websocket
    */
   message: string;
-  // messages: string[] = [];
-  // connection;
-
   /**
    * constructor - calls constructor of parent WizardJobComponent
    * @param {Router} router For redirecting

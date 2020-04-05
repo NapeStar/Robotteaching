@@ -2,10 +2,14 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 /**
- * @ignore
+ * set environment variable for url address backend and url address for spinner
+ *
+ * development environment
  */
 export const environment = {
-  production: false
+  production: false,
+  urlAddress: 'http://localhost:3000',
+  urlSpinner: 'http://localhost:3030'
 };
 
 /*

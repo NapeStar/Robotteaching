@@ -5,6 +5,8 @@ import {WizardStepperService} from '../wizard-stepper/wizard-stepper.service';
 import {Subscription} from 'rxjs';
 import {Subject} from 'rxjs';
 import {WorkflowListElement} from '../model/workflow-list-element.model';
+import {EnvironmentUrlService} from '../environment-url.service';
+
 /**
  * this service provides the communication with backend.
  * The communication for all CRUD (CREATE, READ, UPDATE, DELETE) + Execute(Run) operations are provided.
@@ -34,9 +36,11 @@ export class HttpRequestService {
    * constructor
    * @param {HttpClient} http Service for for communication with backend
    * @param {WizardStepperService} wizardStepperService Service for sharing workflow information
+   * @param {EnvironmentUrlService} envUrl Service for providing Url set in environments.ts file
    */
   constructor(private http: HttpClient,
-              private wizardStepperService: WizardStepperService) {
+              private wizardStepperService: WizardStepperService,
+              private envUrl: EnvironmentUrlService) {
     this.workflowSub = this.wizardStepperService.getWorkflowListener()
       .subscribe(workflow => {
         this.workflow = workflow;
@@ -48,7 +52,7 @@ export class HttpRequestService {
    * @param {Workflow} workflow
    */
   saveWorkflow(workflow: Workflow) {
-    this.http.post('http://localhost:3000/saveWorkflow', {jsondata: workflow}).subscribe(
+    this.http.post(this.envUrl.urlAddress + '/saveWorkflow', {jsondata: workflow}).subscribe(
       (responseData) => {
         console.log(responseData);
         this.workflow.id = responseData + '';
@@ -60,7 +64,7 @@ export class HttpRequestService {
    * @param {Workflow} workflow
    */
   createWorkflow(workflow: Workflow) {
-    this.http.post('http://localhost:3000/createWorkflow', {jsondata: workflow}).subscribe(
+    this.http.post(this.envUrl.urlAddress + '/createWorkflow', {jsondata: workflow}).subscribe(
       (responseData) => {
         console.log(responseData);
         this.workflow.id = responseData + '';
@@ -72,7 +76,7 @@ export class HttpRequestService {
    * @param {Workflow} workflow
    */
   runWorkflow() {
-    this.http.post('http://localhost:3000/playWorkflow', {wf_id: this.workflow.id}).subscribe(
+    this.http.post(this.envUrl.urlAddress + '/playWorkflow', {wf_id: this.workflow.id}).subscribe(
       (responseData) => {
         console.log(responseData);
       });
@@ -83,7 +87,7 @@ export class HttpRequestService {
    */
   updateWorkflow(workflow: Workflow) {
     console.log(this.workflow);
-    this.http.post('http://localhost:3000/updateWorkflow', {jsondata: workflow}).subscribe(
+    this.http.post(this.envUrl.urlAddress + '/updateWorkflow', {jsondata: workflow}).subscribe(
       (responseData) => {
         console.log(responseData);
       });
@@ -94,7 +98,7 @@ export class HttpRequestService {
    * Stores response (all workflows) in workflowList locally resp. workflowListSub to share
    */
   getAllWorkflows() {
-    this.http.post<WorkflowListElement[]>('http://localhost:3000/readWorkflow/readAll', null).subscribe(
+    this.http.post<WorkflowListElement[]>(this.envUrl.urlAddress + '/readWorkflow/readAll', null).subscribe(
       (responseData) => {
         this.workflowList = responseData;
         this.workflowListSub.next([...this.workflowList]);
@@ -114,21 +118,21 @@ export class HttpRequestService {
    * @param {number} id ID of workflow
    */
   deleteWorkflow(id: number) {
-    return this.http.post('http://localhost:3000/deleteWorkflow/deleteOne', {wf_id: id});
+    return this.http.post(this.envUrl.urlAddress + '/deleteWorkflow/deleteOne', {wf_id: id});
   }
   /**
    * Requests current arm position from backend
    * @returns The requested arm position
    */
   getArmPosition() {
-    return this.http.post('http://localhost:3000/RobotDataService/getBasePosition', null);
+    return this.http.post(this.envUrl.urlAddress + '/RobotDataService/getBasePosition', null);
   }
   /**
    * Requests current base position from backend
    * @returns The requested base position
    */
   getBasePosition() {
-    return this.http.post('http://localhost:3000/RobotDataService/getBasePosition', null);
+    return this.http.post(this.envUrl.urlAddress + '/RobotDataService/getBasePosition', null);
   }
   /**
    * Requests the workflow belonging to id from backend
@@ -136,7 +140,7 @@ export class HttpRequestService {
    * @returns The requested workflow
    */
   getWorkflow(id: number) {
-    return this.http.post('http://localhost:3000/readWorkflow/readOne', {wf_id: id});
+    return this.http.post(this.envUrl.urlAddress + '/readWorkflow/readOne', {wf_id: id});
   }
 }
 

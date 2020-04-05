@@ -140,12 +140,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>)</code>
+<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, envUrl: <a href="../injectables/EnvironmentUrlService.html">EnvironmentUrlService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/jobs/jobs.service.ts:21</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/jobs/jobs.service.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -178,6 +178,22 @@
                                                     
                                                         <td>
                                                                 <code><p>Service for for communication with backend</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>envUrl</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/EnvironmentUrlService.html" target="_self" >EnvironmentUrlService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>Service for providing Url set in environments.ts file</p>
 </code>
                                                         </td>
                                                 </tr>
@@ -217,8 +233,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="32"
-                            class="link-to-prism">src/app/jobs/jobs.service.ts:32</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/jobs/jobs.service.ts:35</a></div>
                 </td>
             </tr>
 
@@ -269,7 +285,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/jobs/jobs.service.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/jobs/jobs.service.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -302,7 +318,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/jobs/jobs.service.ts:21</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/jobs/jobs.service.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -338,7 +354,7 @@ here to share the response between components</p>
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/jobs/jobs.service.ts:44</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/jobs/jobs.service.ts:47</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -373,7 +389,7 @@ here to share the response between components</p>
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/jobs/jobs.service.ts:51</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/jobs/jobs.service.ts:54</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -400,6 +416,7 @@ here to share the response between components</p>
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 import {HttpClient} from &#x27;@angular/common/http&#x27;;
 import {Subject} from &#x27;rxjs&#x27;;
+import {EnvironmentUrlService} from &#x27;../environment-url.service&#x27;;
 /**
  * This service is only used in available-jobs component.
  *
@@ -421,15 +438,17 @@ export class JobsService {
   /**
    * constructor
    * @param {HttpClient} http Service for for communication with backend
+   * @param {EnvironmentUrlService} envUrl Service for providing Url set in environments.ts file
    */
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,
+              private envUrl: EnvironmentUrlService) {
   }
   /**
    * requests available jobs (methods) from backend and store them locally and observable
    * @returns The list of available jobs (methods)
    */
   getJobsFromServer() {
-    return this.http.post&lt;{workflows: string[]}&gt;(&#x27;http://localhost:3000/RobotDataService/getAvailableJobs&#x27;, null).subscribe(
+    return this.http.post&lt;{workflows: string[]}&gt;(this.envUrl.urlAddress + &#x27;/RobotDataService/getAvailableJobs&#x27;, null).subscribe(
       (responseData) &#x3D;&gt; {
         this._response &#x3D; responseData.workflows;
         this._responseListener.next([...this._response]);

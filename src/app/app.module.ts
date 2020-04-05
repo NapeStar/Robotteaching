@@ -36,7 +36,7 @@ import { WorkflowTableComponent } from './workflow-table/workflow-table.componen
 import {SocketDataService} from './sockets/websocket.service';
 import {NgxSpinnerModule} from 'ngx-spinner';
 import { WizardNewMethodComponent } from './wizard-stepper/wizard-new-method/wizard-new-method.component';
-
+import { EnvironmentUrlService} from './environment-url.service';
 
 @NgModule({
   declarations: [
@@ -80,7 +80,7 @@ import { WizardNewMethodComponent } from './wizard-stepper/wizard-new-method/wiz
     MatProgressSpinnerModule,
     NgxSpinnerModule
   ],
-  providers: [WizardStepperService, SocketDataService],
+  providers: [WizardStepperService, SocketDataService, EnvironmentUrlService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

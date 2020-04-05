@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Subject} from 'rxjs';
+import {EnvironmentUrlService} from '../environment-url.service';
 /**
  * This service is only used in available-jobs component.
  *
@@ -22,15 +23,17 @@ export class JobsService {
   /**
    * constructor
    * @param {HttpClient} http Service for for communication with backend
+   * @param {EnvironmentUrlService} envUrl Service for providing Url set in environments.ts file
    */
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,
+              private envUrl: EnvironmentUrlService) {
   }
   /**
    * requests available jobs (methods) from backend and store them locally and observable
    * @returns The list of available jobs (methods)
    */
   getJobsFromServer() {
-    return this.http.post<{workflows: string[]}>('http://localhost:3000/RobotDataService/getAvailableJobs', null).subscribe(
+    return this.http.post<{workflows: string[]}>(this.envUrl.urlAddress + '/RobotDataService/getAvailableJobs', null).subscribe(
       (responseData) => {
         this._response = responseData.workflows;
         this._responseListener.next([...this._response]);

@@ -29,6 +29,13 @@ If you change the code and want to generate an updated documentation enter:
     
 This command also includes the part of the [Additional Documentation](../../additional-documentation/introduction.html) in the updated documentation.  
 
+# Environments Variables 
+
+The URL Address for connecting to backend can be set in environments files.   
+
+Link to [Environment Files](../../miscellaneous/variables.html) variables.    
+Path to directory "src/environments/environment.ts".  
+Path to directory "src/environments/environment.prod.ts".      
    
 # Components Structure  
 
