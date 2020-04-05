@@ -1,7 +1,8 @@
 # Add NewMethod to Workflow Model   
     
 
-Update [worflow](../../classes/Workflow.html) within "model" folder.      
+Update [worflow](../../classes/Workflow.html)  
+Path to directory "src/app/model/workflow.model.ts".        
 
 1. Import NewMethod    
 

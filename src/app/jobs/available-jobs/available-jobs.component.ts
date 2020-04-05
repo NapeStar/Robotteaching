@@ -58,7 +58,6 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
    * used in view for one selected job - Drag&Drop
    */
   selectedJob: any;
-
   /**
    * used in view for table on the right - selected jobs list
    */
@@ -67,8 +66,6 @@ export class AvailableJobsComponent implements OnInit, OnDestroy {
    * used for interim storage
    */
   copiedJobs: string[];
-
-  // jobs: string[] = [];
   /**
    * locally stored response
    */

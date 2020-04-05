@@ -7,7 +7,6 @@ import {HttpClient} from '@angular/common/http';
 import {WizardParentStepperService} from '../../wizard-stepper/wizard-parent/wizard-parent-stepper.service';
 import {SocketDataService} from '../../sockets/websocket.service';
 import {NgxSpinnerService} from 'ngx-spinner';
-
 /**
  * This component shows the configurated workflow and list all containing jobs.
  *
@@ -28,7 +27,13 @@ export class ExecutionRunComponent extends WizardJobComponent implements OnInit,
    * status if already saved in backend
    */
   isAlreadySave = false;
-  // isLoading = false;
+  /**
+   * status for progress spinner
+   */
+  isLoading = false;
+  /**
+   * status for progress spinner
+   */
   workflowProgress = 0;
   /**
    * displayed text of spinner

@@ -1,6 +1,6 @@
 # Introduction
 
-The documentation in this section is designed as a tutorial and explains how to integrate a new method.  
+The documentation in this section is designed as a tutorial and explains how to integrate a new method.    
 The best way to explain how to integrate a new robot method in code is to simply integrate a new method and document each step. Therefore we have added a dummy robot method "NewMethod" in code. 
     
 ![Screenshot](../../screenshots/steps/availablejobs-new-method.png)   
